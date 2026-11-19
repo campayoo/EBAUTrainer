@@ -1,0 +1,49 @@
+# Clase completa: Potencial y energía eléctrica
+id: fis.em.electrico.u02
+objectives:
+  - Calcular el potencial y la energía potencial eléctrica.
+  - Relacionar trabajo, diferencia de potencial y movimiento de cargas.
+explanation:
+  - title: Potencial y energía potencial
+    body: |
+      El campo eléctrico es conservativo, igual que el gravitatorio:
+      $$E_p = k\frac{q\,Q}{r}, \qquad V = \frac{E_p}{q} = k\frac{Q}{r}\quad[\mathrm{V} = \mathrm{J/C}]$$
+      - Aquí el **signo de las cargas se mantiene**: $V$ es positivo cerca de cargas positivas y negativo cerca de las negativas.
+      - El potencial es un **escalar**: con varias cargas, se suman los potenciales con su signo.
+  - title: Trabajo y diferencia de potencial
+    body: |
+      El trabajo que hace el campo al llevar una carga $q$ de $A$ a $B$:
+      $$W_{A\to B} = -\Delta E_p = q\,(V_A - V_B)$$
+      - Las cargas **positivas** se mueven espontáneamente hacia **potenciales menores**; las negativas, hacia potenciales mayores.
+      - En un campo **uniforme** (entre dos placas): $\Delta V = E\cdot d$.
+      - Las **superficies equipotenciales** son perpendiculares a las líneas de campo; moverse por ellas no cuesta trabajo.
+  - title: Aceleración de partículas
+    body: |
+      Una carga que parte del reposo y atraviesa una diferencia de potencial $\Delta V$ gana energía cinética:
+      $$\frac12 m v^2 = |q|\,\Delta V$$
+      Es el principio de los aceleradores de partículas. Unidad práctica: el **electronvoltio**, $1\ \mathrm{eV} = 1{,}6\cdot10^{-19}$ J.
+examples:
+  - title: Un electrón acelerado
+    statement: |
+      Un electrón parte del reposo y se acelera con una diferencia de potencial de 100 V. ¿Qué velocidad alcanza? ($m_e = 9{,}11\cdot10^{-31}$ kg, $e = 1{,}6\cdot10^{-19}$ C)
+    steps:
+      - |
+        **Conservación de la energía:** $\frac12 m v^2 = e\,\Delta V$.
+      - |
+        **Despejamos:** $v = \sqrt{\dfrac{2e\,\Delta V}{m}} = \sqrt{\dfrac{2\cdot1{,}6\cdot10^{-19}\cdot100}{9{,}11\cdot10^{-31}}}$.
+      - |
+        **Resultado:** $v \approx 5{,}93\cdot10^{6}\ \mathrm{m/s}$, y su energía cinética es de 100 eV.
+    result: |
+      Es un 2 % de la velocidad de la luz: todavía no hacen falta correcciones relativistas.
+summary:
+  - |-
+    $V = kQ/r$ (escalar, con signo); $E_p = qV$.
+  - |-
+    $W_{A\to B} = q(V_A - V_B)$; en un campo uniforme, $\Delta V = Ed$.
+  - |-
+    Partícula acelerada desde el reposo: $\frac12mv^2 = |q|\Delta V$.
+common_errors:
+  - |-
+    Quitar el signo de la carga al calcular el potencial.
+  - |-
+    Sumar potenciales como vectores (se suman como números).

@@ -1,0 +1,54 @@
+# Clase completa: Primitivas inmediatas
+id: mat2.int.primitivas.u01
+objectives:
+  - Entender la integral indefinida como la operación inversa de derivar.
+  - Calcular primitivas inmediatas y de tipo compuesto.
+explanation:
+  - title: ¿Qué es una primitiva?
+    body: |
+      $F$ es una **primitiva** de $f$ si $F'(x) = f(x)$. Como la derivada de una constante es 0, hay infinitas primitivas, que se diferencian en una constante:
+      $$\int f(x)\,dx = F(x) + C$$
+      **Comprobación:** deriva tu resultado. Si obtienes el integrando, está bien.
+  - title: Tabla básica
+    body: |
+      - $\int x^n\,dx = \dfrac{x^{n+1}}{n+1} + C$ (con $n \neq -1$).
+      - $\int \dfrac1x\,dx = \ln|x| + C$.
+      - $\int e^x\,dx = e^x + C$ y $\int a^x\,dx = \dfrac{a^x}{\ln a} + C$.
+      - $\int \sin x\,dx = -\cos x + C$ y $\int \cos x\,dx = \sin x + C$.
+      - $\int \dfrac{1}{1 + x^2}\,dx = \arctan x + C$.
+
+      Linealidad: $\int (af + bg) = a\int f + b\int g$.
+  - title: Inmediatas de tipo compuesto
+    body: |
+      Son la regla de la cadena "al revés": si aparece una función **y su derivada**, es inmediata.
+      - $\int f'\,f^n = \dfrac{f^{n+1}}{n+1} + C$.
+      - $\int \dfrac{f'}{f} = \ln|f| + C$.
+      - $\int f'\,e^f = e^f + C$.
+      - $\int f'\cos f = \sin f + C$.
+
+      Si falta una constante, se "fabrica": $\int x\,e^{x^2}dx = \frac12\int 2x\,e^{x^2}dx = \frac12 e^{x^2} + C$.
+examples:
+  - title: Dos primitivas
+    statement: |
+      Calcula a) $\int\left(3x^2 + \dfrac2x - e^x\right)dx$ y b) $\int \dfrac{2x}{x^2 + 1}\,dx$.
+    steps:
+      - |
+        **a)** Término a término: $x^3 + 2\ln|x| - e^x + C$.
+      - |
+        **b)** El numerador es la derivada del denominador: es del tipo $\frac{f'}{f}$, así que da $\ln(x^2 + 1) + C$. No hace falta valor absoluto porque $x^2 + 1 > 0$.
+      - |
+        **Comprobación de b):** $\left(\ln(x^2+1)\right)' = \dfrac{2x}{x^2+1}$ ✓
+    result: |
+      Antes de lanzarte a métodos largos, busca siempre "una función y su derivada".
+summary:
+  - |-
+    $\int f = F + C$ con $F' = f$. Comprueba derivando.
+  - |-
+    Tipos compuestos: $f'f^n$, $\frac{f'}{f}$, $f'e^f$, $f'\cos f$...
+  - |-
+    Si falta una constante, multiplica y divide por ella.
+common_errors:
+  - |-
+    Olvidar la constante $+C$.
+  - |-
+    Aplicar $\frac{x^{n+1}}{n+1}$ con $n = -1$: ese caso es el logaritmo.

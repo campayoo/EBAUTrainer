@@ -1,0 +1,60 @@
+# Clase completa: Sistemas lineales y método de Gauss
+id: mat2.alg.sistemas.u01
+objectives:
+  - Escribir un sistema en forma matricial.
+  - Resolver sistemas por el método de Gauss.
+  - Clasificar un sistema según su número de soluciones.
+explanation:
+  - title: Sistemas y forma matricial
+    body: |
+      Un sistema de ecuaciones lineales se puede escribir como $AX = B$:
+      - $A$: **matriz de coeficientes**.
+      - $X$: columna de incógnitas.
+      - $B$: columna de términos independientes.
+      - $A^* = (A\,|\,B)$: **matriz ampliada**.
+
+      Según sus soluciones, un sistema es:
+      - **Compatible determinado (SCD)**: una única solución.
+      - **Compatible indeterminado (SCI)**: infinitas soluciones.
+      - **Incompatible (SI)**: ninguna.
+  - title: El método de Gauss
+    body: |
+      Se trabaja con la matriz ampliada y se hacen ceros por debajo de la diagonal con operaciones entre filas, hasta llegar a una forma **escalonada**. Después se resuelve "de abajo arriba" (sustitución regresiva).
+
+      Notación útil: $F_2 \to F_2 - 2F_1$ significa "a la fila 2 le resto el doble de la fila 1".
+
+      Al final:
+      - Si aparece una fila $0\ 0\ 0\ |\ k$ con $k \neq 0$: **incompatible** ($0 = k$ es imposible).
+      - Si quedan menos ecuaciones útiles que incógnitas: **indeterminado**.
+  - title: Regla de Cramer
+    body: |
+      Si $|A| \neq 0$, cada incógnita es un cociente de determinantes:
+      $$x = \frac{|A_x|}{|A|}$$
+      donde $A_x$ es la matriz $A$ con la columna de $x$ sustituida por $B$. Es cómoda para sistemas $3\times3$ con números pequeños, y muy útil cuando solo te piden una incógnita.
+examples:
+  - title: Un sistema 3×3 por Gauss
+    statement: |
+      Resuelve $\begin{cases} x + y + z = 6 \\ 2x - y + z = 3 \\ x + 2y - z = 2 \end{cases}$
+    steps:
+      - |
+        **Ceros en la primera columna:** $F_2 \to F_2 - 2F_1$ y $F_3 \to F_3 - F_1$:
+        $$\left(\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\ 0 & -3 & -1 & -9 \\ 0 & 1 & -2 & -4 \end{array}\right)$$
+      - |
+        **Cero en la segunda columna:** $F_3 \to 3F_3 + F_2$:
+        $$\left(\begin{array}{ccc|c} 1 & 1 & 1 & 6 \\ 0 & -3 & -1 & -9 \\ 0 & 0 & -7 & -21 \end{array}\right)$$
+      - |
+        **Sustitución regresiva:** $-7z = -21 \Rightarrow z = 3$. Luego $-3y - 3 = -9 \Rightarrow y = 2$. Y $x + 2 + 3 = 6 \Rightarrow x = 1$.
+    result: |
+      Es compatible determinado, con solución $(x, y, z) = (1, 2, 3)$. Comprueba en la tercera ecuación: $1 + 4 - 3 = 2$ ✓
+summary:
+  - |-
+    Sistema $\leftrightarrow AX = B$, con matriz ampliada $A^* = (A|B)$.
+  - |-
+    Gauss: escalonar la ampliada y resolver de abajo arriba.
+  - |-
+    Una fila $0\ 0\ 0\,|\,k$ con $k \neq 0$ indica que el sistema es incompatible.
+common_errors:
+  - |-
+    Operar solo con los coeficientes y olvidar la columna de términos independientes.
+  - |-
+    Errores de signo al restar filas: escribe la operación que haces.

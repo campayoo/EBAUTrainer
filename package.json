@@ -1,0 +1,24 @@
+{
+  "name": "pauta",
+  "version": "1.0.0",
+  "description": "Pauta: profesor virtual con planning semanal para preparar Física y Matemáticas II de la PAU (Comunitat Valenciana).",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "author": "Pablo Campayo Viñes",
+  "repository": { "type": "git", "url": "https://github.com/campayoo/EBAUTrainer.git" },
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "build:content": "node tools/build-content.mjs",
+    "build": "node tools/build.mjs",
+    "preview": "node tools/build.mjs && node tools/serve.mjs _site",
+    "test": "node --test tests/*.test.mjs",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "eslint": "^10.1.0",
+    "yaml": "^2.9.0"
+  },
+  "engines": { "node": ">=22" }
+}

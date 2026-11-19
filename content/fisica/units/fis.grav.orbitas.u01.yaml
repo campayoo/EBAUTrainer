@@ -1,0 +1,120 @@
+# Clase completa: Velocidad orbital, periodo y leyes de Kepler
+id: fis.grav.orbitas.u01
+objectives:
+  - Deducir la velocidad orbital igualando la fuerza gravitatoria a la centrípeta.
+  - Calcular periodos orbitales y aplicar la tercera ley de Kepler.
+  - Conocer las tres leyes de Kepler y el satélite geoestacionario.
+
+explanation:
+  - title: La velocidad orbital
+    body: |
+      En una órbita circular, la fuerza gravitatoria es la que hace de **fuerza centrípeta**:
+      $$G\frac{M\,m}{r^2} = m\frac{v^2}{r}\quad\Rightarrow\quad v = \sqrt{\frac{G M}{r}}$$
+      La masa del satélite $m$ se simplifica: **todos los satélites a la misma altura van a la misma velocidad**, sean grandes o pequeños. Y cuanto más lejos, **más despacio**.
+  - title: El periodo y la tercera ley de Kepler
+    body: |
+      El periodo es el tiempo de una vuelta: $T = \dfrac{2\pi r}{v}$. Sustituyendo $v$:
+      $$T^2 = \frac{4\pi^2}{G M}\,r^3$$
+      Esta es la **tercera ley de Kepler**: para todos los cuerpos que orbitan alrededor del mismo astro, $T^2/r^3$ es la misma constante. Muy útil para comparar dos órbitas sin conocer $G$ ni $M$:
+      $$\frac{T_1^2}{r_1^3} = \frac{T_2^2}{r_2^3}$$
+  - title: Las tres leyes de Kepler
+    body: |
+      1. **Órbitas elípticas:** los planetas describen elipses con el Sol en uno de sus focos.
+      2. **Ley de las áreas:** el radio vector barre áreas iguales en tiempos iguales. Por eso el planeta va **más rápido en el perihelio** (más cerca del Sol) que en el afelio. Es consecuencia de la conservación del **momento angular**, ya que la fuerza gravitatoria es central.
+      3. **Ley de los periodos:** $T^2 \propto r^3$ (con $r$ el semieje mayor).
+  - title: El satélite geoestacionario
+    body: |
+      Un satélite **geoestacionario** gira sobre el ecuador con el mismo periodo que la Tierra (24 h), así que desde el suelo parece quieto. Despejando $r$ de la tercera ley con $T = 86\,400$ s:
+      $$r = \sqrt[3]{\frac{G M_T T^2}{4\pi^2}} \approx 4{,}22\cdot10^7\ \mathrm{m}$$
+      Es decir, unos **35 900 km de altura**. Es donde están los satélites de televisión y meteorológicos.
+
+examples:
+  - title: La Estación Espacial Internacional
+    statement: 'Un satélite orbita a 400 km de altura (como la ISS). Calcula su velocidad y su periodo.'
+    steps:
+      - |
+        **Radio de la órbita:** $r = 6{,}37\cdot10^6 + 4{,}00\cdot10^5 = 6{,}77\cdot10^6$ m.
+      - |
+        **Velocidad:**
+        $$v = \sqrt{\frac{6{,}67\cdot10^{-11}\cdot5{,}97\cdot10^{24}}{6{,}77\cdot10^6}} \approx 7{,}67\cdot10^3\ \mathrm{m/s}$$
+      - |
+        **Periodo:** $T = \dfrac{2\pi r}{v} = \dfrac{2\pi\cdot6{,}77\cdot10^6}{7669} \approx 5546\ \mathrm{s} \approx 92{,}4$ min.
+    result: 'Unos 27 600 km/h: da una vuelta a la Tierra cada hora y media.'
+
+practice:
+  - id: fis.grav.orbitas.u01.p1
+    kind: numeric
+    statement: 'Calcula la velocidad de un satélite en órbita circular a 1000 km de altura. Datos: $G = 6{,}67\cdot10^{-11}$, $M_T = 5{,}97\cdot10^{24}$ kg, $R_T = 6{,}37\cdot10^{6}$ m.'
+    answer:
+      value: 7350.5
+      unit: m/s
+      commonErrors:
+        - { value: 19955, message: 'Has usado $r = h$. El radio de la órbita es $R_T + h$.' }
+    check: 'Math.sqrt(6.67e-11 * 5.97e24 / (6.37e6 + 1e6))'
+    hints: ['Fuerza gravitatoria = fuerza centrípeta.', '$v = \sqrt{GM_T/r}$', '$r = 7{,}37\cdot10^6$ m']
+    solution: '$v = \sqrt{\dfrac{6{,}67\cdot10^{-11}\cdot5{,}97\cdot10^{24}}{7{,}37\cdot10^6}} = \boxed{7{,}35\cdot10^{3}\ \mathrm{m/s}}$'
+  - id: fis.grav.orbitas.u01.p2
+    kind: numeric
+    statement: 'Calcula la altura (en km) a la que orbita un satélite geoestacionario ($T = 24$ h). Datos: $G = 6{,}67\cdot10^{-11}$, $M_T = 5{,}97\cdot10^{24}$ kg, $R_T = 6370$ km.'
+    answer:
+      value: 35857
+      unit: km
+      tolerance: { relative: 0.01 }
+      commonErrors:
+        - { value: 42227, message: 'Ese es el radio de la órbita. Te piden la altura: resta el radio terrestre.' }
+    check: '(Math.cbrt(6.67e-11 * 5.97e24 * 86400**2 / (4 * Math.PI**2)) - 6.37e6) / 1000'
+    hints: ['Pasa el periodo a segundos: $T = 86\,400$ s.', 'Despeja $r$ de $T^2 = \dfrac{4\pi^2}{GM}r^3$.', 'Al final, $h = r - R_T$.']
+    solution: '$r = \sqrt[3]{\dfrac{6{,}67\cdot10^{-11}\cdot5{,}97\cdot10^{24}\cdot86400^2}{4\pi^2}} = 4{,}22\cdot10^7$ m, así que $h = r - R_T \approx \boxed{35\,900\ \mathrm{km}}$.'
+  - id: fis.grav.orbitas.u01.p3
+    kind: choice
+    statement: 'Dos satélites orbitan a la misma altura, pero uno tiene el doble de masa que el otro. ¿Cómo son sus velocidades?'
+    options:
+      - { text: 'Iguales' }
+      - { text: 'El de más masa va más rápido', why: 'La masa del satélite se simplifica al igualar fuerzas.' }
+      - { text: 'El de más masa va más despacio', why: 'En $v = \sqrt{GM/r}$ solo aparece la masa del planeta.' }
+      - { text: 'El de más masa va el doble de rápido', why: 'Revisa la deducción: $m$ aparece a los dos lados.' }
+    correct: 0
+    hints: ['Mira la fórmula de la velocidad orbital.', '¿Aparece la masa del satélite?', 'En $GMm/r^2 = mv^2/r$ la $m$ se cancela.']
+    solution: 'Son **iguales**: $v = \sqrt{GM/r}$ no depende de la masa del satélite.'
+
+test:
+  - id: fis.grav.orbitas.u01.t1
+    kind: numeric
+    statement: 'Calcula el periodo, en minutos, de un satélite en órbita circular a 600 km de altura. Datos: $G = 6{,}67\cdot10^{-11}$, $M_T = 5{,}97\cdot10^{24}$ kg, $R_T = 6{,}37\cdot10^{6}$ m.'
+    answer: { value: 96.567, unit: min }
+    check: '2 * Math.PI * Math.sqrt((6.37e6 + 6e5)**3 / (6.67e-11 * 5.97e24)) / 60'
+    hints: ['$T = 2\pi\sqrt{r^3/(GM)}$', '$r = 6{,}97\cdot10^6$ m', 'El resultado sale en segundos: divide entre 60.']
+    solution: '$T = 2\pi\sqrt{\dfrac{(6{,}97\cdot10^6)^3}{6{,}67\cdot10^{-11}\cdot5{,}97\cdot10^{24}}} = 5794\ \mathrm{s} = \boxed{96{,}6\ \mathrm{min}}$'
+  - id: fis.grav.orbitas.u01.t2
+    kind: numeric
+    statement: 'Un planeta B orbita la misma estrella que un planeta A, pero a una distancia 4 veces mayor. ¿Por qué número queda multiplicado su periodo respecto al de A?'
+    answer:
+      value: 8
+      tolerance: { absolute: 1e-6 }
+      commonErrors:
+        - { value: 4, message: 'El periodo no es proporcional a la distancia: $T^2 \propto r^3$.' }
+        - { value: 64, message: 'Eso es $T^2$. Falta hacer la raíz cuadrada.' }
+    check: '4**1.5'
+    hints: ['Tercera ley de Kepler.', '$\dfrac{T_B^2}{T_A^2} = \dfrac{r_B^3}{r_A^3} = 4^3 = 64$', 'Ahora haz la raíz cuadrada.']
+    solution: '$\dfrac{T_B}{T_A} = \sqrt{4^3} = \sqrt{64} = \boxed{8}$'
+  - id: fis.grav.orbitas.u01.t3
+    kind: choice
+    statement: 'Según la segunda ley de Kepler, un planeta en órbita elíptica...'
+    options:
+      - { text: 'va más rápido cuando está más cerca del Sol' }
+      - { text: 'va siempre a la misma velocidad', why: 'Eso solo pasa en órbitas circulares.' }
+      - { text: 'va más rápido cuando está más lejos del Sol', why: 'Para barrer la misma área estando lejos, necesita recorrer menos arco.' }
+      - { text: 'tiene el mismo periodo que los demás planetas', why: 'El periodo depende del tamaño de la órbita (tercera ley).' }
+    correct: 0
+    hints: ['Ley de las áreas: áreas iguales en tiempos iguales.', 'Cerca del Sol, el radio vector es corto.', 'Para barrer la misma área con un radio corto, hay que recorrer más arco.']
+    solution: 'Para barrer áreas iguales en tiempos iguales, el planeta va **más rápido en el perihelio**. Es la conservación del momento angular.'
+
+summary:
+  - '$v = \sqrt{GM/r}$: no depende de la masa del satélite; más lejos, más despacio.'
+  - '$T^2 = \dfrac{4\pi^2}{GM}r^3$ (tercera ley de Kepler).'
+  - 'Segunda ley: más rápido en el perihelio (se conserva el momento angular).'
+  - 'Geoestacionario: $T = 24$ h, unos 35 900 km de altura.'
+common_errors:
+  - 'Usar $h$ en lugar de $r = R_T + h$.'
+  - 'No pasar el periodo a segundos.'
+  - 'Pensar que un satélite más pesado va más rápido.'

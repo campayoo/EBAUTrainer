@@ -1,0 +1,58 @@
+# Clase completa: Matriz inversa y ecuaciones matriciales
+id: mat2.alg.rango-inversa.u02
+objectives:
+  - Saber cuándo existe la inversa de una matriz y calcularla.
+  - Resolver ecuaciones matriciales despejando con la inversa por el lado correcto.
+explanation:
+  - title: ¿Cuándo existe la inversa?
+    body: |
+      La **inversa** de una matriz cuadrada $A$ es la matriz $A^{-1}$ que cumple $A\cdot A^{-1} = A^{-1}\cdot A = I$.
+
+      **Existe si y solo si $|A| \neq 0$.** Por eso, lo primero siempre es calcular el determinante. En los ejercicios con parámetro, la pregunta "¿para qué valores de $m$ tiene inversa?" se resuelve con $|A| \neq 0$.
+  - title: Cálculo con la adjunta
+    body: |
+      $$A^{-1} = \frac{1}{|A|}\,(\operatorname{Adj} A)^t$$
+      1. Calcula $|A|$.
+      2. Sustituye cada elemento por su **adjunto** $A_{ij} = (-1)^{i+j}M_{ij}$.
+      3. **Traspón** la matriz de adjuntos.
+      4. Divide entre $|A|$.
+
+      En orden 2 queda un atajo: $\begin{pmatrix} a & b \\ c & d \end{pmatrix}^{-1} = \dfrac{1}{ad - bc}\begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$.
+
+      **Compruébalo siempre** multiplicando: $A\cdot A^{-1}$ debe dar $I$.
+  - title: Ecuaciones matriciales
+    body: |
+      Como el producto de matrices no es conmutativo, hay que multiplicar por la inversa **por el mismo lado** en los dos miembros:
+      - $AX = B \Rightarrow X = A^{-1}B$ (por la izquierda).
+      - $XA = B \Rightarrow X = BA^{-1}$ (por la derecha).
+      - $AX + C = B \Rightarrow X = A^{-1}(B - C)$.
+      - $AX = X + B \Rightarrow (A - I)X = B \Rightarrow X = (A - I)^{-1}B$. ¡Ojo! Se escribe $X = IX$ para poder sacar factor común.
+examples:
+  - title: Inversa y ecuación matricial
+    statement: |
+      Sea $A = \begin{pmatrix} 2 & 1 \\ 5 & 3 \end{pmatrix}$. Calcula $A^{-1}$ y resuelve $AX = B$ con $B = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$.
+    steps:
+      - |
+        **Determinante:** $|A| = 2\cdot3 - 1\cdot5 = 1 \neq 0$, así que existe la inversa.
+      - |
+        **Inversa:** $A^{-1} = \dfrac{1}{1}\begin{pmatrix} 3 & -1 \\ -5 & 2 \end{pmatrix} = \begin{pmatrix} 3 & -1 \\ -5 & 2 \end{pmatrix}$.
+      - |
+        **Ecuación:** $X = A^{-1}B = \begin{pmatrix} 3\cdot1 - 1\cdot2 \\ -5\cdot1 + 2\cdot2 \end{pmatrix} = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$.
+      - |
+        **Comprobación:** $AX = \begin{pmatrix} 2 - 1 \\ 5 - 3 \end{pmatrix} = \begin{pmatrix} 1 \\ 2 \end{pmatrix} = B$ ✓
+    result: |
+      Comprobar el resultado cuesta un minuto y en la PAU evita perder el apartado entero por un signo.
+summary:
+  - |-
+    $A^{-1}$ existe $\iff |A| \neq 0$.
+  - |-
+    $A^{-1} = \dfrac{1}{|A|}(\operatorname{Adj}A)^t$.
+  - |-
+    $AX = B \Rightarrow X = A^{-1}B$; $\ XA = B \Rightarrow X = BA^{-1}$.
+common_errors:
+  - |-
+    Olvidar trasponer la matriz de adjuntos.
+  - |-
+    Escribir $X = BA^{-1}$ cuando la ecuación es $AX = B$.
+  - |-
+    En $AX - X$, sacar factor común como $(A - 1)X$ en vez de $(A - I)X$.

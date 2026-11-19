@@ -1,0 +1,52 @@
+# Clase completa: Posiciones relativas
+id: mat2.geo.rectas-planos.u02
+objectives:
+  - Estudiar la posición relativa de dos planos, de recta y plano, y de dos rectas.
+explanation:
+  - title: Dos planos
+    body: |
+      Compara los coeficientes de $\pi_1: A_1x + B_1y + C_1z + D_1 = 0$ y $\pi_2: A_2x + B_2y + C_2z + D_2 = 0$:
+      - **Coincidentes:** los cuatro coeficientes son proporcionales.
+      - **Paralelos:** $A, B, C$ son proporcionales, pero $D$ no.
+      - **Secantes:** los vectores normales no son proporcionales. Se cortan en una recta.
+
+      Con rangos: $\operatorname{rg}\begin{pmatrix} A_1 & B_1 & C_1 \\ A_2 & B_2 & C_2 \end{pmatrix} = 2$ significa que son secantes.
+  - title: Recta y plano
+    body: |
+      Sea la recta con director $\vec u$ y punto $P$, y el plano con normal $\vec n$:
+      - $\vec u\cdot\vec n \neq 0$: **secantes** (se cortan en un punto).
+      - $\vec u\cdot\vec n = 0$ y $P \notin \pi$: **paralelos**.
+      - $\vec u\cdot\vec n = 0$ y $P \in \pi$: **recta contenida** en el plano.
+
+      Para hallar el punto de corte, sustituye las paramétricas de la recta en la ecuación del plano y despeja $\lambda$.
+  - title: Dos rectas
+    body: |
+      Con directores $\vec u$ y $\vec v$, puntos $A \in r$ y $B \in s$:
+      - $\vec u \parallel \vec v$: **paralelas** o **coincidentes** (coinciden si $B \in r$).
+      - $\vec u \not\parallel \vec v$ y $[\vec u, \vec v, \overrightarrow{AB}] = 0$: **secantes** (están en el mismo plano y se cortan).
+      - $[\vec u, \vec v, \overrightarrow{AB}] \neq 0$: **se cruzan** (no están en el mismo plano).
+examples:
+  - title: ¿Se cortan o se cruzan?
+    statement: |
+      Estudia la posición de $r: (x,y,z) = (1, 0, 0) + \lambda(1, 1, 0)$ y $s: (x,y,z) = (0, 1, 1) + \mu(1, -1, 0)$.
+    steps:
+      - |
+        **Directores:** $\vec u = (1, 1, 0)$ y $\vec v = (1, -1, 0)$ no son proporcionales: las rectas no son paralelas.
+      - |
+        **Vector entre puntos:** $\overrightarrow{AB} = (0, 1, 1) - (1, 0, 0) = (-1, 1, 1)$.
+      - |
+        **Producto mixto:** $\begin{vmatrix} 1 & 1 & 0 \\ 1 & -1 & 0 \\ -1 & 1 & 1 \end{vmatrix} = -2 \neq 0$.
+    result: |
+      Las rectas **se cruzan**: no son paralelas y no están en el mismo plano.
+summary:
+  - |-
+    Planos: compara la proporcionalidad de los coeficientes (o usa rangos).
+  - |-
+    Recta y plano: mira $\vec u\cdot\vec n$ y después si el punto de la recta está en el plano.
+  - |-
+    Dos rectas: paralelismo de los directores y producto mixto $[\vec u, \vec v, \overrightarrow{AB}]$.
+common_errors:
+  - |-
+    Decir que dos rectas no paralelas se cortan sin comprobar el producto mixto.
+  - |-
+    Confundir paralelos con coincidentes: hay que mirar también el término independiente.

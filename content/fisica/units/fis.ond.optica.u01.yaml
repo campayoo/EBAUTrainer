@@ -1,0 +1,53 @@
+# Clase completa: Espejos
+id: fis.ond.optica.u01
+objectives:
+  - Usar las normas DIN de signos.
+  - Calcular la posición y el tamaño de la imagen en espejos planos y esféricos.
+  - Trazar los rayos principales.
+explanation:
+  - title: Normas DIN de signos
+    body: |
+      La luz viaja de **izquierda a derecha** y el origen está en el espejo (o en la lente):
+      - Distancias a la **derecha**: positivas. A la **izquierda**: negativas. Por tanto, un objeto real delante del espejo tiene $s < 0$.
+      - Alturas hacia **arriba**: positivas.
+      - En un espejo cóncavo, el centro está a la izquierda: $R < 0$ y $f < 0$. En uno convexo, $R > 0$ y $f > 0$.
+  - title: Ecuaciones de los espejos
+    body: |
+      $$\frac{1}{s'} + \frac{1}{s} = \frac{1}{f} = \frac{2}{R}, \qquad A = \frac{y'}{y} = -\frac{s'}{s}$$
+      - $s' < 0$: la imagen está delante del espejo, es **real** (se puede proyectar).
+      - $s' > 0$: está detrás, es **virtual**.
+      - $A < 0$: imagen **invertida**; $|A| > 1$: **mayor**.
+
+      **Espejo plano:** imagen virtual, derecha, del mismo tamaño y simétrica ($s' = -s$).
+  - title: Rayos principales
+    body: |
+      1. Un rayo **paralelo** al eje se refleja pasando por el **foco**.
+      2. Un rayo que pasa por el **foco** se refleja **paralelo** al eje.
+      3. Un rayo que pasa por el **centro** vuelve sobre sí mismo.
+
+      Con dos rayos basta; el tercero sirve de comprobación. En la PAU, el trazado de rayos suele puntuar tanto como el cálculo.
+examples:
+  - title: Espejo cóncavo
+    statement: |
+      Un objeto está a 30 cm de un espejo cóncavo de 40 cm de radio. Calcula la posición de la imagen y el aumento.
+    steps:
+      - |
+        **Datos DIN:** $s = -30$ cm, $R = -40$ cm, así que $f = -20$ cm.
+      - |
+        **Posición:** $\dfrac{1}{s'} = \dfrac{1}{f} - \dfrac1s = -\dfrac{1}{20} + \dfrac{1}{30} = -\dfrac{1}{60} \Rightarrow s' = -60$ cm.
+      - |
+        **Aumento:** $A = -\dfrac{s'}{s} = -\dfrac{-60}{-30} = -2$.
+    result: |
+      Imagen real (delante del espejo), invertida y del doble de tamaño. Es lo que pasa cuando el objeto está entre el foco y el centro.
+summary:
+  - |-
+    DIN: luz hacia la derecha; el objeto real tiene $s < 0$; cóncavo, $f < 0$.
+  - |-
+    $1/s' + 1/s = 1/f$, con $f = R/2$; $A = -s'/s$.
+  - |-
+    $s' < 0$ real; $s' > 0$ virtual. $A < 0$ invertida.
+common_errors:
+  - |-
+    Olvidar los signos DIN (por ejemplo, poner $s$ positivo).
+  - |-
+    Usar la ecuación de las lentes con un espejo.

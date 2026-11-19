@@ -1,0 +1,49 @@
+# Clase completa: Sonido - intensidad y nivel sonoro
+id: fis.ond.ondas.u02
+objectives:
+  - Calcular la intensidad de una onda y cómo disminuye con la distancia.
+  - Calcular y operar con niveles de intensidad sonora en decibelios.
+explanation:
+  - title: El sonido
+    body: |
+      El sonido es una onda **mecánica longitudinal**: necesita un medio. En el aire viaja a unos **340 m/s**, más rápido en líquidos y sólidos. El oído humano percibe entre unos 20 Hz y 20 000 Hz.
+      - **Tono** (grave o agudo): depende de la frecuencia.
+      - **Intensidad** (fuerte o flojo): depende de la energía que transporta.
+      - **Timbre**: depende de la forma de la onda (armónicos).
+  - title: Intensidad
+    body: |
+      Es la potencia que atraviesa cada metro cuadrado. Para un foco **puntual** que emite en todas direcciones:
+      $$I = \frac{P}{4\pi r^2}\quad[\mathrm{W/m^2}]$$
+      Disminuye con el cuadrado de la distancia: a doble distancia, la intensidad es la cuarta parte.
+  - title: Nivel de intensidad sonora
+    body: |
+      Como el oído responde de forma logarítmica, se usa el **decibelio**:
+      $$\beta = 10\log\frac{I}{I_0}\quad[\mathrm{dB}], \qquad I_0 = 10^{-12}\ \mathrm{W/m^2}$$
+      - Intensidad $\times10$: el nivel sube **10 dB**.
+      - Intensidad $\times2$ (por ejemplo, dos fuentes iguales): sube unos **3 dB**.
+      - Distancia $\times2$: baja unos **6 dB**.
+
+      ¡Los decibelios **no se suman** directamente! Se suman las intensidades y después se pasa a dB.
+examples:
+  - title: Un altavoz
+    statement: |
+      Un altavoz emite 0,1 W de potencia sonora en todas direcciones. Calcula la intensidad y el nivel sonoro a 5 m.
+    steps:
+      - |
+        **Intensidad:** $I = \dfrac{0{,}1}{4\pi\cdot5^2} \approx 3{,}18\cdot10^{-4}\ \mathrm{W/m^2}$.
+      - |
+        **Nivel:** $\beta = 10\log\dfrac{3{,}18\cdot10^{-4}}{10^{-12}} = 10\log(3{,}18\cdot10^{8}) \approx 85{,}0$ dB.
+    result: |
+      Dos altavoces iguales darían 88 dB, no 170 dB: los decibelios no se suman.
+summary:
+  - |-
+    Foco puntual: $I = P/(4\pi r^2)$.
+  - |-
+    $\beta = 10\log(I/I_0)$ con $I_0 = 10^{-12}$ W/m².
+  - |-
+    ×10 en intensidad: +10 dB. ×2: +3 dB. Doble distancia: −6 dB.
+common_errors:
+  - |-
+    Sumar decibelios directamente.
+  - |-
+    Olvidar el factor 10 delante del logaritmo.

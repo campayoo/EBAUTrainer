@@ -1,0 +1,110 @@
+# Clase completa: Ley de gravitación universal
+# Constantes usadas: G = 6,67·10^-11 N·m²/kg², M_T = 5,97·10^24 kg, R_T = 6,37·10^6 m
+id: fis.grav.campo.u01
+objectives:
+  - Aplicar la ley de gravitación universal entre dos cuerpos.
+  - Entender cómo depende la fuerza de las masas y de la distancia.
+  - Medir siempre las distancias entre los CENTROS de los cuerpos.
+
+explanation:
+  - title: La ley de Newton
+    body: |
+      Dos cuerpos cualesquiera se **atraen** con una fuerza proporcional al producto de sus masas e inversamente proporcional al cuadrado de la distancia que los separa:
+      $$F = G\,\frac{M\,m}{r^2}, \qquad G = 6{,}67\cdot10^{-11}\ \mathrm{N\,m^2/kg^2}$$
+      La fuerza va dirigida a lo largo de la recta que une ambos cuerpos y siempre es **atractiva**. En forma vectorial: $\vec F = -G\dfrac{Mm}{r^2}\,\vec u_r$, donde $\vec u_r$ apunta desde $M$ hacia $m$ (el signo menos indica atracción).
+  - title: ¿Por qué no notamos que nos atraemos?
+    body: |
+      Porque $G$ es diminuta. Dos personas de 70 kg separadas 1 m se atraen con
+      $$F = 6{,}67\cdot10^{-11}\cdot\frac{70\cdot70}{1^2} \approx 3{,}3\cdot10^{-7}\ \mathrm{N}$$
+      ¡menos que el peso de un grano de arena! La gravedad solo es apreciable cuando al menos uno de los cuerpos tiene una masa enorme, como un planeta.
+  - title: Cuerpos esféricos y distancias
+    body: |
+      Una esfera (un planeta, una estrella) atrae como si toda su masa estuviera concentrada en su **centro**. Por eso, para un satélite a una altura $h$ sobre la superficie:
+      $$r = R_T + h$$
+      Es el error más frecuente de la PAU: usar $h$ en lugar de $R_T + h$.
+  - title: Dependencia con la distancia y principio de superposición
+    body: |
+      La fuerza depende de $1/r^2$: si la distancia se **duplica**, la fuerza se divide entre **4**; si se triplica, entre 9.
+
+      Si sobre un cuerpo actúan varias masas, la fuerza total es la **suma vectorial** de las fuerzas que ejerce cada una por separado (principio de superposición).
+
+examples:
+  - title: La fuerza entre la Tierra y la Luna
+    statement: 'Calcula la fuerza con la que se atraen la Tierra y la Luna. Datos: $M_L = 7{,}35\cdot10^{22}$ kg; distancia entre centros $d = 3{,}84\cdot10^{8}$ m.'
+    steps:
+      - |
+        **Planteamiento:** ley de gravitación con $r = d$ (ya es la distancia entre centros).
+      - |
+        **Sustitución:**
+        $$F = 6{,}67\cdot10^{-11}\cdot\frac{5{,}97\cdot10^{24}\cdot7{,}35\cdot10^{22}}{(3{,}84\cdot10^{8})^2}$$
+      - |
+        **Resultado:** $F \approx 1{,}98\cdot10^{20}\ \mathrm{N}$.
+    result: 'Por la tercera ley de Newton, la Luna atrae a la Tierra con una fuerza igual y de sentido contrario.'
+
+practice:
+  - id: fis.grav.campo.u01.p1
+    kind: numeric
+    statement: 'Dos esferas de 50 kg y 80 kg tienen sus centros separados 0,5 m. ¿Con qué fuerza se atraen? Dato: $G = 6{,}67\cdot10^{-11}\ \mathrm{N\,m^2/kg^2}$.'
+    answer: { value: 1.0672e-6, unit: N }
+    check: '6.67e-11 * 50 * 80 / 0.5**2'
+    hints: ['Aplica directamente la ley de gravitación.', '$F = G\dfrac{m_1 m_2}{r^2}$', '$r^2 = 0{,}25\ \mathrm{m^2}$']
+    solution: '$F = 6{,}67\cdot10^{-11}\cdot\dfrac{50\cdot80}{0{,}5^2} = \boxed{1{,}07\cdot10^{-6}\ \mathrm{N}}$'
+  - id: fis.grav.campo.u01.p2
+    kind: choice
+    statement: 'Si la distancia entre dos cuerpos se duplica, la fuerza gravitatoria entre ellos...'
+    options:
+      - { text: 'se divide entre 4' }
+      - { text: 'se divide entre 2', why: 'La fuerza depende de $1/r^2$, no de $1/r$.' }
+      - { text: 'se duplica', why: 'Al alejarse, la atracción disminuye.' }
+      - { text: 'no cambia', why: 'Sí depende de la distancia, y mucho.' }
+    correct: 0
+    hints: ['Fíjate en el exponente de $r$.', '$F \propto 1/r^2$', 'Si $r \to 2r$, entonces $r^2 \to 4r^2$.']
+    solution: 'Como $F \propto 1/r^2$, al duplicar $r$ la fuerza se divide entre $2^2 = 4$.'
+  - id: fis.grav.campo.u01.p3
+    kind: numeric
+    statement: 'Usando la ley de gravitación, calcula la fuerza con la que la Tierra atrae a una persona de 70 kg situada en su superficie. Datos: $G = 6{,}67\cdot10^{-11}$, $M_T = 5{,}97\cdot10^{24}$ kg, $R_T = 6{,}37\cdot10^{6}$ m.'
+    answer: { value: 686.94, unit: N }
+    check: '6.67e-11 * 5.97e24 * 70 / 6.37e6**2'
+    hints: ['En la superficie, la distancia al centro es el radio terrestre.', '$F = G\dfrac{M_T\,m}{R_T^2}$', '$R_T^2 = 4{,}06\cdot10^{13}\ \mathrm{m^2}$']
+    solution: '$F = 6{,}67\cdot10^{-11}\cdot\dfrac{5{,}97\cdot10^{24}\cdot70}{(6{,}37\cdot10^6)^2} \approx \boxed{687\ \mathrm{N}}$. ¡Es su peso! ($70\cdot9{,}81 \approx 687$ N.)'
+
+test:
+  - id: fis.grav.campo.u01.t1
+    kind: choice
+    statement: 'Comparada con la fuerza que la Tierra ejerce sobre la Luna, la fuerza que la Luna ejerce sobre la Tierra es...'
+    options:
+      - { text: 'igual en módulo y de sentido contrario' }
+      - { text: 'mucho menor, porque la Luna tiene menos masa', why: 'En la fórmula aparecen las DOS masas: el producto $Mm$ es el mismo.' }
+      - { text: 'mucho mayor', why: 'Piensa en la tercera ley de Newton.' }
+      - { text: 'nula', why: 'Toda masa atrae a cualquier otra masa.' }
+    correct: 0
+    hints: ['Tercera ley de Newton: acción y reacción.', 'En $F = GMm/r^2$ aparecen las dos masas.', 'Lo que cambia es el EFECTO (la aceleración), no la fuerza.']
+    solution: 'Son un par acción-reacción: **igual módulo y sentidos contrarios**. Lo que difiere es la aceleración que producen ($a = F/m$).'
+  - id: fis.grav.campo.u01.t2
+    kind: numeric
+    statement: 'Calcula la fuerza gravitatoria sobre un satélite de 1000 kg que orbita a 300 km de altura. Datos: $G = 6{,}67\cdot10^{-11}$, $M_T = 5{,}97\cdot10^{24}$ kg, $R_T = 6{,}37\cdot10^{6}$ m.'
+    answer:
+      value: 8950.5
+      unit: N
+      commonErrors:
+        - { value: 4.4245e6, message: 'Has usado la altura como distancia. Debe ser $r = R_T + h$.' }
+    check: '6.67e-11 * 5.97e24 * 1000 / (6.37e6 + 3e5)**2'
+    hints: ['¿Desde dónde se mide la distancia?', '$r = R_T + h = 6{,}67\cdot10^6$ m', '$F = GM_Tm/r^2$']
+    solution: '$F = 6{,}67\cdot10^{-11}\cdot\dfrac{5{,}97\cdot10^{24}\cdot1000}{(6{,}67\cdot10^6)^2} = \boxed{8{,}95\cdot10^{3}\ \mathrm{N}}$'
+  - id: fis.grav.campo.u01.t3
+    kind: numeric
+    statement: 'Si se triplican las dos masas y también la distancia entre ellas, ¿por qué número queda multiplicada la fuerza?'
+    answer: { value: 1, tolerance: { absolute: 1e-9 } }
+    check: '(3 * 3) / 3**2'
+    hints: ['Escribe la nueva fuerza con $3M$, $3m$ y $3r$.', '$F'' = G\dfrac{(3M)(3m)}{(3r)^2}$', 'Simplifica: $9/9$.']
+    solution: '$F'' = G\dfrac{9Mm}{9r^2} = F$: queda multiplicada por $\boxed{1}$ (no cambia).'
+
+summary:
+  - '$F = GMm/r^2$: atractiva, a lo largo de la recta que une los cuerpos.'
+  - '$r$ se mide entre CENTROS: para satélites, $r = R_T + h$.'
+  - 'Doble distancia → cuarta parte de fuerza.'
+  - 'Varias masas: suma vectorial (superposición).'
+common_errors:
+  - 'Usar la altura $h$ en lugar de $R_T + h$.'
+  - 'Olvidar pasar los km a metros.'
+  - 'Pensar que el cuerpo con más masa ejerce más fuerza sobre el otro.'

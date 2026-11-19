@@ -1,0 +1,53 @@
+# Clase completa: Efecto fotoeléctrico
+id: fis.mod.cuantica.u01
+objectives:
+  - Explicar el efecto fotoeléctrico con la hipótesis de los fotones.
+  - Calcular la energía cinética de los electrones, la frecuencia umbral y el potencial de frenado.
+explanation:
+  - title: La crisis de la física clásica
+    body: |
+      Planck (1900) propuso que la energía se emite en **paquetes** o cuantos:
+      $$E = h\,f, \qquad h = 6{,}63\cdot10^{-34}\ \mathrm{J\,s}$$
+      Einstein (1905) fue más allá: la luz **está formada** por paquetes de energía, los **fotones**.
+  - title: El efecto fotoeléctrico
+    body: |
+      Al iluminar un metal, puede arrancar electrones. Los experimentos mostraban algo que la teoría ondulatoria no explicaba:
+      - Por debajo de una **frecuencia umbral** $f_0$ no se emiten electrones, por intensa que sea la luz.
+      - La energía de los electrones depende de la **frecuencia**, no de la intensidad.
+      - La intensidad solo aumenta el **número** de electrones.
+
+      Explicación de Einstein: cada fotón entrega toda su energía a un electrón.
+      $$hf = W_0 + E_{c,max}, \qquad W_0 = hf_0$$
+      $W_0$ es el **trabajo de extracción** del metal.
+  - title: Potencial de frenado
+    body: |
+      Es la diferencia de potencial necesaria para frenar los electrones más rápidos:
+      $$e\,V_f = E_{c,max}$$
+      Al representar $E_{c,max}$ frente a $f$ sale una recta de **pendiente $h$** que corta el eje de frecuencias en $f_0$.
+
+      Conversión útil: $1\ \mathrm{eV} = 1{,}6\cdot10^{-19}$ J.
+examples:
+  - title: Luz violeta sobre un metal
+    statement: |
+      Sobre un metal con $W_0 = 2{,}3$ eV incide luz de 400 nm. Calcula la energía del fotón, la energía cinética máxima, el potencial de frenado y la frecuencia umbral.
+    steps:
+      - |
+        **Fotón:** $E = \dfrac{hc}{\lambda} = \dfrac{6{,}63\cdot10^{-34}\cdot3\cdot10^8}{4\cdot10^{-7}} \approx 4{,}97\cdot10^{-19}$ J $\approx 3{,}11$ eV.
+      - |
+        **Energía cinética:** $E_{c,max} = 3{,}11 - 2{,}3 \approx 0{,}81$ eV, así que $V_f \approx 0{,}81$ V.
+      - |
+        **Umbral:** $f_0 = \dfrac{W_0}{h} = \dfrac{2{,}3\cdot1{,}6\cdot10^{-19}}{6{,}63\cdot10^{-34}} \approx 5{,}55\cdot10^{14}$ Hz.
+    result: |
+      Con luz roja (unos 700 nm, 1,8 eV por fotón) no saldría ningún electrón, por muy intensa que fuera.
+summary:
+  - |-
+    $E = hf$; $hf = W_0 + E_{c,max}$; $W_0 = hf_0$.
+  - |-
+    La frecuencia decide si hay emisión; la intensidad, cuántos electrones.
+  - |-
+    $eV_f = E_{c,max}$. 1 eV = 1,6·10⁻¹⁹ J.
+common_errors:
+  - |-
+    Mezclar julios y electronvoltios en la misma resta.
+  - |-
+    Pensar que más intensidad da electrones más rápidos.

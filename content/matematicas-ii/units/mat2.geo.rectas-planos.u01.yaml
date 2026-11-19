@@ -1,0 +1,50 @@
+# Clase completa: Ecuaciones de rectas y planos
+id: mat2.geo.rectas-planos.u01
+objectives:
+  - Escribir las ecuaciones de una recta y de un plano en sus distintas formas.
+  - Pasar de una forma a otra.
+explanation:
+  - title: Ecuaciones de la recta
+    body: |
+      Una recta queda determinada por un **punto** $P(x_0, y_0, z_0)$ y un **vector director** $\vec u = (u_1, u_2, u_3)$:
+      - **Vectorial:** $(x, y, z) = (x_0, y_0, z_0) + \lambda(u_1, u_2, u_3)$.
+      - **Paramétricas:** $x = x_0 + \lambda u_1$, $y = y_0 + \lambda u_2$, $z = z_0 + \lambda u_3$.
+      - **Continua:** $\dfrac{x - x_0}{u_1} = \dfrac{y - y_0}{u_2} = \dfrac{z - z_0}{u_3}$.
+      - **Implícitas:** como intersección de dos planos. Su vector director es $\vec n_1\times\vec n_2$.
+  - title: Ecuaciones del plano
+    body: |
+      Un plano queda determinado por un punto y **dos vectores** no paralelos, o por un punto y un **vector normal** $\vec n = (A, B, C)$:
+      - **General:** $Ax + By + Cz + D = 0$. ¡Los coeficientes son las coordenadas del vector normal!
+      - **Por tres puntos** $P, Q, R$: el normal es $\vec n = \overrightarrow{PQ}\times\overrightarrow{PR}$ y $D$ se obtiene sustituyendo uno de los puntos.
+      - Equivalente: $\begin{vmatrix} x - x_0 & y - y_0 & z - z_0 \\ u_1 & u_2 & u_3 \\ v_1 & v_2 & v_3 \end{vmatrix} = 0$.
+  - title: ¿Un punto está en la recta o en el plano?
+    body: |
+      - **Plano:** sustituye el punto en la ecuación general. Si da 0, pertenece.
+      - **Recta:** sustituye en las paramétricas y comprueba que el mismo $\lambda$ cumple las tres ecuaciones.
+examples:
+  - title: Plano por tres puntos
+    statement: |
+      Halla la ecuación general del plano que pasa por $A(1, 0, 0)$, $B(0, 2, 0)$ y $C(0, 0, 3)$.
+    steps:
+      - |
+        **Vectores del plano:** $\overrightarrow{AB} = (-1, 2, 0)$ y $\overrightarrow{AC} = (-1, 0, 3)$.
+      - |
+        **Normal:** $\overrightarrow{AB}\times\overrightarrow{AC} = (2\cdot3 - 0\cdot0,\ 0\cdot(-1) - (-1)\cdot3,\ (-1)\cdot0 - 2\cdot(-1)) = (6, 3, 2)$.
+      - |
+        **Ecuación:** $6x + 3y + 2z + D = 0$. Sustituyendo $A$: $6 + D = 0 \Rightarrow D = -6$.
+      - |
+        **Resultado:** $6x + 3y + 2z - 6 = 0$. Comprobación con $B$: $0 + 6 + 0 - 6 = 0$ ✓
+    result: |
+      Dividiendo entre 6 queda $\frac{x}{1} + \frac{y}{2} + \frac{z}{3} = 1$: la forma **segmentaria**, que muestra los cortes con los ejes.
+summary:
+  - |-
+    Recta: punto + vector director (vectorial, paramétricas, continua o implícitas).
+  - |-
+    Plano: $Ax + By + Cz + D = 0$, con $(A, B, C)$ el vector normal.
+  - |-
+    Plano por tres puntos: normal $= \overrightarrow{PQ}\times\overrightarrow{PR}$.
+common_errors:
+  - |-
+    Confundir el vector director de una recta con el normal de un plano.
+  - |-
+    Olvidar comprobar la ecuación final con los puntos del enunciado.

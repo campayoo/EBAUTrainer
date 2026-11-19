@@ -1,0 +1,106 @@
+# =====================================================================
+# Física (2.º Bachillerato) — temario (esqueleto curricular)
+#
+# 4 bloques, como el currículo LOMLOE y la PAU de la Comunitat Valenciana:
+#   A. Campo gravitatorio (2 puntos)      B. Campo electromagnético (3 puntos)
+#   C. Vibraciones y ondas (3 puntos)     D. Física relativista, cuántica,
+#                                            nuclear y de partículas (2 puntos)
+# Ver content/matematicas-ii/subject.yaml para el significado de cada campo.
+# =====================================================================
+id: fis
+name: Física
+short: Física
+color: '#e8590c'
+icon: '⚛'
+description: Campos gravitatorio y electromagnético, ondas, óptica y física moderna.
+blocks:
+  - id: fis.grav
+    title: A. Campo gravitatorio
+    examSection: A
+    examWeight: 2
+    topics:
+      - id: fis.grav.campo
+        title: Gravitación y campo gravitatorio
+        units:
+          - { id: fis.grav.campo.u01, title: Ley de gravitación universal, minutes: 45, difficulty: 2, requires: [], generators: [grav-fuerza] }
+          - { id: fis.grav.campo.u02, title: Intensidad del campo gravitatorio, minutes: 50, difficulty: 3, requires: [fis.grav.campo.u01], generators: [grav-campo-altura, grav-superposicion] }
+      - id: fis.grav.energia
+        title: Energía y potencial gravitatorio
+        units:
+          - { id: fis.grav.energia.u01, title: Potencial y energía potencial gravitatoria, minutes: 50, difficulty: 3, requires: [fis.grav.campo.u02], generators: [grav-potencial, grav-energia-potencial] }
+      - id: fis.grav.orbitas
+        title: Movimiento de satélites y planetas
+        units:
+          - { id: fis.grav.orbitas.u01, title: Velocidad orbital, periodo y leyes de Kepler, minutes: 55, difficulty: 3, requires: [fis.grav.campo.u02], generators: [grav-velocidad-orbital, grav-periodo, grav-kepler] }
+          - { id: fis.grav.orbitas.u02, title: Energía de satélites y velocidad de escape, minutes: 55, difficulty: 4, requires: [fis.grav.orbitas.u01, fis.grav.energia.u01], generators: [grav-energia-satelite, grav-escape] }
+
+  - id: fis.em
+    title: B. Campo electromagnético
+    examSection: B
+    examWeight: 3
+    topics:
+      - id: fis.em.electrico
+        title: Campo eléctrico
+        units:
+          - { id: fis.em.electrico.u01, title: Ley de Coulomb y campo eléctrico, minutes: 50, difficulty: 3, requires: [], generators: [coulomb-fuerza, campo-electrico] }
+          - { id: fis.em.electrico.u02, title: Potencial y energía eléctrica, minutes: 50, difficulty: 3, requires: [fis.em.electrico.u01], generators: [potencial-electrico] }
+          - { id: fis.em.electrico.u03, title: Flujo eléctrico y teorema de Gauss, minutes: 45, difficulty: 4, requires: [fis.em.electrico.u01], generators: [flujo-gauss] }
+      - id: fis.em.magnetico
+        title: Campo magnético
+        units:
+          - { id: fis.em.magnetico.u01, title: Fuerza de Lorentz y movimiento de cargas, minutes: 55, difficulty: 4, requires: [fis.em.electrico.u01], generators: [lorentz-radio] }
+          - { id: fis.em.magnetico.u02, title: Campos creados por corrientes y fuerza entre conductores, minutes: 50, difficulty: 4, requires: [fis.em.magnetico.u01], generators: [campo-hilo, fuerza-conductores] }
+      - id: fis.em.induccion
+        title: Inducción electromagnética
+        units:
+          - { id: fis.em.induccion.u01, title: Flujo magnético y ley de Faraday-Lenz, minutes: 55, difficulty: 4, requires: [fis.em.magnetico.u02], generators: [fem-inducida] }
+          - { id: fis.em.induccion.u02, title: Alternadores, motores y transformadores, minutes: 40, difficulty: 3, requires: [fis.em.induccion.u01], generators: [transformador] }
+
+  - id: fis.ond
+    title: C. Vibraciones y ondas
+    examSection: C
+    examWeight: 3
+    topics:
+      - id: fis.ond.mas
+        title: Movimiento armónico simple
+        units:
+          - { id: fis.ond.mas.u01, title: 'MAS: cinemática, dinámica y energía', minutes: 55, difficulty: 3, requires: [], generators: [mas-vmax, mas-periodo-muelle] }
+      - id: fis.ond.ondas
+        title: Ondas y sonido
+        units:
+          - { id: fis.ond.ondas.u01, title: Ecuación de las ondas armónicas, minutes: 55, difficulty: 4, requires: [fis.ond.mas.u01], generators: [onda-ecuacion, onda-longitud] }
+          - { id: fis.ond.ondas.u02, title: 'Sonido: intensidad y nivel sonoro', minutes: 45, difficulty: 3, requires: [fis.ond.ondas.u01], generators: [nivel-sonoro] }
+          - { id: fis.ond.ondas.u03, title: Fenómenos ondulatorios, minutes: 45, difficulty: 3, requires: [fis.ond.ondas.u01], generators: [onda-longitud] }
+      - id: fis.ond.luz
+        title: Naturaleza de la luz
+        units:
+          - { id: fis.ond.luz.u01, title: Naturaleza de la luz y refracción, minutes: 45, difficulty: 3, requires: [fis.ond.ondas.u01], generators: [snell, angulo-limite] }
+      - id: fis.ond.optica
+        title: Óptica geométrica
+        units:
+          - { id: fis.ond.optica.u01, title: Espejos, minutes: 50, difficulty: 3, requires: [fis.ond.luz.u01], generators: [espejo-concavo] }
+          - { id: fis.ond.optica.u02, title: Lentes delgadas, el ojo e instrumentos ópticos, minutes: 55, difficulty: 4, requires: [fis.ond.optica.u01], generators: [lente-convergente, potencia-lente] }
+
+  - id: fis.mod
+    title: D. Física relativista, cuántica, nuclear y de partículas
+    examSection: D
+    examWeight: 2
+    topics:
+      - id: fis.mod.relatividad
+        title: Relatividad especial
+        units:
+          - { id: fis.mod.relatividad.u01, title: 'Relatividad especial: tiempo, longitud y energía', minutes: 45, difficulty: 3, requires: [], generators: [relatividad-tiempo] }
+      - id: fis.mod.cuantica
+        title: Física cuántica
+        units:
+          - { id: fis.mod.cuantica.u01, title: Efecto fotoeléctrico, minutes: 50, difficulty: 3, requires: [], generators: [fotoelectrico] }
+          - { id: fis.mod.cuantica.u02, title: Hipótesis de De Broglie e incertidumbre, minutes: 40, difficulty: 3, requires: [fis.mod.cuantica.u01], generators: [de-broglie] }
+      - id: fis.mod.nuclear
+        title: Física nuclear
+        units:
+          - { id: fis.mod.nuclear.u01, title: Radiactividad y ley de desintegración, minutes: 50, difficulty: 3, requires: [], generators: [desintegracion] }
+          - { id: fis.mod.nuclear.u02, title: Energía de enlace, fisión y fusión, minutes: 45, difficulty: 3, requires: [fis.mod.nuclear.u01], generators: [energia-enlace] }
+      - id: fis.mod.particulas
+        title: Física de partículas
+        units:
+          - { id: fis.mod.particulas.u01, title: Modelo estándar e interacciones fundamentales, minutes: 35, difficulty: 2, requires: [], generators: [particulas-concepto] }

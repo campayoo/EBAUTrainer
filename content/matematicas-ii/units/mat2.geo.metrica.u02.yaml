@@ -1,0 +1,46 @@
+# Clase completa: Distancias
+id: mat2.geo.metrica.u02
+objectives:
+  - Calcular distancias entre puntos, rectas y planos.
+explanation:
+  - title: Punto-punto y punto-plano
+    body: |
+      $$d(A, B) = |\overrightarrow{AB}|$$
+      $$d(P, \pi) = \frac{|Ax_0 + By_0 + Cz_0 + D|}{\sqrt{A^2 + B^2 + C^2}}$$
+      **Dos planos paralelos:** coge un punto de uno y calcula su distancia al otro.
+
+      **Recta paralela a un plano:** distancia de un punto cualquiera de la recta al plano.
+  - title: Punto-recta
+    body: |
+      Si $A$ es un punto de la recta y $\vec u$ su director:
+      $$d(P, r) = \frac{|\overrightarrow{AP}\times\vec u|}{|\vec u|}$$
+      Es la altura de un paralelogramo: área entre base.
+  - title: Dos rectas que se cruzan
+    body: |
+      $$d(r, s) = \frac{|[\overrightarrow{AB}, \vec u, \vec v]|}{|\vec u\times\vec v|}$$
+      Es la altura de un paralelepípedo: volumen entre área de la base. Si las rectas son paralelas, basta con la distancia de un punto de una a la otra.
+examples:
+  - title: Distancia de un punto a un plano
+    statement: |
+      Calcula la distancia de $P(1, 2, 3)$ al plano $\pi: 2x - y + 2z - 3 = 0$.
+    steps:
+      - |
+        **Numerador:** $|2\cdot1 - 2 + 2\cdot3 - 3| = |3| = 3$.
+      - |
+        **Denominador:** $\sqrt{2^2 + (-1)^2 + 2^2} = \sqrt9 = 3$.
+      - |
+        **Distancia:** $d = \dfrac{3}{3} = 1$ u.
+    result: |
+      Si el numerador sale 0, el punto está en el plano y la distancia es 0.
+summary:
+  - |-
+    $d(P,\pi) = \dfrac{|Ax_0 + By_0 + Cz_0 + D|}{\sqrt{A^2+B^2+C^2}}$.
+  - |-
+    $d(P, r) = \dfrac{|\overrightarrow{AP}\times\vec u|}{|\vec u|}$.
+  - |-
+    Rectas que se cruzan: producto mixto entre módulo del producto vectorial.
+common_errors:
+  - |-
+    Olvidar el valor absoluto del numerador.
+  - |-
+    Usar la fórmula de punto-plano con la ecuación sin igualar a 0.

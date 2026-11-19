@@ -1,0 +1,48 @@
+# Clase completa: Naturaleza de la luz y refracción
+id: fis.ond.luz.u01
+objectives:
+  - Conocer los modelos históricos de la luz y el espectro electromagnético.
+  - Aplicar el índice de refracción, la ley de Snell y la reflexión total.
+explanation:
+  - title: ¿Qué es la luz?
+    body: |
+      - Newton: partículas (corpúsculos). Huygens: ondas.
+      - Young (1801), con su experimento de la doble rendija, demostró que la luz **interfiere**: es una onda.
+      - Maxwell: es una **onda electromagnética** (campos eléctrico y magnético que oscilan), que viaja en el vacío a $c = 3\cdot10^8$ m/s.
+      - Einstein (1905), con el efecto fotoeléctrico: también se comporta como **partícula** (fotón).
+
+      Hoy se acepta la **dualidad onda-corpúsculo**.
+  - title: El espectro electromagnético
+    body: |
+      De menor a mayor frecuencia (y energía): ondas de radio, microondas, infrarrojo, **visible** (de unos 700 nm, rojo, a 400 nm, violeta), ultravioleta, rayos X y rayos gamma. Todas viajan a $c$ en el vacío y cumplen $c = \lambda f$.
+  - title: Refracción y reflexión total
+    body: |
+      - **Índice de refracción:** $n = \dfrac{c}{v} \ge 1$.
+      - **Ley de Snell:** $n_1\sin\theta_1 = n_2\sin\theta_2$ (ángulos medidos desde la normal).
+      - Al pasar a un medio de mayor $n$, la luz se acerca a la normal.
+      - La **frecuencia no cambia**; la longitud de onda sí: $\lambda = \lambda_0/n$.
+      - **Reflexión total:** al pasar a un medio de menor $n$, a partir del **ángulo límite** $\sin\theta_L = \dfrac{n_2}{n_1}$ no hay refracción. Así funciona la fibra óptica.
+      - **Dispersión:** $n$ depende de $\lambda$, por eso un prisma separa los colores.
+examples:
+  - title: Del aire al agua
+    statement: |
+      Un rayo pasa del aire al agua ($n = 1{,}33$) con un ángulo de incidencia de 30°. Calcula el ángulo de refracción y la velocidad de la luz en el agua.
+    steps:
+      - |
+        **Snell:** $1\cdot\sin30^\circ = 1{,}33\sin\theta_2 \Rightarrow \sin\theta_2 = \dfrac{0{,}5}{1{,}33} = 0{,}376$, así que $\theta_2 \approx 22{,}1^\circ$.
+      - |
+        **Velocidad:** $v = \dfrac{c}{n} = \dfrac{3\cdot10^8}{1{,}33} \approx 2{,}26\cdot10^{8}$ m/s.
+    result: |
+      El rayo se acerca a la normal (22,1° < 30°), como corresponde al pasar a un medio más refringente.
+summary:
+  - |-
+    La luz es una onda electromagnética con comportamiento dual (onda y fotón).
+  - |-
+    $n = c/v$; Snell: $n_1\sin\theta_1 = n_2\sin\theta_2$.
+  - |-
+    Reflexión total por encima de $\theta_L$, con $\sin\theta_L = n_2/n_1$ (de más a menos $n$).
+common_errors:
+  - |-
+    Medir los ángulos desde la superficie en lugar de desde la normal.
+  - |-
+    Calcular el ángulo límite al pasar de menor a mayor índice (no existe).

@@ -1,0 +1,49 @@
+# Clase completa: Producto vectorial y producto mixto
+id: mat2.geo.vectores.u02
+objectives:
+  - Calcular el producto vectorial y el producto mixto.
+  - Usarlos para obtener vectores perpendiculares, áreas y volúmenes.
+explanation:
+  - title: El producto vectorial
+    body: |
+      $\vec u\times\vec v$ es un **vector** perpendicular a $\vec u$ y a $\vec v$. Se calcula con un "determinante":
+      $$\vec u\times\vec v = \begin{vmatrix} \vec i & \vec j & \vec k \\ u_1 & u_2 & u_3 \\ v_1 & v_2 & v_3 \end{vmatrix} = (u_2v_3 - u_3v_2,\ u_3v_1 - u_1v_3,\ u_1v_2 - u_2v_1)$$
+      Propiedades:
+      - Su módulo es el **área del paralelogramo** que forman $\vec u$ y $\vec v$: $|\vec u\times\vec v| = |\vec u||\vec v|\sin\alpha$.
+      - $\vec u\times\vec v = -\vec v\times\vec u$ (no es conmutativo).
+      - $\vec u\times\vec v = \vec 0 \iff$ los vectores son paralelos.
+  - title: El producto mixto
+    body: |
+      $$[\vec u, \vec v, \vec w] = \vec u\cdot(\vec v\times\vec w) = \begin{vmatrix} u_1 & u_2 & u_3 \\ v_1 & v_2 & v_3 \\ w_1 & w_2 & w_3 \end{vmatrix}$$
+      - Su valor absoluto es el **volumen del paralelepípedo** formado por los tres vectores.
+      - Vale 0 si y solo si los tres vectores son **coplanarios**. Así se comprueba si 4 puntos están en el mismo plano.
+  - title: ¿Para qué sirven en la PAU?
+    body: |
+      - **Vector normal de un plano:** el producto vectorial de dos vectores del plano.
+      - **Vector director de una recta** dada como intersección de dos planos: $\vec n_1\times\vec n_2$.
+      - **Áreas** (triángulos: la mitad del paralelogramo) y **volúmenes** (tetraedros: la sexta parte del paralelepípedo).
+examples:
+  - title: Producto vectorial y área
+    statement: |
+      Calcula $\vec u\times\vec v$ con $\vec u = (1, 0, 2)$ y $\vec v = (0, 1, 1)$, y el área del paralelogramo que forman.
+    steps:
+      - |
+        **Componentes:** $(0\cdot1 - 2\cdot1,\ 2\cdot0 - 1\cdot1,\ 1\cdot1 - 0\cdot0) = (-2, -1, 1)$.
+      - |
+        **Comprobación:** $(-2,-1,1)\cdot(1,0,2) = -2 + 0 + 2 = 0$ y $(-2,-1,1)\cdot(0,1,1) = 0 - 1 + 1 = 0$: es perpendicular a ambos ✓
+      - |
+        **Área:** $|\vec u\times\vec v| = \sqrt{4 + 1 + 1} = \sqrt6 \approx 2{,}45\ \text{u}^2$.
+    result: |
+      Comprobar la perpendicularidad con el producto escalar detecta casi cualquier error de signo.
+summary:
+  - |-
+    $\vec u\times\vec v$: vector perpendicular a ambos; su módulo es el área del paralelogramo.
+  - |-
+    $[\vec u,\vec v,\vec w]$: determinante 3×3; su valor absoluto es el volumen del paralelepípedo.
+  - |-
+    Producto mixto 0 $\iff$ vectores coplanarios.
+common_errors:
+  - |-
+    Equivocarse de signo en la segunda componente del producto vectorial.
+  - |-
+    Olvidar dividir entre 2 (triángulo) o entre 6 (tetraedro).

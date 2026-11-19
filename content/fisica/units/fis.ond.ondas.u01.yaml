@@ -1,0 +1,56 @@
+# Clase completa: Ecuación de las ondas armónicas
+id: fis.ond.ondas.u01
+objectives:
+  - Interpretar la ecuación de una onda armónica.
+  - Obtener amplitud, frecuencia, longitud de onda y velocidad.
+explanation:
+  - title: ¿Qué es una onda?
+    body: |
+      Una onda es una perturbación que **transporta energía sin transportar materia**.
+      - **Transversal:** las partículas vibran perpendicularmente a la dirección de propagación (cuerda, luz).
+      - **Longitudinal:** vibran en la misma dirección (sonido).
+      - **Mecánicas** (necesitan un medio, como el sonido) y **electromagnéticas** (se propagan en el vacío, como la luz).
+  - title: La ecuación de onda
+    body: |
+      Para una onda armónica que avanza hacia las $x$ positivas:
+      $$y(x, t) = A\sin(\omega t - kx + \varphi_0)$$
+      - $k = \dfrac{2\pi}{\lambda}$: **número de onda** (rad/m).
+      - $\omega = 2\pi f$: pulsación.
+      - **Velocidad de propagación:** $v = \lambda f = \dfrac{\omega}{k}$.
+
+      Con signo $+$ entre $\omega t$ y $kx$, la onda avanza hacia las $x$ **negativas**.
+  - title: Doble periodicidad
+    body: |
+      - Fijado un punto ($x$ constante), oscila en el tiempo con periodo $T$.
+      - Fijado un instante ($t$ constante), la forma se repite en el espacio cada $\lambda$.
+
+      Dos puntos separados $\Delta x$ tienen una **diferencia de fase** $\Delta\varphi = k\,\Delta x$. Están en fase si $\Delta x = n\lambda$, y en oposición si $\Delta x = (n + \frac12)\lambda$.
+
+      No confundas la **velocidad de propagación** ($v = \lambda f$, constante) con la **velocidad de vibración** de las partículas ($\partial y/\partial t$, que cambia).
+examples:
+  - title: Leer una ecuación de onda
+    statement: |
+      Una onda viene dada por $y = 0{,}05\sin(10\pi t - 2\pi x)$ (SI). Halla $A$, $f$, $\lambda$, $v$ y el sentido de propagación.
+    steps:
+      - |
+        **Amplitud:** $A = 0{,}05$ m.
+      - |
+        **Frecuencia:** $\omega = 10\pi \Rightarrow f = \dfrac{\omega}{2\pi} = 5$ Hz.
+      - |
+        **Longitud de onda:** $k = 2\pi \Rightarrow \lambda = \dfrac{2\pi}{k} = 1$ m.
+      - |
+        **Velocidad:** $v = \lambda f = 5$ m/s, hacia las $x$ positivas (signo $-$).
+    result: |
+      La velocidad máxima de vibración de las partículas es $A\omega = 0{,}05\cdot10\pi \approx 1{,}57$ m/s: distinta de la de propagación.
+summary:
+  - |-
+    $y = A\sin(\omega t - kx)$, con $k = 2\pi/\lambda$ y $\omega = 2\pi f$.
+  - |-
+    $v = \lambda f = \omega/k$.
+  - |-
+    Signo $-$: avanza hacia $+x$. Signo $+$: hacia $-x$.
+common_errors:
+  - |-
+    Confundir $k$ con $\lambda$, u $\omega$ con $f$.
+  - |-
+    Confundir la velocidad de propagación con la de vibración.

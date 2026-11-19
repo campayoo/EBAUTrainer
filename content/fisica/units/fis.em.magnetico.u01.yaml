@@ -1,0 +1,47 @@
+# Clase completa: Fuerza de Lorentz y movimiento de cargas
+id: fis.em.magnetico.u01
+objectives:
+  - Calcular la fuerza magnética sobre cargas y corrientes.
+  - Describir el movimiento circular de una carga en un campo magnético.
+explanation:
+  - title: La fuerza de Lorentz
+    body: |
+      Sobre una carga $q$ que se mueve con velocidad $\vec v$ en un campo magnético $\vec B$:
+      $$\vec F = q\,\vec v\times\vec B, \qquad F = |q|\,v\,B\sin\alpha$$
+      - Es **perpendicular** a $\vec v$ y a $\vec B$ (regla de la mano derecha; si $q < 0$, sentido contrario).
+      - Si la carga está quieta o se mueve paralela al campo, **no hay fuerza**.
+      - Como es perpendicular a la velocidad, **no cambia el módulo** de la velocidad ni hace trabajo: solo curva la trayectoria.
+
+      Unidad de $B$: el **tesla** (T).
+  - title: Movimiento circular
+    body: |
+      Si $\vec v \perp \vec B$, la fuerza de Lorentz hace de fuerza centrípeta:
+      $$|q|vB = m\frac{v^2}{r} \;\Rightarrow\; r = \frac{mv}{|q|B}, \qquad T = \frac{2\pi m}{|q|B}$$
+      El periodo **no depende de la velocidad**: es la base del ciclotrón. El espectrómetro de masas separa isótopos porque el radio depende de la masa.
+  - title: Fuerza sobre una corriente y selector de velocidades
+    body: |
+      - Sobre un conductor rectilíneo de longitud $L$ con corriente $I$ (**ley de Laplace**): $\vec F = I\,\vec L\times\vec B$, es decir, $F = ILB\sin\alpha$.
+      - **Selector de velocidades:** con un campo eléctrico y uno magnético perpendiculares, solo pasan sin desviarse las partículas con $qE = qvB$, es decir, $v = E/B$.
+examples:
+  - title: Un protón en un campo magnético
+    statement: |
+      Un protón entra a $2\cdot10^6$ m/s perpendicularmente a un campo de 0,5 T. Calcula el radio de su trayectoria. ($m_p = 1{,}67\cdot10^{-27}$ kg, $e = 1{,}6\cdot10^{-19}$ C)
+    steps:
+      - |
+        **Fuerza magnética = fuerza centrípeta:** $r = \dfrac{mv}{|q|B}$.
+      - |
+        **Sustitución:** $r = \dfrac{1{,}67\cdot10^{-27}\cdot2\cdot10^{6}}{1{,}6\cdot10^{-19}\cdot0{,}5} \approx 4{,}2\cdot10^{-2}$ m.
+    result: |
+      Un electrón con la misma velocidad giraría en sentido contrario y con un radio unas 1800 veces menor.
+summary:
+  - |-
+    $\vec F = q\vec v\times\vec B$: perpendicular a $\vec v$; no cambia la rapidez.
+  - |-
+    Órbita: $r = mv/(|q|B)$ y $T = 2\pi m/(|q|B)$.
+  - |-
+    Corriente: $F = ILB\sin\alpha$. Selector: $v = E/B$.
+common_errors:
+  - |-
+    Olvidar invertir el sentido de la fuerza para cargas negativas.
+  - |-
+    Pensar que la fuerza magnética acelera la partícula (solo la desvía).

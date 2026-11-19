@@ -1,0 +1,43 @@
+# Clase completa: Áreas y volúmenes
+id: mat2.geo.metrica.u03
+objectives:
+  - Calcular áreas de triángulos y paralelogramos y volúmenes de paralelepípedos y tetraedros.
+explanation:
+  - title: Áreas
+    body: |
+      - **Paralelogramo** de lados $\vec u$ y $\vec v$: $S = |\vec u\times\vec v|$.
+      - **Triángulo** $ABC$: $S = \dfrac12|\overrightarrow{AB}\times\overrightarrow{AC}|$.
+  - title: Volúmenes
+    body: |
+      - **Paralelepípedo** de aristas $\vec u, \vec v, \vec w$: $V = |[\vec u, \vec v, \vec w]|$.
+      - **Tetraedro** $ABCD$: $V = \dfrac16\left|[\overrightarrow{AB}, \overrightarrow{AC}, \overrightarrow{AD}]\right|$.
+
+      Si el volumen sale 0, los cuatro puntos son coplanarios: no hay tetraedro.
+  - title: Ejercicios "inversos"
+    body: |
+      A veces dan el área o el volumen y piden una coordenada desconocida. Plantea la fórmula con la incógnita, iguálala al valor dado y resuelve. **Ojo con el valor absoluto:** suele haber dos soluciones.
+examples:
+  - title: Volumen de un tetraedro
+    statement: |
+      Calcula el volumen del tetraedro de vértices $O(0,0,0)$, $A(2,0,0)$, $B(0,3,0)$ y $C(0,0,4)$.
+    steps:
+      - |
+        **Vectores desde $O$:** $\overrightarrow{OA} = (2,0,0)$, $\overrightarrow{OB} = (0,3,0)$ y $\overrightarrow{OC} = (0,0,4)$.
+      - |
+        **Producto mixto:** $\begin{vmatrix} 2 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 4 \end{vmatrix} = 24$.
+      - |
+        **Volumen:** $V = \dfrac{24}{6} = 4\ \text{u}^3$.
+    result: |
+      Coincide con la fórmula de la pirámide, $\frac13\cdot\text{base}\cdot\text{altura} = \frac13\cdot3\cdot4 = 4$ ✓
+summary:
+  - |-
+    Triángulo: $\frac12|\overrightarrow{AB}\times\overrightarrow{AC}|$.
+  - |-
+    Tetraedro: $\frac16|[\overrightarrow{AB},\overrightarrow{AC},\overrightarrow{AD}]|$.
+  - |-
+    En los problemas inversos, el valor absoluto da dos soluciones.
+common_errors:
+  - |-
+    Olvidar el $\frac12$ o el $\frac16$.
+  - |-
+    Perder una de las dos soluciones al quitar el valor absoluto.

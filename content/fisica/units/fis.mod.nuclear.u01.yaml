@@ -1,0 +1,50 @@
+# Clase completa: Radiactividad y ley de desintegración
+id: fis.mod.nuclear.u01
+objectives:
+  - Conocer los tipos de radiactividad y escribir reacciones nucleares.
+  - Aplicar la ley de desintegración, el periodo de semidesintegración y la actividad.
+explanation:
+  - title: Tipos de radiactividad
+    body: |
+      Los núcleos inestables emiten radiación para estabilizarse ($^{A}_{Z}\mathrm{X}$: $A$ = nucleones, $Z$ = protones):
+      - **Alfa (α)**: núcleo de helio $^4_2\mathrm{He}$. $A$ baja 4 y $Z$ baja 2. Poco penetrante: la detiene una hoja de papel.
+      - **Beta menos (β⁻)**: un neutrón se convierte en protón y emite un electrón (y un antineutrino). $A$ igual y $Z$ sube 1. La detiene una lámina de aluminio.
+      - **Gamma (γ)**: fotones de alta energía. $A$ y $Z$ no cambian. Muy penetrante (plomo, hormigón).
+
+      En toda reacción nuclear se conservan $A$ y $Z$ (leyes de Soddy-Fajans).
+  - title: Ley de desintegración
+    body: |
+      $$N = N_0\,e^{-\lambda t}$$
+      - $\lambda$: **constante de desintegración** (s⁻¹).
+      - **Periodo de semidesintegración:** $T_{1/2} = \dfrac{\ln2}{\lambda}$, el tiempo en que se desintegra la mitad. Equivalente: $N = N_0\left(\frac12\right)^{t/T_{1/2}}$.
+      - **Vida media:** $\tau = 1/\lambda$.
+      - **Actividad:** $A = \lambda N$, en **becquerelios** (1 Bq = 1 desintegración/s). Decrece igual que $N$.
+  - title: Datación con carbono-14
+    body: |
+      Los seres vivos mantienen una proporción constante de C-14 mientras viven. Al morir, deja de renovarse y decae con $T_{1/2} = 5730$ años. Midiendo la fracción que queda, se calcula la edad:
+      $$t = \frac{T_{1/2}}{\ln2}\ln\frac{N_0}{N}$$
+examples:
+  - title: Datar un resto arqueológico
+    statement: |
+      Un hueso conserva el 30 % del C-14 que tenía en vida. ¿Qué antigüedad tiene? ($T_{1/2} = 5730$ años)
+    steps:
+      - |
+        **Constante:** $\lambda = \dfrac{\ln2}{5730}$ años⁻¹.
+      - |
+        **Despejamos de $N = N_0e^{-\lambda t}$:** $t = \dfrac{1}{\lambda}\ln\dfrac{N_0}{N} = \dfrac{5730}{\ln2}\ln\dfrac{1}{0{,}3}$.
+      - |
+        **Resultado:** $t \approx 9950$ años.
+    result: |
+      Comprobación aproximada: tras 2 periodos (11 460 años) quedaría el 25 %. El 30 % está algo antes, y cuadra.
+summary:
+  - |-
+    α: $A - 4$, $Z - 2$. β⁻: $Z + 1$. γ: sin cambios.
+  - |-
+    $N = N_0e^{-\lambda t}$, $T_{1/2} = \ln2/\lambda$, $A = \lambda N$.
+  - |-
+    Cada $T_{1/2}$, la cantidad se divide entre 2.
+common_errors:
+  - |-
+    Pensar que la desintegración es lineal: tras $2T_{1/2}$ queda $\frac14$, no 0.
+  - |-
+    Mezclar unidades de tiempo (años y segundos) en $\lambda t$.

@@ -1,0 +1,51 @@
+# Clase completa: MAS - cinemática, dinámica y energía
+id: fis.ond.mas.u01
+objectives:
+  - Describir un movimiento armónico simple con sus ecuaciones.
+  - Relacionar el periodo con la masa y la constante del muelle, o con la longitud del péndulo.
+  - Analizar la energía de un oscilador.
+explanation:
+  - title: Ecuaciones del MAS
+    body: |
+      $$x(t) = A\sin(\omega t + \varphi_0)$$
+      - $A$: **amplitud** (elongación máxima). $\omega$: **pulsación**, con $\omega = 2\pi f = \dfrac{2\pi}{T}$. $\varphi_0$: **fase inicial**.
+      - Velocidad: $v = A\omega\cos(\omega t + \varphi_0)$, máxima en el centro: $v_{max} = A\omega$.
+      - Aceleración: $a = -\omega^2 x$, máxima en los extremos: $a_{max} = A\omega^2$.
+
+      El signo menos es la clave del MAS: la aceleración siempre apunta hacia la posición de equilibrio.
+  - title: Dinámica
+    body: |
+      Un MAS aparece cuando hay una fuerza recuperadora proporcional al desplazamiento, $F = -kx$ (ley de Hooke):
+      - **Muelle:** $\omega = \sqrt{\dfrac km}$ y $T = 2\pi\sqrt{\dfrac mk}$.
+      - **Péndulo simple** (oscilaciones pequeñas): $T = 2\pi\sqrt{\dfrac Lg}$. No depende de la masa ni de la amplitud.
+  - title: Energía
+    body: |
+      $$E_p = \frac12kx^2, \qquad E_c = \frac12k(A^2 - x^2), \qquad E = \frac12kA^2 = \text{constante}$$
+      En los extremos toda la energía es potencial; en el centro, toda cinética. Lo puedes ver en el **Laboratorio** de Pauta.
+examples:
+  - title: Un muelle
+    statement: |
+      Una masa de 0,5 kg cuelga de un muelle de $k = 200$ N/m y oscila con amplitud 10 cm. Calcula $\omega$, $T$, $v_{max}$ y la energía.
+    steps:
+      - |
+        **Pulsación:** $\omega = \sqrt{200/0{,}5} = 20$ rad/s.
+      - |
+        **Periodo:** $T = 2\pi/\omega \approx 0{,}314$ s.
+      - |
+        **Velocidad máxima:** $v_{max} = A\omega = 0{,}10\cdot20 = 2$ m/s.
+      - |
+        **Energía:** $E = \frac12kA^2 = \frac12\cdot200\cdot0{,}1^2 = 1$ J. Comprobación: $\frac12mv_{max}^2 = \frac12\cdot0{,}5\cdot4 = 1$ J ✓
+    result: |
+      Comprobar la energía por dos caminos es una forma rápida de detectar errores.
+summary:
+  - |-
+    $x = A\sin(\omega t + \varphi_0)$, $v_{max} = A\omega$, $a = -\omega^2x$.
+  - |-
+    Muelle: $T = 2\pi\sqrt{m/k}$. Péndulo: $T = 2\pi\sqrt{L/g}$.
+  - |-
+    $E = \frac12kA^2$, constante.
+common_errors:
+  - |-
+    Usar la amplitud en cm sin pasarla a metros.
+  - |-
+    Confundir la frecuencia $f$ con la pulsación $\omega$.

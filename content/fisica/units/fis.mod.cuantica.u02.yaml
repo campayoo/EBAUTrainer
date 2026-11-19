@@ -1,0 +1,42 @@
+# Clase completa: Hipótesis de De Broglie e incertidumbre
+id: fis.mod.cuantica.u02
+objectives:
+  - Calcular la longitud de onda asociada a una partícula.
+  - Interpretar el principio de incertidumbre de Heisenberg.
+explanation:
+  - title: La hipótesis de De Broglie (1924)
+    body: |
+      Si la luz (una onda) se comporta a veces como partícula, quizá las partículas se comporten como ondas:
+      $$\lambda = \frac{h}{p} = \frac{h}{m\,v}$$
+      Se confirmó en 1927 (Davisson y Germer): los electrones se **difractan** en un cristal, igual que los rayos X. Es la base del **microscopio electrónico**, que ve detalles mucho más pequeños que uno óptico.
+  - title: ¿Por qué no vemos ondas en una pelota?
+    body: |
+      Porque $h$ es diminuta: para objetos cotidianos, $\lambda$ es tan pequeña que ningún efecto ondulatorio es observable. Solo importa para partículas con poca masa, como los electrones, cuya $\lambda$ es comparable al tamaño de los átomos.
+  - title: Principio de incertidumbre (Heisenberg, 1927)
+    body: |
+      No se puede conocer a la vez, con precisión arbitraria, la posición y el momento de una partícula:
+      $$\Delta x\,\Delta p \ge \frac{h}{4\pi}$$
+      No es un problema de los aparatos de medida: es una propiedad de la naturaleza. Por eso, en el modelo cuántico del átomo, los electrones no tienen órbitas definidas sino **orbitales** (zonas de probabilidad).
+examples:
+  - title: Electrón frente a pelota
+    statement: |
+      Calcula la longitud de onda de De Broglie de a) un electrón a $10^6$ m/s; b) una pelota de 0,15 kg a 40 m/s. ($m_e = 9{,}11\cdot10^{-31}$ kg)
+    steps:
+      - |
+        **a)** $\lambda = \dfrac{6{,}63\cdot10^{-34}}{9{,}11\cdot10^{-31}\cdot10^{6}} \approx 7{,}3\cdot10^{-10}$ m, del orden del tamaño de un átomo.
+      - |
+        **b)** $\lambda = \dfrac{6{,}63\cdot10^{-34}}{0{,}15\cdot40} \approx 1{,}1\cdot10^{-34}$ m: ridículamente pequeña.
+    result: |
+      Por eso el comportamiento ondulatorio solo se nota en el mundo microscópico.
+summary:
+  - |-
+    $\lambda = h/(mv)$: toda partícula tiene una onda asociada.
+  - |-
+    Solo es apreciable para partículas muy ligeras (electrones).
+  - |-
+    $\Delta x\,\Delta p \ge h/(4\pi)$: límite fundamental, no instrumental.
+common_errors:
+  - |-
+    Usar la fórmula $\lambda = c/f$ (solo vale para la luz) con un electrón.
+  - |-
+    Interpretar la incertidumbre como un error de los aparatos.

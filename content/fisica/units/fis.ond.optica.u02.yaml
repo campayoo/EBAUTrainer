@@ -1,0 +1,52 @@
+# Clase completa: Lentes delgadas, el ojo e instrumentos ópticos
+id: fis.ond.optica.u02
+objectives:
+  - Aplicar la ecuación de las lentes delgadas y la potencia.
+  - Explicar los defectos de la visión y su corrección.
+  - Describir la lupa, el microscopio y el telescopio.
+explanation:
+  - title: Lentes delgadas
+    body: |
+      Con las normas DIN:
+      $$\frac{1}{s'} - \frac{1}{s} = \frac{1}{f'}, \qquad A = \frac{y'}{y} = \frac{s'}{s}, \qquad P = \frac{1}{f'}\ [\text{dioptrías, con } f' \text{ en m}]$$
+      - **Convergente** ($f' > 0$, más gruesa en el centro): si el objeto está más allá del foco, da imágenes reales.
+      - **Divergente** ($f' < 0$): siempre da imágenes virtuales, derechas y menores.
+
+      Rayos: el paralelo sale por el foco imagen $F'$; el que pasa por el foco objeto $F$ sale paralelo; el que pasa por el centro no se desvía.
+  - title: El ojo y sus defectos
+    body: |
+      El cristalino es una lente convergente que forma la imagen en la retina.
+      - **Miopía:** la imagen se forma **delante** de la retina; no se ve bien de lejos. Se corrige con lentes **divergentes**.
+      - **Hipermetropía:** se forma **detrás**; cuesta ver de cerca. Se corrige con lentes **convergentes**.
+      - **Presbicia** (vista cansada): el cristalino pierde flexibilidad con la edad. Convergentes para ver de cerca.
+      - **Astigmatismo:** la córnea no es simétrica. Lentes cilíndricas.
+  - title: Instrumentos ópticos
+    body: |
+      - **Lupa:** convergente, con el objeto entre el foco y la lente: imagen virtual, derecha y mayor.
+      - **Microscopio:** dos lentes convergentes (objetivo y ocular); el aumento total es el producto de ambos.
+      - **Telescopio refractor:** objetivo de gran focal y ocular de focal corta; aumento angular $f'_{obj}/f'_{oc}$.
+examples:
+  - title: Lente convergente
+    statement: |
+      Un objeto de 2 cm está a 30 cm de una lente convergente de $f' = 10$ cm. Calcula la posición y el tamaño de la imagen.
+    steps:
+      - |
+        **Datos DIN:** $s = -30$ cm, $f' = +10$ cm.
+      - |
+        **Posición:** $\dfrac{1}{s'} = \dfrac{1}{f'} + \dfrac1s = \dfrac{1}{10} - \dfrac{1}{30} = \dfrac{2}{30} \Rightarrow s' = 15$ cm.
+      - |
+        **Aumento y tamaño:** $A = \dfrac{s'}{s} = \dfrac{15}{-30} = -0{,}5$, así que $y' = -1$ cm.
+    result: |
+      Imagen real (detrás de la lente), invertida y de la mitad de tamaño: es lo que hace una cámara de fotos. La potencia de la lente es $P = 1/0{,}10 = 10$ dioptrías.
+summary:
+  - |-
+    $1/s' - 1/s = 1/f'$; $A = s'/s$; $P = 1/f'$ con $f'$ en metros.
+  - |-
+    Convergente $f' > 0$; divergente $f' < 0$.
+  - |-
+    Miopía → divergente; hipermetropía y presbicia → convergente.
+common_errors:
+  - |-
+    Confundir la ecuación de las lentes (resta) con la de los espejos (suma).
+  - |-
+    Calcular la potencia con $f'$ en cm.

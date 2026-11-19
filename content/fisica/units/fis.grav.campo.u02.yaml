@@ -1,0 +1,116 @@
+# Clase completa: Intensidad del campo gravitatorio
+id: fis.grav.campo.u02
+objectives:
+  - Entender el concepto de campo y calcular la intensidad del campo gravitatorio.
+  - Calcular cómo varía $g$ con la altura.
+  - Aplicar el principio de superposición y hallar puntos de campo nulo.
+
+explanation:
+  - title: ¿Qué es un campo?
+    body: |
+      Una masa modifica el espacio que la rodea: cualquier otra masa que pongas allí notará una fuerza. Esa "propiedad del espacio" es el **campo gravitatorio**.
+
+      Su **intensidad** $\vec g$ es la fuerza por unidad de masa:
+      $$\vec g = \frac{\vec F}{m} = -G\frac{M}{r^2}\,\vec u_r \qquad\Rightarrow\qquad g = G\frac{M}{r^2}$$
+      Se mide en N/kg, que es lo mismo que m/s²: **la intensidad del campo es la aceleración de la gravedad**.
+  - title: El campo de la Tierra y la altura
+    body: |
+      En la superficie, $g_0 = G\dfrac{M_T}{R_T^2} \approx 9{,}81\ \mathrm{N/kg}$. A una altura $h$:
+      $$g = G\frac{M_T}{(R_T + h)^2} = g_0\,\frac{R_T^2}{(R_T + h)^2}$$
+      La segunda forma es muy útil cuando el enunciado da $g_0$ en lugar de $G$ y $M_T$. Por ejemplo, a una altura igual al radio ($r = 2R_T$), $g = g_0/4$.
+  - title: Líneas de campo
+    body: |
+      Se dibujan para visualizar el campo: son **tangentes** a $\vec g$ en cada punto y, en el campo gravitatorio, son **radiales y van hacia la masa** (las masas son "sumideros" de campo). Donde las líneas están más juntas, el campo es más intenso.
+
+      Puedes verlas en el visualizador de campos de Pauta.
+  - title: Varias masas y puntos de campo nulo
+    body: |
+      El campo total es la **suma vectorial** de los campos de cada masa. Entre dos masas existe un punto donde los dos campos se anulan, porque tienen igual módulo y sentidos opuestos:
+      $$G\frac{m_1}{x^2} = G\frac{m_2}{(d - x)^2}$$
+      Ese punto está siempre **más cerca de la masa menor**.
+
+examples:
+  - title: El punto de campo nulo entre la Tierra y la Luna
+    statement: '¿A qué distancia del centro de la Tierra se anula el campo gravitatorio creado por la Tierra y la Luna? Datos: $M_T/M_L = 81{,}2$; distancia Tierra-Luna $d = 3{,}84\cdot10^8$ m.'
+    steps:
+      - |
+        **Planteamiento:** igualamos los módulos de ambos campos en un punto a distancia $x$ de la Tierra:
+        $$\frac{M_T}{x^2} = \frac{M_L}{(d - x)^2} \Rightarrow \frac{x}{d - x} = \sqrt{\frac{M_T}{M_L}} = 9{,}01$$
+      - |
+        **Despejamos:** $x = 9{,}01(d - x) \Rightarrow x = \dfrac{9{,}01\,d}{10{,}01}$.
+      - |
+        **Resultado:** $x \approx 3{,}46\cdot10^8$ m, es decir, a un 90 % del camino hacia la Luna.
+    result: 'Tiene sentido: el punto está mucho más cerca de la Luna, que es la masa menor.'
+
+practice:
+  - id: fis.grav.campo.u02.p1
+    kind: numeric
+    statement: 'Calcula la intensidad del campo gravitatorio en la superficie terrestre. Datos: $G = 6{,}67\cdot10^{-11}$, $M_T = 5{,}97\cdot10^{24}$ kg, $R_T = 6{,}37\cdot10^{6}$ m.'
+    answer: { value: 9.8134, unit: N/kg }
+    check: '6.67e-11 * 5.97e24 / 6.37e6**2'
+    hints: ['En la superficie, $r = R_T$.', '$g_0 = G\dfrac{M_T}{R_T^2}$', '$R_T^2 = 4{,}06\cdot10^{13}\ \mathrm{m^2}$']
+    solution: '$g_0 = \dfrac{6{,}67\cdot10^{-11}\cdot5{,}97\cdot10^{24}}{(6{,}37\cdot10^6)^2} = \boxed{9{,}81\ \mathrm{N/kg}}$'
+  - id: fis.grav.campo.u02.p2
+    kind: numeric
+    statement: 'En la superficie terrestre $g_0 = 9{,}8$ N/kg. ¿Cuánto vale $g$ a una altura sobre la superficie igual al radio terrestre?'
+    answer:
+      value: 2.45
+      unit: N/kg
+      commonErrors:
+        - { value: 4.9, message: 'La distancia al centro se duplica, pero $g$ depende de $1/r^2$: se divide entre 4, no entre 2.' }
+    check: '9.8 / 4'
+    hints: ['¿A qué distancia del centro está ese punto?', '$r = R_T + R_T = 2R_T$', '$g = g_0\dfrac{R_T^2}{(2R_T)^2}$']
+    solution: '$g = 9{,}8\cdot\dfrac{R_T^2}{4R_T^2} = \dfrac{9{,}8}{4} = \boxed{2{,}45\ \mathrm{N/kg}}$'
+  - id: fis.grav.campo.u02.p3
+    kind: numeric
+    statement: 'Marte tiene una masa de $6{,}42\cdot10^{23}$ kg y un radio de $3{,}39\cdot10^{6}$ m. Calcula la gravedad en su superficie. Dato: $G = 6{,}67\cdot10^{-11}\ \mathrm{N\,m^2/kg^2}$.'
+    answer: { value: 3.7262, unit: N/kg }
+    check: '6.67e-11 * 6.42e23 / 3.39e6**2'
+    hints: ['Es la misma fórmula que para la Tierra.', '$g = GM/R^2$', '$R^2 = 1{,}15\cdot10^{13}\ \mathrm{m^2}$']
+    solution: '$g = \dfrac{6{,}67\cdot10^{-11}\cdot6{,}42\cdot10^{23}}{(3{,}39\cdot10^6)^2} = \boxed{3{,}73\ \mathrm{N/kg}}$, unas 2,6 veces menos que en la Tierra.'
+
+test:
+  - id: fis.grav.campo.u02.t1
+    kind: choice
+    statement: '¿Cuál de estas unidades es equivalente a N/kg?'
+    options:
+      - { text: 'm/s²' }
+      - { text: 'J/kg', why: 'J/kg es la unidad del potencial gravitatorio.' }
+      - { text: 'N·m', why: 'Eso es una unidad de energía (o de momento de fuerza).' }
+      - { text: 'kg/m³', why: 'Eso es una densidad.' }
+    correct: 0
+    hints: ['Recuerda que 1 N = 1 kg·m/s².', 'Divide entre kg.', 'La intensidad del campo es una aceleración.']
+    solution: '$1\ \mathrm{N/kg} = 1\ \dfrac{\mathrm{kg\,m/s^2}}{\mathrm{kg}} = 1\ \mathrm{m/s^2}$.'
+  - id: fis.grav.campo.u02.t2
+    kind: numeric
+    statement: '¿A qué altura sobre la superficie (en km) el campo gravitatorio terrestre vale la novena parte que en la superficie? Dato: $R_T = 6370$ km.'
+    answer:
+      value: 12740
+      unit: km
+      tolerance: { relative: 0.01 }
+      commonErrors:
+        - { value: 19110, message: 'Esa es la distancia al CENTRO de la Tierra ($3R_T$). Te piden la altura sobre la superficie.' }
+    check: '2 * 6370'
+    hints: ['Si $g = g_0/9$, ¿cómo es $r$ comparado con $R_T$?', '$\dfrac{R_T^2}{r^2} = \dfrac19 \Rightarrow r = 3R_T$', 'La altura es $h = r - R_T$.']
+    solution: '$r = 3R_T$, así que $h = 2R_T = \boxed{12\,740\ \mathrm{km}}$.'
+  - id: fis.grav.campo.u02.t3
+    kind: choice
+    statement: 'En un punto cercano a un planeta, el vector intensidad de campo gravitatorio apunta...'
+    options:
+      - { text: 'hacia el centro del planeta' }
+      - { text: 'alejándose del planeta', why: 'La gravedad siempre es atractiva.' }
+      - { text: 'tangente a la superficie', why: 'Las líneas del campo gravitatorio de una esfera son radiales.' }
+      - { text: 'depende de la masa que pongamos allí', why: 'El campo existe y tiene su dirección aunque no haya ninguna masa de prueba.' }
+    correct: 0
+    hints: ['¿Qué le pasa a un objeto que sueltas?', 'La fuerza gravitatoria es atractiva.', 'Las líneas de campo son radiales.']
+    solution: 'Apunta **hacia el centro** del planeta: las líneas de campo son radiales y entrantes.'
+
+summary:
+  - '$g = F/m = GM/r^2$; se mide en N/kg = m/s².'
+  - 'Con la altura: $g = g_0 R_T^2/(R_T + h)^2$.'
+  - 'Líneas de campo radiales hacia la masa.'
+  - 'Varias masas: suma vectorial. El punto de campo nulo está más cerca de la masa menor.'
+common_errors:
+  - 'Pensar que el campo depende de la masa del objeto que lo "siente".'
+  - 'Dividir entre 2 en vez de entre 4 al duplicar la distancia.'
+  - 'Confundir la altura con la distancia al centro.'

@@ -1,0 +1,32 @@
+# Estructura del simulacro de Física (PAU Comunitat Valenciana 2025-26).
+# 4 apartados, uno por bloque: A (2 p), B (3 p), C (3 p), D (2 p).
+# Un apartado no tiene optatividad y en los otros se elige entre dos.
+# La duración está PENDIENTE DE CONFIRMAR con la guía oficial.
+subject: fis
+duration_minutes: 90
+official_url: https://universitats.gva.es
+sections:
+  - id: A
+    title: Campo gravitatorio
+    points: 2
+    options: 1
+    questions: 2
+    generators: [grav-campo-altura, grav-velocidad-orbital, grav-periodo, grav-energia-satelite, grav-escape, grav-kepler, grav-potencial, grav-superposicion]
+  - id: B
+    title: Campo electromagnético
+    points: 3
+    options: 2
+    questions: 3
+    generators: [coulomb-fuerza, campo-electrico, potencial-electrico, flujo-gauss, lorentz-radio, campo-hilo, fuerza-conductores, fem-inducida, transformador]
+  - id: C
+    title: Vibraciones y ondas
+    points: 3
+    options: 2
+    questions: 3
+    generators: [mas-vmax, mas-periodo-muelle, onda-longitud, onda-ecuacion, nivel-sonoro, snell, angulo-limite, espejo-concavo, lente-convergente, potencia-lente]
+  - id: D
+    title: Física relativista, cuántica, nuclear y de partículas
+    points: 2
+    options: 2
+    questions: 2
+    generators: [relatividad-tiempo, fotoelectrico, de-broglie, desintegracion, energia-enlace, particulas-concepto]

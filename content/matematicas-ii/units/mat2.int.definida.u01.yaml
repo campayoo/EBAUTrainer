@@ -1,0 +1,48 @@
+# Clase completa: Integral definida y teorema fundamental del cálculo
+id: mat2.int.definida.u01
+objectives:
+  - Calcular integrales definidas con la regla de Barrow.
+  - Aplicar el teorema fundamental del cálculo.
+explanation:
+  - title: La integral definida
+    body: |
+      $\int_a^b f(x)\,dx$ es el **área con signo** entre la gráfica de $f$ y el eje $X$, desde $x = a$ hasta $x = b$: cuenta positiva por encima del eje y negativa por debajo.
+
+      Propiedades:
+      - $\int_a^a f = 0$ y $\int_b^a f = -\int_a^b f$.
+      - $\int_a^b f = \int_a^c f + \int_c^b f$.
+  - title: Regla de Barrow
+    body: |
+      Si $F$ es una primitiva de $f$ (continua en $[a, b]$):
+      $$\int_a^b f(x)\,dx = \big[F(x)\big]_a^b = F(b) - F(a)$$
+      La constante $C$ se cancela, así que no hace falta escribirla.
+  - title: Teorema fundamental del cálculo
+    body: |
+      Si $f$ es continua, la función $F(x) = \int_a^x f(t)\,dt$ es derivable y
+      $$F'(x) = f(x)$$
+      Con la regla de la cadena: $\dfrac{d}{dx}\int_a^{g(x)} f(t)\,dt = f(g(x))\cdot g'(x)$.
+
+      Se usa en ejercicios que piden extremos o límites de funciones definidas mediante una integral.
+examples:
+  - title: Barrow y teorema fundamental
+    statement: |
+      a) Calcula $\int_0^2 (3x^2 - 2x)\,dx$. b) Deriva $F(x) = \int_0^{x^2}\sin t\,dt$.
+    steps:
+      - |
+        **a)** Primitiva: $x^3 - x^2$. Barrow: $(8 - 4) - (0 - 0) = 4$.
+      - |
+        **b)** Por el teorema fundamental y la regla de la cadena: $F'(x) = \sin(x^2)\cdot 2x$.
+    result: |
+      En b) no hace falta calcular la integral: basta con "sustituir el límite superior y multiplicar por su derivada".
+summary:
+  - |-
+    Barrow: $\int_a^b f = F(b) - F(a)$.
+  - |-
+    La integral definida es un área con signo.
+  - |-
+    $\left(\int_a^{g(x)} f(t)\,dt\right)' = f(g(x))\,g'(x)$.
+common_errors:
+  - |-
+    Restar al revés: es $F(b) - F(a)$, no $F(a) - F(b)$.
+  - |-
+    Olvidar la derivada de $g(x)$ en el teorema fundamental.

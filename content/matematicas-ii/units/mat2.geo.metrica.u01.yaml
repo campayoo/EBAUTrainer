@@ -1,0 +1,46 @@
+# Clase completa: Ángulos entre rectas y planos
+id: mat2.geo.metrica.u01
+objectives:
+  - Calcular el ángulo entre dos rectas, entre dos planos y entre una recta y un plano.
+explanation:
+  - title: Ángulo entre dos rectas
+    body: |
+      Es el ángulo agudo que forman sus vectores directores:
+      $$\cos\alpha = \frac{|\vec u\cdot\vec v|}{|\vec u|\,|\vec v|}$$
+      El valor absoluto garantiza que el ángulo esté entre $0^\circ$ y $90^\circ$.
+  - title: Ángulo entre dos planos
+    body: |
+      Es el ángulo que forman sus vectores normales:
+      $$\cos\alpha = \frac{|\vec n_1\cdot\vec n_2|}{|\vec n_1|\,|\vec n_2|}$$
+      Dos planos son perpendiculares si $\vec n_1\cdot\vec n_2 = 0$.
+  - title: Ángulo entre recta y plano
+    body: |
+      Se usa el **seno**, porque el director de la recta se compara con la normal del plano, que es perpendicular al plano:
+      $$\sin\alpha = \frac{|\vec u\cdot\vec n|}{|\vec u|\,|\vec n|}$$
+      - Recta perpendicular al plano: $\vec u \parallel \vec n$.
+      - Recta paralela al plano (o contenida): $\vec u\cdot\vec n = 0$.
+examples:
+  - title: Ángulo entre dos planos
+    statement: |
+      Calcula el ángulo entre $\pi_1: x + y = 1$ y $\pi_2: y + z = 2$.
+    steps:
+      - |
+        **Normales:** $\vec n_1 = (1, 1, 0)$ y $\vec n_2 = (0, 1, 1)$.
+      - |
+        **Producto escalar y módulos:** $\vec n_1\cdot\vec n_2 = 1$; $|\vec n_1| = |\vec n_2| = \sqrt2$.
+      - |
+        **Ángulo:** $\cos\alpha = \dfrac{1}{\sqrt2\cdot\sqrt2} = \dfrac12 \Rightarrow \alpha = 60^\circ$.
+    result: |
+      Fíjate en que la $z$ que "falta" en $\pi_1$ es un coeficiente 0, no un 1.
+summary:
+  - |-
+    Rectas: coseno con los directores. Planos: coseno con las normales.
+  - |-
+    Recta y plano: SENO con el director y la normal.
+  - |-
+    Usa siempre el valor absoluto para obtener el ángulo agudo.
+common_errors:
+  - |-
+    Usar el coseno en el ángulo recta-plano.
+  - |-
+    Poner un 1 en la coordenada de una variable que no aparece en la ecuación (debe ser 0).

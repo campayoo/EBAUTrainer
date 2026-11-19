@@ -1,0 +1,53 @@
+# Clase completa: Monotonía, extremos y optimización
+id: mat2.ana.derivadas.u03
+objectives:
+  - Estudiar el crecimiento y los extremos relativos de una función.
+  - Plantear y resolver problemas de optimización.
+explanation:
+  - title: Monotonía
+    body: |
+      - $f'(x) > 0$ en un intervalo: $f$ es **creciente**.
+      - $f'(x) < 0$: $f$ es **decreciente**.
+
+      Método: resuelve $f'(x) = 0$, marca esas raíces (y los puntos fuera del dominio) en la recta real y estudia el signo de $f'$ en cada trozo.
+  - title: Extremos relativos
+    body: |
+      Los candidatos son los puntos con $f'(x) = 0$. Se clasifican así:
+      - Por el **cambio de signo** de $f'$: de $+$ a $-$ es un **máximo**; de $-$ a $+$, un **mínimo**.
+      - O con la **segunda derivada**: $f''(a) < 0$ es un máximo; $f''(a) > 0$, un mínimo.
+
+      Da siempre el punto completo: $(a, f(a))$.
+  - title: Optimización paso a paso
+    body: |
+      1. Identifica qué hay que **maximizar o minimizar** y escríbelo como función.
+      2. Usa la **condición** del enunciado (la "ligadura") para dejarla con **una sola variable**.
+      3. Indica el **dominio** con sentido físico (longitudes positivas, etc.).
+      4. Deriva, iguala a 0 y comprueba que es máximo o mínimo.
+      5. Responde a la pregunta con unidades.
+examples:
+  - title: Extremos y una caja
+    statement: |
+      a) Halla los extremos de $f(x) = x^3 - 6x^2 + 9x + 1$. b) De una lámina cuadrada de 12 cm de lado se cortan cuatro cuadrados iguales en las esquinas para hacer una caja sin tapa. ¿Qué lado deben tener para que el volumen sea máximo?
+    steps:
+      - |
+        **a)** $f'(x) = 3x^2 - 12x + 9 = 3(x - 1)(x - 3)$. El signo de $f'$ es $+, -, +$: máximo en $(1, 5)$ y mínimo en $(3, 1)$.
+      - |
+        **b)** Si el corte mide $x$, la caja tiene base $(12 - 2x)^2$ y altura $x$: $V(x) = x(12 - 2x)^2$, con $0 < x < 6$.
+      - |
+        $V'(x) = (12 - 2x)(12 - 6x) = 0 \Rightarrow x = 2$ (la otra raíz, $x = 6$, deja la caja sin base).
+      - |
+        Como $V'$ pasa de positiva a negativa en $x = 2$, es un máximo: $V(2) = 2\cdot8^2 = 128\ \text{cm}^3$.
+    result: |
+      El dominio ($0 < x < 6$) es lo que permite descartar soluciones sin sentido.
+summary:
+  - |-
+    Signo de $f'$: crecimiento y decrecimiento.
+  - |-
+    Extremos: $f' = 0$ y cambio de signo (o el signo de $f''$).
+  - |-
+    Optimización: función objetivo, ligadura, una variable, dominio, derivar y comprobar.
+common_errors:
+  - |-
+    Dar solo la abscisa del extremo y no el punto completo.
+  - |-
+    No justificar que el punto crítico es máximo o mínimo.

@@ -1,0 +1,49 @@
+# Clase completa: Probabilidad condicionada y total
+id: mat2.pro.probabilidad.u01
+objectives:
+  - Calcular probabilidades con la regla de Laplace y las propiedades básicas.
+  - Usar la probabilidad condicionada, la independencia y el teorema de la probabilidad total.
+explanation:
+  - title: Lo básico
+    body: |
+      - **Laplace** (casos equiprobables): $P(A) = \dfrac{\text{casos favorables}}{\text{casos posibles}}$.
+      - **Contrario:** $P(\bar A) = 1 - P(A)$.
+      - **Unión:** $P(A\cup B) = P(A) + P(B) - P(A\cap B)$.
+      - **Leyes de De Morgan:** $P(\bar A\cap\bar B) = 1 - P(A\cup B)$.
+
+      Una **tabla de contingencia** o un **diagrama de Venn** ordenan muy bien los datos.
+  - title: Condicionada e independencia
+    body: |
+      La probabilidad de $A$ **sabiendo que** ha ocurrido $B$:
+      $$P(A\mid B) = \frac{P(A\cap B)}{P(B)}$$
+      De ahí, $P(A\cap B) = P(B)\cdot P(A\mid B)$ (regla del producto: se multiplica a lo largo de las ramas de un árbol).
+
+      $A$ y $B$ son **independientes** si $P(A\cap B) = P(A)\,P(B)$, o lo que es lo mismo, si $P(A\mid B) = P(A)$.
+  - title: Probabilidad total
+    body: |
+      Si $A_1, \dots, A_n$ forman un **sistema completo** (no se solapan y cubren todos los casos):
+      $$P(B) = P(A_1)P(B\mid A_1) + \dots + P(A_n)P(B\mid A_n)$$
+      En un **diagrama de árbol**: se multiplica a lo largo de cada rama que acaba en $B$ y se suman esas ramas.
+examples:
+  - title: Dos urnas
+    statement: |
+      La urna I tiene 3 bolas rojas y 2 azules; la urna II, 1 roja y 4 azules. Se lanza una moneda: si sale cara se extrae de la urna I, y si sale cruz, de la II. ¿Cuál es la probabilidad de sacar bola roja?
+    steps:
+      - |
+        **Árbol:** $P(\text{I}) = P(\text{II}) = \frac12$; $P(R\mid\text{I}) = \frac35$ y $P(R\mid\text{II}) = \frac15$.
+      - |
+        **Probabilidad total:** $P(R) = \frac12\cdot\frac35 + \frac12\cdot\frac15 = \frac{3}{10} + \frac{1}{10} = \frac25 = 0{,}4$.
+    result: |
+      Comprobación de sentido común: el resultado está entre $\frac15$ y $\frac35$, las probabilidades de cada urna.
+summary:
+  - |-
+    $P(A\cup B) = P(A) + P(B) - P(A\cap B)$.
+  - |-
+    $P(A\mid B) = \dfrac{P(A\cap B)}{P(B)}$. Independientes: $P(A\cap B) = P(A)P(B)$.
+  - |-
+    Probabilidad total: suma de las ramas del árbol que llevan a $B$.
+common_errors:
+  - |-
+    Confundir $P(A\mid B)$ con $P(B\mid A)$.
+  - |-
+    Confundir sucesos independientes con incompatibles ($P(A\cap B) = 0$).

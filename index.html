@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pauta · Tu profesor virtual para la PAU</title>
+  <meta name="description" content="Profesor virtual que organiza tu semana y te da clase para preparar Física y Matemáticas II de la PAU. Funciona sin conexión y sin instalar nada.">
+  <meta name="theme-color" content="#4f5bd5">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <!-- build:css -->
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <!-- /build:css -->
+  <!-- build:js -->
+  <script type="module" src="src/main.js"></script>
+  <!-- /build:js -->
+</head>
+<body>
+  <div id="app">
+    <p class="boot">Cargando Pauta…</p>
+    <noscript><p class="boot">Pauta necesita JavaScript activado para funcionar.</p></noscript>
+  </div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+# Clase completa: Ley de Coulomb y campo eléctrico
+id: fis.em.electrico.u01
+objectives:
+  - Aplicar la ley de Coulomb y el principio de superposición.
+  - Calcular el campo eléctrico creado por cargas puntuales.
+explanation:
+  - title: La ley de Coulomb
+    body: |
+      Dos cargas puntuales se atraen (signos opuestos) o se repelen (mismo signo) con una fuerza
+      $$F = k\frac{|q_1\,q_2|}{r^2}, \qquad k = 9\cdot10^{9}\ \mathrm{N\,m^2/C^2} = \frac{1}{4\pi\varepsilon_0}$$
+      Es la "hermana" de la ley de gravitación, con dos diferencias: puede ser **repulsiva**, y es muchísimo más intensa.
+
+      Múltiplos habituales: $1\ \mu\mathrm{C} = 10^{-6}$ C y $1\ \mathrm{nC} = 10^{-9}$ C.
+  - title: El campo eléctrico
+    body: |
+      $$\vec E = \frac{\vec F}{q}, \qquad E = k\frac{|Q|}{r^2}\quad [\mathrm{N/C}]$$
+      - Una carga **positiva** crea un campo que **sale** de ella; una **negativa**, un campo que **entra**.
+      - Sobre una carga $q$ actúa la fuerza $\vec F = q\vec E$. Si $q < 0$, la fuerza va en sentido contrario al campo.
+      - Las **líneas de campo** salen de las cargas positivas y acaban en las negativas.
+  - title: Principio de superposición
+    body: |
+      Con varias cargas, el campo total es la **suma vectorial** de los campos de cada una. Método:
+      1. Haz un dibujo y pon un vector por cada carga (cuidado con el sentido según el signo).
+      2. Calcula los módulos.
+      3. Suma por componentes.
+
+      Puedes verlo en el **Laboratorio** de Pauta (modo eléctrico).
+examples:
+  - title: Campo en el punto medio
+    statement: |
+      Una carga $q_1 = +2\ \mu$C está en $x = 0$ y otra $q_2 = -3\ \mu$C en $x = 0{,}30$ m. Calcula el campo en el punto medio.
+    steps:
+      - |
+        **Distancia de cada carga al punto medio:** 0,15 m.
+      - |
+        **Campo de $q_1$** (positiva: apunta hacia fuera, hacia $+x$): $E_1 = 9\cdot10^9\cdot\dfrac{2\cdot10^{-6}}{0{,}15^2} = 8{,}0\cdot10^5\ \mathrm{N/C}$.
+      - |
+        **Campo de $q_2$** (negativa: apunta hacia ella, también hacia $+x$): $E_2 = 9\cdot10^9\cdot\dfrac{3\cdot10^{-6}}{0{,}15^2} = 1{,}2\cdot10^6\ \mathrm{N/C}$.
+      - |
+        **Total:** los dos van en el mismo sentido, así que se suman: $E = 2{,}0\cdot10^6\ \mathrm{N/C}$, hacia $+x$.
+    result: |
+      Con cargas de distinto signo, en el punto medio los campos se SUMAN. Con cargas del mismo signo, se restan.
+summary:
+  - |-
+    $F = k|q_1q_2|/r^2$, con $k = 9\cdot10^9$ en el SI.
+  - |-
+    $E = k|Q|/r^2$: sale de las cargas positivas y entra en las negativas.
+  - |-
+    Varias cargas: suma vectorial (dibujo + componentes).
+common_errors:
+  - |-
+    No pasar μC o nC a culombios, ni cm a metros.
+  - |-
+    Sumar los módulos sin mirar los sentidos.

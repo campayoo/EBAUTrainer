@@ -1,0 +1,51 @@
+# Clase completa: Rango de una matriz (práctica y test con ejercicios generados)
+id: mat2.alg.rango-inversa.u01
+objectives:
+  - Entender qué mide el rango de una matriz.
+  - Calcular el rango por menores y por el método de Gauss.
+explanation:
+  - title: ¿Qué es el rango?
+    body: |
+      El **rango** de una matriz, $\operatorname{rg}(A)$, es el **número de filas (o de columnas) linealmente independientes**, es decir, que no se pueden obtener combinando las demás.
+
+      - Si una fila es múltiplo de otra, o suma de otras, **no aporta** nada nuevo al rango.
+      - El rango de una matriz $m\times n$ es, como mucho, el menor de $m$ y $n$.
+      - El rango por filas y el rango por columnas siempre coinciden.
+  - title: Rango por menores
+    body: |
+      Un **menor de orden $k$** es el determinante de una submatriz $k\times k$ (te quedas con $k$ filas y $k$ columnas).
+
+      El rango es el **orden del mayor menor distinto de cero**. Procedimiento:
+      1. Busca un elemento no nulo: el rango es al menos 1.
+      2. Busca un menor de orden 2 no nulo: el rango es al menos 2.
+      3. "Orla" ese menor añadiendo una fila y una columna. Si todos los menores de orden 3 que lo contienen son nulos, el rango es 2.
+  - title: Rango por Gauss
+    body: |
+      Haz ceros por debajo de la diagonal con operaciones elementales (intercambiar filas, multiplicar una fila por un número no nulo, sumar a una fila un múltiplo de otra). Estas operaciones **no cambian el rango**.
+
+      Al final, el rango es el **número de filas que no son completamente nulas**.
+examples:
+  - title: Rango de una matriz 3×3
+    statement: |
+      Calcula el rango de $A = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 1 & 0 & 1 \end{pmatrix}$.
+    steps:
+      - |
+        **¿Rango 3?** La fila 2 es el doble de la fila 1, así que $|A| = 0$ y el rango es menor que 3.
+      - |
+        **¿Rango 2?** Buscamos un menor de orden 2 no nulo con las filas 1 y 3: $\begin{vmatrix} 1 & 2 \\ 1 & 0 \end{vmatrix} = 0 - 2 = -2 \neq 0$.
+      - |
+        **Conclusión:** $\operatorname{rg}(A) = 2$.
+    result: |
+      Fíjate en que ver de un vistazo que dos filas son proporcionales ahorra calcular el determinante de orden 3.
+summary:
+  - |-
+    Rango = número de filas (o columnas) linealmente independientes.
+  - |-
+    Por menores: orden del mayor menor no nulo. Por Gauss: filas no nulas tras escalonar.
+  - |-
+    Una matriz cuadrada $n\times n$ tiene rango $n$ si y solo si $|A| \neq 0$.
+common_errors:
+  - |-
+    Concluir que el rango es 1 porque $|A| = 0$: solo indica que es menor que 3.
+  - |-
+    Olvidar que las operaciones de Gauss se hacen sobre filas completas.

@@ -1,0 +1,46 @@
+# Clase completa: Campos creados por corrientes y fuerza entre conductores
+id: fis.em.magnetico.u02
+objectives:
+  - Calcular el campo magnético de un hilo, una espira y un solenoide.
+  - Calcular la fuerza entre dos conductores paralelos.
+explanation:
+  - title: Las corrientes crean campos magnéticos
+    body: |
+      Lo descubrió Oersted en 1820: una corriente desvía una brújula. Con $\mu_0 = 4\pi\cdot10^{-7}$ T·m/A:
+      - **Hilo rectilíneo infinito**, a distancia $d$: $B = \dfrac{\mu_0 I}{2\pi d}$. Las líneas son circunferencias alrededor del hilo (regla de la mano derecha: pulgar en el sentido de la corriente).
+      - **Centro de una espira** de radio $R$: $B = \dfrac{\mu_0 I}{2R}$.
+      - **Interior de un solenoide** de $N$ espiras y longitud $L$: $B = \dfrac{\mu_0 N I}{L}$, uniforme. Es un electroimán.
+  - title: Fuerza entre conductores paralelos
+    body: |
+      Cada hilo está dentro del campo del otro, así que sufre una fuerza:
+      $$\frac{F}{L} = \frac{\mu_0 I_1 I_2}{2\pi d}$$
+      - Corrientes en el **mismo sentido**: se **atraen**.
+      - En **sentidos opuestos**: se **repelen**.
+
+      (Justo al revés que las cargas eléctricas: conviene recordarlo así.)
+  - title: Varias corrientes
+    body: |
+      El campo total es la **suma vectorial** de los campos de cada corriente. Dibuja con cuidado el sentido de cada uno con la regla de la mano derecha antes de sumar.
+examples:
+  - title: Un solenoide
+    statement: |
+      Un solenoide de 500 espiras y 25 cm de longitud está recorrido por una corriente de 2 A. Calcula el campo en su interior.
+    steps:
+      - |
+        **Fórmula:** $B = \dfrac{\mu_0 N I}{L}$.
+      - |
+        **Sustitución:** $B = \dfrac{4\pi\cdot10^{-7}\cdot500\cdot2}{0{,}25} \approx 5{,}0\cdot10^{-3}$ T.
+    result: |
+      Es unas 100 veces el campo magnético terrestre (unos $5\cdot10^{-5}$ T).
+summary:
+  - |-
+    Hilo: $B = \mu_0I/(2\pi d)$. Espira: $B = \mu_0I/(2R)$. Solenoide: $B = \mu_0NI/L$.
+  - |-
+    $F/L = \mu_0I_1I_2/(2\pi d)$: mismo sentido se atraen; opuesto se repelen.
+  - |-
+    Regla de la mano derecha para el sentido de $\vec B$.
+common_errors:
+  - |-
+    Confundir el campo de una espira con el de un hilo (falta o sobra el $\pi$).
+  - |-
+    No pasar la longitud del solenoide a metros.

@@ -1,0 +1,49 @@
+# Clase completa: Teorema de Rouché-Frobenius
+id: mat2.alg.sistemas.u02
+objectives:
+  - Clasificar un sistema comparando rangos.
+  - Saber cuántos parámetros tiene la solución de un sistema indeterminado.
+explanation:
+  - title: El teorema
+    body: |
+      Sea un sistema $AX = B$ con $n$ incógnitas y matriz ampliada $A^*$. Entonces:
+      - Si $\operatorname{rg}(A) \neq \operatorname{rg}(A^*)$: **incompatible**.
+      - Si $\operatorname{rg}(A) = \operatorname{rg}(A^*) = n$: **compatible determinado**.
+      - Si $\operatorname{rg}(A) = \operatorname{rg}(A^*) < n$: **compatible indeterminado**, con $n - \operatorname{rg}(A)$ parámetros.
+
+      Como $A^*$ tiene una columna más que $A$, su rango es igual o una unidad mayor.
+  - title: Sistemas homogéneos
+    body: |
+      Si todos los términos independientes son 0 ($AX = 0$), el sistema es **homogéneo**. Siempre es compatible, porque $x = y = z = 0$ es solución (la **solución trivial**).
+      - Si $|A| \neq 0$: solo tiene la solución trivial.
+      - Si $|A| = 0$: tiene infinitas soluciones.
+  - title: Resolver un sistema indeterminado
+    body: |
+      Si el rango es $r < n$, te quedas con $r$ ecuaciones independientes y pasas $n - r$ incógnitas al otro lado como **parámetros** ($z = \lambda$, por ejemplo). Después resuelves las demás en función de $\lambda$.
+examples:
+  - title: Clasificar con rangos
+    statement: |
+      Clasifica $\begin{cases} x + y = 2 \\ 2x + 2y = 5 \end{cases}$
+    steps:
+      - |
+        **Matrices:** $A = \begin{pmatrix} 1 & 1 \\ 2 & 2 \end{pmatrix}$ y $A^* = \left(\begin{array}{cc|c} 1 & 1 & 2 \\ 2 & 2 & 5 \end{array}\right)$.
+      - |
+        **Rango de $A$:** $|A| = 2 - 2 = 0$, y como tiene elementos no nulos, $\operatorname{rg}(A) = 1$.
+      - |
+        **Rango de $A^*$:** el menor formado por las columnas 2 y 3 es $\begin{vmatrix} 1 & 2 \\ 2 & 5 \end{vmatrix} = 5 - 4 = 1 \neq 0$, así que $\operatorname{rg}(A^*) = 2$.
+      - |
+        **Conclusión:** $1 \neq 2$: el sistema es **incompatible**.
+    result: |
+      Geométricamente son dos rectas paralelas: la segunda ecuación equivale a $x + y = 2{,}5$, que contradice la primera.
+summary:
+  - |-
+    $\operatorname{rg}A \neq \operatorname{rg}A^*$: SI.
+  - |-
+    $\operatorname{rg}A = \operatorname{rg}A^* = n$: SCD. Si es menor que $n$: SCI con $n - \operatorname{rg}A$ parámetros.
+  - |-
+    Los sistemas homogéneos siempre son compatibles.
+common_errors:
+  - |-
+    Comparar el rango con el número de ecuaciones en vez de con el de incógnitas.
+  - |-
+    Calcular solo el rango de $A$ y olvidar el de la ampliada.

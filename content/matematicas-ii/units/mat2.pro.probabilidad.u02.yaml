@@ -1,0 +1,41 @@
+# Clase completa: Teorema de Bayes
+id: mat2.pro.probabilidad.u02
+objectives:
+  - Calcular probabilidades "a posteriori" con el teorema de Bayes.
+  - Interpretar el resultado en contexto.
+explanation:
+  - title: El teorema
+    body: |
+      Con un sistema completo $A_1, \dots, A_n$ y un suceso $B$ que ya ha ocurrido:
+      $$P(A_i\mid B) = \frac{P(A_i)\,P(B\mid A_i)}{P(B)}$$
+      El denominador $P(B)$ se calcula con la **probabilidad total**.
+
+      Se usa cuando el enunciado da la información "en un sentido" ($P(B\mid A)$) y pregunta "en el contrario" ($P(A\mid B)$): ¿de qué máquina viene la pieza defectuosa? ¿Qué probabilidad hay de estar enfermo si el test da positivo?
+  - title: En el árbol
+    body: |
+      $$P(A_i\mid B) = \frac{\text{rama que pasa por } A_i \text{ y acaba en } B}{\text{suma de todas las ramas que acaban en } B}$$
+examples:
+  - title: Un test médico
+    statement: |
+      Una enfermedad afecta al 2 % de la población. Un test da positivo en el 95 % de los enfermos y en el 10 % de los sanos. Si una persona da positivo, ¿qué probabilidad hay de que esté enferma?
+    steps:
+      - |
+        **Datos:** $P(E) = 0{,}02$, $P(+\mid E) = 0{,}95$, $P(+\mid\bar E) = 0{,}10$.
+      - |
+        **Probabilidad total:** $P(+) = 0{,}02\cdot0{,}95 + 0{,}98\cdot0{,}10 = 0{,}019 + 0{,}098 = 0{,}117$.
+      - |
+        **Bayes:** $P(E\mid +) = \dfrac{0{,}019}{0{,}117} \approx 0{,}162$.
+    result: |
+      ¡Solo un 16 %! Como la enfermedad es rara, la mayoría de los positivos son falsos positivos. Por eso los positivos se confirman con una segunda prueba.
+summary:
+  - |-
+    Bayes: $P(A_i\mid B) = \dfrac{P(A_i)P(B\mid A_i)}{P(B)}$.
+  - |-
+    $P(B)$ sale de la probabilidad total.
+  - |-
+    Se usa para "invertir" una condicionada.
+common_errors:
+  - |-
+    Dar como resultado el numerador $P(A_i\cap B)$ sin dividir.
+  - |-
+    Olvidar alguna rama al calcular $P(B)$.

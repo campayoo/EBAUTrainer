@@ -1,0 +1,119 @@
+# =====================================================================
+# Matemáticas II — temario (esqueleto curricular)
+#
+# Cada unidad declara:
+#   minutes     duración estimada de la clase (30-60 min)
+#   difficulty  1 (fácil) a 5 (muy difícil)
+#   requires    prerrequisitos (ids de otras unidades)
+#   generators  plantillas de ejercicios con parámetros (src/core/generators)
+# Si existe units/<id>.yaml, la unidad tiene clase COMPLETA (teoría escrita).
+# Si no, Pauta ofrece una "clase exprés" con ejercicios generados.
+#
+# Referencia: currículo LOMLOE (RD 243/2022, Decreto 108/2022 de la
+# Comunitat Valenciana) y estructura de la PAU 2026 en la C. Valenciana.
+# =====================================================================
+id: mat2
+name: Matemáticas II
+short: Mates II
+color: '#4f5bd5'
+icon: '∑'
+description: Álgebra lineal, geometría en el espacio, análisis, integrales y probabilidad.
+blocks:
+  - id: mat2.alg
+    title: Álgebra lineal
+    examSection: algebra
+    examWeight: 2.5
+    topics:
+      - id: mat2.alg.matrices
+        title: Matrices
+        units:
+          - { id: mat2.alg.matrices.u01, title: Tipos de matrices y operaciones, minutes: 45, difficulty: 2, requires: [], generators: [mat-combinacion] }
+          - { id: mat2.alg.matrices.u02, title: Producto de matrices y potencias, minutes: 50, difficulty: 3, requires: [mat2.alg.matrices.u01], generators: [mat-producto] }
+      - id: mat2.alg.determinantes
+        title: Determinantes
+        units:
+          - { id: mat2.alg.determinantes.u01, title: Determinantes de orden 2 y 3, minutes: 45, difficulty: 2, requires: [mat2.alg.matrices.u02], generators: [det-2x2, det-3x3] }
+          - { id: mat2.alg.determinantes.u02, title: Propiedades y desarrollo por adjuntos, minutes: 55, difficulty: 3, requires: [mat2.alg.determinantes.u01], generators: [det-propiedades, det-3x3] }
+      - id: mat2.alg.rango-inversa
+        title: Rango y matriz inversa
+        units:
+          - { id: mat2.alg.rango-inversa.u01, title: Rango de una matriz, minutes: 50, difficulty: 3, requires: [mat2.alg.determinantes.u02], generators: [rango-3x3] }
+          - { id: mat2.alg.rango-inversa.u02, title: Matriz inversa y ecuaciones matriciales, minutes: 55, difficulty: 4, requires: [mat2.alg.determinantes.u02], generators: [inversa-2x2] }
+      - id: mat2.alg.sistemas
+        title: Sistemas de ecuaciones
+        units:
+          - { id: mat2.alg.sistemas.u01, title: Sistemas lineales y método de Gauss, minutes: 50, difficulty: 3, requires: [mat2.alg.rango-inversa.u01], generators: [sistema-gauss] }
+          - { id: mat2.alg.sistemas.u02, title: Teorema de Rouché-Frobenius, minutes: 50, difficulty: 4, requires: [mat2.alg.sistemas.u01], generators: [rouche-parametro] }
+          - { id: mat2.alg.sistemas.u03, title: Discusión de sistemas con parámetros, minutes: 60, difficulty: 5, requires: [mat2.alg.sistemas.u02], generators: [rouche-parametro, sistema-gauss] }
+
+  - id: mat2.geo
+    title: Geometría en el espacio
+    examSection: geometria
+    examWeight: 2.5
+    topics:
+      - id: mat2.geo.vectores
+        title: Vectores en el espacio
+        units:
+          - { id: mat2.geo.vectores.u01, title: Vectores y producto escalar, minutes: 45, difficulty: 2, requires: [], generators: [producto-escalar, angulo-vectores] }
+          - { id: mat2.geo.vectores.u02, title: Producto vectorial y producto mixto, minutes: 50, difficulty: 3, requires: [mat2.geo.vectores.u01], generators: [area-triangulo, volumen-tetraedro] }
+      - id: mat2.geo.rectas-planos
+        title: Rectas y planos
+        units:
+          - { id: mat2.geo.rectas-planos.u01, title: Ecuaciones de rectas y planos, minutes: 50, difficulty: 3, requires: [mat2.geo.vectores.u02], generators: [plano-punto-normal] }
+          - { id: mat2.geo.rectas-planos.u02, title: Posiciones relativas, minutes: 55, difficulty: 4, requires: [mat2.geo.rectas-planos.u01], generators: [posicion-planos] }
+      - id: mat2.geo.metrica
+        title: Ángulos, distancias, áreas y volúmenes
+        units:
+          - { id: mat2.geo.metrica.u01, title: Ángulos entre rectas y planos, minutes: 45, difficulty: 3, requires: [mat2.geo.rectas-planos.u02], generators: [angulo-vectores] }
+          - { id: mat2.geo.metrica.u02, title: Distancias, minutes: 55, difficulty: 4, requires: [mat2.geo.rectas-planos.u02], generators: [distancia-punto-plano] }
+          - { id: mat2.geo.metrica.u03, title: Áreas y volúmenes, minutes: 45, difficulty: 3, requires: [mat2.geo.vectores.u02], generators: [area-triangulo, volumen-tetraedro] }
+
+  - id: mat2.ana
+    title: 'Análisis: funciones y derivadas'
+    examSection: analisis
+    examWeight: 1.5
+    topics:
+      - id: mat2.ana.limites
+        title: Límites y continuidad
+        units:
+          - { id: mat2.ana.limites.u01, title: Límites y continuidad, minutes: 50, difficulty: 3, requires: [], generators: [limite-infinito, limite-cero-cero] }
+          - { id: mat2.ana.limites.u02, title: Teorema de Bolzano, minutes: 40, difficulty: 3, requires: [mat2.ana.limites.u01], generators: [bolzano-intervalo] }
+      - id: mat2.ana.derivadas
+        title: Derivadas y aplicaciones
+        units:
+          - { id: mat2.ana.derivadas.u01, title: Derivabilidad y reglas de derivación, minutes: 55, difficulty: 3, requires: [mat2.ana.limites.u01], generators: [derivada-punto, recta-tangente] }
+          - { id: mat2.ana.derivadas.u02, title: Teoremas de Rolle y del valor medio, minutes: 45, difficulty: 4, requires: [mat2.ana.derivadas.u01], generators: [valor-medio] }
+          - { id: mat2.ana.derivadas.u03, title: Monotonía, extremos y optimización, minutes: 60, difficulty: 4, requires: [mat2.ana.derivadas.u01], generators: [extremo-cubica, optimizacion] }
+          - { id: mat2.ana.derivadas.u04, title: Representación gráfica de funciones, minutes: 60, difficulty: 4, requires: [mat2.ana.derivadas.u03], generators: [extremo-cubica, limite-infinito] }
+
+  - id: mat2.int
+    title: 'Análisis: integrales'
+    examSection: analisis
+    examWeight: 1
+    topics:
+      - id: mat2.int.primitivas
+        title: Primitivas
+        units:
+          - { id: mat2.int.primitivas.u01, title: Primitivas inmediatas, minutes: 45, difficulty: 3, requires: [mat2.ana.derivadas.u01], generators: [integral-definida] }
+          - { id: mat2.int.primitivas.u02, title: Integración por partes y cambio de variable, minutes: 60, difficulty: 4, requires: [mat2.int.primitivas.u01], generators: [integral-partes] }
+      - id: mat2.int.definida
+        title: Integral definida
+        units:
+          - { id: mat2.int.definida.u01, title: Integral definida y teorema fundamental, minutes: 50, difficulty: 3, requires: [mat2.int.primitivas.u01], generators: [integral-definida] }
+          - { id: mat2.int.definida.u02, title: Cálculo de áreas, minutes: 55, difficulty: 4, requires: [mat2.int.definida.u01], generators: [area-parabola] }
+
+  - id: mat2.pro
+    title: Probabilidad y estadística
+    examSection: probabilidad
+    examWeight: 2.5
+    topics:
+      - id: mat2.pro.probabilidad
+        title: Probabilidad
+        units:
+          - { id: mat2.pro.probabilidad.u01, title: Probabilidad condicionada y total, minutes: 50, difficulty: 3, requires: [], generators: [prob-total] }
+          - { id: mat2.pro.probabilidad.u02, title: Teorema de Bayes, minutes: 45, difficulty: 3, requires: [mat2.pro.probabilidad.u01], generators: [bayes] }
+      - id: mat2.pro.distribuciones
+        title: Distribuciones de probabilidad
+        units:
+          - { id: mat2.pro.distribuciones.u01, title: Variable aleatoria y distribución binomial, minutes: 50, difficulty: 3, requires: [mat2.pro.probabilidad.u01], generators: [binomial-exacta] }
+          - { id: mat2.pro.distribuciones.u02, title: Distribución normal, minutes: 55, difficulty: 3, requires: [mat2.pro.distribuciones.u01], generators: [normal-tipificar] }

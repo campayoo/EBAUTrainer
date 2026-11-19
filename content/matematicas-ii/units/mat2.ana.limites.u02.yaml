@@ -1,0 +1,50 @@
+# Clase completa: Teorema de Bolzano
+id: mat2.ana.limites.u02
+objectives:
+  - Aplicar el teorema de Bolzano para demostrar que una ecuación tiene solución.
+  - Conocer el teorema de Weierstrass.
+explanation:
+  - title: El teorema de Bolzano
+    body: |
+      Si $f$ es **continua en $[a, b]$** y $f(a)$ y $f(b)$ tienen **signos distintos**, entonces existe al menos un $c \in (a, b)$ con $f(c) = 0$.
+
+      Idea intuitiva: si dibujas una curva sin levantar el lápiz desde debajo del eje $X$ hasta encima, tienes que cruzarlo.
+  - title: Cómo se usa en la PAU
+    body: |
+      Para demostrar que una ecuación $g(x) = h(x)$ tiene solución:
+      1. Pásalo todo a un lado: $f(x) = g(x) - h(x)$.
+      2. Justifica que $f$ es **continua** en el intervalo (no te lo saltes: puntúa).
+      3. Calcula $f(a)$ y $f(b)$ y comprueba que tienen signos opuestos.
+      4. Concluye con el teorema.
+
+      **Unicidad:** si además $f$ es estrictamente creciente o decreciente (por ejemplo, $f' > 0$), la raíz es **única**.
+  - title: El teorema de Weierstrass
+    body: |
+      Si $f$ es continua en un intervalo **cerrado** $[a, b]$, alcanza en él un **máximo y un mínimo absolutos**. Por eso, en optimización sobre un intervalo cerrado hay que comparar los puntos críticos con los extremos del intervalo.
+examples:
+  - title: Demostrar que hay una raíz
+    statement: |
+      Demuestra que $x^3 + x - 5 = 0$ tiene una solución en $(1, 2)$ y que es única.
+    steps:
+      - |
+        **Continuidad:** $f(x) = x^3 + x - 5$ es un polinomio, continuo en $[1, 2]$.
+      - |
+        **Signos:** $f(1) = 1 + 1 - 5 = -3 < 0$ y $f(2) = 8 + 2 - 5 = 5 > 0$.
+      - |
+        **Bolzano:** existe $c \in (1, 2)$ con $f(c) = 0$.
+      - |
+        **Unicidad:** $f'(x) = 3x^2 + 1 > 0$, así que $f$ es estrictamente creciente y solo puede cortar el eje una vez.
+    result: |
+      Bolzano dice que la raíz existe, pero no dónde está exactamente. Para acotarla más, sigue partiendo el intervalo por la mitad (método de bisección).
+summary:
+  - |-
+    Continua en $[a,b]$ y $f(a)\cdot f(b) < 0$ $\Rightarrow$ existe $c \in (a,b)$ con $f(c) = 0$.
+  - |-
+    Unicidad: monotonía estricta ($f' > 0$ o $f' < 0$).
+  - |-
+    Weierstrass: continua en $[a,b]$ $\Rightarrow$ alcanza máximo y mínimo absolutos.
+common_errors:
+  - |-
+    No justificar la continuidad.
+  - |-
+    Aplicarlo a una función con una asíntota vertical dentro del intervalo.

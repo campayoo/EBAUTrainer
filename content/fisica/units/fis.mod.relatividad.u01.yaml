@@ -1,0 +1,51 @@
+# Clase completa: Relatividad especial
+id: fis.mod.relatividad.u01
+objectives:
+  - Conocer los postulados de la relatividad especial.
+  - Calcular la dilatación del tiempo y la contracción de longitudes.
+  - Aplicar la equivalencia masa-energía.
+explanation:
+  - title: Los postulados de Einstein (1905)
+    body: |
+      1. Las leyes de la física son las mismas en todos los sistemas de referencia **inerciales**.
+      2. La velocidad de la luz en el vacío, $c$, es la **misma para todos los observadores**, se muevan como se muevan.
+
+      La consecuencia es sorprendente: el tiempo y el espacio **no son absolutos**. El experimento de Michelson-Morley ya había mostrado que no existía el "éter".
+  - title: Tiempo y longitud
+    body: |
+      Con el **factor de Lorentz** $\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}} \ge 1$:
+      - **Dilatación del tiempo:** $\Delta t = \gamma\,\Delta t_0$. El **tiempo propio** $\Delta t_0$ se mide con un reloj que va con el fenómeno; cualquier otro observador mide un tiempo mayor.
+      - **Contracción de longitudes:** $L = \dfrac{L_0}{\gamma}$. La **longitud propia** $L_0$ se mide en reposo respecto al objeto; en movimiento se mide más corto (solo en la dirección del movimiento).
+
+      Prueba real: los muones de los rayos cósmicos llegan al suelo gracias a la dilatación del tiempo.
+  - title: Masa y energía
+    body: |
+      $$E = mc^2$$
+      Una masa en reposo tiene una energía $E_0 = m_0c^2$. Energía total: $E = \gamma m_0c^2$; energía cinética relativista: $E_c = (\gamma - 1)m_0c^2$.
+
+      Nada con masa puede alcanzar $c$, porque necesitaría una energía infinita. Esta equivalencia explica la energía nuclear.
+examples:
+  - title: Una nave a 0,8c
+    statement: |
+      Una nave mide 100 m en reposo y viaja a $0{,}8c$. ¿Qué longitud mide un observador en la Tierra? Y otra pregunta: ¿cuánta energía equivale a 1 g de masa?
+    steps:
+      - |
+        **Factor de Lorentz:** $\gamma = \dfrac{1}{\sqrt{1 - 0{,}64}} = \dfrac{1}{0{,}6} = \dfrac53$.
+      - |
+        **Contracción:** $L = \dfrac{L_0}{\gamma} = 100\cdot0{,}6 = 60$ m.
+      - |
+        **Energía de 1 g:** $E = mc^2 = 10^{-3}\cdot(3\cdot10^8)^2 = 9\cdot10^{13}$ J.
+    result: |
+      $9\cdot10^{13}$ J es aproximadamente la energía de una bomba nuclear de unos 20 kilotones: así de "concentrada" está la energía en la masa.
+summary:
+  - |-
+    $c$ es igual para todos los observadores inerciales.
+  - |-
+    $\Delta t = \gamma\Delta t_0$; $L = L_0/\gamma$; $\gamma = 1/\sqrt{1 - v^2/c^2}$.
+  - |-
+    $E = mc^2$; $E_c = (\gamma - 1)m_0c^2$.
+common_errors:
+  - |-
+    Confundir cuál es el tiempo propio o la longitud propia.
+  - |-
+    Usar $v$ en lugar de $v/c$ dentro de la raíz.

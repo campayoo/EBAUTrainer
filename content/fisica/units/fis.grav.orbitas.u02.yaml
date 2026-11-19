@@ -1,0 +1,116 @@
+# Clase completa: Energía de satélites y velocidad de escape
+id: fis.grav.orbitas.u02
+objectives:
+  - Calcular la energía cinética, potencial y mecánica de un satélite en órbita.
+  - Calcular la energía necesaria para lanzar un satélite o cambiarlo de órbita.
+  - Deducir y calcular la velocidad de escape.
+
+explanation:
+  - title: La energía de un satélite en órbita
+    body: |
+      Usando $v^2 = GM/r$ (de la clase anterior):
+      $$E_c = \frac12 m v^2 = \frac{GMm}{2r} \qquad E_p = -\frac{GMm}{r}$$
+      $$E_m = E_c + E_p = -\frac{GMm}{2r}$$
+      Fíjate: en una órbita circular $E_m = -E_c$ y $E_p = 2E_m$. Cuanto más alta es la órbita, **mayor** (menos negativa) es su energía mecánica.
+  - title: Lanzar un satélite y cambiarlo de órbita
+    body: |
+      La energía que hay que **aportar** es la diferencia de energía mecánica entre el estado final y el inicial.
+      - **Desde la superficie** (sin tener en cuenta la rotación terrestre), el satélite parte con $E_m = -\dfrac{GMm}{R_T}$:
+        $$E_{lanz} = -\frac{GMm}{2r} + \frac{GMm}{R_T}$$
+      - **De una órbita $r_1$ a otra $r_2$:**
+        $$\Delta E = \frac{GMm}{2}\left(\frac{1}{r_1} - \frac{1}{r_2}\right)$$
+  - title: Velocidad de escape
+    body: |
+      Es la velocidad mínima con la que hay que lanzar un cuerpo para que **no vuelva nunca**, es decir, para que llegue al infinito con velocidad 0. Allí su energía mecánica es 0, así que:
+      $$\frac12 m v_e^2 - \frac{GMm}{R} = 0 \quad\Rightarrow\quad v_e = \sqrt{\frac{2GM}{R}}$$
+      Desde la superficie terrestre, $v_e \approx 11{,}2$ km/s. Tampoco depende de la masa del cuerpo. Es $\sqrt{2}$ veces la velocidad de una órbita rasante.
+  - title: ¿Qué dice el signo de la energía mecánica?
+    body: |
+      - $E_m < 0$: el cuerpo está **ligado** al planeta (órbita cerrada: circunferencia o elipse).
+      - $E_m = 0$: escapa justo, con trayectoria parabólica.
+      - $E_m > 0$: escapa con velocidad sobrante (trayectoria hiperbólica).
+
+examples:
+  - title: Subir un satélite de órbita
+    statement: '¿Cuánta energía hay que darle a un satélite de 800 kg para pasarlo de una órbita a 400 km de altura a otra a 1000 km?'
+    steps:
+      - |
+        **Radios:** $r_1 = 6{,}77\cdot10^6$ m y $r_2 = 7{,}37\cdot10^6$ m.
+      - |
+        **Diferencia de energía mecánica:**
+        $$\Delta E = \frac{GM_Tm}{2}\left(\frac{1}{r_1} - \frac{1}{r_2}\right) = \frac{6{,}67\cdot10^{-11}\cdot5{,}97\cdot10^{24}\cdot800}{2}\left(\frac{1}{6{,}77\cdot10^6} - \frac{1}{7{,}37\cdot10^6}\right)$$
+      - |
+        **Resultado:** $\Delta E \approx 1{,}92\cdot10^{9}$ J.
+    result: 'Es positiva: subir de órbita cuesta energía, aunque en la órbita alta el satélite vaya más despacio.'
+
+practice:
+  - id: fis.grav.orbitas.u02.p1
+    kind: numeric
+    statement: 'Calcula la velocidad de escape desde la superficie terrestre. Datos: $G = 6{,}67\cdot10^{-11}$, $M_T = 5{,}97\cdot10^{24}$ kg, $R_T = 6{,}37\cdot10^{6}$ m.'
+    answer:
+      value: 11181
+      unit: m/s
+      commonErrors:
+        - { value: 7906.4, message: 'Esa es la velocidad orbital rasante. La de escape lleva un 2 dentro de la raíz.' }
+    check: 'Math.sqrt(2 * 6.67e-11 * 5.97e24 / 6.37e6)'
+    hints: ['La energía mecánica debe ser 0 para llegar al infinito.', '$v_e = \sqrt{2GM/R}$', 'Desde la superficie, $R = R_T$.']
+    solution: '$v_e = \sqrt{\dfrac{2\cdot6{,}67\cdot10^{-11}\cdot5{,}97\cdot10^{24}}{6{,}37\cdot10^6}} = \boxed{1{,}12\cdot10^{4}\ \mathrm{m/s}}$'
+  - id: fis.grav.orbitas.u02.p2
+    kind: numeric
+    statement: 'Calcula la energía mecánica de un satélite de 500 kg en órbita circular a 800 km de altura. Datos: $G = 6{,}67\cdot10^{-11}$, $M_T = 5{,}97\cdot10^{24}$ kg, $R_T = 6{,}37\cdot10^{6}$ m.'
+    answer:
+      value: -1.3884e10
+      unit: J
+      commonErrors:
+        - { value: -2.7768e10, message: 'Esa es la energía potencial. La mecánica es la mitad: $E_m = -GMm/(2r)$.' }
+    check: '-6.67e-11 * 5.97e24 * 500 / (2 * (6.37e6 + 8e5))'
+    hints: ['$E_m = E_c + E_p$ en órbita circular.', '$E_m = -\dfrac{GMm}{2r}$', '$r = 7{,}17\cdot10^6$ m']
+    solution: '$E_m = -\dfrac{6{,}67\cdot10^{-11}\cdot5{,}97\cdot10^{24}\cdot500}{2\cdot7{,}17\cdot10^6} = \boxed{-1{,}39\cdot10^{10}\ \mathrm{J}}$'
+  - id: fis.grav.orbitas.u02.p3
+    kind: choice
+    statement: 'Un satélite tiene energía mecánica negativa. Eso significa que...'
+    options:
+      - { text: 'está ligado al planeta y no escapará' }
+      - { text: 'está cayendo hacia el planeta', why: 'Una órbita estable también tiene $E_m < 0$.' }
+      - { text: 'se ha calculado mal', why: 'Con el cero en el infinito, los cuerpos ligados tienen $E_m < 0$.' }
+      - { text: 'escapará con velocidad sobrante', why: 'Eso ocurre con $E_m > 0$.' }
+    correct: 0
+    hints: ['¿Qué energía mecánica hace falta para llegar al infinito?', 'Para escapar se necesita $E_m \ge 0$.', 'Si es negativa, no le llega.']
+    solution: '$E_m < 0$ significa que el satélite está **ligado**: no tiene energía suficiente para escapar.'
+
+test:
+  - id: fis.grav.orbitas.u02.t1
+    kind: numeric
+    statement: '¿Qué energía hay que comunicar a un satélite de 1000 kg, en reposo en la superficie, para ponerlo en órbita circular a 600 km de altura? (Desprecia la rotación terrestre.) Datos: $G = 6{,}67\cdot10^{-11}$, $M_T = 5{,}97\cdot10^{24}$ kg, $R_T = 6{,}37\cdot10^{6}$ m.'
+    answer: { value: 3.3946e10, unit: J }
+    check: '-6.67e-11*5.97e24*1000/(2*(6.37e6+6e5)) + 6.67e-11*5.97e24*1000/6.37e6'
+    hints: ['Energía aportada = $E_{m,\,final} - E_{m,\,inicial}$.', 'En la superficie, en reposo: $E_m = -GMm/R_T$.', 'En la órbita: $E_m = -GMm/(2r)$, con $r = 6{,}97\cdot10^6$ m.']
+    solution: '$E = -\dfrac{GMm}{2r} + \dfrac{GMm}{R_T} = -2{,}86\cdot10^{10} + 6{,}25\cdot10^{10} = \boxed{3{,}39\cdot10^{10}\ \mathrm{J}}$'
+  - id: fis.grav.orbitas.u02.t2
+    kind: numeric
+    statement: 'Calcula la velocidad de escape desde la superficie de la Luna. Datos: $M_L = 7{,}35\cdot10^{22}$ kg, $R_L = 1{,}74\cdot10^{6}$ m, $G = 6{,}67\cdot10^{-11}\ \mathrm{N\,m^2/kg^2}$.'
+    answer: { value: 2373.8, unit: m/s }
+    check: 'Math.sqrt(2 * 6.67e-11 * 7.35e22 / 1.74e6)'
+    hints: ['Misma fórmula que para la Tierra.', '$v_e = \sqrt{2GM_L/R_L}$', '$2GM_L = 9{,}80\cdot10^{12}$']
+    solution: '$v_e = \sqrt{\dfrac{2\cdot6{,}67\cdot10^{-11}\cdot7{,}35\cdot10^{22}}{1{,}74\cdot10^6}} = \boxed{2{,}37\cdot10^{3}\ \mathrm{m/s}}$'
+  - id: fis.grav.orbitas.u02.t3
+    kind: choice
+    statement: 'En una órbita circular, ¿qué relación hay entre la energía mecánica y la energía cinética?'
+    options:
+      - { text: '$E_m = -E_c$' }
+      - { text: '$E_m = E_c$', why: 'La energía mecánica es negativa y la cinética positiva.' }
+      - { text: '$E_m = 2E_c$', why: 'Es $E_p$ la que vale $-2E_c$.' }
+      - { text: '$E_m = 0$', why: 'Eso sería justo la condición de escape.' }
+    correct: 0
+    hints: ['$E_c = \dfrac{GMm}{2r}$', '$E_m = -\dfrac{GMm}{2r}$', 'Compara las dos expresiones.']
+    solution: '$E_m = -\dfrac{GMm}{2r} = -E_c$.'
+
+summary:
+  - 'Órbita circular: $E_c = \dfrac{GMm}{2r}$, $E_p = -\dfrac{GMm}{r}$, $E_m = -\dfrac{GMm}{2r}$.'
+  - 'Energía aportada = $E_{m,final} - E_{m,inicial}$.'
+  - 'Velocidad de escape: $v_e = \sqrt{2GM/R}$ (11,2 km/s en la Tierra).'
+  - '$E_m < 0$: ligado. $E_m \ge 0$: escapa.'
+common_errors:
+  - 'Usar la energía potencial en lugar de la mecánica.'
+  - 'Olvidar la energía inicial del satélite en la superficie.'
+  - 'Confundir la velocidad de escape con la orbital.'

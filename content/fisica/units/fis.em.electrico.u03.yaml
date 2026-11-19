@@ -1,0 +1,45 @@
+# Clase completa: Flujo eléctrico y teorema de Gauss
+id: fis.em.electrico.u03
+objectives:
+  - Calcular el flujo del campo eléctrico.
+  - Aplicar el teorema de Gauss a distribuciones con simetría.
+explanation:
+  - title: Flujo eléctrico
+    body: |
+      El **flujo** mide cuántas líneas de campo atraviesan una superficie:
+      $$\Phi = \vec E\cdot\vec S = E\,S\cos\theta\quad[\mathrm{N\,m^2/C}]$$
+      donde $\theta$ es el ángulo entre el campo y el **vector superficie** (perpendicular a ella). El flujo es máximo si el campo atraviesa la superficie de frente, y nulo si es paralelo a ella.
+  - title: El teorema de Gauss
+    body: |
+      El flujo a través de **cualquier superficie cerrada** solo depende de la carga que encierra:
+      $$\Phi = \frac{Q_{\text{int}}}{\varepsilon_0}, \qquad \varepsilon_0 = 8{,}85\cdot10^{-12}\ \mathrm{C^2/(N\,m^2)}$$
+      Las cargas que están fuera no aportan flujo neto: sus líneas entran y salen.
+  - title: Aplicaciones con simetría
+    body: |
+      Eligiendo una superficie "gaussiana" adecuada:
+      - **Esfera cargada** (o carga puntual), por fuera: $E = k\dfrac{Q}{r^2}$, como si toda la carga estuviera en el centro.
+      - **Conductor en equilibrio**: $E = 0$ en su interior, y la carga se reparte por la superficie (por eso funciona una jaula de Faraday).
+      - **Plano infinito** con densidad $\sigma$: $E = \dfrac{\sigma}{2\varepsilon_0}$, uniforme.
+examples:
+  - title: Esfera conductora cargada
+    statement: |
+      Una esfera conductora de radio 10 cm tiene una carga de 5 nC. Calcula el campo a 20 cm del centro y a 5 cm del centro.
+    steps:
+      - |
+        **Fuera (r = 0,20 m):** por Gauss, como una carga puntual: $E = 9\cdot10^9\cdot\dfrac{5\cdot10^{-9}}{0{,}20^2} \approx 1{,}1\cdot10^{3}\ \mathrm{N/C}$ (1125 N/C).
+      - |
+        **Dentro (r = 0,05 m):** una superficie gaussiana interior no encierra carga (está toda en la superficie del conductor), así que $E = 0$.
+    result: |
+      Por eso, dentro de un coche (una "jaula" metálica) estás protegido si cae un rayo.
+summary:
+  - |-
+    $\Phi = ES\cos\theta$.
+  - |-
+    Gauss: $\Phi = Q_{\text{int}}/\varepsilon_0$ en cualquier superficie cerrada.
+  - |-
+    Esfera: por fuera como una carga puntual; dentro de un conductor, $E = 0$.
+common_errors:
+  - |-
+    Medir el ángulo con la superficie en vez de con su vector perpendicular.
+  - |-
+    Incluir en $Q_{\text{int}}$ cargas que están fuera de la superficie.

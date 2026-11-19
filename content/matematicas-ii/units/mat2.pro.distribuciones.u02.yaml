@@ -1,0 +1,51 @@
+# Clase completa: Distribución normal
+id: mat2.pro.distribuciones.u02
+objectives:
+  - Tipificar una variable normal y usar la tabla de la N(0, 1).
+  - Calcular probabilidades de intervalos y resolver problemas inversos.
+explanation:
+  - title: La distribución normal
+    body: |
+      $X \sim N(\mu, \sigma)$ es una variable **continua** con forma de **campana**, simétrica respecto a la media $\mu$. La desviación típica $\sigma$ indica lo "ancha" que es.
+
+      En una variable continua, $P(X = a) = 0$, así que da igual escribir $<$ o $\le$.
+
+      Regla práctica: en $\mu \pm \sigma$ está el 68 % de los datos; en $\mu \pm 2\sigma$, el 95 %; en $\mu \pm 3\sigma$, el 99,7 %.
+  - title: Tipificar
+    body: |
+      Se pasa a la normal estándar $Z \sim N(0, 1)$, que es la que aparece en la tabla:
+      $$Z = \frac{X - \mu}{\sigma}$$
+      La tabla da $P(Z \le z)$ para $z \ge 0$. El resto sale de la simetría:
+      - $P(Z \ge z) = 1 - P(Z \le z)$.
+      - $P(Z \le -z) = 1 - P(Z \le z)$.
+      - $P(a \le Z \le b) = P(Z \le b) - P(Z \le a)$.
+  - title: Problemas inversos
+    body: |
+      Si te dan una probabilidad y piden el valor: busca en el **interior** de la tabla el $z$ que corresponde a esa probabilidad y deshaz la tipificación: $x = \mu + z\,\sigma$.
+
+      Ejemplo: "el 10 % más alto" corresponde a $P(Z \le z) = 0{,}90$, es decir, $z \approx 1{,}28$.
+examples:
+  - title: Estaturas
+    statement: |
+      La estatura de un grupo sigue una $N(170, 10)$ (en cm). Calcula la probabilidad de que una persona mida entre 160 y 185 cm.
+    steps:
+      - |
+        **Tipificar:** $z_1 = \dfrac{160 - 170}{10} = -1$ y $z_2 = \dfrac{185 - 170}{10} = 1{,}5$.
+      - |
+        **Tabla:** $P(Z \le 1{,}5) = 0{,}9332$ y $P(Z \le -1) = 1 - 0{,}8413 = 0{,}1587$.
+      - |
+        **Resultado:** $P(160 \le X \le 185) = 0{,}9332 - 0{,}1587 = 0{,}7745$.
+    result: |
+      Haz siempre un dibujo de la campana sombreando la zona: así es casi imposible equivocarse de signo.
+summary:
+  - |-
+    $Z = \dfrac{X - \mu}{\sigma} \sim N(0, 1)$.
+  - |-
+    Simetría: $P(Z \le -z) = 1 - P(Z \le z)$.
+  - |-
+    Problema inverso: busca la probabilidad dentro de la tabla y despeja $x = \mu + z\sigma$.
+common_errors:
+  - |-
+    Dividir entre la varianza en lugar de entre la desviación típica.
+  - |-
+    Buscar en la tabla valores negativos de $z$ sin usar la simetría.

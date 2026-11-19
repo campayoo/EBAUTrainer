@@ -1,0 +1,48 @@
+# Clase completa: Fenómenos ondulatorios
+id: fis.ond.ondas.u03
+objectives:
+  - Explicar la reflexión, la refracción, la difracción y la interferencia.
+  - Calcular las frecuencias de las ondas estacionarias en una cuerda.
+  - Explicar el efecto Doppler.
+explanation:
+  - title: Reflexión, refracción y difracción
+    body: |
+      - **Reflexión:** la onda rebota al llegar a otro medio; el ángulo de reflexión es igual al de incidencia (eco).
+      - **Refracción:** la onda cambia de medio y de velocidad, y se desvía. La **frecuencia no cambia**; cambian la velocidad y la longitud de onda.
+      - **Difracción:** la onda rodea obstáculos o se abre al pasar por una rendija. Es apreciable cuando el tamaño del obstáculo es **del orden de $\lambda$**. Por eso oímos detrás de una esquina (el sonido tiene $\lambda$ de metros) pero no vemos (la luz, de cientos de nanómetros).
+  - title: Interferencia y ondas estacionarias
+    body: |
+      Dos ondas coherentes que coinciden se superponen. Si $\Delta r$ es la diferencia de caminos:
+      - **Constructiva** (máximo): $\Delta r = n\lambda$.
+      - **Destructiva** (mínimo): $\Delta r = \left(n + \frac12\right)\lambda$.
+
+      Una **onda estacionaria** surge de la interferencia de una onda con su reflejada. Hay **nodos** (sin vibración) y **vientres**, separados $\lambda/4$; entre dos nodos hay $\lambda/2$. En una cuerda fija por los dos extremos:
+      $$f_n = \frac{n\,v}{2L}, \qquad n = 1, 2, 3\dots$$
+  - title: Efecto Doppler
+    body: |
+      Si la fuente o el observador se mueven, la frecuencia percibida cambia: **más aguda al acercarse** y más grave al alejarse (la sirena de una ambulancia).
+      $$f' = f\,\frac{v \pm v_o}{v \mp v_f}$$
+      Signos superiores cuando se **acercan** ($+v_o$ si el observador se acerca, $-v_f$ si la fuente se acerca). Se usa en radares de velocidad y en ecografías.
+examples:
+  - title: Cuerda de guitarra
+    statement: |
+      Una cuerda de 0,80 m fija por sus extremos transmite ondas a 240 m/s. Calcula la frecuencia fundamental y la del segundo armónico.
+    steps:
+      - |
+        **Fundamental ($n = 1$):** $\lambda_1 = 2L = 1{,}6$ m, así que $f_1 = \dfrac{v}{2L} = \dfrac{240}{1{,}6} = 150$ Hz.
+      - |
+        **Segundo armónico:** $f_2 = 2f_1 = 300$ Hz.
+    result: |
+      Al pisar un traste se acorta $L$ y sube la frecuencia: la nota se hace más aguda.
+summary:
+  - |-
+    En la refracción, la frecuencia se mantiene; cambian $v$ y $\lambda$.
+  - |-
+    Interferencia: constructiva con $\Delta r = n\lambda$; destructiva con $\Delta r = (n + \frac12)\lambda$.
+  - |-
+    Cuerda fija: $f_n = nv/(2L)$. Doppler: más agudo al acercarse.
+common_errors:
+  - |-
+    Pensar que la frecuencia cambia al cambiar de medio.
+  - |-
+    Tomar $\lambda = L$ en el modo fundamental (es $2L$).

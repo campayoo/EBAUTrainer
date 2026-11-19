@@ -1,0 +1,50 @@
+# Clase completa: Vectores en el espacio y producto escalar
+id: mat2.geo.vectores.u01
+objectives:
+  - Operar con vectores en coordenadas.
+  - Calcular el producto escalar, el módulo y el ángulo entre dos vectores.
+explanation:
+  - title: Vectores en el espacio
+    body: |
+      Un vector $\vec u = (u_1, u_2, u_3)$ tiene **módulo** (longitud), **dirección** y **sentido**.
+      - El vector que va de $A$ a $B$ es $\overrightarrow{AB} = B - A$ (extremo menos origen).
+      - Módulo: $|\vec u| = \sqrt{u_1^2 + u_2^2 + u_3^2}$.
+      - Dos vectores son **paralelos** si sus coordenadas son proporcionales.
+      - El **punto medio** de $AB$ es $M = \dfrac{A + B}{2}$.
+  - title: El producto escalar
+    body: |
+      Es un **número**:
+      $$\vec u\cdot\vec v = u_1v_1 + u_2v_2 + u_3v_3 = |\vec u|\,|\vec v|\cos\alpha$$
+      De la segunda forma sale el ángulo entre dos vectores:
+      $$\cos\alpha = \frac{\vec u\cdot\vec v}{|\vec u|\,|\vec v|}$$
+  - title: La perpendicularidad
+    body: |
+      $$\vec u \perp \vec v \iff \vec u\cdot\vec v = 0$$
+      Es la herramienta más usada de la geometría de la PAU: sirve para comprobar si dos rectas son perpendiculares, para hallar planos perpendiculares, proyecciones, etc.
+
+      Si el producto escalar es positivo, el ángulo es agudo; si es negativo, obtuso.
+examples:
+  - title: Ángulo entre dos vectores
+    statement: |
+      Calcula el ángulo que forman $\vec u = (1, 2, 2)$ y $\vec v = (2, -1, 2)$.
+    steps:
+      - |
+        **Producto escalar:** $\vec u\cdot\vec v = 1\cdot2 + 2\cdot(-1) + 2\cdot2 = 4$.
+      - |
+        **Módulos:** $|\vec u| = \sqrt{1 + 4 + 4} = 3$ y $|\vec v| = \sqrt{4 + 1 + 4} = 3$.
+      - |
+        **Ángulo:** $\cos\alpha = \dfrac{4}{3\cdot3} = \dfrac49 \Rightarrow \alpha \approx 63{,}6^\circ$.
+    result: |
+      Como el producto escalar es positivo, el ángulo es agudo, como cabía esperar.
+summary:
+  - |-
+    $\overrightarrow{AB} = B - A$ y $|\vec u| = \sqrt{u_1^2 + u_2^2 + u_3^2}$.
+  - |-
+    $\vec u\cdot\vec v = u_1v_1 + u_2v_2 + u_3v_3 = |\vec u||\vec v|\cos\alpha$.
+  - |-
+    Perpendiculares $\iff \vec u\cdot\vec v = 0$.
+common_errors:
+  - |-
+    Calcular $\overrightarrow{AB}$ como $A - B$.
+  - |-
+    Olvidar la raíz cuadrada al calcular el módulo.

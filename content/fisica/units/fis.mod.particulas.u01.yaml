@@ -1,0 +1,51 @@
+# Clase completa: Modelo estándar e interacciones fundamentales
+id: fis.mod.particulas.u01
+objectives:
+  - Clasificar las partículas elementales según el modelo estándar.
+  - Relacionar cada interacción fundamental con su partícula mediadora.
+explanation:
+  - title: Las partículas de la materia (fermiones)
+    body: |
+      - **6 quarks:** up (u), down (d), charm, strange, top y bottom. Tienen carga fraccionaria: $+\frac23 e$ (u) y $-\frac13 e$ (d). Nunca se encuentran aislados.
+      - **6 leptones:** electrón, muon, tau y sus tres neutrinos.
+
+      Los quarks forman **hadrones**:
+      - **Bariones** (3 quarks): protón (uud) y neutrón (udd).
+      - **Mesones** (quark + antiquark): piones, kaones...
+
+      Cada partícula tiene su **antipartícula** (igual masa, carga opuesta): el positrón es el antielectrón.
+  - title: Las interacciones y sus mediadores (bosones)
+    body: |
+      Las cuatro interacciones fundamentales, de más a menos intensa:
+      1. **Fuerte:** une los quarks y mantiene el núcleo unido. Mediador: el **gluón**. Muy corto alcance.
+      2. **Electromagnética:** entre cargas. Mediador: el **fotón**. Alcance infinito.
+      3. **Débil:** responsable de la desintegración beta. Mediadores: los bosones **W⁺, W⁻ y Z⁰**.
+      4. **Gravitatoria:** la más débil con diferencia. No está incluida en el modelo estándar (el gravitón es hipotético).
+
+      El **bosón de Higgs** (descubierto en el CERN en 2012) explica por qué algunas partículas tienen masa.
+  - title: Aceleradores
+    body: |
+      Para estudiar estas partículas se hacen chocar protones o electrones a velocidades cercanas a la de la luz en **aceleradores** como el LHC del CERN (27 km de circunferencia). Usan campos eléctricos para acelerar y campos magnéticos para curvar la trayectoria: la física de los bloques B y D trabajando juntas.
+examples:
+  - title: La carga del protón y del neutrón
+    statement: |
+      Comprueba con las cargas de los quarks que el protón (uud) tiene carga $+e$ y el neutrón (udd), carga 0.
+    steps:
+      - |
+        **Protón:** $+\frac23 + \frac23 - \frac13 = +1$, es decir, $+e$ ✓
+      - |
+        **Neutrón:** $+\frac23 - \frac13 - \frac13 = 0$ ✓
+    result: |
+      En la desintegración β⁻, un quark d del neutrón se convierte en un quark u (mediante un bosón W⁻): el neutrón pasa a ser un protón.
+summary:
+  - |-
+    Materia: 6 quarks + 6 leptones. Protón uud; neutrón udd.
+  - |-
+    Mediadores: gluón (fuerte), fotón (EM), W y Z (débil). Higgs: la masa.
+  - |-
+    La gravedad no forma parte del modelo estándar.
+common_errors:
+  - |-
+    Pensar que el protón y el neutrón son partículas elementales.
+  - |-
+    Confundir el mediador de la interacción débil (W y Z) con el de la fuerte (gluón).

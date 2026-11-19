@@ -1,0 +1,55 @@
+# Clase completa: Límites y continuidad
+id: mat2.ana.limites.u01
+objectives:
+  - Calcular límites y resolver las indeterminaciones más habituales.
+  - Estudiar la continuidad de una función, incluidas las definidas a trozos.
+explanation:
+  - title: Límites e indeterminaciones
+    body: |
+      $\lim_{x\to a} f(x) = L$ significa que $f(x)$ se acerca a $L$ cuando $x$ se acerca a $a$. Si los **límites laterales** son distintos, el límite no existe.
+
+      Las indeterminaciones típicas y cómo resolverlas:
+      - $\frac{\infty}{\infty}$ con polinomios: compara los grados (o divide entre la mayor potencia).
+      - $\frac00$: factoriza (Ruffini) y simplifica, o usa L'Hôpital.
+      - $\infty - \infty$ con raíces: multiplica y divide por el **conjugado**.
+      - $1^\infty$: $\lim f^g = e^{\lim g\,(f - 1)}$.
+  - title: La regla de L'Hôpital
+    body: |
+      Si $\lim \frac{f(x)}{g(x)}$ da $\frac00$ o $\frac{\infty}{\infty}$, entonces
+      $$\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}$$
+      siempre que este último límite exista. Se deriva el numerador y el denominador **por separado** (¡no es la derivada del cociente!). Se puede aplicar varias veces.
+  - title: Continuidad
+    body: |
+      $f$ es **continua en $x = a$** si se cumplen las tres condiciones:
+      1. Existe $f(a)$.
+      2. Existe $\lim_{x\to a} f(x)$ (los dos límites laterales coinciden).
+      3. $\lim_{x\to a} f(x) = f(a)$.
+
+      Tipos de discontinuidad: **evitable** (el límite existe pero no coincide con $f(a)$), **de salto** (los laterales son distintos) y **asintótica** (algún lateral es infinito).
+
+      En las funciones a trozos, solo hay que estudiar los **puntos de unión**: impón que los límites laterales coincidan.
+examples:
+  - title: Un parámetro para que sea continua
+    statement: |
+      Halla $a$ para que $f(x) = \begin{cases} x^2 + a & x < 1 \\ 2x + 3 & x \ge 1 \end{cases}$ sea continua en $\mathbb{R}$.
+    steps:
+      - |
+        **Fuera de $x = 1$:** cada trozo es un polinomio, y por tanto continuo.
+      - |
+        **En $x = 1$:** límite por la izquierda $1 + a$; por la derecha y $f(1)$: $2 + 3 = 5$.
+      - |
+        **Igualamos:** $1 + a = 5 \Rightarrow a = 4$.
+    result: |
+      Otro límite típico: $\lim_{x\to\infty}\left(\sqrt{x^2 + 3x} - x\right)$. Con el conjugado queda $\lim\frac{3x}{\sqrt{x^2+3x} + x} = \frac32$.
+summary:
+  - |-
+    Indeterminaciones: grados ($\infty/\infty$), factorizar o L'Hôpital ($0/0$), conjugado ($\infty - \infty$), número $e$ ($1^\infty$).
+  - |-
+    Continua en $a$: existe $f(a)$, existe el límite y coinciden.
+  - |-
+    A trozos: estudia solo los puntos de unión.
+common_errors:
+  - |-
+    Aplicar L'Hôpital derivando el cociente entero.
+  - |-
+    Usar L'Hôpital cuando el límite no es una indeterminación.

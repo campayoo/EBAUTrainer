@@ -1,0 +1,52 @@
+# Clase completa: Representación gráfica de funciones
+id: mat2.ana.derivadas.u04
+objectives:
+  - Estudiar todos los elementos de una función para dibujarla.
+  - Calcular asíntotas verticales, horizontales y oblicuas.
+explanation:
+  - title: El guion del estudio
+    body: |
+      1. **Dominio.**
+      2. **Simetría:** par si $f(-x) = f(x)$; impar si $f(-x) = -f(x)$.
+      3. **Cortes con los ejes.**
+      4. **Asíntotas.**
+      5. **Monotonía y extremos** (con $f'$).
+      6. **Curvatura y puntos de inflexión** (con $f''$).
+      7. Tabla de valores y **dibujo**.
+  - title: Asíntotas
+    body: |
+      - **Vertical** $x = a$: si $\lim_{x\to a} f(x) = \pm\infty$. Búscalas donde se anula el denominador.
+      - **Horizontal** $y = L$: si $\lim_{x\to\pm\infty} f(x) = L$.
+      - **Oblicua** $y = mx + n$, con $m = \lim\dfrac{f(x)}{x}$ y $n = \lim\,(f(x) - mx)$. En un cociente de polinomios aparece cuando el grado del numerador es **uno más** que el del denominador. Si hay horizontal por un lado, no hay oblicua por ese mismo lado.
+  - title: Curvatura
+    body: |
+      - $f''(x) > 0$: **convexa** (forma de $\cup$).
+      - $f''(x) < 0$: **cóncava** (forma de $\cap$).
+      - Donde $f''$ cambia de signo hay un **punto de inflexión**.
+examples:
+  - title: Estudio de un cociente
+    statement: |
+      Estudia las asíntotas y los extremos de $f(x) = \dfrac{x^2}{x - 1}$.
+    steps:
+      - |
+        **Dominio y asíntota vertical:** $\mathbb{R}\setminus\{1\}$, y $x = 1$ es asíntota vertical (el numerador vale 1 y el denominador tiende a 0).
+      - |
+        **Oblicua:** dividiendo, $\dfrac{x^2}{x - 1} = x + 1 + \dfrac{1}{x - 1}$, así que $y = x + 1$.
+      - |
+        **Extremos:** $f'(x) = \dfrac{x^2 - 2x}{(x - 1)^2} = 0 \Rightarrow x = 0$ o $x = 2$. Signos de $f'$: $+, -, -, +$ (con $x = 1$ en medio).
+      - |
+        **Resultado:** máximo relativo en $(0, 0)$ y mínimo relativo en $(2, 4)$.
+    result: |
+      Fíjate en que el "máximo" (0) es menor que el "mínimo" (4): son extremos **relativos** y están en ramas distintas de la gráfica.
+summary:
+  - |-
+    Dominio, simetría, cortes, asíntotas, $f'$ y $f''$: siempre en este orden.
+  - |-
+    Oblicua cuando el grado del numerador es uno más que el del denominador.
+  - |-
+    $f'' > 0$ convexa, $f'' < 0$ cóncava.
+common_errors:
+  - |-
+    Olvidar los puntos fuera del dominio al estudiar el signo de $f'$.
+  - |-
+    Buscar oblicua cuando ya hay asíntota horizontal por ese lado.

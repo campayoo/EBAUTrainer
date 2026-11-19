@@ -1,0 +1,47 @@
+# Clase completa: Flujo magnético y ley de Faraday-Lenz
+id: fis.em.induccion.u01
+objectives:
+  - Calcular el flujo magnético.
+  - Aplicar la ley de Faraday-Lenz para obtener la fem inducida y el sentido de la corriente.
+explanation:
+  - title: Flujo magnético
+    body: |
+      $$\Phi = \vec B\cdot\vec S = B\,S\cos\theta\quad[\mathrm{Wb} = \mathrm{T\,m^2}]$$
+      donde $\theta$ es el ángulo entre $\vec B$ y el vector superficie (perpendicular a la espira). Para una bobina de $N$ espiras, el flujo total es $N\Phi$.
+  - title: Ley de Faraday-Lenz
+    body: |
+      Cuando el flujo **cambia**, aparece una fuerza electromotriz (fem) inducida:
+      $$\varepsilon = -N\frac{d\Phi}{dt} \qquad\text{(valor medio: } \varepsilon = -N\frac{\Delta\Phi}{\Delta t}\text{)}$$
+      El flujo puede cambiar porque cambie $B$, porque cambie el área $S$ o porque gire la espira (cambia $\theta$).
+
+      **Ley de Lenz (el signo −):** la corriente inducida circula en el sentido que **se opone al cambio** de flujo que la produce. Si el flujo aumenta, la corriente crea un campo en sentido contrario; si disminuye, a favor.
+  - title: Varilla en movimiento
+    body: |
+      Una varilla de longitud $L$ que se mueve con velocidad $v$ perpendicular a un campo $B$ barre área, y se induce
+      $$\varepsilon = B\,L\,v$$
+      Con una resistencia $R$ en el circuito, la corriente es $I = \varepsilon/R$.
+examples:
+  - title: Varilla deslizante
+    statement: |
+      Una varilla de 50 cm se desplaza a 4 m/s sobre dos raíles, perpendicular a un campo de 0,2 T. Calcula la fem inducida y la corriente si la resistencia del circuito es de 2 Ω.
+    steps:
+      - |
+        **Fem:** $\varepsilon = BLv = 0{,}2\cdot0{,}5\cdot4 = 0{,}4$ V.
+      - |
+        **Corriente:** $I = \dfrac{\varepsilon}{R} = \dfrac{0{,}4}{2} = 0{,}2$ A.
+      - |
+        **Sentido (Lenz):** el área del circuito aumenta, así que el flujo aumenta, y la corriente circula de forma que su campo se oponga a ese aumento.
+    result: |
+      Además, sobre la varilla aparece una fuerza que la frena: para mantener la velocidad hay que empujar. Es la energía que acaba como corriente eléctrica.
+summary:
+  - |-
+    $\Phi = BS\cos\theta$, en Wb.
+  - |-
+    $\varepsilon = -N\,\Delta\Phi/\Delta t$: solo hay fem si el flujo CAMBIA.
+  - |-
+    Lenz: la corriente inducida se opone al cambio. Varilla: $\varepsilon = BLv$.
+common_errors:
+  - |-
+    Pensar que un campo intenso pero constante induce corriente.
+  - |-
+    Olvidar multiplicar por el número de espiras $N$.

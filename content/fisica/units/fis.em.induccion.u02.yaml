@@ -1,0 +1,43 @@
+# Clase completa: Alternadores, motores y transformadores
+id: fis.em.induccion.u02
+objectives:
+  - Explicar cómo un alternador produce corriente alterna.
+  - Aplicar la relación de transformación de un transformador.
+explanation:
+  - title: El alternador
+    body: |
+      Una bobina de $N$ espiras y área $S$ gira con velocidad angular $\omega$ dentro de un campo $B$. El ángulo varía, $\theta = \omega t$, así que
+      $$\Phi = NBS\cos\omega t \;\Rightarrow\; \varepsilon = NBS\omega\sin\omega t$$
+      Es una **corriente alterna** sinusoidal de valor máximo $\varepsilon_0 = NBS\omega$. En España la red es de **50 Hz**. Así funcionan las centrales eléctricas: algo hace girar la bobina (vapor, agua, viento).
+  - title: El motor eléctrico
+    body: |
+      Es el proceso inverso: una corriente en una espira dentro de un campo magnético sufre fuerzas (ley de Laplace) que la hacen **girar**. Energía eléctrica → energía mecánica.
+  - title: El transformador
+    body: |
+      Dos bobinas enrolladas en un mismo núcleo de hierro. La corriente alterna del primario crea un flujo variable que induce una fem en el secundario:
+      $$\frac{V_2}{V_1} = \frac{N_2}{N_1} \qquad\text{y, si es ideal,}\qquad V_1I_1 = V_2I_2$$
+      - Solo funciona con **corriente alterna** (con continua el flujo no cambia).
+      - La electricidad se transporta a **alta tensión**: para la misma potencia, la intensidad es menor y se pierde menos energía en los cables ($P_{\text{pérdida}} = I^2R$).
+examples:
+  - title: Fem máxima de un alternador
+    statement: |
+      Una bobina de 100 espiras de 0,02 m² gira a 50 Hz en un campo de 0,5 T. Calcula la fem máxima.
+    steps:
+      - |
+        **Velocidad angular:** $\omega = 2\pi f = 2\pi\cdot50 \approx 314$ rad/s.
+      - |
+        **Fem máxima:** $\varepsilon_0 = NBS\omega = 100\cdot0{,}5\cdot0{,}02\cdot314 \approx 314$ V.
+    result: |
+      Su expresión completa es $\varepsilon(t) = 314\sin(100\pi t)$ V.
+summary:
+  - |-
+    Alternador: $\varepsilon = NBS\omega\sin\omega t$, con máximo $NBS\omega$.
+  - |-
+    Transformador: $V_2/V_1 = N_2/N_1$; solo con corriente alterna.
+  - |-
+    Alta tensión en el transporte: menos intensidad, menos pérdidas.
+common_errors:
+  - |-
+    Usar la frecuencia $f$ en lugar de $\omega = 2\pi f$.
+  - |-
+    Invertir la relación de espiras del transformador.

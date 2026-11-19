@@ -1,0 +1,51 @@
+# Clase completa: Derivabilidad y reglas de derivación
+id: mat2.ana.derivadas.u01
+objectives:
+  - Entender la derivada como límite y como pendiente.
+  - Estudiar la derivabilidad de funciones a trozos.
+  - Derivar con soltura, incluida la regla de la cadena.
+explanation:
+  - title: La derivada
+    body: |
+      $$f'(a) = \lim_{h\to0}\frac{f(a + h) - f(a)}{h}$$
+      Es la **pendiente de la recta tangente** a la gráfica en $x = a$ y mide la rapidez con la que cambia $f$.
+
+      **Derivable $\Rightarrow$ continua**, pero no al revés: $f(x) = |x|$ es continua en 0 y no derivable (tiene un "pico": derivadas laterales $-1$ y $1$).
+  - title: Reglas de derivación
+    body: |
+      Las más usadas:
+      - $(x^n)' = nx^{n-1}$, $\ (e^x)' = e^x$, $\ (\ln x)' = \frac1x$, $\ (\sin x)' = \cos x$, $\ (\cos x)' = -\sin x$.
+      - Producto: $(fg)' = f'g + fg'$. Cociente: $\left(\frac fg\right)' = \dfrac{f'g - fg'}{g^2}$.
+      - **Regla de la cadena:** $(f(g(x)))' = f'(g(x))\cdot g'(x)$. Por ejemplo, $(e^{x^2})' = e^{x^2}\cdot 2x$ y $(\ln(x^2+1))' = \dfrac{2x}{x^2 + 1}$.
+  - title: Derivabilidad de funciones a trozos
+    body: |
+      En un punto de unión $x = a$:
+      1. Primero, **continuidad** (si no es continua, no es derivable).
+      2. Después, las **derivadas laterales** deben coincidir: deriva cada trozo y sustituye $x = a$.
+
+      Si hay dos parámetros, la continuidad da una ecuación y la derivabilidad otra.
+examples:
+  - title: Dos parámetros, dos condiciones
+    statement: |
+      Halla $a$ y $b$ para que $f(x) = \begin{cases} x^2 & x \le 1 \\ ax + b & x > 1 \end{cases}$ sea derivable en $x = 1$.
+    steps:
+      - |
+        **Continuidad en 1:** $1^2 = a + b$, es decir, $a + b = 1$.
+      - |
+        **Derivadas laterales:** a la izquierda $2x \to 2$; a la derecha $a$. Por tanto $a = 2$.
+      - |
+        **Resultado:** $a = 2$ y $b = -1$. La recta $y = 2x - 1$ es justo la tangente a $y = x^2$ en $x = 1$.
+    result: |
+      Interpretación: la función es derivable cuando los dos trozos "empalman" sin pico.
+summary:
+  - |-
+    $f'(a)$ = pendiente de la tangente. Derivable implica continua.
+  - |-
+    Regla de la cadena: deriva "de fuera hacia dentro" y multiplica.
+  - |-
+    A trozos: continuidad + derivadas laterales iguales.
+common_errors:
+  - |-
+    Olvidar multiplicar por la derivada de dentro en la regla de la cadena.
+  - |-
+    Estudiar la derivabilidad sin haber comprobado antes la continuidad.

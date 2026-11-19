@@ -1,0 +1,51 @@
+# Clase completa: Teoremas de Rolle y del valor medio
+id: mat2.ana.derivadas.u02
+objectives:
+  - Enunciar y aplicar los teoremas de Rolle y del valor medio.
+  - Comprobar todas sus hipótesis.
+explanation:
+  - title: Teorema de Rolle
+    body: |
+      Si $f$ es:
+      1. **continua** en $[a, b]$,
+      2. **derivable** en $(a, b)$,
+      3. y $f(a) = f(b)$,
+
+      entonces existe $c \in (a, b)$ con $f'(c) = 0$: hay un punto de **tangente horizontal**.
+  - title: Teorema del valor medio (Lagrange)
+    body: |
+      Si $f$ es **continua** en $[a, b]$ y **derivable** en $(a, b)$, existe $c \in (a, b)$ con
+      $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
+      Interpretación: en algún punto, la tangente es **paralela a la cuerda** que une los extremos. En un viaje, en algún instante tu velocidad coincide con la velocidad media.
+
+      Rolle es el caso particular en que $f(a) = f(b)$.
+  - title: Cómo redactar la respuesta
+    body: |
+      1. Comprueba **una a una** las hipótesis (continuidad, derivabilidad y, en Rolle, $f(a) = f(b)$). En funciones a trozos o con valor absoluto, suele fallar la derivabilidad.
+      2. Aplica el teorema.
+      3. Si piden el valor de $c$, resuelve $f'(c) = \dots$ y quédate solo con las soluciones **dentro** de $(a, b)$.
+examples:
+  - title: Rolle y valor medio
+    statement: |
+      a) Comprueba Rolle para $f(x) = x^2 - 4x + 3$ en $[1, 3]$. b) Halla el $c$ del valor medio para $g(x) = x^3$ en $[0, 2]$.
+    steps:
+      - |
+        **a)** Es un polinomio (continuo y derivable), y $f(1) = 0 = f(3)$. Entonces $f'(c) = 2c - 4 = 0 \Rightarrow c = 2 \in (1, 3)$ ✓
+      - |
+        **b)** Pendiente de la cuerda: $\dfrac{g(2) - g(0)}{2 - 0} = \dfrac{8}{2} = 4$.
+      - |
+        Resolvemos $g'(c) = 3c^2 = 4 \Rightarrow c = \pm\dfrac{2}{\sqrt3}$. Solo vale $c = \dfrac{2}{\sqrt3} \approx 1{,}15$, que está en $(0, 2)$.
+    result: |
+      Descartar la solución negativa es lo que distingue una respuesta completa de una a medias.
+summary:
+  - |-
+    Rolle: continua, derivable y $f(a) = f(b)$ $\Rightarrow$ $f'(c) = 0$.
+  - |-
+    Valor medio: continua y derivable $\Rightarrow$ $f'(c) = \frac{f(b) - f(a)}{b - a}$.
+  - |-
+    El $c$ debe estar dentro del intervalo abierto.
+common_errors:
+  - |-
+    No comprobar las hipótesis antes de aplicar el teorema.
+  - |-
+    Dar como válidos valores de $c$ fuera del intervalo.

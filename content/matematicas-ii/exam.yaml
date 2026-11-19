@@ -1,0 +1,33 @@
+# Estructura del simulacro de Matemáticas II (PAU Comunitat Valenciana).
+# Según la comisión de la materia: 4 ejercicios de 2,5 puntos; el de
+# Probabilidad y Estadística es obligatorio y en los otros se elige opción.
+# La duración y el reparto exacto de los apartados 2 y 3 están PENDIENTES DE
+# CONFIRMAR con la guía oficial: cámbialos aquí cuando se publiquen.
+subject: mat2
+duration_minutes: 90
+official_url: https://universitats.gva.es
+sections:
+  - id: '1'
+    title: Probabilidad y estadística
+    points: 2.5
+    options: 1          # obligatorio: una sola opción
+    questions: 2
+    generators: [prob-total, bayes, binomial-exacta, normal-tipificar]
+  - id: '2'
+    title: Álgebra
+    points: 2.5
+    options: 2          # el alumno elige entre dos propuestas
+    questions: 2
+    generators: [det-3x3, det-propiedades, rango-3x3, inversa-2x2, sistema-gauss, rouche-parametro, mat-producto]
+  - id: '3'
+    title: Geometría
+    points: 2.5
+    options: 2
+    questions: 2
+    generators: [producto-escalar, angulo-vectores, area-triangulo, volumen-tetraedro, plano-punto-normal, distancia-punto-plano, posicion-planos]
+  - id: '4'
+    title: Análisis
+    points: 2.5
+    options: 2
+    questions: 2
+    generators: [limite-infinito, limite-cero-cero, derivada-punto, recta-tangente, optimizacion, extremo-cubica, integral-definida, area-parabola, integral-partes]

@@ -1,0 +1,47 @@
+# Clase completa: Energía de enlace, fisión y fusión
+id: fis.mod.nuclear.u02
+objectives:
+  - Calcular el defecto de masa y la energía de enlace.
+  - Explicar por qué la fisión y la fusión liberan energía.
+explanation:
+  - title: Defecto de masa y energía de enlace
+    body: |
+      ¡Un núcleo pesa **menos** que sus protones y neutrones por separado! Esa diferencia es el **defecto de masa**:
+      $$\Delta m = Z\,m_p + (A - Z)\,m_n - M_{\text{núcleo}}$$
+      Esa masa se convirtió en energía al formarse el núcleo. Es la **energía de enlace**:
+      $$E_e = \Delta m\,c^2, \qquad 1\ \mathrm{u} \equiv 931{,}5\ \mathrm{MeV}$$
+  - title: Energía de enlace por nucleón
+    body: |
+      $E_e/A$ indica la **estabilidad** de un núcleo. Su gráfica crece rápidamente, tiene un máximo cerca del **hierro-56** (unos 8,8 MeV/nucleón) y después baja lentamente.
+      - Los núcleos **ligeros** ganan estabilidad uniéndose: **fusión**.
+      - Los núcleos **pesados** ganan estabilidad rompiéndose: **fisión**.
+      En los dos casos se libera energía, porque los productos están más ligados.
+  - title: Fisión y fusión
+    body: |
+      - **Fisión:** un neutrón rompe un núcleo pesado (por ejemplo, $^{235}\mathrm{U}$) en dos más ligeros, más 2 o 3 neutrones que pueden provocar una **reacción en cadena**. Libera unos 200 MeV por núcleo. Es la base de las centrales nucleares actuales, que generan residuos radiactivos.
+      - **Fusión:** dos núcleos ligeros (isótopos del hidrógeno) se unen formando helio. Es la energía del Sol. Requiere temperaturas de millones de grados; proyectos como ITER intentan dominarla.
+examples:
+  - title: El núcleo de helio
+    statement: |
+      Calcula la energía de enlace del $^4_2\mathrm{He}$ y su energía por nucleón. ($m_p = 1{,}007276$ u, $m_n = 1{,}008665$ u, $M_{\mathrm{He}} = 4{,}001506$ u)
+    steps:
+      - |
+        **Defecto de masa:** $\Delta m = 2\cdot1{,}007276 + 2\cdot1{,}008665 - 4{,}001506 = 0{,}030376$ u.
+      - |
+        **Energía de enlace:** $E_e = 0{,}030376\cdot931{,}5 \approx 28{,}3$ MeV.
+      - |
+        **Por nucleón:** $\dfrac{28{,}3}{4} \approx 7{,}07$ MeV/nucleón.
+    result: |
+      Es un valor muy alto para un núcleo tan ligero: el helio-4 es especialmente estable, y por eso sale "entero" en la desintegración alfa.
+summary:
+  - |-
+    $\Delta m = Zm_p + Nm_n - M$; $E_e = \Delta m\,c^2$ (1 u = 931,5 MeV).
+  - |-
+    $E_e/A$ máxima cerca del Fe-56.
+  - |-
+    Fisión (núcleos pesados) y fusión (ligeros) liberan energía.
+common_errors:
+  - |-
+    Restar las masas al revés (el defecto de masa es positivo).
+  - |-
+    Confundir la energía de enlace total con la energía por nucleón.

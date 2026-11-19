@@ -1,0 +1,51 @@
+# Clase completa: Cálculo de áreas
+id: mat2.int.definida.u02
+objectives:
+  - Calcular el área entre una curva y el eje X.
+  - Calcular el área entre dos curvas.
+explanation:
+  - title: Área entre una curva y el eje X
+    body: |
+      La integral resta las zonas que quedan por debajo del eje. Para obtener un **área** (siempre positiva):
+      1. Halla los **cortes con el eje $X$** dentro del intervalo.
+      2. Divide el intervalo en esos puntos.
+      3. Integra en cada trozo y suma los **valores absolutos**.
+  - title: Área entre dos curvas
+    body: |
+      1. Halla los **puntos de corte** resolviendo $f(x) = g(x)$.
+      2. En cada intervalo, averigua qué función está por encima (sustituye un punto intermedio).
+      3. $\text{Área} = \int_a^b \big(f_{\text{arriba}} - f_{\text{abajo}}\big)\,dx$.
+
+      Si las curvas se cruzan varias veces, divide en trozos o integra $|f - g|$.
+  - title: Consejos
+    body: |
+      - Haz un **esbozo** de las gráficas: evita errores y la PAU lo valora.
+      - El resultado lleva unidades: $\text{u}^2$.
+      - Si sale un área negativa, has restado al revés.
+examples:
+  - title: Dos áreas típicas
+    statement: |
+      a) Área entre $y = x^2$ e $y = x$. b) Área entre $y = x^2 - 4$ y el eje $X$ en $[0, 3]$.
+    steps:
+      - |
+        **a)** Cortes: $x^2 = x \Rightarrow x = 0,\ x = 1$. En $(0,1)$ la recta está por encima (en $x = \frac12$: $\frac12 > \frac14$). Área $= \int_0^1 (x - x^2)\,dx = \frac12 - \frac13 = \frac16\ \text{u}^2$.
+      - |
+        **b)** Corte con el eje en $x = 2$. Primitiva: $F(x) = \frac{x^3}{3} - 4x$.
+      - |
+        En $[0, 2]$: $|F(2) - F(0)| = \left|\frac83 - 8\right| = \frac{16}{3}$. En $[2, 3]$: $F(3) - F(2) = -3 + \frac{16}{3} = \frac73$.
+      - |
+        Área total: $\frac{16}{3} + \frac73 = \frac{23}{3} \approx 7{,}67\ \text{u}^2$.
+    result: |
+      Sin partir en $x = 2$ saldría $\int_0^3 (x^2 - 4)\,dx = -3$: un resultado sin sentido como área.
+summary:
+  - |-
+    Con el eje: parte en los cortes y suma valores absolutos.
+  - |-
+    Entre curvas: $\int (\text{arriba} - \text{abajo})$ entre los puntos de corte.
+  - |-
+    Haz un esbozo y pon las unidades ($\text{u}^2$).
+common_errors:
+  - |-
+    Integrar de golpe una función que cambia de signo en el intervalo.
+  - |-
+    No comprobar qué curva está por encima.

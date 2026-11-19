@@ -1,0 +1,110 @@
+# Clase completa: Producto de matrices y potencias
+id: mat2.alg.matrices.u02
+objectives:
+  - Saber cuándo se pueden multiplicar dos matrices y qué dimensión tiene el resultado.
+  - Calcular productos de matrices fila por columna.
+  - Calcular potencias y detectar patrones en $A^n$.
+
+explanation:
+  - title: ¿Cuándo se pueden multiplicar?
+    body: |
+      $A\cdot B$ solo existe si el **número de columnas de $A$** coincide con el **número de filas de $B$**:
+      $$\underset{m\times \boxed{n}}{A}\cdot\underset{\boxed{n}\times p}{B} = \underset{m\times p}{C}$$
+      Los números "de dentro" deben coincidir y los "de fuera" dan la dimensión del resultado.
+  - title: Fila por columna
+    body: |
+      Cada elemento $c_{ij}$ del producto se obtiene combinando la **fila $i$ de $A$** con la **columna $j$ de $B$**: se multiplican elemento a elemento y se suman.
+      $$\begin{pmatrix} \color{#4f5bd5}{1} & \color{#4f5bd5}{2} \\ 0 & -1 \end{pmatrix}\begin{pmatrix} \color{#e8590c}{3} & 1 \\ \color{#e8590c}{2} & 4 \end{pmatrix} \Rightarrow c_{11} = 1\cdot3 + 2\cdot2 = 7$$
+      Es el mismo cálculo que un bucle doble en programación: para cada fila, para cada columna, un sumatorio.
+  - title: El producto NO es conmutativo
+    body: |
+      En general, $A\cdot B \neq B\cdot A$. ¡Incluso puede que uno de los dos productos ni exista! Por eso, en las ecuaciones matriciales importa mucho si multiplicas por la izquierda o por la derecha.
+
+      La matriz identidad sí conmuta con todas: $A\cdot I = I\cdot A = A$.
+  - title: Potencias
+    body: |
+      Para matrices cuadradas, $A^2 = A\cdot A$, $A^3 = A^2\cdot A$, etc. En la PAU es típico pedir $A^n$: calcula $A^2$, $A^3$... hasta ver el **patrón**. Por ejemplo:
+      $$A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \Rightarrow A^2 = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix},\ A^3 = \begin{pmatrix} 1 & 3 \\ 0 & 1 \end{pmatrix} \Rightarrow A^n = \begin{pmatrix} 1 & n \\ 0 & 1 \end{pmatrix}$$
+      **Ojo:** $A^2$ no es elevar cada elemento al cuadrado.
+
+examples:
+  - title: Comprobar que AB ≠ BA
+    statement: |
+      Calcula $AB$ y $BA$ para $A = \begin{pmatrix} 1 & 2 \\ 0 & -1 \end{pmatrix}$ y $B = \begin{pmatrix} 3 & 1 \\ 2 & 4 \end{pmatrix}$.
+    steps:
+      - |
+        **$AB$**, fila por columna:
+        $$AB = \begin{pmatrix} 1\cdot3 + 2\cdot2 & 1\cdot1 + 2\cdot4 \\ 0\cdot3 + (-1)\cdot2 & 0\cdot1 + (-1)\cdot4 \end{pmatrix} = \begin{pmatrix} 7 & 9 \\ -2 & -4 \end{pmatrix}$$
+      - |
+        **$BA$**:
+        $$BA = \begin{pmatrix} 3\cdot1 + 1\cdot0 & 3\cdot2 + 1\cdot(-1) \\ 2\cdot1 + 4\cdot0 & 2\cdot2 + 4\cdot(-1) \end{pmatrix} = \begin{pmatrix} 3 & 5 \\ 2 & 0 \end{pmatrix}$$
+    result: 'Son distintas: el orden de los factores sí altera el producto de matrices.'
+
+practice:
+  - id: mat2.alg.matrices.u02.p1
+    kind: choice
+    statement: 'Si $A$ es $3\times2$ y $B$ es $2\times4$, ¿qué dimensión tiene $A\cdot B$?'
+    options:
+      - { text: '$3\times4$' }
+      - { text: '$2\times2$', why: 'Los números de dentro (2 y 2) son los que deben coincidir; el resultado lo dan los de fuera.' }
+      - { text: '$4\times3$', why: 'Ese sería el orden de $B\cdot A$... que además no existe.' }
+      - { text: 'No se pueden multiplicar', why: 'Columnas de $A$ = 2 = filas de $B$: sí se pueden.' }
+    correct: 0
+    hints: ['Escribe las dimensiones una al lado de la otra: $(3\times2)(2\times4)$.', 'Los de dentro deben coincidir.', 'Los de fuera dan el resultado.']
+    solution: '$(3\times\boxed{2})(\boxed{2}\times4) = 3\times4$.'
+  - id: mat2.alg.matrices.u02.p2
+    kind: numeric
+    statement: |
+      Con $A = \begin{pmatrix} 2 & -1 & 0 \\ 1 & 3 & 2 \end{pmatrix}$ y $B = \begin{pmatrix} 1 & 0 \\ 2 & -1 \\ -1 & 4 \end{pmatrix}$, calcula el elemento $c_{21}$ de $A\cdot B$.
+    answer: { value: 5, tolerance: { absolute: 0 } }
+    check: '1*1 + 3*2 + 2*(-1)'
+    hints: ['$c_{21}$ usa la fila 2 de $A$ y la columna 1 de $B$.', 'Fila 2 de $A$: $(1, 3, 2)$. Columna 1 de $B$: $(1, 2, -1)$.', 'Multiplica término a término y suma.']
+    solution: '$c_{21} = 1\cdot1 + 3\cdot2 + 2\cdot(-1) = 1 + 6 - 2 = \boxed{5}$'
+  - id: mat2.alg.matrices.u02.p3
+    kind: numeric
+    statement: 'Sea $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$. Calcula el elemento de la fila 2 y columna 2 de $A^2$.'
+    answer:
+      value: 22
+      tolerance: { absolute: 0 }
+      commonErrors:
+        - { value: 16, message: 'Has elevado el elemento al cuadrado. $A^2 = A\cdot A$: hay que multiplicar fila por columna.' }
+    check: '3*2 + 4*4'
+    hints: ['$A^2 = A\cdot A$.', 'El elemento $(2,2)$ es la fila 2 de $A$ por la columna 2 de $A$.', 'Fila 2: $(3, 4)$. Columna 2: $(2, 4)$.']
+    solution: '$(A^2)_{22} = 3\cdot2 + 4\cdot4 = 6 + 16 = \boxed{22}$'
+
+test:
+  - id: mat2.alg.matrices.u02.t1
+    kind: choice
+    statement: 'Si $A$ y $B$ son ambas de dimensión $2\times3$, ¿existe $A\cdot B$?'
+    options:
+      - { text: 'No' }
+      - { text: 'Sí, y es $2\times3$', why: 'Para multiplicar, columnas de $A$ (3) deben ser iguales a filas de $B$ (2).' }
+      - { text: 'Sí, y es $2\times2$', why: 'Comprueba la condición: 3 columnas frente a 2 filas.' }
+      - { text: 'Sí, y es $3\times3$', why: 'Ese sería $A^t\cdot B$, no $A\cdot B$.' }
+    correct: 0
+    hints: ['$(2\times3)(2\times3)$', '¿Coinciden los números de dentro?', '3 ≠ 2']
+    solution: 'No existe: $A$ tiene 3 columnas y $B$ tiene 2 filas.'
+  - id: mat2.alg.matrices.u02.t2
+    kind: numeric
+    statement: 'Si $A = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$, ¿cuánto vale el elemento $(1,1)$ de $A^2$?'
+    answer: { value: 1, tolerance: { absolute: 0 } }
+    check: '0*0 + 1*1'
+    hints: ['$A^2 = A\cdot A$', 'Fila 1 por columna 1.', '$(0, 1)\cdot(0, 1)$']
+    solution: '$(A^2)_{11} = 0\cdot0 + 1\cdot1 = \boxed{1}$. De hecho, $A^2 = I$.'
+  - id: mat2.alg.matrices.u02.t3
+    kind: numeric
+    statement: 'Sea $A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$. ¿Cuánto vale el elemento $(1,2)$ de $A^5$?'
+    answer: { value: 5, tolerance: { absolute: 0 } }
+    check: '5'
+    hints: ['Calcula $A^2$ y $A^3$ y busca un patrón.', '$A^2 = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}$', 'Parece que $A^n = \begin{pmatrix} 1 & n \\ 0 & 1 \end{pmatrix}$.']
+    solution: 'Por inducción, $A^n = \begin{pmatrix} 1 & n \\ 0 & 1 \end{pmatrix}$, así que el elemento pedido es $\boxed{5}$.'
+
+summary:
+  - '$A_{m\times n}\cdot B_{n\times p} = C_{m\times p}$: los de dentro coinciden, los de fuera dan el resultado.'
+  - '$c_{ij}$ = fila $i$ de $A$ · columna $j$ de $B$.'
+  - 'En general $AB \neq BA$.'
+  - '$A^n$: calcula las primeras potencias y busca el patrón.'
+common_errors:
+  - 'Multiplicar elemento a elemento en lugar de fila por columna.'
+  - 'Dar por hecho que $AB = BA$.'
+  - 'Calcular $A^2$ elevando cada elemento al cuadrado.'

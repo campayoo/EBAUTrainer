@@ -1,0 +1,30 @@
+# Integración continua: en cada push o pull request se comprueba que
+# el código pasa el linter, los tests y que la app se puede construir.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar dependencias de desarrollo
+        run: npm install --no-audit --no-fund
+      - name: Linter (ESLint)
+        run: npm run lint
+      - name: Tests (planificador, corrección, contenido...)
+        run: npm test
+      - name: Construir la versión descargable
+        run: npm run build
+      - name: Guardar Pauta.html como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: Pauta
+          path: dist/Pauta.html
