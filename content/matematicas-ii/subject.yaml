@@ -15,7 +15,8 @@
 id: mat2
 name: Matemáticas II
 short: Mates II
-color: '#4f5bd5'
+order: 1   # posición en listas y en la portada
+color: '#2b6cb0'
 icon: '∑'
 description: Álgebra lineal, geometría en el espacio, análisis, integrales y probabilidad.
 blocks:

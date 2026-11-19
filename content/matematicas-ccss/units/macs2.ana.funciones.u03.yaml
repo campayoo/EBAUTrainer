@@ -1,0 +1,48 @@
+# Clase completa: Optimización en contextos económicos
+id: macs2.ana.funciones.u03
+objectives:
+- Interpretar funciones de ingreso, coste y beneficio.
+- Resolver problemas de optimización con derivadas.
+explanation:
+- title: Funciones económicas
+  body: |
+    - **Ingreso:** $I(x) = p(x)\cdot x$ (precio por cantidad).
+    - **Coste:** $C(x) = $ costes fijos + costes variables.
+    - **Beneficio:** $B(x) = I(x) - C(x)$.
+    - **Coste medio:** $C(x)/x$.
+
+    Las derivadas tienen sentido económico: $C'(x)$ es el **coste marginal** (lo que cuesta, aproximadamente, una unidad más).
+- title: Método de optimización
+  body: |
+    1. Escribe la función que hay que optimizar con **una sola variable** (usa los datos para despejar).
+    2. Fija el **dominio** con sentido: cantidades $\ge 0$, capacidad máxima...
+    3. Resuelve $f'(x) = 0$ y comprueba que es un máximo o un mínimo ($f''$ o el signo de $f'$).
+    4. Si el dominio es un intervalo cerrado, compara también los extremos del intervalo.
+    5. Responde a la pregunta con las unidades.
+examples:
+- title: Beneficio máximo
+  statement: |
+    Una empresa ingresa $I(x) = 100x - x^2$ euros al vender $x$ unidades, y su coste es $C(x) = 20x + 1200$. ¿Cuántas unidades maximizan el beneficio? ¿Cuál es ese beneficio?
+  steps:
+  - |
+    **Beneficio:** $B(x) = 100x - x^2 - 20x - 1200 = -x^2 + 80x - 1200$.
+  - |
+    **Derivada:** $B'(x) = -2x + 80 = 0$, así que $x = 40$.
+  - |
+    **Comprobación:** $B''(x) = -2 < 0$, luego es un máximo.
+  - |
+    **Valor:** $B(40) = -1600 + 3200 - 1200 = 400$.
+  result: |
+    Hay que vender **40 unidades**, con un beneficio máximo de **400 €**.
+summary:
+- |
+  $B = I - C$; $C'$ es el coste marginal.
+- |
+  Una sola variable, dominio con sentido, $f' = 0$ y comprobar.
+- |
+  Responde en el contexto y con unidades.
+common_errors:
+- |
+  Restar mal los costes fijos al construir $B(x)$.
+- |
+  No comprobar que el punto crítico es un máximo.

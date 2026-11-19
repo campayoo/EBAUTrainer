@@ -19,9 +19,9 @@ git push -u origin main
 1. En el repositorio: **Settings → Pages**.
 2. En **Source**, elige **GitHub Actions**.
 3. Ve a la pestaña **Actions**: el workflow *Publicar en GitHub Pages* se ejecuta solo en cada push a `main` (o lánzalo a mano con *Run workflow*).
-4. Al terminar, la web estará en **https://campayoo.github.io/EBAUTrainer/**.
+4. Al terminar, la web estará en **https://campayoo.github.io/EBAUTrainer/**: la portada en la raíz y la app en **/app/**.
 
-El workflow ejecuta los tests, genera `_site/` con `npm run build` y lo publica. En la web también estará `Pauta.html` para descargar (Ajustes → "Descargar Pauta").
+El workflow ejecuta los tests, genera `_site/` con `npm run build` y lo publica. Estructura: `index.html` + `landing.css` (portada, desde `site/`), `app/` (la aplicación) y `Pauta.html`. En la web también estará `Pauta.html` para descargar (Ajustes → "Descargar Pauta").
 
 > **Alternativa sin Actions:** *Source: Deploy from a branch → main → / (root)*. También funciona, porque el repositorio ya incluye `src/content/content.generated.js`, pero la versión descargable `Pauta.html` no estará en la web.
 

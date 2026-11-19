@@ -53,7 +53,9 @@ content/
 
 - **`subject.yaml`** define TODO el temario. Cada unidad tiene: `id`, `title`, `minutes`, `difficulty` (1-5), `requires` (prerrequisitos) y `generators` (plantillas de ejercicios de `src/core/generators/`).
 - **`units/<id>.yaml`** es opcional. Si existe, la unidad tiene **clase completa**; si no, Pauta ofrece una **clase exprés** con ejercicios generados.
-- **Añadir una asignatura** (Química, por ejemplo) = crear `content/quimica/` con sus YAML y ejecutar `npm run build:content`. El código de la app no cambia.
+- **Añadir una asignatura** (Tecnología, por ejemplo) = crear `content/tecnologia/` con sus YAML y ejecutar `npm run build:content`. El código de la app no cambia; solo hacen falta generadores nuevos si quieres ejercicios propios (para preguntas tipo test basta con `bankGenerator`, ver `src/core/generators/bank.js`).
+- `order` (opcional, en `subject.yaml`): posición de la asignatura en las listas y en la portada.
+- Las explicaciones admiten **tablas** Markdown sencillas (`| a | b |` con una fila `|---|---|` bajo la cabecera).
 
 ## 3. Formato de una clase completa
 

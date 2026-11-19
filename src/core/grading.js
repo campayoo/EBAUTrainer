@@ -71,6 +71,7 @@ const UNIT_TABLE = [
   ['angulo', 1, 'º', '°', 'grados', 'deg'],
   ['angulo', 180 / Math.PI, 'rad'],
   ['potencia_optica', 1, 'dioptrias', 'dioptrías', 'dp'],
+  ['temperatura', 1, 'k', 'kelvin'],
   ['area', 1, 'm^2', 'u^2', 'u2'],
   ['volumen', 1, 'm^3', 'u^3', 'u3'],
   ['cantidad', 1, 'u', 'unidades'],

@@ -1,0 +1,45 @@
+# Clase completa: Cinética química
+id: qui.reac.energia.u03
+objectives:
+- Escribir y usar ecuaciones de velocidad y órdenes de reacción.
+- Explicar los factores que modifican la velocidad.
+explanation:
+- title: Velocidad y ecuación de velocidad
+  body: |
+    Para $a\,A + b\,B \to \text{productos}$:
+    $$v = k\,[A]^m[B]^n$$
+    - $m$ y $n$ son los **órdenes parciales**, y **no** tienen por qué coincidir con los coeficientes: se obtienen experimentalmente.
+    - El orden total es $m + n$.
+    - $k$ es la **constante de velocidad**; sus unidades dependen del orden total.
+- title: Teoría de colisiones y factores
+  body: |
+    Para reaccionar, las moléculas deben chocar con la orientación adecuada y con una energía mínima, la **energía de activación** $E_a$. Por eso la velocidad aumenta con:
+    - **La concentración:** hay más choques.
+    - **La temperatura:** más moléculas superan $E_a$ (ecuación de Arrhenius, $k = A\,e^{-E_a/RT}$).
+    - **La superficie de contacto.**
+    - **Un catalizador:** abre un camino con menor $E_a$, sin cambiar $\Delta H$ ni el equilibrio.
+examples:
+- title: Efecto de duplicar la concentración
+  statement: |
+    La reacción $2\,\mathrm{NO + O_2 \to 2\,NO_2}$ tiene la ecuación de velocidad $v = k[\mathrm{NO}]^2[\mathrm{O_2}]$. ¿Qué pasa con la velocidad si se duplica $[\mathrm{NO}]$? ¿Cuál es el orden total?
+  steps:
+  - |
+    **Nueva velocidad:** $v' = k(2[\mathrm{NO}])^2[\mathrm{O_2}] = 4\,k[\mathrm{NO}]^2[\mathrm{O_2}]$.
+  - |
+    **Comparación:** $v'= 4v$.
+  - |
+    **Orden total:** $2 + 1 = 3$.
+  result: |
+    La velocidad se **multiplica por 4**; la reacción es de orden 3.
+summary:
+- |
+  $v = k[A]^m[B]^n$: los órdenes son experimentales.
+- |
+  Catalizador: baja $E_a$, pero no cambia $\Delta H$ ni la constante de equilibrio.
+- |
+  Más temperatura implica mayor $k$.
+common_errors:
+- |
+  Tomar los coeficientes estequiométricos como órdenes sin que lo diga el enunciado.
+- |
+  Decir que el catalizador desplaza el equilibrio.

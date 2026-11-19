@@ -1,0 +1,13 @@
+# Simulacro de Química (estructura ORIENTATIVA).
+# La comisión de la Comunitat Valenciana confirma cinco ejercicios, con el
+# primero obligatorio. El resto (puntos y optatividad) está POR CONFIRMAR
+# con la guía oficial: cámbialo aquí cuando la consultes.
+subject: qui
+duration_minutes: 90
+official_url: https://universitats.gva.es
+sections:
+  - { id: '1', title: Estructura de la materia y enlace, points: 2, options: 1, questions: 2, generators: [qui-atomo, qui-periodica, qui-enlace, qui-fuerzas] }
+  - { id: '2', title: Termoquímica y cinética, points: 2, options: 2, questions: 2, generators: [entalpia-combustion, gibbs, qui-cinetica, entalpia-combustion] }
+  - { id: '3', title: Equilibrio químico, points: 2, options: 2, questions: 2, generators: [kc-equilibrio, qui-equilibrio, kc-equilibrio, qui-equilibrio] }
+  - { id: '4', title: Ácido-base y redox, points: 2, options: 2, questions: 2, generators: [ph-fuerte, ph-debil, fem-pila, faraday, qui-acidobase, qui-redox] }
+  - { id: '5', title: Química orgánica, points: 2, options: 2, questions: 2, generators: [qui-organica, qui-reacciones-org, qui-organica, qui-reacciones-org] }

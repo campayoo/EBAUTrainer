@@ -1,0 +1,50 @@
+# Clase completa: Constantes de equilibrio Kc y Kp
+id: qui.eq.equilibrio.u01
+objectives:
+- Plantear la tabla de concentraciones inicial-cambio-equilibrio.
+- Calcular $K_c$ y $K_p$ y relacionarlas.
+explanation:
+- title: El equilibrio químico
+  body: |
+    En una reacción reversible, el equilibrio se alcanza cuando la velocidad directa iguala a la inversa: las concentraciones dejan de cambiar (pero la reacción no se para; es un equilibrio **dinámico**).
+
+    Para $a\,A + b\,B \rightleftharpoons c\,C + d\,D$:
+    $$K_c = \frac{[C]^c[D]^d}{[A]^a[B]^b}$$
+    Los sólidos y los líquidos puros **no** aparecen en la expresión.
+- title: Kp y el método de la tabla
+  body: |
+    Con gases se usan presiones parciales: $K_p = K_c\,(RT)^{\Delta n}$, siendo $\Delta n$ = moles de gas de productos − de reactivos y $R = 0{,}082$ atm·L/(mol·K).
+
+    Método de la tabla (**ICE**):
+    1. Concentraciones **iniciales**.
+    2. **Cambio**: $-ax$, $-bx$, $+cx$, $+dx$.
+    3. **Equilibrio**: inicial + cambio. Sustituye en $K_c$.
+
+    El **cociente de reacción** $Q$ tiene la misma forma: si $Q < K$, la reacción avanza hacia los productos.
+examples:
+- title: Equilibrio del yoduro de hidrógeno
+  statement: |
+    En un matraz de 1 L se ponen 1,00 mol de H₂ y 1,00 mol de I₂. En el equilibrio hay 1,56 mol de HI. Calcula $K_c$ y $K_p$ para $\mathrm{H_2 + I_2 \rightleftharpoons 2\,HI}$.
+  steps:
+  - |
+    **Cambio:** se forman $2x = 1{,}56$ mol de HI, así que $x = 0{,}78$ mol.
+  - |
+    **Equilibrio:** $[\mathrm{H_2}] = [\mathrm{I_2}] = 1{,}00 - 0{,}78 = 0{,}22$ M y $[\mathrm{HI}] = 1{,}56$ M.
+  - |
+    **Constante:** $K_c = \dfrac{1{,}56^2}{0{,}22\cdot0{,}22} = 50{,}3$.
+  - |
+    **Kp:** $\Delta n = 2 - 2 = 0$, así que $K_p = K_c$.
+  result: |
+    $K_c = K_p \approx 50$.
+summary:
+- |
+  $K_c$: productos entre reactivos, elevados a sus coeficientes.
+- |
+  Sólidos y líquidos puros no aparecen.
+- |
+  $K_p = K_c(RT)^{\Delta n}$.
+common_errors:
+- |
+  Usar moles en lugar de concentraciones cuando el volumen no es 1 L.
+- |
+  Olvidar elevar a los coeficientes estequiométricos.

@@ -8,10 +8,10 @@
 
 import { html, raw, cls } from '../ui/html.js';
 import { icon } from '../ui/icons.js';
-import { exerciseView } from '../ui/components.js';
+import { exerciseView, classPicker, unitIdsOfBlock } from '../ui/components.js';
 import { renderInline } from '../ui/markdown.js';
 import { content, subjectsById, subjectNames } from '../data/content.js';
-import { completeOnboarding, getState, LEVEL_WEIGHTS } from '../data/store.js';
+import { completeOnboarding, getState, LEVEL_WEIGHTS, classSeenIds } from '../data/store.js';
 import { todayISO, defaultExamDate, diffDays, WEEKDAY_NAMES } from '../core/dates.js';
 import { generateExercise } from '../core/generators/index.js';
 import { createRng, freshSeed } from '../core/random.js';
@@ -44,12 +44,22 @@ function start() {
     targetGrade: st.student?.targetGrade ?? 8,
     diag: null,
     diagnostic: {},
+    // Lo que ya han dado en clase: { subjectId: Set(unitId) }
+    seen: Object.fromEntries(st.subjects.map((s) => [s.id, new Set(classSeenIds(st, s.id))])),
   };
 }
 
 const say = (text) => ob.log.push({ from: 'teacher', text });
 const answer = (text) => ob.log.push({ from: 'me', text });
 const chosenList = () => content.subjects.filter((s) => ob.selected.has(s.id));
+const current = () => chosenList()[ob.levelIdx];
+const seenOf = (id) => (ob.seen[id] ??= new Set());
+
+/** Pasa a la siguiente asignatura, o a la prueba inicial si ya no quedan. */
+function nextSubject() {
+  ob.levelIdx++;
+  go(ob.levelIdx < chosenList().length ? 'level' : 'diag-offer');
+}
 
 /** Prepara la prueba inicial: 2 ejercicios por asignatura, de bloques distintos. */
 function buildDiagnostic() {
@@ -69,7 +79,9 @@ function teacherPrompt(step) {
   switch (step) {
     case 'name': return '¿Cómo te llamas?';
     case 'subjects': return '¿Qué asignaturas quieres preparar? Todo el contenido ya está dentro de la app: no tienes que descargar nada.';
-    case 'level': return `¿Qué tal llevas **${subjectNames[chosenList()[ob.levelIdx].id]}**?`;
+    case 'level': return `¿Qué tal llevas **${subjectNames[current().id]}**?`;
+    case 'class-ask': return `¿Estás dando ya **${current().short}** en el instituto o la academia? Si me dices por dónde vais, no te explico desde cero lo que ya habéis visto.`;
+    case 'class-pick': return 'Marca las unidades que ya habéis dado en clase. Te pondré repasos de esas y empezaremos por la siguiente.';
     case 'diag-offer': return '¿Hacemos una **prueba rápida** de 2 preguntas por asignatura? Me ayuda a ajustar el tiempo de cada tema. Es opcional.';
     case 'days': return '¿Qué días puedes estudiar y cuánto tiempo cada día? (Luego podrás afinarlo día a día en Ajustes.)';
     case 'exam': return '¿Cuándo es tu examen? Si aún no hay fecha oficial, deja la estimada y cámbiala cuando se publique.';
@@ -97,10 +109,21 @@ function controls() {
       return html`<div class="chips" role="group" aria-label="Asignaturas">
           ${content.subjects.map((s) => html`<button class="${cls('chip', ob.selected.has(s.id) && 'on')}" style="--c:${s.color}" aria-pressed="${ob.selected.has(s.id)}" data-action="ob-toggle-subject" data-id="${s.id}"><span aria-hidden="true">${s.icon}</span> ${s.name}</button>`)}
         </div>
-        <p class="help">Más asignaturas (Química, Biología...) llegarán en futuras versiones.</p>
         <button class="btn btn-primary" data-action="ob-subjects-next" ${ob.selected.size === 0 ? 'disabled' : ''}>Siguiente</button>`;
     case 'level':
       return html`<div class="chips">${LEVELS.map((l) => html`<button class="chip" data-action="ob-level" data-level="${l.id}">${l.label} <small class="muted">· ${l.hint}</small></button>`)}</div>`;
+    case 'class-ask':
+      return html`<div class="chips">
+          <button class="btn btn-primary" data-action="ob-class-yes">Sí, ya hemos dado temas</button>
+          <button class="btn" data-action="ob-class-no">No, empiezo de cero</button>
+        </div>`;
+    case 'class-pick': {
+      const s = current();
+      const n = seenOf(s.id).size;
+      return html`${classPicker(s, seenOf(s.id))}
+        <div class="row-end"><span class="small muted">${n === 1 ? '1 unidad marcada' : `${n} unidades marcadas`}</span>
+        <button class="btn btn-primary" data-action="ob-class-done">Listo</button></div>`;
+    }
     case 'diag-offer':
       return html`<div class="chips"><button class="btn btn-primary" data-action="ob-diag-yes">Sí, hagamos la prueba</button><button class="btn" data-action="ob-diag-no">Ahora no</button></div>`;
     case 'diag': {
@@ -182,7 +205,8 @@ export default {
       ctx.rerender();
     },
     'ob-subjects-next': (el, ctx) => {
-      answer(chosenList().map((s) => s.name).join(' y '));
+      const names = chosenList().map((s) => s.name);
+      answer(names.length > 1 ? `${names.slice(0, -1).join(', ')} y ${names.at(-1)}` : names[0]);
       ob.levelIdx = 0;
       go('level');
       ctx.rerender();
@@ -191,8 +215,31 @@ export default {
       const s = chosenList()[ob.levelIdx];
       ob.levels[s.id] = el.dataset.level;
       answer(LEVELS.find((l) => l.id === el.dataset.level).label);
-      ob.levelIdx++;
-      go(ob.levelIdx < chosenList().length ? 'level' : 'diag-offer');
+      go('class-ask');
+      ctx.rerender();
+    },
+    'ob-class-yes': (el, ctx) => { answer('Sí, ya hemos dado temas'); go('class-pick'); ctx.rerender(); },
+    'ob-class-no': (el, ctx) => {
+      answer('No, empiezo de cero');
+      seenOf(current().id).clear();
+      nextSubject();
+      ctx.rerender();
+    },
+    'class-toggle': (el, ctx) => {
+      const seen = seenOf(current().id);
+      if (seen.has(el.dataset.unit)) seen.delete(el.dataset.unit); else seen.add(el.dataset.unit);
+      ctx.rerender();
+    },
+    'class-block': (el, ctx) => {
+      const seen = seenOf(current().id);
+      for (const id of unitIdsOfBlock(current(), el.dataset.block)) if (el.dataset.on === '1') seen.add(id); else seen.delete(id);
+      ctx.rerender();
+    },
+    'ob-class-done': (el, ctx) => {
+      const n = seenOf(current().id).size;
+      answer(n ? `Hemos dado ${n === 1 ? '1 unidad' : `${n} unidades`}` : 'Aún nada');
+      if (n) say(n >= 4 ? '¡Vais a buen ritmo! Lo apunto.' : 'Apuntado.');
+      nextSubject();
       ctx.rerender();
     },
     'ob-diag-yes': (el, ctx) => {
@@ -263,7 +310,8 @@ export default {
     'ob-target': (el, ctx) => {
       ob.targetGrade = Number(el.dataset.grade);
       answer(`Un ${ob.targetGrade}`);
-      const subjects = chosenList().map((s) => `${s.name} (${LEVELS.find((l) => l.id === (ob.levels[s.id] ?? 'medio')).label.toLowerCase()})`).join(' y ');
+      const parts = chosenList().map((s) => `${s.name} (${LEVELS.find((l) => l.id === (ob.levels[s.id] ?? 'medio')).label.toLowerCase()})`);
+      const subjects = parts.length > 1 ? `${parts.slice(0, -1).join(', ')} y ${parts.at(-1)}` : parts[0];
       say(`Resumen: estudiarás **${subjects}**, ${ob.days.size} días a la semana, ${ob.minutes} minutos al día, con el examen el ${ob.examDate}. ¿Creo tu planning?`);
       ob.step = 'summary';
       ctx.rerender();
@@ -277,6 +325,7 @@ export default {
         availability,
         examDate: ob.examDate,
         diagnostic: ob.diagnostic,
+        seen: Object.fromEntries(chosenList().map((s) => [s.id, [...seenOf(s.id)]])),
       });
       ob = null;
       ctx.navigate('hoy');

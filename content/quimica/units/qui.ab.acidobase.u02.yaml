@@ -1,0 +1,51 @@
+# Clase completa: Ácidos débiles e hidrólisis
+id: qui.ab.acidobase.u02
+objectives:
+- Calcular el pH y el grado de disociación de un ácido débil.
+- Predecir el carácter ácido, básico o neutro de una sal.
+explanation:
+- title: Ácidos débiles
+  body: |
+    Un ácido débil se disocia solo parcialmente:
+    $$\mathrm{HA + H_2O \rightleftharpoons A^- + H_3O^+}, \qquad K_a = \frac{[\mathrm{A^-}][\mathrm{H_3O^+}]}{[\mathrm{HA}]} = \frac{x^2}{c - x}$$
+    - Si $K_a$ es pequeña, se puede aproximar $c - x \approx c$, así que $x \approx \sqrt{K_a\,c}$ (comprueba que $x$ es menor del 5 % de $c$).
+    - **Grado de disociación:** $\alpha = x / c$.
+    - Para un par conjugado: $K_a\cdot K_b = K_w$.
+- title: Hidrólisis de sales
+  body: |
+    | Sal procedente de | Ejemplo | Disolución |
+    |---|---|---|
+    | ácido fuerte + base fuerte | NaCl | neutra |
+    | ácido débil + base fuerte | CH₃COONa | básica |
+    | ácido fuerte + base débil | NH₄Cl | ácida |
+
+    El ion que procede del electrolito débil reacciona con el agua. Por ejemplo, $\mathrm{CH_3COO^- + H_2O \rightleftharpoons CH_3COOH + OH^-}$.
+
+    Una **disolución reguladora** (ácido débil + su sal) amortigua los cambios de pH.
+examples:
+- title: pH del ácido acético
+  statement: |
+    Calcula el pH y el grado de disociación de una disolución 0,10 M de ácido acético ($K_a = 1{,}8\cdot10^{-5}$).
+  steps:
+  - |
+    **Planteamiento:** $K_a = \dfrac{x^2}{0{,}10 - x} = 1{,}8\cdot10^{-5}$.
+  - |
+    **Aproximación:** $x \approx \sqrt{1{,}8\cdot10^{-5}\cdot0{,}10} = 1{,}34\cdot10^{-3}$ M (es el 1,3 % de 0,10, así que la aproximación es válida).
+  - |
+    **pH:** $-\log(1{,}34\cdot10^{-3}) = 2{,}87$.
+  - |
+    **Grado de disociación:** $\alpha = 1{,}34\cdot10^{-3}/0{,}10 = 0{,}013$, es decir, el 1,3 %.
+  result: |
+    pH ≈ **2,87** y $\alpha \approx 1{,}3\ \%$. (Resolviendo la ecuación de segundo grado se obtiene 2,88.)
+summary:
+- |
+  Ácido débil: $K_a = x^2/(c - x)$, y $x \approx \sqrt{K_a c}$ si $K_a$ es pequeña.
+- |
+  $\alpha = x/c$ y $K_aK_b = K_w$.
+- |
+  El ion que viene del electrolito débil es el que se hidroliza.
+common_errors:
+- |
+  Tomar $[\mathrm{H_3O^+}] = c$ para un ácido débil.
+- |
+  Decir que el CH₃COONa da una disolución ácida "porque viene de un ácido".

@@ -1,0 +1,43 @@
+# Clase completa: Electrólisis y leyes de Faraday
+id: qui.ab.redox.u02
+objectives:
+- Describir una cuba electrolítica.
+- Calcular masas depositadas con las leyes de Faraday.
+explanation:
+- title: La electrólisis
+  body: |
+    Es el proceso inverso a la pila: una corriente externa fuerza una reacción **no espontánea**.
+    - **Ánodo (+):** oxidación.
+    - **Cátodo (−):** reducción.
+
+    Ejemplos: obtención de Na y Cl₂ a partir de NaCl fundido, electrólisis del agua y recubrimientos metálicos (galvanoplastia).
+- title: Leyes de Faraday
+  body: |
+    La carga que circula es $Q = I\,t$ (amperios por segundos). Un mol de electrones transporta $F = 96\,500$ C (constante de Faraday).
+    $$m = \frac{M\,I\,t}{n\,F}$$
+    donde $M$ es la masa molar y $n$, el número de electrones que intercambia cada ion.
+examples:
+- title: Depositar cobre
+  statement: |
+    Se hace pasar una corriente de 2,0 A durante 30 min por una disolución de CuSO₄. ¿Qué masa de cobre se deposita? ($M_{Cu} = 63{,}5$ g/mol)
+  steps:
+  - |
+    **Carga:** $Q = 2{,}0 \cdot 1800 = 3600$ C.
+  - |
+    **Semirreacción:** $\mathrm{Cu^{2+} + 2e^- \to Cu}$, así que $n = 2$.
+  - |
+    **Masa:** $m = \dfrac{63{,}5\cdot3600}{2\cdot96\,500} = 1{,}18$ g.
+  result: |
+    Se depositan **1,18 g** de cobre en el cátodo.
+summary:
+- |
+  Electrólisis: reacción no espontánea forzada por una corriente.
+- |
+  $Q = It$ y $F = 96\,500$ C/mol.
+- |
+  $m = MIt/(nF)$.
+common_errors:
+- |
+  Dejar el tiempo en minutos.
+- |
+  Olvidar dividir entre el número de electrones $n$.

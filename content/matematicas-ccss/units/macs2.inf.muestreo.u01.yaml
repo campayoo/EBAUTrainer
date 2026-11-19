@@ -1,0 +1,44 @@
+# Clase completa: Muestreo y distribución de la media muestral
+id: macs2.inf.muestreo.u01
+objectives:
+- Distinguir población y muestra, y los tipos de muestreo.
+- Usar la distribución de la media muestral.
+explanation:
+- title: Población y muestra
+  body: |
+    - **Población:** todos los individuos que se estudian. **Muestra:** una parte, que debe ser **representativa**.
+    - **Muestreo aleatorio simple:** todos tienen la misma probabilidad de ser elegidos.
+    - **Sistemático:** de $k$ en $k$.
+    - **Estratificado:** se divide en grupos (estratos) y se elige en cada uno de forma **proporcional** a su tamaño.
+- title: La media muestral
+  body: |
+    Si la población es $N(\mu, \sigma)$ (o si $n \ge 30$, por el **teorema central del límite**), la media de las muestras de tamaño $n$ sigue:
+    $$\bar X \sim N\left(\mu,\ \frac{\sigma}{\sqrt n}\right)$$
+    Cuanto mayor es la muestra, más se concentran las medias alrededor de $\mu$.
+
+    Para la proporción: $\hat p \sim N\left(p, \sqrt{\dfrac{p(1 - p)}{n}}\right)$.
+examples:
+- title: Media de 36 personas
+  statement: |
+    Una variable sigue una $N(100, 12)$. Se toman muestras de 36 personas. ¿Cuál es la probabilidad de que la media muestral supere 103?
+  steps:
+  - |
+    **Distribución de la media:** $\bar X \sim N\left(100, \dfrac{12}{\sqrt{36}}\right) = N(100, 2)$.
+  - |
+    **Tipificamos:** $z = \dfrac{103 - 100}{2} = 1{,}5$.
+  - |
+    **Tabla:** $P(\bar X > 103) = 1 - 0{,}9332 = 0{,}0668$.
+  result: |
+    La probabilidad es **0,0668**. (Para un individuo solo, $P(X > 103)$ sería mucho mayor: 0,40.)
+summary:
+- |
+  Muestreos aleatorio simple, sistemático y estratificado (proporcional).
+- |
+  $\bar X \sim N(\mu, \sigma/\sqrt n)$.
+- |
+  Teorema central del límite: con $n \ge 30$ vale aunque la población no sea normal.
+common_errors:
+- |
+  Usar $\sigma$ en lugar de $\sigma/\sqrt n$ para la media.
+- |
+  Hacer un muestreo estratificado sin respetar las proporciones.

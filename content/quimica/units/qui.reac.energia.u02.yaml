@@ -1,0 +1,52 @@
+# Clase completa: Entropía y espontaneidad
+id: qui.reac.energia.u02
+objectives:
+- Predecir el signo de la variación de entropía.
+- Usar la energía libre de Gibbs para decidir si una reacción es espontánea.
+explanation:
+- title: Entropía
+  body: |
+    La **entropía** $S$ mide el desorden (el número de formas de repartir la energía). Aumenta ($\Delta S > 0$) cuando:
+    - se pasa de sólido a líquido o de líquido a gas;
+    - aumenta el número de moles de gas;
+    - un sólido se disuelve.
+
+    Se mide en J/(mol·K): ¡cuidado al combinarla con $\Delta H$ en kJ!
+- title: Energía libre de Gibbs
+  body: |
+    $$\Delta G = \Delta H - T\,\Delta S$$
+    Una reacción es **espontánea** si $\Delta G < 0$.
+
+    | $\Delta H$ | $\Delta S$ | Espontánea |
+    |---|---|---|
+    | − | + | siempre |
+    | + | − | nunca |
+    | − | − | a temperatura baja |
+    | + | + | a temperatura alta |
+
+    La temperatura de cambio es $T = \Delta H / \Delta S$ (con las mismas unidades).
+examples:
+- title: Síntesis del amoniaco
+  statement: |
+    Para $\mathrm{N_2 + 3\,H_2 \to 2\,NH_3}$, $\Delta H = -92$ kJ y $\Delta S = -199$ J/K. ¿A qué temperaturas es espontánea?
+  steps:
+  - |
+    **Signos:** $\Delta H < 0$ (favorable) y $\Delta S < 0$ (desfavorable, porque se pasa de 4 a 2 moles de gas). Será espontánea a temperatura baja.
+  - |
+    **Mismas unidades:** $\Delta H = -92\,000$ J.
+  - |
+    **Temperatura de equilibrio:** $T = \dfrac{\Delta H}{\Delta S} = \dfrac{-92\,000}{-199} = 462$ K.
+  result: |
+    Es espontánea por debajo de **462 K** (unos 189 °C).
+summary:
+- |
+  $\Delta G = \Delta H - T\Delta S$; espontánea si $\Delta G < 0$.
+- |
+  Más moles de gas implica $\Delta S > 0$.
+- |
+  Pasa $\Delta S$ a kJ (o $\Delta H$ a J) antes de operar.
+common_errors:
+- |
+  Mezclar kJ y J en la misma fórmula.
+- |
+  Usar la temperatura en °C en lugar de en kelvin.

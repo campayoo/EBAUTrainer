@@ -10,6 +10,7 @@
 id: fis
 name: Física
 short: Física
+order: 2   # posición en listas y en la portada
 color: '#e8590c'
 icon: '⚛'
 description: Campos gravitatorio y electromagnético, ondas, óptica y física moderna.

@@ -1,0 +1,46 @@
+# Clase completa: Microorganismos, virus y biotecnología
+id: bio.mic.micro.u01
+objectives:
+- Clasificar los microorganismos y describir los ciclos de los virus.
+- Explicar las aplicaciones de la biotecnología y la ingeniería genética.
+explanation:
+- title: Microorganismos y virus
+  body: |
+    - **Bacterias** (procariotas), **protozoos**, **algas microscópicas** y **hongos** (levaduras y mohos).
+    - **Virus:** son acelulares, formados por un ácido nucleico (ADN o ARN) y una **cápsida** de proteínas. Son parásitos obligados.
+      - **Ciclo lítico:** el virus se multiplica y rompe la célula.
+      - **Ciclo lisogénico:** el ADN vírico se integra en el de la célula (profago) y puede activarse más tarde.
+    - Los **retrovirus** (VIH) usan la **transcriptasa inversa**: ARN → ADN.
+- title: Biotecnología
+  body: |
+    - **Tradicional:** pan, vino, yogur y queso (fermentaciones), antibióticos y depuración de aguas.
+    - **Ingeniería genética:**
+      - Las **enzimas de restricción** cortan el ADN; la **ligasa** lo une; los **plásmidos** sirven de vectores.
+      - Producción de insulina con bacterias y organismos transgénicos.
+    - **PCR:** amplifica el ADN; cada ciclo duplica las copias.
+    - **CRISPR-Cas9:** edición precisa de genes.
+examples:
+- title: Copias en la PCR
+  statement: |
+    Se parte de una molécula de ADN y se hacen 20 ciclos de PCR. ¿Cuántas copias se obtienen, como máximo?
+  steps:
+  - |
+    **Cada ciclo duplica las copias:** 1 → 2 → 4 → 8...
+  - |
+    **Tras $n$ ciclos:** $2^n$ moléculas.
+  - |
+    **Para 20 ciclos:** $2^{20} = 1\,048\,576$.
+  result: |
+    Algo más de **un millón** de copias en un par de horas: por eso la PCR sirve en análisis forenses y en el diagnóstico de enfermedades.
+summary:
+- |
+  Virus: ácido nucleico + cápsida, sin metabolismo propio.
+- |
+  Ciclo lítico (destruye la célula) y lisogénico (se integra).
+- |
+  Herramientas: enzimas de restricción, ligasa, plásmidos, PCR y CRISPR.
+common_errors:
+- |
+  Decir que los antibióticos sirven contra los virus.
+- |
+  Considerar a los virus como procariotas.

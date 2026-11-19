@@ -1,0 +1,48 @@
+# Clase completa: Termoquímica y ley de Hess
+id: qui.reac.energia.u01
+objectives:
+- Calcular entalpías de reacción con entalpías de formación y con la ley de Hess.
+- Relacionar la entalpía con el calor desprendido por una cantidad de sustancia.
+explanation:
+- title: Entalpía de reacción
+  body: |
+    A presión constante, el calor intercambiado es la variación de **entalpía** $\Delta H$:
+    - $\Delta H < 0$: reacción **exotérmica** (desprende calor).
+    - $\Delta H > 0$: reacción **endotérmica** (absorbe calor).
+
+    Con entalpías de formación (las de los elementos en su estado estándar valen 0):
+    $$\Delta H^\circ_r = \sum n\,\Delta H^\circ_f(\text{productos}) - \sum n\,\Delta H^\circ_f(\text{reactivos})$$
+- title: Ley de Hess
+  body: |
+    La entalpía es una **función de estado**: solo depende del estado inicial y final. Por eso puedes combinar reacciones conocidas como si fueran ecuaciones:
+    - Si inviertes una reacción, cambia el signo de $\Delta H$.
+    - Si la multiplicas por un número, multiplica también $\Delta H$.
+
+    También se puede estimar con **energías de enlace**: $\Delta H \approx \sum E(\text{rotos}) - \sum E(\text{formados})$.
+examples:
+- title: Combustión del metano
+  statement: |
+    Calcula la entalpía de combustión del metano y el calor que desprenden 32 g. Datos: $\Delta H^\circ_f$ (kJ/mol): CH₄ −74,8; CO₂ −393,5; H₂O(l) −285,8.
+  steps:
+  - |
+    **Reacción ajustada:** $\mathrm{CH_4 + 2\,O_2 \to CO_2 + 2\,H_2O(l)}$.
+  - |
+    **Productos − reactivos:** $\Delta H = [-393{,}5 + 2(-285{,}8)] - [-74{,}8 + 0] = -890{,}3$ kJ/mol.
+  - |
+    **Moles de metano:** $32\ \mathrm g / 16\ \mathrm{g/mol} = 2$ mol.
+  - |
+    **Calor:** $Q = 2 \cdot (-890{,}3) = -1780{,}6$ kJ.
+  result: |
+    $\Delta H_c = -890{,}3$ kJ/mol; 32 g desprenden **1780,6 kJ**.
+summary:
+- |
+  $\Delta H < 0$ exotérmica y $\Delta H > 0$ endotérmica.
+- |
+  $\Delta H_r = \sum \Delta H_f(\text{prod}) - \sum \Delta H_f(\text{reac})$.
+- |
+  Hess: invierte y cambia el signo; multiplica y multiplica $\Delta H$.
+common_errors:
+- |
+  Olvidar multiplicar cada $\Delta H_f$ por su coeficiente.
+- |
+  Dar a los elementos (O₂) una entalpía de formación distinta de cero.

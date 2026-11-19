@@ -1,0 +1,64 @@
+# =====================================================================
+# Matemáticas Aplicadas a las Ciencias Sociales II — temario
+# Bloques: álgebra (con programación lineal), análisis y estadística
+# (probabilidad e inferencia). Reutiliza generadores de Matemáticas II.
+# =====================================================================
+id: macs2
+name: Matemáticas Aplicadas a las CC. SS. II
+short: MACS II
+order: 5   # posición en listas y en la portada
+color: '#7c3aed'
+icon: '∫'
+description: Matrices y sistemas, programación lineal, funciones y sus aplicaciones económicas, probabilidad e inferencia estadística.
+blocks:
+  - id: macs2.alg
+    title: Álgebra
+    examSection: '1'
+    examWeight: 2.5
+    topics:
+      - id: macs2.alg.matrices
+        title: Matrices y sistemas
+        units:
+          - { id: macs2.alg.matrices.u01, title: Matrices, operaciones e inversa, minutes: 55, difficulty: 3, requires: [], generators: [mat-producto, inversa-2x2, det-2x2] }
+          - { id: macs2.alg.matrices.u02, title: Sistemas de ecuaciones lineales, minutes: 55, difficulty: 3, requires: [macs2.alg.matrices.u01], generators: [sistema-gauss] }
+      - id: macs2.alg.pl
+        title: Programación lineal
+        units:
+          - { id: macs2.alg.pl.u01, title: Inecuaciones y región factible, minutes: 45, difficulty: 3, requires: [], generators: [prog-lineal] }
+          - { id: macs2.alg.pl.u02, title: Problemas de programación lineal, minutes: 60, difficulty: 4, requires: [macs2.alg.pl.u01], generators: [prog-lineal] }
+  - id: macs2.ana
+    title: Análisis
+    examSection: '2'
+    examWeight: 2.5
+    topics:
+      - id: macs2.ana.funciones
+        title: Funciones y derivadas
+        units:
+          - { id: macs2.ana.funciones.u01, title: Límites, continuidad y funciones a trozos, minutes: 50, difficulty: 3, requires: [], generators: [limite-infinito, limite-cero-cero] }
+          - { id: macs2.ana.funciones.u02, title: Derivadas, monotonía y extremos, minutes: 55, difficulty: 3, requires: [macs2.ana.funciones.u01], generators: [derivada-punto, extremo-cubica] }
+          - { id: macs2.ana.funciones.u03, title: Optimización en contextos económicos, minutes: 50, difficulty: 3, requires: [macs2.ana.funciones.u02], generators: [beneficio-max, optimizacion] }
+      - id: macs2.ana.integrales
+        title: Integrales
+        units:
+          - { id: macs2.ana.integrales.u01, title: Integrales y cálculo de áreas, minutes: 55, difficulty: 3, requires: [macs2.ana.funciones.u02], generators: [integral-definida, area-parabola] }
+  - id: macs2.pro
+    title: Probabilidad
+    examSection: '3'
+    examWeight: 2.5
+    topics:
+      - id: macs2.pro.probabilidad
+        title: Probabilidad y distribuciones
+        units:
+          - { id: macs2.pro.probabilidad.u01, title: Probabilidad condicionada, total y Bayes, minutes: 55, difficulty: 3, requires: [], generators: [prob-total, bayes] }
+          - { id: macs2.pro.probabilidad.u02, title: Distribuciones binomial y normal, minutes: 55, difficulty: 3, requires: [macs2.pro.probabilidad.u01], generators: [binomial-exacta, normal-tipificar] }
+  - id: macs2.inf
+    title: Inferencia estadística
+    examSection: '4'
+    examWeight: 2.5
+    topics:
+      - id: macs2.inf.muestreo
+        title: Muestreo y estimación
+        units:
+          - { id: macs2.inf.muestreo.u01, title: Muestreo y distribución de la media muestral, minutes: 50, difficulty: 3, requires: [macs2.pro.probabilidad.u02], generators: [media-muestral] }
+          - { id: macs2.inf.muestreo.u02, title: Intervalos de confianza para la media y la proporción, minutes: 55, difficulty: 4, requires: [macs2.inf.muestreo.u01], generators: [ic-media, ic-proporcion] }
+          - { id: macs2.inf.muestreo.u03, title: Tamaño de la muestra, minutes: 40, difficulty: 3, requires: [macs2.inf.muestreo.u02], generators: [tamano-muestra] }

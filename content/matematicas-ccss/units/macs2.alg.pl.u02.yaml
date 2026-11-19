@@ -1,0 +1,43 @@
+# Clase completa: Problemas de programación lineal
+id: macs2.alg.pl.u02
+objectives:
+- Plantear un problema de programación lineal a partir de un enunciado.
+- Encontrar el óptimo evaluando la función objetivo en los vértices.
+explanation:
+- title: Planteamiento
+  body: |
+    1. **Incógnitas:** qué decides ($x$ = unidades de A, $y$ = unidades de B).
+    2. **Función objetivo:** lo que se maximiza (beneficio) o minimiza (coste), $z = px + qy$.
+    3. **Restricciones:** recursos limitados, mínimos, y $x, y \ge 0$.
+
+    Una tabla con los datos ayuda mucho a no equivocarse.
+- title: Teorema fundamental
+  body: |
+    Si la región factible está acotada, el máximo y el mínimo de una función lineal se alcanzan en un **vértice** (o en todo un lado, si dos vértices dan el mismo valor).
+
+    Método: calcula los vértices, evalúa $z$ en cada uno y compara. Responde en el contexto: "hay que fabricar 3 mesas y 2 sillas, con un beneficio de 130 €".
+examples:
+- title: Mesas y sillas
+  statement: |
+    Un taller fabrica mesas ($x$) y sillas ($y$). Puede hacer como máximo 5 piezas al día y como máximo 3 mesas. Cada mesa deja 30 € y cada silla, 20 €. ¿Cuántas debe fabricar para maximizar el beneficio?
+  steps:
+  - |
+    **Planteamiento:** maximizar $z = 30x + 20y$ con $x + y \le 5$, $x \le 3$, $x, y \ge 0$.
+  - |
+    **Vértices** (los de la clase anterior): $(0, 0)$, $(3, 0)$, $(3, 2)$ y $(0, 5)$.
+  - |
+    **Evaluamos:** $z(0, 0) = 0$; $z(3, 0) = 90$; $z(3, 2) = 130$; $z(0, 5) = 100$.
+  result: |
+    El máximo es **130 €**, fabricando **3 mesas y 2 sillas** al día.
+summary:
+- |
+  Incógnitas, función objetivo y restricciones (con $x, y \ge 0$).
+- |
+  El óptimo está en un vértice de la región factible.
+- |
+  Da la respuesta con las unidades del problema.
+common_errors:
+- |
+  Olvidar las restricciones de no negatividad.
+- |
+  Dar solo el valor de $z$ sin decir cuántas unidades hay que fabricar.

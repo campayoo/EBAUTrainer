@@ -1,0 +1,49 @@
+# Clase completa: Fuerzas intermoleculares y propiedades de las sustancias
+id: qui.est.enlace.u02
+objectives:
+- Identificar las fuerzas intermoleculares de una sustancia.
+- Explicar los puntos de fusión y ebullición y la solubilidad.
+explanation:
+- title: Fuerzas entre moléculas
+  body: |
+    De más débil a más fuerte:
+    - **Fuerzas de dispersión (London):** en todas las moléculas; crecen con el tamaño (masa molar).
+    - **Dipolo-dipolo:** entre moléculas polares.
+    - **Puente de hidrógeno:** cuando el H está unido a **F, O o N** y se acerca a otro de esos átomos. Es la más intensa.
+
+    Son mucho más débiles que los enlaces: al hervir agua **no se rompen** los enlaces O–H.
+- title: Propiedades de cada tipo de sustancia
+  body: |
+    | Sustancia | Ejemplo | Fusión | Conduce |
+    |---|---|---|---|
+    | Iónica | NaCl | alta | fundida o disuelta |
+    | Covalente molecular | H₂O, CH₄ | baja | no |
+    | Red covalente | diamante | muy alta | no (salvo grafito) |
+    | Metálica | Cu | variable | sí, en sólido |
+
+    "Lo semejante disuelve a lo semejante": las sustancias polares se disuelven en agua y las apolares, en disolventes apolares.
+examples:
+- title: Ordenar puntos de ebullición
+  statement: |
+    Ordena de menor a mayor punto de ebullición: CH₄, H₂O y H₂S.
+  steps:
+  - |
+    **CH₄:** apolar, solo fuerzas de dispersión y es pequeña. Punto de ebullición muy bajo.
+  - |
+    **H₂S:** polar (angular), con dipolo-dipolo; el S no forma puentes de hidrógeno.
+  - |
+    **H₂O:** forma **puentes de hidrógeno** (H unido a O), mucho más intensos.
+  result: |
+    $T_{eb}(\mathrm{CH_4}) < T_{eb}(\mathrm{H_2S}) < T_{eb}(\mathrm{H_2O})$. El agua hierve a 100 °C y el H₂S, a unos −60 °C, pese a ser más pesado.
+summary:
+- |
+  Dispersión < dipolo-dipolo < puente de hidrógeno.
+- |
+  Puente de hidrógeno: H unido a F, O o N.
+- |
+  Al cambiar de estado una sustancia molecular, se rompen fuerzas intermoleculares, no enlaces.
+common_errors:
+- |
+  Decir que al hervir el agua se rompen los enlaces O–H.
+- |
+  Atribuir puentes de hidrógeno a moléculas como CH₄ o HCl.

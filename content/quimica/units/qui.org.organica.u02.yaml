@@ -1,0 +1,44 @@
+# Clase completa: Reacciones orgánicas y polímeros
+id: qui.org.organica.u02
+objectives:
+- Clasificar las reacciones orgánicas y predecir sus productos.
+- Distinguir los polímeros de adición de los de condensación.
+explanation:
+- title: Tipos de reacciones
+  body: |
+    - **Sustitución:** un átomo o grupo se cambia por otro. $\mathrm{CH_4 + Cl_2 \xrightarrow{luz} CH_3Cl + HCl}$.
+    - **Adición:** a un doble o triple enlace. $\mathrm{CH_2{=}CH_2 + HBr \to CH_3CH_2Br}$. Con alquenos asimétricos se sigue la **regla de Markovnikov**: el H va al carbono que ya tenía más H.
+    - **Eliminación:** se forma un doble enlace. Ejemplo: la deshidratación de un alcohol con H₂SO₄ y calor.
+    - **Condensación:** se unen dos moléculas liberando una pequeña (H₂O). Ejemplo: la **esterificación**, ácido + alcohol ⇌ éster + agua.
+    - **Redox:** alcohol primario → aldehído → ácido; alcohol secundario → cetona.
+- title: Polímeros
+  body: |
+    - **De adición:** los monómeros tienen un doble enlace que se abre. Ejemplos: polietileno, PVC y poliestireno.
+    - **De condensación:** se libera una molécula pequeña en cada unión. Ejemplos: poliésteres (PET) y poliamidas (nailon).
+
+    Los polímeros sintéticos son muy útiles, pero muchos no son biodegradables: de ahí la importancia del reciclaje.
+examples:
+- title: Una esterificación
+  statement: |
+    Escribe la reacción entre el ácido etanoico y el etanol. ¿De qué tipo es y cómo se llama el producto?
+  steps:
+  - |
+    **Reactivos:** $\mathrm{CH_3COOH + CH_3CH_2OH}$.
+  - |
+    **Se elimina agua:** el OH del ácido y el H del alcohol.
+  - |
+    **Producto:** $\mathrm{CH_3COOCH_2CH_3 + H_2O}$.
+  result: |
+    Es una reacción de **condensación** (esterificación). Se forma **etanoato de etilo**, un éster con olor afrutado.
+summary:
+- |
+  Adición: a enlaces dobles (Markovnikov). Sustitución: en alcanos y aromáticos.
+- |
+  Ácido + alcohol ⇌ éster + agua.
+- |
+  Polímeros de adición (polietileno) y de condensación (PET, nailon).
+common_errors:
+- |
+  Nombrar el éster al revés: la parte del ácido va primero (etanoato) y la del alcohol después (de etilo).
+- |
+  Llamar sustitución a una adición a un doble enlace.

@@ -1,0 +1,46 @@
+# Clase completa: Membrana plasmática y transporte
+id: bio.cel.estructura.u02
+objectives:
+- Describir el modelo de mosaico fluido.
+- Clasificar los mecanismos de transporte a través de la membrana.
+explanation:
+- title: El mosaico fluido
+  body: |
+    La membrana es una **bicapa de fosfolípidos** con proteínas incrustadas (integrales) o adosadas (periféricas), colesterol (regula la fluidez) y, en la cara externa, glúcidos (glucocáliz, que interviene en el reconocimiento celular).
+
+    Es **fluida** (los componentes se desplazan lateralmente) y **asimétrica**.
+- title: Transporte
+  body: |
+    | Tipo | Gasto de energía | Ejemplo |
+    |---|---|---|
+    | Difusión simple | no (a favor de gradiente) | O₂, CO₂ |
+    | Difusión facilitada | no | glucosa (permeasas), iones (canales) |
+    | Transporte activo | sí, ATP (en contra de gradiente) | bomba Na⁺/K⁺ |
+    | Endocitosis / exocitosis | sí | fagocitosis, secreción |
+
+    La bomba de sodio-potasio saca 3 Na⁺ y mete 2 K⁺ por cada ATP: mantiene el potencial de membrana.
+examples:
+- title: Clasificar transportes
+  statement: |
+    Indica el mecanismo: (a) entrada de O₂ en la célula; (b) salida de Na⁺ contra gradiente; (c) un macrófago captura una bacteria.
+  steps:
+  - |
+    **(a)** El O₂ es pequeño y apolar, y va a favor de gradiente: **difusión simple**.
+  - |
+    **(b)** Va en contra de gradiente con una proteína: **transporte activo** (bomba Na⁺/K⁺).
+  - |
+    **(c)** Entra una partícula grande englobada por la membrana: **fagocitosis**.
+  result: |
+    (a) Difusión simple; (b) transporte activo; (c) endocitosis por fagocitosis.
+summary:
+- |
+  Mosaico fluido: bicapa lipídica + proteínas + colesterol + glucocáliz.
+- |
+  A favor de gradiente, transporte pasivo; en contra, activo (ATP).
+- |
+  Las partículas grandes entran por endocitosis.
+common_errors:
+- |
+  Pensar que la difusión facilitada gasta ATP.
+- |
+  Confundir la fagocitosis (sólidos) con la pinocitosis (líquidos).

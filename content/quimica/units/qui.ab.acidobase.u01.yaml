@@ -1,0 +1,45 @@
+# Clase completa: Ácidos y bases fuertes; concepto de pH
+id: qui.ab.acidobase.u01
+objectives:
+- Aplicar las teorías de Arrhenius y Brønsted-Lowry.
+- Calcular el pH de disoluciones de ácidos y bases fuertes.
+explanation:
+- title: Ácidos y bases
+  body: |
+    - **Arrhenius:** un ácido libera H⁺ en agua; una base, OH⁻.
+    - **Brønsted-Lowry:** un ácido **cede** un protón y una base lo **acepta**. Cada ácido tiene su **base conjugada**: $\mathrm{HCl/Cl^-}$, $\mathrm{NH_4^+/NH_3}$.
+
+    Un ácido **fuerte** se disocia por completo (HCl, HNO₃, H₂SO₄ en su primera etapa); una base fuerte también (NaOH, KOH).
+- title: El pH
+  body: |
+    $$\mathrm{pH} = -\log[\mathrm{H_3O^+}], \qquad \mathrm{pOH} = -\log[\mathrm{OH^-}]$$
+    A 25 °C, $K_w = [\mathrm{H_3O^+}][\mathrm{OH^-}] = 10^{-14}$, así que $\mathrm{pH} + \mathrm{pOH} = 14$.
+
+    - pH < 7 ácido, pH = 7 neutro y pH > 7 básico.
+    - Con un ácido fuerte monoprótico: $[\mathrm{H_3O^+}] = c$.
+    - En una **neutralización** fuerte-fuerte, en el punto de equivalencia el pH es 7 y se cumple $n_{ácido} = n_{base}$ (para especies monopróticas).
+examples:
+- title: pH de un ácido y de una base fuertes
+  statement: |
+    Calcula el pH de una disolución 0,020 M de HCl y el de una 0,0050 M de NaOH.
+  steps:
+  - |
+    **HCl:** se disocia por completo, $[\mathrm{H_3O^+}] = 0{,}020$ M, y $\mathrm{pH} = -\log 0{,}020 = 1{,}70$.
+  - |
+    **NaOH:** $[\mathrm{OH^-}] = 0{,}0050$ M, y $\mathrm{pOH} = -\log 0{,}0050 = 2{,}30$.
+  - |
+    **pH:** $14 - 2{,}30 = 11{,}70$.
+  result: |
+    HCl 0,020 M: pH = **1,70**. NaOH 0,0050 M: pH = **11,70**.
+summary:
+- |
+  Ácido fuerte: $[\mathrm{H_3O^+}] = c$.
+- |
+  $\mathrm{pH} + \mathrm{pOH} = 14$ a 25 °C.
+- |
+  Brønsted: el ácido cede H⁺ y la base lo acepta.
+common_errors:
+- |
+  Calcular el pH de una base usando $[\mathrm{OH^-}]$ directamente, sin pasar por el pOH.
+- |
+  Olvidar el signo menos del logaritmo.

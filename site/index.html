@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pauta · El profe que organiza tu semana hasta la PAU</title>
+  <meta name="description" content="Pauta te dice qué estudiar cada día, te da la clase y corrige tus ejercicios. Matemáticas II, Física, Química, Biología y MACS II. Gratis, sin registro y sin internet.">
+  <meta name="theme-color" content="#1d3a8a">
+  <link rel="icon" href="app/assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+  <!--
+    Portada del proyecto en GitHub Pages (https://campayoo.github.io/EBAUTrainer/).
+    La aplicación vive en /app/ y la versión descargable en /Pauta.html.
+    La lista de asignaturas la rellena tools/build.mjs a partir del contenido
+    (content/*/subject.yaml), así que nunca se queda desactualizada.
+  -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="top">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">P</span>Pauta</a>
+    <nav aria-label="Secciones">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#asignaturas">Asignaturas</a>
+      <a href="#descargar">Descargar</a>
+    </nav>
+    <a class="btn btn-primary" href="app/">Abrir la app</a>
+  </header>
+
+  <main id="contenido">
+    <!-- Portada: lo más característico de una clase es un ejercicio corregido -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>El profe que organiza tu semana hasta la PAU.</h1>
+        <p class="lead">Pauta te dice qué estudiar cada día, te da la clase y corrige tus ejercicios. Si un día no puedes, reorganiza el plan solo y te explica qué ha cambiado.</p>
+        <div class="cta">
+          <a class="btn btn-primary btn-lg" href="app/">Empezar ahora</a>
+          <a class="btn btn-lg" href="Pauta.html" download>Descargar para usar sin internet</a>
+        </div>
+        <p class="fine">Gratis y sin registro. Tu progreso se guarda en tu navegador, no en ningún servidor.</p>
+      </div>
+
+      <figure class="sheet" aria-label="Ejemplo: un ejercicio de Química corregido por Pauta">
+        <div class="sheet-head">
+          <span>Química · Ácidos débiles</span>
+          <span>Ejercicio 3</span>
+        </div>
+        <p class="statement">Calcula el pH de una disolución 0,10 M de ácido acético (K<sub>a</sub> = 1,8·10<sup>−5</sup>).</p>
+        <ol class="work">
+          <li><span>K<sub>a</sub> = x² / (0,10 − x)</span><svg class="tick" viewBox="0 0 28 24" aria-hidden="true"><path d="M3 13 l7 8 l15 -18"/></svg></li>
+          <li><span>x ≈ √(1,8·10<sup>−5</sup> · 0,10) = 1,34·10<sup>−3</sup> M</span><svg class="tick" viewBox="0 0 28 24" aria-hidden="true"><path d="M3 13 l7 8 l15 -18"/></svg></li>
+          <li><span><mark>pH = −log(1,34·10<sup>−3</sup>) = 2,87</mark></span><svg class="tick" viewBox="0 0 28 24" aria-hidden="true"><path d="M3 13 l7 8 l15 -18"/></svg></li>
+        </ol>
+        <!-- Nota rodeada a boli rojo; las marcas se "dibujan" una vez al cargar (salvo con movimiento reducido) -->
+        <div class="grade"><svg viewBox="0 0 100 60" aria-hidden="true"><ellipse cx="50" cy="30" rx="44" ry="24"/></svg><span><span class="sr-only">Nota: </span>9,5</span></div>
+        <p class="note">Bien la aproximación. Comprueba siempre que x es menor que el 5 % de c.</p>
+      </figure>
+    </section>
+
+    <section id="como-funciona" class="band">
+      <h2>Cómo funciona</h2>
+      <ol class="steps">
+        <li>
+          <h3>Le cuentas tu situación</h3>
+          <p>Qué asignaturas preparas, cuánto tiempo tienes cada día y por dónde vais en clase. Lo que ya habéis dado no te lo vuelve a explicar desde cero.</p>
+        </li>
+        <li>
+          <h3>Te hace el planning</h3>
+          <p>Reparte el temario hasta el examen, intercala asignaturas, respeta el orden de los temas y programa repasos espaciados para que no se te olvide.</p>
+        </li>
+        <li>
+          <h3>Cada día, una clase guiada</h3>
+          <p>Calentamiento, explicación, ejemplo resuelto paso a paso, práctica con pistas y un mini test. Los ejercicios se corrigen al momento.</p>
+        </li>
+        <li>
+          <h3>Se adapta a ti</h3>
+          <p>Si fallas un tema, te pone un refuerzo. Si vas rápido, adelanta. Si un día no estudias, recoloca lo pendiente. Y siempre te dice por qué.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="asignaturas" class="band">
+      <h2>Asignaturas</h2>
+      <p class="sub">Temario del currículo de 2.º de Bachillerato de la Comunitat Valenciana. Cada unidad tiene su clase completa y ejercicios que se generan con números distintos cada vez.</p>
+      <!-- build:subjects -->
+      <ul class="subjects"><li>Se rellena al construir la web (npm run build).</li></ul>
+      <!-- /build:subjects -->
+    </section>
+
+    <section id="descargar" class="band download">
+      <div>
+        <h2>Funciona sin internet</h2>
+        <ul class="facts">
+          <li><strong>Un solo archivo.</strong> Descarga <code>Pauta.html</code> y ábrelo con doble clic en Chrome, Edge o Firefox. No hace falta instalar nada.</li>
+          <li><strong>También como app.</strong> Desde la versión web puedes instalarla en el móvil o el ordenador y abrirla aunque no tengas conexión.</li>
+          <li><strong>Tus datos son tuyos.</strong> No hay cuentas ni servidor: el progreso se guarda en tu dispositivo y puedes exportar una copia cuando quieras.</li>
+        </ul>
+      </div>
+      <div class="download-box">
+        <a class="btn btn-primary btn-lg" href="Pauta.html" download>Descargar Pauta.html</a>
+        <a class="btn btn-lg" href="app/">Usarla en el navegador</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Hecho por Pablo Campayo Viñes como proyecto de portfolio. Código con licencia MIT y contenido CC BY-SA 4.0 en <a href="https://github.com/campayoo/EBAUTrainer">GitHub</a>.</p>
+    <p>Los exámenes oficiales se enlazan, no se copian. La estructura de los simulacros de Química, Biología y MACS II es orientativa: compruébala en la web de la comisión de la PAU.</p>
+  </footer>
+</body>
+</html>

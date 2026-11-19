@@ -4,7 +4,7 @@
 > "Preparar la PAU es, sobre todo, un problema de organización: muchas asignaturas, poco tiempo y planes que se rompen en cuanto faltas un día. Quise hacer un profesor virtual que planifique por ti, te dé clase y **se replanifique solo**."
 
 ## 2. Demo (2 min)
-1. Bienvenida → elegir Física y Matemáticas II, "Matemáticas me cuesta" → se genera el planning.
+1. Bienvenida → elegir Matemáticas II, Física y Química, "Matemáticas me cuesta", y en Química «ya hemos dado el bloque A» → se genera el planning (lo dado en clase aparece como repasos).
 2. **Hoy** → empezar una clase → fallar a propósito → la corrección detecta el error ("has usado *h* en lugar de *R + h*") → pedir una pista.
 3. Terminar la clase → **Planning → Lo que ha cambiado**: el profesor explica qué ha movido.
 4. **Laboratorio** (30 s) y **Simulacro** con nota estimada.
@@ -23,7 +23,7 @@
 - La clave de la IA la pone cada usuario y nunca está en el código.
 
 ## 5. Qué mejoraría (30 s)
-- Añadir más ejercicios escritos a mano (las 55 unidades tienen teoría, pero solo 9 tienen ejercicios propios además de los generados).
+- Añadir más ejercicios escritos a mano (las 97 unidades tienen teoría, pero solo 9 tienen ejercicios propios además de los generados).
 - Un backend opcional para sincronizar entre dispositivos y un modo profesor en tiempo real (el núcleo ya es independiente del navegador).
 - Interfaz en valenciano.
 

@@ -1,0 +1,54 @@
+# Clase completa: Ciclo celular, mitosis y meiosis
+id: bio.cel.estructura.u03
+objectives:
+- Describir las fases del ciclo celular y de la mitosis.
+- Comparar la mitosis y la meiosis y su importancia biológica.
+explanation:
+- title: Ciclo celular y mitosis
+  body: |
+    **Interfase:**
+    - **G1:** la célula crece.
+    - **S:** se **replica el ADN**.
+    - **G2:** se prepara para dividirse.
+
+    **Mitosis:**
+    1. **Profase:** los cromosomas se condensan y se forma el huso.
+    2. **Metafase:** los cromosomas se alinean en la placa ecuatorial.
+    3. **Anafase:** se separan las **cromátidas hermanas**.
+    4. **Telofase:** se forman dos núcleos.
+
+    Después, la **citocinesis**: por estrangulamiento en las células animales y por fragmoplasto en las vegetales.
+
+    Resultado: 2 células **idénticas** con el mismo número de cromosomas (2n → 2n).
+- title: Meiosis
+  body: |
+    Son dos divisiones seguidas tras una sola replicación:
+    - **Meiosis I (reduccional):** en la profase I se emparejan los homólogos y hay **sobrecruzamiento**; en la anafase I se separan los **cromosomas homólogos**.
+    - **Meiosis II:** como una mitosis; se separan las cromátidas.
+
+    Resultado: 4 células **haploides** (n) y **distintas**. Origina los gametos y la **variabilidad genética** (sobrecruzamiento + reparto al azar de los cromosomas).
+examples:
+- title: Contar cromosomas
+  statement: |
+    Una célula tiene 2n = 4 cromosomas. ¿Cuántos cromosomas tendrán las células hijas tras una mitosis? ¿Y tras una meiosis?
+  steps:
+  - |
+    **Mitosis:** reparte una copia de cada cromosoma a cada hija: 2 células con **2n = 4**.
+  - |
+    **Meiosis I:** separa los homólogos: 2 células con n = 2 (cada cromosoma con 2 cromátidas).
+  - |
+    **Meiosis II:** separa las cromátidas: 4 células con **n = 2**.
+  result: |
+    Mitosis: 2 células 2n = 4 idénticas. Meiosis: 4 células n = 2 genéticamente distintas.
+summary:
+- |
+  El ADN se replica en la fase S.
+- |
+  Mitosis: 2n → dos células 2n idénticas.
+- |
+  Meiosis: 2n → cuatro células n distintas (sobrecruzamiento en la profase I).
+common_errors:
+- |
+  Decir que en la anafase de la mitosis se separan los cromosomas homólogos.
+- |
+  Pensar que el ADN se replica entre la meiosis I y la II.

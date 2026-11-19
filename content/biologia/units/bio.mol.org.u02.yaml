@@ -1,0 +1,49 @@
+# Clase completa: Proteínas y enzimas
+id: bio.mol.org.u02
+objectives:
+- Describir los niveles de estructura de las proteínas.
+- Explicar el funcionamiento de las enzimas y su regulación.
+explanation:
+- title: Estructura de las proteínas
+  body: |
+    Los **aminoácidos** se unen por **enlaces peptídicos** (carboxilo + amino, con pérdida de agua).
+    1. **Primaria:** la secuencia de aminoácidos (la determina el ADN).
+    2. **Secundaria:** hélice α o lámina β, mantenidas por puentes de hidrógeno.
+    3. **Terciaria:** el plegamiento tridimensional (puentes disulfuro, interacciones entre cadenas laterales).
+    4. **Cuaternaria:** la unión de varias cadenas (hemoglobina).
+
+    **Desnaturalización:** con calor o con cambios de pH se pierde la estructura 3D y, con ella, la función. La primaria se mantiene.
+- title: Enzimas
+  body: |
+    Son catalizadores biológicos: **disminuyen la energía de activación** y se recuperan intactas.
+    - El sustrato se une al **centro activo** (modelo del ajuste inducido).
+    - Son **específicas**.
+    - La velocidad depende de la temperatura y del pH (cada enzima tiene su óptimo) y de la concentración de sustrato (hasta la $V_{max}$).
+    - **Inhibición competitiva:** el inhibidor ocupa el centro activo; se revierte con más sustrato.
+    - **No competitiva:** se une a otra zona y deforma la enzima.
+    - **Cofactores:** iones o coenzimas (muchas proceden de vitaminas).
+examples:
+- title: Efecto de la temperatura
+  statement: |
+    Una enzima humana trabaja a 37 °C. Explica qué pasa con su actividad a 10 °C y a 70 °C.
+  steps:
+  - |
+    **A 10 °C:** hay menos choques entre la enzima y el sustrato, así que la actividad baja. Al volver a 37 °C, se recupera.
+  - |
+    **A 37 °C:** es su temperatura óptima y la actividad es máxima.
+  - |
+    **A 70 °C:** la enzima se **desnaturaliza**, pierde la forma del centro activo y la actividad cae a cero de forma irreversible.
+  result: |
+    El frío ralentiza la enzima (reversible); el calor excesivo la desnaturaliza (irreversible).
+summary:
+- |
+  Enlace peptídico entre aminoácidos; cuatro niveles de estructura.
+- |
+  Desnaturalizar: se pierde la forma (y la función), pero no la secuencia.
+- |
+  Las enzimas bajan la energía de activación y son específicas.
+common_errors:
+- |
+  Decir que la desnaturalización rompe los enlaces peptídicos.
+- |
+  Afirmar que la enzima se gasta en la reacción.

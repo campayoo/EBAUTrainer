@@ -1,0 +1,53 @@
+# Clase completa: Célula procariota y eucariota; orgánulos
+id: bio.cel.estructura.u01
+objectives:
+- Comparar células procariotas y eucariotas, animales y vegetales.
+- Relacionar cada orgánulo con su función.
+explanation:
+- title: Tipos de células
+  body: |
+    | | Procariota | Eucariota |
+    |---|---|---|
+    | Núcleo | no (nucleoide) | sí, con envoltura |
+    | ADN | circular | lineal, con histonas |
+    | Ribosomas | 70S | 80S (70S en mitocondrias y cloroplastos) |
+    | Orgánulos con membrana | no | sí |
+    | Ejemplo | bacterias | animales, plantas, hongos |
+
+    La célula **vegetal** tiene, además, **pared de celulosa**, **cloroplastos** y una gran vacuola, y no tiene centriolos.
+- title: Orgánulos
+  body: |
+    - **Núcleo:** guarda el ADN; el nucléolo fabrica los ribosomas.
+    - **Retículo endoplasmático:** rugoso (síntesis de proteínas) y liso (lípidos y detoxificación).
+    - **Aparato de Golgi:** modifica, empaqueta y distribuye.
+    - **Lisosomas:** digestión celular.
+    - **Mitocondrias:** respiración celular.
+    - **Cloroplastos:** fotosíntesis.
+    - **Citoesqueleto:** forma y movimiento; los centriolos organizan el huso.
+
+    **Teoría endosimbiótica:** mitocondrias y cloroplastos proceden de bacterias englobadas. Tienen ADN circular propio y ribosomas 70S, y se dividen solos.
+examples:
+- title: Identificar una célula
+  statement: |
+    Al microscopio electrónico se observa una célula con pared, ribosomas 70S, ADN circular y sin núcleo. ¿Qué tipo de célula es? ¿Podría ser vegetal?
+  steps:
+  - |
+    **Sin núcleo y con ADN circular:** es una célula procariota.
+  - |
+    **Ribosomas 70S:** lo confirman.
+  - |
+    **¿Vegetal?** No: la célula vegetal es eucariota. La pared de una bacteria es de peptidoglucano, no de celulosa.
+  result: |
+    Es una **bacteria** (procariota). Que tenga pared no la convierte en vegetal.
+summary:
+- |
+  Procariota: sin núcleo, ribosomas 70S y ADN circular.
+- |
+  La vegetal tiene, además, pared de celulosa, cloroplastos y una gran vacuola.
+- |
+  Endosimbiosis: mitocondrias y cloroplastos eran bacterias.
+common_errors:
+- |
+  Decir que las procariotas no tienen ribosomas.
+- |
+  Atribuir a todas las paredes celulares la celulosa.

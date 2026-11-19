@@ -32,7 +32,8 @@ export function progressTree(subject, progress) {
  */
 export function weakPoints(units, progress, limit = 5) {
   return units
-    .filter((u) => progress[u.id]?.completed && progress[u.id].mastery < 0.7)
+    // Las unidades marcadas "vistas en clase" y aún sin nota no cuentan: no sabemos cómo las llevas.
+    .filter((u) => progress[u.id]?.completed && progress[u.id].mastery < 0.7 && !(progress[u.id].source === 'clase' && (progress[u.id].lastScore ?? null) === null))
     .map((u) => ({ unit: u, mastery: progress[u.id].mastery, priority: (1 - progress[u.id].mastery) * (u.examWeight ?? 1) }))
     .sort((a, b) => b.priority - a.priority)
     .slice(0, limit);

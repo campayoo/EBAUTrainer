@@ -18,7 +18,7 @@ const port = Number(process.env.PORT ?? 5173);
 const TYPES = {
   '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css',
   '.json': 'application/json', '.webmanifest': 'application/manifest+json', '.svg': 'image/svg+xml',
-  '.png': 'image/png', '.woff2': 'font/woff2', '.ics': 'text/calendar',
+  '.png': 'image/png', '.woff2': 'font/woff2', '.woff': 'font/woff', '.ics': 'text/calendar',
 };
 
 createServer(async (req, res) => {

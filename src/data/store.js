@@ -15,7 +15,7 @@
 import { loadState, saveState, clearState } from './storage.js';
 import { generatePlan, diffPlans, summarizePlan } from '../core/planner.js';
 import { applyReview, initialProgress } from '../core/srs.js';
-import { todayISO, defaultExamDate, formatShort } from '../core/dates.js';
+import { todayISO, defaultExamDate, formatShort, addDays } from '../core/dates.js';
 import { streak, compliance, aggregate, weakPoints } from '../core/stats.js';
 import { allUnits, subjectsById, subjectNames, unitsById, unitsOfSubject } from './content.js';
 
@@ -144,7 +144,8 @@ export function checkMissed() {
 
 /**
  * Termina la conversación inicial.
- * @param data { name, targetGrade, subjects: [{ id, level }], availability, examDate, diagnostic: { unitId: nota } }
+ * @param data { name, targetGrade, subjects: [{ id, level }], availability, examDate,
+ *               diagnostic: { unitId: nota }, seen: { subjectId: [unitId] } }
  */
 export function completeOnboarding(data) {
   const today = todayISO();
@@ -154,16 +155,25 @@ export function completeOnboarding(data) {
     // La prueba inicial no completa unidades: solo reduce el tiempo que necesitan.
     progress[unitId] = { ...initialProgress(), ...(progress[unitId] ?? {}), mastery: Math.round(Math.min(0.6, score * 0.6) * 100) / 100 };
   }
+  // Lo que ya han dado en clase cuenta como visto (ver applyClassProgress).
+  let classUnits = 0;
+  let prog = progress;
+  for (const [subjectId, ids] of Object.entries(data.seen ?? {})) {
+    const res = applyClassProgress(prog, subjectId, ids, today);
+    prog = res.progress;
+    classUnits += res.added.length;
+  }
   const isFirstTime = !state.student;
   state = {
     ...state,
     student: { name: data.name.trim(), targetGrade: data.targetGrade, createdAt: state.student?.createdAt ?? today },
     profile: { ...state.profile, availability: data.availability, examDate: data.examDate },
     subjects: data.subjects.map((s) => ({ id: s.id, level: s.level, weight: LEVEL_WEIGHTS[s.level] ?? 1 })),
-    progress,
+    progress: prog,
   };
   return replan('onboarding', [
     isFirstTime ? `¡Listo, ${data.name.trim()}! He preparado tu planning hasta el examen.` : 'He actualizado tu planning con tus nuevas respuestas.',
+    ...(classUnits ? [`Como en clase ya habéis visto ${classUnits === 1 ? '1 unidad' : `${classUnits} unidades`}, empiezo por donde vais y te pongo repasos de lo ya dado.`] : []),
   ], { describe: (plan) => describePlan(plan, today) });
 }
 
@@ -179,6 +189,82 @@ export function describePlan(plan, today = todayISO()) {
   }
   if (plan.stats.finalPhaseStart) out.push(`Desde el ${formatShort(plan.stats.finalPhaseStart)}: repaso de tus puntos débiles y simulacros de examen.`);
   return [...out, ...plan.warnings];
+}
+
+/* ------------------------------------------------------------------ */
+/* "¿Por dónde vas en clase?"                                          */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Dominio con el que entra una unidad que el alumno dice haber visto en clase.
+ * Es un punto de partida prudente: haberla visto no significa dominarla, y el
+ * primer repaso lo corregirá (SM-2 sube o baja el dominio según la nota).
+ */
+export const CLASS_MASTERY = 0.55;
+
+/**
+ * Aplica (función pura) el progreso de clase de UNA asignatura.
+ * - Las unidades marcadas que no estaban completadas pasan a completadas con
+ *   source 'clase' y un primer repaso escalonado (para no acumularlos el mismo día).
+ * - Las que estaban marcadas "de clase" y ya no lo están vuelven a pendientes,
+ *   pero solo si no se han trabajado en la app (no perdemos notas reales).
+ * @returns { progress, added: [unitId], removed: [unitId] }
+ */
+export function applyClassProgress(progress, subjectId, seenIds, today = todayISO()) {
+  const seen = new Set(seenIds);
+  const next = { ...progress };
+  const added = [];
+  const removed = [];
+  for (const u of unitsOfSubject(subjectId)) {
+    const p = progress[u.id];
+    if (seen.has(u.id) && !p?.completed) {
+      next[u.id] = {
+        ...initialProgress(),
+        ...(p ?? {}),
+        completed: true,
+        completedAt: today,
+        source: 'clase',
+        mastery: Math.max(p?.mastery ?? 0, CLASS_MASTERY),
+        reps: 1,
+        interval: 1,
+        // Primeros repasos repartidos entre dentro de 2 y de 16 días aprox.
+        nextReview: addDays(today, 2 + Math.floor(added.length * 1.5) % 15),
+      };
+      added.push(u.id);
+    } else if (!seen.has(u.id) && p?.source === 'clase' && (p.lastScore ?? null) === null) {
+      delete next[u.id];
+      removed.push(u.id);
+    }
+  }
+  return { progress: next, added, removed };
+}
+
+/** Ids de las unidades que el alumno marcó como vistas en clase. */
+export function classSeenIds(st, subjectId) {
+  return unitsOfSubject(subjectId).filter((u) => st.progress[u.id]?.source === 'clase').map((u) => u.id);
+}
+
+/** Primera clase pendiente de una asignatura en un plan (para decir "seguimos por..."). */
+function nextLessonTitle(plan, subjectId) {
+  const s = plan?.sessions.find((x) => x.kind === 'lesson' && x.subjectId === subjectId);
+  return s ? unitsById.get(s.unitId)?.title : null;
+}
+
+/** Acción: el alumno actualiza por dónde va en clase en una asignatura. */
+export function setClassProgress(subjectId, seenIds) {
+  const today = todayISO();
+  const res = applyClassProgress(state.progress, subjectId, seenIds, today);
+  if (!res.added.length && !res.removed.length) return ['No hay cambios: tu planning sigue igual.'];
+  state = { ...state, progress: res.progress };
+  const name = subjectNames[subjectId];
+  const intro = [];
+  if (res.added.length) {
+    intro.push(`Apuntado: en ${name} ya habéis visto ${res.added.length === 1 ? '1 unidad más' : `${res.added.length} unidades más`}. No te las explico desde cero: te pongo repasos cortos para comprobar que las tienes.`);
+  }
+  if (res.removed.length) intro.push(`Vuelvo a poner en el plan ${res.removed.length === 1 ? '1 unidad' : `${res.removed.length} unidades`} de ${name} que habías marcado como vistas.`);
+  const messages = replan('class-progress', intro);
+  const nextTitle = nextLessonTitle(state.plan, subjectId);
+  return nextTitle ? [...messages, `En ${name} seguimos por «${nextTitle}».`] : messages;
 }
 
 export function addSubject(id, weight = 1) {

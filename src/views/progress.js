@@ -80,7 +80,7 @@ export default {
         <h2>Simulacros</h2>
         ${state.exams.length === 0 ? html`<p class="muted">Aún no has hecho ningún simulacro. <a class="link" href="#/simulacro">Hacer uno</a></p>` : html`
         <table class="table"><thead><tr><th>Fecha</th><th>Asignatura</th><th>Nota</th></tr></thead>
-          <tbody>${[...state.exams].reverse().map((e) => html`<tr><td>${e.date}</td><td>${subjectBadge(e.subjectId)}</td><td><strong>${String(e.grade).replace('.', ',')}</strong> / 10</td></tr>`)}</tbody></table>`}
+          <tbody>${[...state.exams].reverse().map((e) => html`<tr><td>${formatShort(e.date)}</td><td>${subjectBadge(e.subjectId)}</td><td><strong>${String(e.grade).replace('.', ',')}</strong> / 10</td></tr>`)}</tbody></table>`}
       </section>`;
   },
 };

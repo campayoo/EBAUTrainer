@@ -78,12 +78,36 @@ const OL = /^\s*\d+\. /;
  * Un bloque (texto entre líneas en blanco) puede mezclar texto y listas.
  * Lo recorremos línea a línea agrupando "tramos" del mismo tipo.
  */
+/** Fila de tabla estilo GitHub: empieza por «|». */
+const TABLE = /^\s*\|/;
+
+/**
+ * Convierte filas «| a | b |» en una tabla HTML. La segunda fila
+ * («|---|---|») separa la cabecera del cuerpo. Cada celda pasa por
+ * inline(), que escapa el texto, así que no se cuela HTML.
+ */
+function renderTable(rows) {
+  const cells = (row) => row.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+  const isSeparator = (row) => /^\s*\|?\s*:?-{2,}/.test(row);
+  const [head, ...rest] = rows;
+  const body = rest.filter((r) => !isSeparator(r));
+  const th = cells(head).map((c) => `<th scope="col">${inline(c)}</th>`).join('');
+  const trs = body.map((r) => `<tr>${cells(r).map((c) => `<td>${inline(c)}</td>`).join('')}</tr>`).join('');
+  return `<div class="table-wrap"><table class="md-table"><thead><tr>${th}</tr></thead><tbody>${trs}</tbody></table></div>`;
+}
+
 function renderBlock(block) {
   const lines = block.split('\n').map((l) => l.trimEnd()).filter((l) => l.trim() !== '');
   const runs = []; // [{ type: 'p' | 'ul' | 'ol', items: [] }]
   for (const line of lines) {
-    const type = UL.test(line) ? 'ul' : OL.test(line) ? 'ol' : 'p';
+    const type = TABLE.test(line) ? 'table' : UL.test(line) ? 'ul' : OL.test(line) ? 'ol' : 'p';
     const last = runs[runs.length - 1];
+    if (type === 'table') {
+      // Las filas de una tabla se acumulan tal cual; se procesan al final.
+      if (last && last.type === 'table') last.items.push(line);
+      else runs.push({ type, items: [line] });
+      continue;
+    }
     const isContinuation = type === 'p' && /^\s{2,}/.test(line) && last && last.type !== 'p';
     if (isContinuation) {
       last.items[last.items.length - 1] += ' ' + line.trim();
@@ -96,6 +120,7 @@ function renderBlock(block) {
     }
   }
   return runs.map((run) => {
+    if (run.type === 'table') return renderTable(run.items);
     if (run.type !== 'p') return `<${run.type}>${run.items.map((it) => `<li>${inline(it)}</li>`).join('')}</${run.type}>`;
     const text = run.items[0];
     // Una fórmula destacada sola no va dentro de <p>.

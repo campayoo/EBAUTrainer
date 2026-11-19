@@ -1,0 +1,51 @@
+# Clase completa: El sistema inmunitario
+id: bio.mic.inmuno.u01
+objectives:
+- Distinguir la respuesta inespecífica de la específica.
+- Explicar las respuestas primaria y secundaria, las vacunas y las alteraciones del sistema inmunitario.
+explanation:
+- title: Defensas
+  body: |
+    - **Barreras externas:** piel, mucosas, lágrimas.
+    - **Respuesta inespecífica (innata):** inflamación, fagocitos (neutrófilos y macrófagos) y complemento.
+    - **Respuesta específica (adaptativa):** reconoce **antígenos** concretos.
+      - **Humoral:** los **linfocitos B** se transforman en células plasmáticas que producen **anticuerpos**.
+      - **Celular:** los **linfocitos T** destruyen células infectadas (T citotóxicos) o coordinan la respuesta (T colaboradores).
+
+    Un anticuerpo es una proteína con forma de Y; se une al antígeno de forma específica.
+- title: Memoria y vacunas
+  body: |
+    - **Respuesta primaria:** es lenta y deja **células de memoria**.
+    - **Respuesta secundaria:** es más rápida e intensa.
+
+    | Inmunidad | Natural | Artificial |
+    |---|---|---|
+    | Activa | pasar la enfermedad | vacuna |
+    | Pasiva | anticuerpos de la madre | suero |
+
+    **Alteraciones:** alergias (hipersensibilidad), enfermedades autoinmunes e inmunodeficiencias (como el sida, causado por el VIH, que destruye los linfocitos T colaboradores).
+examples:
+- title: Vacuna frente a suero
+  statement: |
+    Una persona recibe una mordedura de serpiente venenosa. ¿Es mejor una vacuna o un suero? ¿Por qué?
+  steps:
+  - |
+    **Necesidad:** hay que neutralizar el veneno **ya**.
+  - |
+    **Vacuna:** el cuerpo tardaría días en producir anticuerpos (respuesta primaria).
+  - |
+    **Suero:** aporta anticuerpos ya fabricados; protege de inmediato, pero dura poco y no deja memoria.
+  result: |
+    Un **suero** (inmunidad pasiva artificial). La vacuna sirve para prevenir, no para curar una urgencia.
+summary:
+- |
+  Inespecífica (innata) frente a específica (linfocitos B y T).
+- |
+  La respuesta secundaria es más rápida gracias a las células de memoria.
+- |
+  Vacuna: activa artificial. Suero: pasiva artificial.
+common_errors:
+- |
+  Decir que los anticuerpos los fabrican los linfocitos T.
+- |
+  Pensar que la vacuna da inmunidad pasiva.

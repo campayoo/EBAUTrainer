@@ -1,562 +1,13 @@
 // AUTO-GENERADO por tools/build-content.mjs a partir de content/*.yaml.
 // NO lo edites a mano: edita los YAML y ejecuta "npm run build:content".
 export default {
- "version": "65130bfe374a",
+ "version": "7999e3246e9b",
  "subjects": [
-  {
-   "id": "fis",
-   "name": "Física",
-   "short": "Física",
-   "color": "#e8590c",
-   "icon": "⚛",
-   "description": "Campos gravitatorio y electromagnético, ondas, óptica y física moderna.",
-   "blocks": [
-    {
-     "id": "fis.grav",
-     "title": "A. Campo gravitatorio",
-     "examSection": "A",
-     "examWeight": 2,
-     "topics": [
-      {
-       "id": "fis.grav.campo",
-       "title": "Gravitación y campo gravitatorio",
-       "units": [
-        {
-         "id": "fis.grav.campo.u01",
-         "title": "Ley de gravitación universal",
-         "minutes": 45,
-         "difficulty": 2,
-         "requires": [],
-         "generators": [
-          "grav-fuerza"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.grav",
-         "topicId": "fis.grav.campo",
-         "examWeight": 2,
-         "hasLesson": true
-        },
-        {
-         "id": "fis.grav.campo.u02",
-         "title": "Intensidad del campo gravitatorio",
-         "minutes": 50,
-         "difficulty": 3,
-         "requires": [
-          "fis.grav.campo.u01"
-         ],
-         "generators": [
-          "grav-campo-altura",
-          "grav-superposicion"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.grav",
-         "topicId": "fis.grav.campo",
-         "examWeight": 2,
-         "hasLesson": true
-        }
-       ]
-      },
-      {
-       "id": "fis.grav.energia",
-       "title": "Energía y potencial gravitatorio",
-       "units": [
-        {
-         "id": "fis.grav.energia.u01",
-         "title": "Potencial y energía potencial gravitatoria",
-         "minutes": 50,
-         "difficulty": 3,
-         "requires": [
-          "fis.grav.campo.u02"
-         ],
-         "generators": [
-          "grav-potencial",
-          "grav-energia-potencial"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.grav",
-         "topicId": "fis.grav.energia",
-         "examWeight": 2,
-         "hasLesson": true
-        }
-       ]
-      },
-      {
-       "id": "fis.grav.orbitas",
-       "title": "Movimiento de satélites y planetas",
-       "units": [
-        {
-         "id": "fis.grav.orbitas.u01",
-         "title": "Velocidad orbital",
-         "minutes": 55,
-         "difficulty": 3,
-         "requires": [
-          "fis.grav.campo.u02"
-         ],
-         "generators": [
-          "grav-velocidad-orbital",
-          "grav-periodo",
-          "grav-kepler"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.grav",
-         "topicId": "fis.grav.orbitas",
-         "examWeight": 2,
-         "hasLesson": true
-        },
-        {
-         "id": "fis.grav.orbitas.u02",
-         "title": "Energía de satélites y velocidad de escape",
-         "minutes": 55,
-         "difficulty": 4,
-         "requires": [
-          "fis.grav.orbitas.u01",
-          "fis.grav.energia.u01"
-         ],
-         "generators": [
-          "grav-energia-satelite",
-          "grav-escape"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.grav",
-         "topicId": "fis.grav.orbitas",
-         "examWeight": 2,
-         "hasLesson": true
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "id": "fis.em",
-     "title": "B. Campo electromagnético",
-     "examSection": "B",
-     "examWeight": 3,
-     "topics": [
-      {
-       "id": "fis.em.electrico",
-       "title": "Campo eléctrico",
-       "units": [
-        {
-         "id": "fis.em.electrico.u01",
-         "title": "Ley de Coulomb y campo eléctrico",
-         "minutes": 50,
-         "difficulty": 3,
-         "requires": [],
-         "generators": [
-          "coulomb-fuerza",
-          "campo-electrico"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.em",
-         "topicId": "fis.em.electrico",
-         "examWeight": 3,
-         "hasLesson": true
-        },
-        {
-         "id": "fis.em.electrico.u02",
-         "title": "Potencial y energía eléctrica",
-         "minutes": 50,
-         "difficulty": 3,
-         "requires": [
-          "fis.em.electrico.u01"
-         ],
-         "generators": [
-          "potencial-electrico"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.em",
-         "topicId": "fis.em.electrico",
-         "examWeight": 3,
-         "hasLesson": true
-        },
-        {
-         "id": "fis.em.electrico.u03",
-         "title": "Flujo eléctrico y teorema de Gauss",
-         "minutes": 45,
-         "difficulty": 4,
-         "requires": [
-          "fis.em.electrico.u01"
-         ],
-         "generators": [
-          "flujo-gauss"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.em",
-         "topicId": "fis.em.electrico",
-         "examWeight": 3,
-         "hasLesson": true
-        }
-       ]
-      },
-      {
-       "id": "fis.em.magnetico",
-       "title": "Campo magnético",
-       "units": [
-        {
-         "id": "fis.em.magnetico.u01",
-         "title": "Fuerza de Lorentz y movimiento de cargas",
-         "minutes": 55,
-         "difficulty": 4,
-         "requires": [
-          "fis.em.electrico.u01"
-         ],
-         "generators": [
-          "lorentz-radio"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.em",
-         "topicId": "fis.em.magnetico",
-         "examWeight": 3,
-         "hasLesson": true
-        },
-        {
-         "id": "fis.em.magnetico.u02",
-         "title": "Campos creados por corrientes y fuerza entre conductores",
-         "minutes": 50,
-         "difficulty": 4,
-         "requires": [
-          "fis.em.magnetico.u01"
-         ],
-         "generators": [
-          "campo-hilo",
-          "fuerza-conductores"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.em",
-         "topicId": "fis.em.magnetico",
-         "examWeight": 3,
-         "hasLesson": true
-        }
-       ]
-      },
-      {
-       "id": "fis.em.induccion",
-       "title": "Inducción electromagnética",
-       "units": [
-        {
-         "id": "fis.em.induccion.u01",
-         "title": "Flujo magnético y ley de Faraday-Lenz",
-         "minutes": 55,
-         "difficulty": 4,
-         "requires": [
-          "fis.em.magnetico.u02"
-         ],
-         "generators": [
-          "fem-inducida"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.em",
-         "topicId": "fis.em.induccion",
-         "examWeight": 3,
-         "hasLesson": true
-        },
-        {
-         "id": "fis.em.induccion.u02",
-         "title": "Alternadores",
-         "minutes": 40,
-         "difficulty": 3,
-         "requires": [
-          "fis.em.induccion.u01"
-         ],
-         "generators": [
-          "transformador"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.em",
-         "topicId": "fis.em.induccion",
-         "examWeight": 3,
-         "hasLesson": true
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "id": "fis.ond",
-     "title": "C. Vibraciones y ondas",
-     "examSection": "C",
-     "examWeight": 3,
-     "topics": [
-      {
-       "id": "fis.ond.mas",
-       "title": "Movimiento armónico simple",
-       "units": [
-        {
-         "id": "fis.ond.mas.u01",
-         "title": "MAS: cinemática, dinámica y energía",
-         "minutes": 55,
-         "difficulty": 3,
-         "requires": [],
-         "generators": [
-          "mas-vmax",
-          "mas-periodo-muelle"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.ond",
-         "topicId": "fis.ond.mas",
-         "examWeight": 3,
-         "hasLesson": true
-        }
-       ]
-      },
-      {
-       "id": "fis.ond.ondas",
-       "title": "Ondas y sonido",
-       "units": [
-        {
-         "id": "fis.ond.ondas.u01",
-         "title": "Ecuación de las ondas armónicas",
-         "minutes": 55,
-         "difficulty": 4,
-         "requires": [
-          "fis.ond.mas.u01"
-         ],
-         "generators": [
-          "onda-ecuacion",
-          "onda-longitud"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.ond",
-         "topicId": "fis.ond.ondas",
-         "examWeight": 3,
-         "hasLesson": true
-        },
-        {
-         "id": "fis.ond.ondas.u02",
-         "title": "Sonido: intensidad y nivel sonoro",
-         "minutes": 45,
-         "difficulty": 3,
-         "requires": [
-          "fis.ond.ondas.u01"
-         ],
-         "generators": [
-          "nivel-sonoro"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.ond",
-         "topicId": "fis.ond.ondas",
-         "examWeight": 3,
-         "hasLesson": true
-        },
-        {
-         "id": "fis.ond.ondas.u03",
-         "title": "Fenómenos ondulatorios",
-         "minutes": 45,
-         "difficulty": 3,
-         "requires": [
-          "fis.ond.ondas.u01"
-         ],
-         "generators": [
-          "onda-longitud"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.ond",
-         "topicId": "fis.ond.ondas",
-         "examWeight": 3,
-         "hasLesson": true
-        }
-       ]
-      },
-      {
-       "id": "fis.ond.luz",
-       "title": "Naturaleza de la luz",
-       "units": [
-        {
-         "id": "fis.ond.luz.u01",
-         "title": "Naturaleza de la luz y refracción",
-         "minutes": 45,
-         "difficulty": 3,
-         "requires": [
-          "fis.ond.ondas.u01"
-         ],
-         "generators": [
-          "snell",
-          "angulo-limite"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.ond",
-         "topicId": "fis.ond.luz",
-         "examWeight": 3,
-         "hasLesson": true
-        }
-       ]
-      },
-      {
-       "id": "fis.ond.optica",
-       "title": "Óptica geométrica",
-       "units": [
-        {
-         "id": "fis.ond.optica.u01",
-         "title": "Espejos",
-         "minutes": 50,
-         "difficulty": 3,
-         "requires": [
-          "fis.ond.luz.u01"
-         ],
-         "generators": [
-          "espejo-concavo"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.ond",
-         "topicId": "fis.ond.optica",
-         "examWeight": 3,
-         "hasLesson": true
-        },
-        {
-         "id": "fis.ond.optica.u02",
-         "title": "Lentes delgadas",
-         "minutes": 55,
-         "difficulty": 4,
-         "requires": [
-          "fis.ond.optica.u01"
-         ],
-         "generators": [
-          "lente-convergente",
-          "potencia-lente"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.ond",
-         "topicId": "fis.ond.optica",
-         "examWeight": 3,
-         "hasLesson": true
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "id": "fis.mod",
-     "title": "D. Física relativista, cuántica, nuclear y de partículas",
-     "examSection": "D",
-     "examWeight": 2,
-     "topics": [
-      {
-       "id": "fis.mod.relatividad",
-       "title": "Relatividad especial",
-       "units": [
-        {
-         "id": "fis.mod.relatividad.u01",
-         "title": "Relatividad especial: tiempo, longitud y energía",
-         "minutes": 45,
-         "difficulty": 3,
-         "requires": [],
-         "generators": [
-          "relatividad-tiempo"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.mod",
-         "topicId": "fis.mod.relatividad",
-         "examWeight": 2,
-         "hasLesson": true
-        }
-       ]
-      },
-      {
-       "id": "fis.mod.cuantica",
-       "title": "Física cuántica",
-       "units": [
-        {
-         "id": "fis.mod.cuantica.u01",
-         "title": "Efecto fotoeléctrico",
-         "minutes": 50,
-         "difficulty": 3,
-         "requires": [],
-         "generators": [
-          "fotoelectrico"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.mod",
-         "topicId": "fis.mod.cuantica",
-         "examWeight": 2,
-         "hasLesson": true
-        },
-        {
-         "id": "fis.mod.cuantica.u02",
-         "title": "Hipótesis de De Broglie e incertidumbre",
-         "minutes": 40,
-         "difficulty": 3,
-         "requires": [
-          "fis.mod.cuantica.u01"
-         ],
-         "generators": [
-          "de-broglie"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.mod",
-         "topicId": "fis.mod.cuantica",
-         "examWeight": 2,
-         "hasLesson": true
-        }
-       ]
-      },
-      {
-       "id": "fis.mod.nuclear",
-       "title": "Física nuclear",
-       "units": [
-        {
-         "id": "fis.mod.nuclear.u01",
-         "title": "Radiactividad y ley de desintegración",
-         "minutes": 50,
-         "difficulty": 3,
-         "requires": [],
-         "generators": [
-          "desintegracion"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.mod",
-         "topicId": "fis.mod.nuclear",
-         "examWeight": 2,
-         "hasLesson": true
-        },
-        {
-         "id": "fis.mod.nuclear.u02",
-         "title": "Energía de enlace",
-         "minutes": 45,
-         "difficulty": 3,
-         "requires": [
-          "fis.mod.nuclear.u01"
-         ],
-         "generators": [
-          "energia-enlace"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.mod",
-         "topicId": "fis.mod.nuclear",
-         "examWeight": 2,
-         "hasLesson": true
-        }
-       ]
-      },
-      {
-       "id": "fis.mod.particulas",
-       "title": "Física de partículas",
-       "units": [
-        {
-         "id": "fis.mod.particulas.u01",
-         "title": "Modelo estándar e interacciones fundamentales",
-         "minutes": 35,
-         "difficulty": 2,
-         "requires": [],
-         "generators": [
-          "particulas-concepto"
-         ],
-         "subjectId": "fis",
-         "blockId": "fis.mod",
-         "topicId": "fis.mod.particulas",
-         "examWeight": 2,
-         "hasLesson": true
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
   {
    "id": "mat2",
    "name": "Matemáticas II",
    "short": "Mates II",
-   "color": "#4f5bd5",
+   "color": "#2b6cb0",
    "icon": "∑",
    "description": "Álgebra lineal, geometría en el espacio, análisis, integrales y probabilidad.",
    "blocks": [
@@ -1191,9 +642,1589 @@ export default {
      ]
     }
    ]
+  },
+  {
+   "id": "fis",
+   "name": "Física",
+   "short": "Física",
+   "color": "#e8590c",
+   "icon": "⚛",
+   "description": "Campos gravitatorio y electromagnético, ondas, óptica y física moderna.",
+   "blocks": [
+    {
+     "id": "fis.grav",
+     "title": "A. Campo gravitatorio",
+     "examSection": "A",
+     "examWeight": 2,
+     "topics": [
+      {
+       "id": "fis.grav.campo",
+       "title": "Gravitación y campo gravitatorio",
+       "units": [
+        {
+         "id": "fis.grav.campo.u01",
+         "title": "Ley de gravitación universal",
+         "minutes": 45,
+         "difficulty": 2,
+         "requires": [],
+         "generators": [
+          "grav-fuerza"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.grav",
+         "topicId": "fis.grav.campo",
+         "examWeight": 2,
+         "hasLesson": true
+        },
+        {
+         "id": "fis.grav.campo.u02",
+         "title": "Intensidad del campo gravitatorio",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [
+          "fis.grav.campo.u01"
+         ],
+         "generators": [
+          "grav-campo-altura",
+          "grav-superposicion"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.grav",
+         "topicId": "fis.grav.campo",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "fis.grav.energia",
+       "title": "Energía y potencial gravitatorio",
+       "units": [
+        {
+         "id": "fis.grav.energia.u01",
+         "title": "Potencial y energía potencial gravitatoria",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [
+          "fis.grav.campo.u02"
+         ],
+         "generators": [
+          "grav-potencial",
+          "grav-energia-potencial"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.grav",
+         "topicId": "fis.grav.energia",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "fis.grav.orbitas",
+       "title": "Movimiento de satélites y planetas",
+       "units": [
+        {
+         "id": "fis.grav.orbitas.u01",
+         "title": "Velocidad orbital",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [
+          "fis.grav.campo.u02"
+         ],
+         "generators": [
+          "grav-velocidad-orbital",
+          "grav-periodo",
+          "grav-kepler"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.grav",
+         "topicId": "fis.grav.orbitas",
+         "examWeight": 2,
+         "hasLesson": true
+        },
+        {
+         "id": "fis.grav.orbitas.u02",
+         "title": "Energía de satélites y velocidad de escape",
+         "minutes": 55,
+         "difficulty": 4,
+         "requires": [
+          "fis.grav.orbitas.u01",
+          "fis.grav.energia.u01"
+         ],
+         "generators": [
+          "grav-energia-satelite",
+          "grav-escape"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.grav",
+         "topicId": "fis.grav.orbitas",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "fis.em",
+     "title": "B. Campo electromagnético",
+     "examSection": "B",
+     "examWeight": 3,
+     "topics": [
+      {
+       "id": "fis.em.electrico",
+       "title": "Campo eléctrico",
+       "units": [
+        {
+         "id": "fis.em.electrico.u01",
+         "title": "Ley de Coulomb y campo eléctrico",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "coulomb-fuerza",
+          "campo-electrico"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.em",
+         "topicId": "fis.em.electrico",
+         "examWeight": 3,
+         "hasLesson": true
+        },
+        {
+         "id": "fis.em.electrico.u02",
+         "title": "Potencial y energía eléctrica",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [
+          "fis.em.electrico.u01"
+         ],
+         "generators": [
+          "potencial-electrico"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.em",
+         "topicId": "fis.em.electrico",
+         "examWeight": 3,
+         "hasLesson": true
+        },
+        {
+         "id": "fis.em.electrico.u03",
+         "title": "Flujo eléctrico y teorema de Gauss",
+         "minutes": 45,
+         "difficulty": 4,
+         "requires": [
+          "fis.em.electrico.u01"
+         ],
+         "generators": [
+          "flujo-gauss"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.em",
+         "topicId": "fis.em.electrico",
+         "examWeight": 3,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "fis.em.magnetico",
+       "title": "Campo magnético",
+       "units": [
+        {
+         "id": "fis.em.magnetico.u01",
+         "title": "Fuerza de Lorentz y movimiento de cargas",
+         "minutes": 55,
+         "difficulty": 4,
+         "requires": [
+          "fis.em.electrico.u01"
+         ],
+         "generators": [
+          "lorentz-radio"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.em",
+         "topicId": "fis.em.magnetico",
+         "examWeight": 3,
+         "hasLesson": true
+        },
+        {
+         "id": "fis.em.magnetico.u02",
+         "title": "Campos creados por corrientes y fuerza entre conductores",
+         "minutes": 50,
+         "difficulty": 4,
+         "requires": [
+          "fis.em.magnetico.u01"
+         ],
+         "generators": [
+          "campo-hilo",
+          "fuerza-conductores"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.em",
+         "topicId": "fis.em.magnetico",
+         "examWeight": 3,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "fis.em.induccion",
+       "title": "Inducción electromagnética",
+       "units": [
+        {
+         "id": "fis.em.induccion.u01",
+         "title": "Flujo magnético y ley de Faraday-Lenz",
+         "minutes": 55,
+         "difficulty": 4,
+         "requires": [
+          "fis.em.magnetico.u02"
+         ],
+         "generators": [
+          "fem-inducida"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.em",
+         "topicId": "fis.em.induccion",
+         "examWeight": 3,
+         "hasLesson": true
+        },
+        {
+         "id": "fis.em.induccion.u02",
+         "title": "Alternadores",
+         "minutes": 40,
+         "difficulty": 3,
+         "requires": [
+          "fis.em.induccion.u01"
+         ],
+         "generators": [
+          "transformador"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.em",
+         "topicId": "fis.em.induccion",
+         "examWeight": 3,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "fis.ond",
+     "title": "C. Vibraciones y ondas",
+     "examSection": "C",
+     "examWeight": 3,
+     "topics": [
+      {
+       "id": "fis.ond.mas",
+       "title": "Movimiento armónico simple",
+       "units": [
+        {
+         "id": "fis.ond.mas.u01",
+         "title": "MAS: cinemática, dinámica y energía",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "mas-vmax",
+          "mas-periodo-muelle"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.ond",
+         "topicId": "fis.ond.mas",
+         "examWeight": 3,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "fis.ond.ondas",
+       "title": "Ondas y sonido",
+       "units": [
+        {
+         "id": "fis.ond.ondas.u01",
+         "title": "Ecuación de las ondas armónicas",
+         "minutes": 55,
+         "difficulty": 4,
+         "requires": [
+          "fis.ond.mas.u01"
+         ],
+         "generators": [
+          "onda-ecuacion",
+          "onda-longitud"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.ond",
+         "topicId": "fis.ond.ondas",
+         "examWeight": 3,
+         "hasLesson": true
+        },
+        {
+         "id": "fis.ond.ondas.u02",
+         "title": "Sonido: intensidad y nivel sonoro",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [
+          "fis.ond.ondas.u01"
+         ],
+         "generators": [
+          "nivel-sonoro"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.ond",
+         "topicId": "fis.ond.ondas",
+         "examWeight": 3,
+         "hasLesson": true
+        },
+        {
+         "id": "fis.ond.ondas.u03",
+         "title": "Fenómenos ondulatorios",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [
+          "fis.ond.ondas.u01"
+         ],
+         "generators": [
+          "onda-longitud"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.ond",
+         "topicId": "fis.ond.ondas",
+         "examWeight": 3,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "fis.ond.luz",
+       "title": "Naturaleza de la luz",
+       "units": [
+        {
+         "id": "fis.ond.luz.u01",
+         "title": "Naturaleza de la luz y refracción",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [
+          "fis.ond.ondas.u01"
+         ],
+         "generators": [
+          "snell",
+          "angulo-limite"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.ond",
+         "topicId": "fis.ond.luz",
+         "examWeight": 3,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "fis.ond.optica",
+       "title": "Óptica geométrica",
+       "units": [
+        {
+         "id": "fis.ond.optica.u01",
+         "title": "Espejos",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [
+          "fis.ond.luz.u01"
+         ],
+         "generators": [
+          "espejo-concavo"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.ond",
+         "topicId": "fis.ond.optica",
+         "examWeight": 3,
+         "hasLesson": true
+        },
+        {
+         "id": "fis.ond.optica.u02",
+         "title": "Lentes delgadas",
+         "minutes": 55,
+         "difficulty": 4,
+         "requires": [
+          "fis.ond.optica.u01"
+         ],
+         "generators": [
+          "lente-convergente",
+          "potencia-lente"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.ond",
+         "topicId": "fis.ond.optica",
+         "examWeight": 3,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "fis.mod",
+     "title": "D. Física relativista, cuántica, nuclear y de partículas",
+     "examSection": "D",
+     "examWeight": 2,
+     "topics": [
+      {
+       "id": "fis.mod.relatividad",
+       "title": "Relatividad especial",
+       "units": [
+        {
+         "id": "fis.mod.relatividad.u01",
+         "title": "Relatividad especial: tiempo, longitud y energía",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "relatividad-tiempo"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.mod",
+         "topicId": "fis.mod.relatividad",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "fis.mod.cuantica",
+       "title": "Física cuántica",
+       "units": [
+        {
+         "id": "fis.mod.cuantica.u01",
+         "title": "Efecto fotoeléctrico",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "fotoelectrico"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.mod",
+         "topicId": "fis.mod.cuantica",
+         "examWeight": 2,
+         "hasLesson": true
+        },
+        {
+         "id": "fis.mod.cuantica.u02",
+         "title": "Hipótesis de De Broglie e incertidumbre",
+         "minutes": 40,
+         "difficulty": 3,
+         "requires": [
+          "fis.mod.cuantica.u01"
+         ],
+         "generators": [
+          "de-broglie"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.mod",
+         "topicId": "fis.mod.cuantica",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "fis.mod.nuclear",
+       "title": "Física nuclear",
+       "units": [
+        {
+         "id": "fis.mod.nuclear.u01",
+         "title": "Radiactividad y ley de desintegración",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "desintegracion"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.mod",
+         "topicId": "fis.mod.nuclear",
+         "examWeight": 2,
+         "hasLesson": true
+        },
+        {
+         "id": "fis.mod.nuclear.u02",
+         "title": "Energía de enlace",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [
+          "fis.mod.nuclear.u01"
+         ],
+         "generators": [
+          "energia-enlace"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.mod",
+         "topicId": "fis.mod.nuclear",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "fis.mod.particulas",
+       "title": "Física de partículas",
+       "units": [
+        {
+         "id": "fis.mod.particulas.u01",
+         "title": "Modelo estándar e interacciones fundamentales",
+         "minutes": 35,
+         "difficulty": 2,
+         "requires": [],
+         "generators": [
+          "particulas-concepto"
+         ],
+         "subjectId": "fis",
+         "blockId": "fis.mod",
+         "topicId": "fis.mod.particulas",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "qui",
+   "name": "Química",
+   "short": "Química",
+   "color": "#0f766e",
+   "icon": "⚗",
+   "description": "Estructura de la materia y enlace, reacciones químicas (termoquímica, equilibrio, ácido-base, redox) y química orgánica.",
+   "blocks": [
+    {
+     "id": "qui.est",
+     "title": "A. Estructura de la materia y enlace químico",
+     "examSection": "1",
+     "examWeight": 2,
+     "topics": [
+      {
+       "id": "qui.est.atomo",
+       "title": "El átomo y la tabla periódica",
+       "units": [
+        {
+         "id": "qui.est.atomo.u01",
+         "title": "Modelo cuántico y configuración electrónica",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "qui-atomo"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.est",
+         "topicId": "qui.est.atomo",
+         "examWeight": 2,
+         "hasLesson": true
+        },
+        {
+         "id": "qui.est.atomo.u02",
+         "title": "Propiedades periódicas",
+         "minutes": 45,
+         "difficulty": 2,
+         "requires": [
+          "qui.est.atomo.u01"
+         ],
+         "generators": [
+          "qui-periodica"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.est",
+         "topicId": "qui.est.atomo",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "qui.est.enlace",
+       "title": "Enlace químico",
+       "units": [
+        {
+         "id": "qui.est.enlace.u01",
+         "title": "Enlace iónico",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [
+          "qui.est.atomo.u02"
+         ],
+         "generators": [
+          "qui-enlace"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.est",
+         "topicId": "qui.est.enlace",
+         "examWeight": 2,
+         "hasLesson": true
+        },
+        {
+         "id": "qui.est.enlace.u02",
+         "title": "Fuerzas intermoleculares y propiedades de las sustancias",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [
+          "qui.est.enlace.u01"
+         ],
+         "generators": [
+          "qui-fuerzas"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.est",
+         "topicId": "qui.est.enlace",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "qui.reac",
+     "title": "B. Reacciones químicas",
+     "examSection": "2",
+     "examWeight": 2,
+     "topics": [
+      {
+       "id": "qui.reac.energia",
+       "title": "Termodinámica y cinética",
+       "units": [
+        {
+         "id": "qui.reac.energia.u01",
+         "title": "Termoquímica y ley de Hess",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "entalpia-combustion"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.reac",
+         "topicId": "qui.reac.energia",
+         "examWeight": 2,
+         "hasLesson": true
+        },
+        {
+         "id": "qui.reac.energia.u02",
+         "title": "Entropía y espontaneidad",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [
+          "qui.reac.energia.u01"
+         ],
+         "generators": [
+          "gibbs"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.reac",
+         "topicId": "qui.reac.energia",
+         "examWeight": 2,
+         "hasLesson": true
+        },
+        {
+         "id": "qui.reac.energia.u03",
+         "title": "Cinética química",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "qui-cinetica"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.reac",
+         "topicId": "qui.reac.energia",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "qui.eq",
+     "title": "C. Equilibrio químico",
+     "examSection": "3",
+     "examWeight": 2,
+     "topics": [
+      {
+       "id": "qui.eq.equilibrio",
+       "title": "Equilibrio químico",
+       "units": [
+        {
+         "id": "qui.eq.equilibrio.u01",
+         "title": "Constantes de equilibrio Kc y Kp",
+         "minutes": 60,
+         "difficulty": 4,
+         "requires": [
+          "qui.reac.energia.u03"
+         ],
+         "generators": [
+          "kc-equilibrio"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.eq",
+         "topicId": "qui.eq.equilibrio",
+         "examWeight": 2,
+         "hasLesson": true
+        },
+        {
+         "id": "qui.eq.equilibrio.u02",
+         "title": "Principio de Le Chatelier",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [
+          "qui.eq.equilibrio.u01"
+         ],
+         "generators": [
+          "qui-equilibrio"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.eq",
+         "topicId": "qui.eq.equilibrio",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "qui.ab",
+     "title": "D. Ácido-base y redox",
+     "examSection": "4",
+     "examWeight": 2,
+     "topics": [
+      {
+       "id": "qui.ab.acidobase",
+       "title": "Reacciones ácido-base",
+       "units": [
+        {
+         "id": "qui.ab.acidobase.u01",
+         "title": "Ácidos y bases fuertes; concepto de pH",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [
+          "qui.eq.equilibrio.u01"
+         ],
+         "generators": [
+          "ph-fuerte",
+          "qui-acidobase"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.ab",
+         "topicId": "qui.ab.acidobase",
+         "examWeight": 2,
+         "hasLesson": true
+        },
+        {
+         "id": "qui.ab.acidobase.u02",
+         "title": "Ácidos débiles e hidrólisis",
+         "minutes": 55,
+         "difficulty": 4,
+         "requires": [
+          "qui.ab.acidobase.u01"
+         ],
+         "generators": [
+          "ph-debil",
+          "qui-acidobase"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.ab",
+         "topicId": "qui.ab.acidobase",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "qui.ab.redox",
+       "title": "Reacciones redox",
+       "units": [
+        {
+         "id": "qui.ab.redox.u01",
+         "title": "Oxidación-reducción y pilas",
+         "minutes": 55,
+         "difficulty": 4,
+         "requires": [],
+         "generators": [
+          "fem-pila",
+          "qui-redox"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.ab",
+         "topicId": "qui.ab.redox",
+         "examWeight": 2,
+         "hasLesson": true
+        },
+        {
+         "id": "qui.ab.redox.u02",
+         "title": "Electrólisis y leyes de Faraday",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [
+          "qui.ab.redox.u01"
+         ],
+         "generators": [
+          "faraday"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.ab",
+         "topicId": "qui.ab.redox",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "qui.org",
+     "title": "E. Química orgánica",
+     "examSection": "5",
+     "examWeight": 2,
+     "topics": [
+      {
+       "id": "qui.org.organica",
+       "title": "Química del carbono",
+       "units": [
+        {
+         "id": "qui.org.organica.u01",
+         "title": "Grupos funcionales",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "qui-organica"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.org",
+         "topicId": "qui.org.organica",
+         "examWeight": 2,
+         "hasLesson": true
+        },
+        {
+         "id": "qui.org.organica.u02",
+         "title": "Reacciones orgánicas y polímeros",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [
+          "qui.org.organica.u01"
+         ],
+         "generators": [
+          "qui-reacciones-org"
+         ],
+         "subjectId": "qui",
+         "blockId": "qui.org",
+         "topicId": "qui.org.organica",
+         "examWeight": 2,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bio",
+   "name": "Biología",
+   "short": "Biología",
+   "color": "#4d7c0f",
+   "icon": "🧬",
+   "description": "Biomoléculas, la célula, metabolismo, genética molecular y herencia, microbiología e inmunología.",
+   "blocks": [
+    {
+     "id": "bio.mol",
+     "title": "A. Las biomoléculas",
+     "examSection": "1",
+     "examWeight": 2.5,
+     "topics": [
+      {
+       "id": "bio.mol.inorg",
+       "title": "Biomoléculas inorgánicas",
+       "units": [
+        {
+         "id": "bio.mol.inorg.u01",
+         "title": "Bioelementos",
+         "minutes": 40,
+         "difficulty": 2,
+         "requires": [],
+         "generators": [
+          "bio-agua"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.mol",
+         "topicId": "bio.mol.inorg",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "bio.mol.org",
+       "title": "Biomoléculas orgánicas",
+       "units": [
+        {
+         "id": "bio.mol.org.u01",
+         "title": "Glúcidos y lípidos",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [
+          "bio.mol.inorg.u01"
+         ],
+         "generators": [
+          "bio-glucidos-lipidos"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.mol",
+         "topicId": "bio.mol.org",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "bio.mol.org.u02",
+         "title": "Proteínas y enzimas",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [
+          "bio.mol.org.u01"
+         ],
+         "generators": [
+          "bio-proteinas"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.mol",
+         "topicId": "bio.mol.org",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "bio.mol.org.u03",
+         "title": "Ácidos nucleicos",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [
+          "bio.mol.org.u02"
+         ],
+         "generators": [
+          "bio-nucleicos",
+          "chargaff"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.mol",
+         "topicId": "bio.mol.org",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bio.cel",
+     "title": "B. La célula",
+     "examSection": "1",
+     "examWeight": 2.5,
+     "topics": [
+      {
+       "id": "bio.cel.estructura",
+       "title": "Estructura celular",
+       "units": [
+        {
+         "id": "bio.cel.estructura.u01",
+         "title": "Célula procariota y eucariota; orgánulos",
+         "minutes": 50,
+         "difficulty": 2,
+         "requires": [],
+         "generators": [
+          "bio-celula"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.cel",
+         "topicId": "bio.cel.estructura",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "bio.cel.estructura.u02",
+         "title": "Membrana plasmática y transporte",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [
+          "bio.cel.estructura.u01"
+         ],
+         "generators": [
+          "bio-membrana"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.cel",
+         "topicId": "bio.cel.estructura",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "bio.cel.estructura.u03",
+         "title": "Ciclo celular",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [
+          "bio.cel.estructura.u01"
+         ],
+         "generators": [
+          "bio-division"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.cel",
+         "topicId": "bio.cel.estructura",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bio.met",
+     "title": "C. Metabolismo",
+     "examSection": "2",
+     "examWeight": 2.5,
+     "topics": [
+      {
+       "id": "bio.met.metabolismo",
+       "title": "Catabolismo y anabolismo",
+       "units": [
+        {
+         "id": "bio.met.metabolismo.u01",
+         "title": "Catabolismo - respiración y fermentación",
+         "minutes": 60,
+         "difficulty": 4,
+         "requires": [
+          "bio.cel.estructura.u01"
+         ],
+         "generators": [
+          "bio-catabolismo"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.met",
+         "topicId": "bio.met.metabolismo",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "bio.met.metabolismo.u02",
+         "title": "Anabolismo - la fotosíntesis",
+         "minutes": 50,
+         "difficulty": 4,
+         "requires": [
+          "bio.met.metabolismo.u01"
+         ],
+         "generators": [
+          "bio-fotosintesis"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.met",
+         "topicId": "bio.met.metabolismo",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bio.gen",
+     "title": "D. Genética molecular y herencia",
+     "examSection": "3",
+     "examWeight": 2.5,
+     "topics": [
+      {
+       "id": "bio.gen.molecular",
+       "title": "Genética molecular",
+       "units": [
+        {
+         "id": "bio.gen.molecular.u01",
+         "title": "Replicación",
+         "minutes": 60,
+         "difficulty": 4,
+         "requires": [
+          "bio.mol.org.u03"
+         ],
+         "generators": [
+          "bio-expresion"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.gen",
+         "topicId": "bio.gen.molecular",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "bio.gen.molecular.u02",
+         "title": "Mutaciones y evolución",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [
+          "bio.gen.molecular.u01"
+         ],
+         "generators": [
+          "bio-mutaciones"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.gen",
+         "topicId": "bio.gen.molecular",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "bio.gen.herencia",
+       "title": "Herencia",
+       "units": [
+        {
+         "id": "bio.gen.herencia.u01",
+         "title": "Genética mendeliana",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "mendel-prob",
+          "bio-herencia"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.gen",
+         "topicId": "bio.gen.herencia",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bio.mic",
+     "title": "E. Microbiología, biotecnología e inmunología",
+     "examSection": "4",
+     "examWeight": 2.5,
+     "topics": [
+      {
+       "id": "bio.mic.micro",
+       "title": "Microorganismos y biotecnología",
+       "units": [
+        {
+         "id": "bio.mic.micro.u01",
+         "title": "Microorganismos",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "bio-microbiologia"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.mic",
+         "topicId": "bio.mic.micro",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "bio.mic.inmuno",
+       "title": "Inmunología",
+       "units": [
+        {
+         "id": "bio.mic.inmuno.u01",
+         "title": "El sistema inmunitario",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "bio-inmuno"
+         ],
+         "subjectId": "bio",
+         "blockId": "bio.mic",
+         "topicId": "bio.mic.inmuno",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "macs2",
+   "name": "Matemáticas Aplicadas a las CC. SS. II",
+   "short": "MACS II",
+   "color": "#7c3aed",
+   "icon": "∫",
+   "description": "Matrices y sistemas, programación lineal, funciones y sus aplicaciones económicas, probabilidad e inferencia estadística.",
+   "blocks": [
+    {
+     "id": "macs2.alg",
+     "title": "Álgebra",
+     "examSection": "1",
+     "examWeight": 2.5,
+     "topics": [
+      {
+       "id": "macs2.alg.matrices",
+       "title": "Matrices y sistemas",
+       "units": [
+        {
+         "id": "macs2.alg.matrices.u01",
+         "title": "Matrices",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "mat-producto",
+          "inversa-2x2",
+          "det-2x2"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.alg",
+         "topicId": "macs2.alg.matrices",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "macs2.alg.matrices.u02",
+         "title": "Sistemas de ecuaciones lineales",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [
+          "macs2.alg.matrices.u01"
+         ],
+         "generators": [
+          "sistema-gauss"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.alg",
+         "topicId": "macs2.alg.matrices",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "macs2.alg.pl",
+       "title": "Programación lineal",
+       "units": [
+        {
+         "id": "macs2.alg.pl.u01",
+         "title": "Inecuaciones y región factible",
+         "minutes": 45,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "prog-lineal"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.alg",
+         "topicId": "macs2.alg.pl",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "macs2.alg.pl.u02",
+         "title": "Problemas de programación lineal",
+         "minutes": 60,
+         "difficulty": 4,
+         "requires": [
+          "macs2.alg.pl.u01"
+         ],
+         "generators": [
+          "prog-lineal"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.alg",
+         "topicId": "macs2.alg.pl",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "macs2.ana",
+     "title": "Análisis",
+     "examSection": "2",
+     "examWeight": 2.5,
+     "topics": [
+      {
+       "id": "macs2.ana.funciones",
+       "title": "Funciones y derivadas",
+       "units": [
+        {
+         "id": "macs2.ana.funciones.u01",
+         "title": "Límites",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "limite-infinito",
+          "limite-cero-cero"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.ana",
+         "topicId": "macs2.ana.funciones",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "macs2.ana.funciones.u02",
+         "title": "Derivadas",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [
+          "macs2.ana.funciones.u01"
+         ],
+         "generators": [
+          "derivada-punto",
+          "extremo-cubica"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.ana",
+         "topicId": "macs2.ana.funciones",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "macs2.ana.funciones.u03",
+         "title": "Optimización en contextos económicos",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [
+          "macs2.ana.funciones.u02"
+         ],
+         "generators": [
+          "beneficio-max",
+          "optimizacion"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.ana",
+         "topicId": "macs2.ana.funciones",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      },
+      {
+       "id": "macs2.ana.integrales",
+       "title": "Integrales",
+       "units": [
+        {
+         "id": "macs2.ana.integrales.u01",
+         "title": "Integrales y cálculo de áreas",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [
+          "macs2.ana.funciones.u02"
+         ],
+         "generators": [
+          "integral-definida",
+          "area-parabola"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.ana",
+         "topicId": "macs2.ana.integrales",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "macs2.pro",
+     "title": "Probabilidad",
+     "examSection": "3",
+     "examWeight": 2.5,
+     "topics": [
+      {
+       "id": "macs2.pro.probabilidad",
+       "title": "Probabilidad y distribuciones",
+       "units": [
+        {
+         "id": "macs2.pro.probabilidad.u01",
+         "title": "Probabilidad condicionada",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [],
+         "generators": [
+          "prob-total",
+          "bayes"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.pro",
+         "topicId": "macs2.pro.probabilidad",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "macs2.pro.probabilidad.u02",
+         "title": "Distribuciones binomial y normal",
+         "minutes": 55,
+         "difficulty": 3,
+         "requires": [
+          "macs2.pro.probabilidad.u01"
+         ],
+         "generators": [
+          "binomial-exacta",
+          "normal-tipificar"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.pro",
+         "topicId": "macs2.pro.probabilidad",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "macs2.inf",
+     "title": "Inferencia estadística",
+     "examSection": "4",
+     "examWeight": 2.5,
+     "topics": [
+      {
+       "id": "macs2.inf.muestreo",
+       "title": "Muestreo y estimación",
+       "units": [
+        {
+         "id": "macs2.inf.muestreo.u01",
+         "title": "Muestreo y distribución de la media muestral",
+         "minutes": 50,
+         "difficulty": 3,
+         "requires": [
+          "macs2.pro.probabilidad.u02"
+         ],
+         "generators": [
+          "media-muestral"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.inf",
+         "topicId": "macs2.inf.muestreo",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "macs2.inf.muestreo.u02",
+         "title": "Intervalos de confianza para la media y la proporción",
+         "minutes": 55,
+         "difficulty": 4,
+         "requires": [
+          "macs2.inf.muestreo.u01"
+         ],
+         "generators": [
+          "ic-media",
+          "ic-proporcion"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.inf",
+         "topicId": "macs2.inf.muestreo",
+         "examWeight": 2.5,
+         "hasLesson": true
+        },
+        {
+         "id": "macs2.inf.muestreo.u03",
+         "title": "Tamaño de la muestra",
+         "minutes": 40,
+         "difficulty": 3,
+         "requires": [
+          "macs2.inf.muestreo.u02"
+         ],
+         "generators": [
+          "tamano-muestra"
+         ],
+         "subjectId": "macs2",
+         "blockId": "macs2.inf",
+         "topicId": "macs2.inf.muestreo",
+         "examWeight": 2.5,
+         "hasLesson": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
   }
  ],
  "exams": {
+  "bio": {
+   "subject": "bio",
+   "duration_minutes": 90,
+   "official_url": "https://universitats.gva.es",
+   "sections": [
+    {
+     "id": "1",
+     "title": "Biomoléculas y célula",
+     "points": 2.5,
+     "options": 1,
+     "questions": 3,
+     "generators": [
+      "bio-agua",
+      "bio-glucidos-lipidos",
+      "bio-proteinas",
+      "bio-nucleicos",
+      "bio-celula",
+      "bio-membrana",
+      "bio-division"
+     ]
+    },
+    {
+     "id": "2",
+     "title": "Metabolismo",
+     "points": 2.5,
+     "options": 2,
+     "questions": 2,
+     "generators": [
+      "bio-catabolismo",
+      "bio-fotosintesis",
+      "bio-catabolismo",
+      "bio-fotosintesis"
+     ]
+    },
+    {
+     "id": "3",
+     "title": "Genética",
+     "points": 2.5,
+     "options": 2,
+     "questions": 2,
+     "generators": [
+      "bio-expresion",
+      "bio-mutaciones",
+      "mendel-prob",
+      "bio-herencia",
+      "chargaff"
+     ]
+    },
+    {
+     "id": "4",
+     "title": "Microbiología e inmunología",
+     "points": 2.5,
+     "options": 2,
+     "questions": 2,
+     "generators": [
+      "bio-microbiologia",
+      "bio-inmuno",
+      "bio-microbiologia",
+      "bio-inmuno"
+     ]
+    }
+   ]
+  },
   "fis": {
    "subject": "fis",
    "duration_minutes": 90,
@@ -1270,6 +2301,66 @@ export default {
     }
    ]
   },
+  "macs2": {
+   "subject": "macs2",
+   "duration_minutes": 90,
+   "official_url": "https://universitats.gva.es",
+   "sections": [
+    {
+     "id": "1",
+     "title": "Álgebra y programación lineal",
+     "points": 2.5,
+     "options": 2,
+     "questions": 2,
+     "generators": [
+      "prog-lineal",
+      "mat-producto",
+      "inversa-2x2",
+      "sistema-gauss"
+     ]
+    },
+    {
+     "id": "2",
+     "title": "Análisis",
+     "points": 2.5,
+     "options": 2,
+     "questions": 2,
+     "generators": [
+      "beneficio-max",
+      "derivada-punto",
+      "integral-definida",
+      "area-parabola",
+      "limite-infinito"
+     ]
+    },
+    {
+     "id": "3",
+     "title": "Probabilidad",
+     "points": 2.5,
+     "options": 1,
+     "questions": 2,
+     "generators": [
+      "prob-total",
+      "bayes",
+      "binomial-exacta",
+      "normal-tipificar"
+     ]
+    },
+    {
+     "id": "4",
+     "title": "Inferencia estadística",
+     "points": 2.5,
+     "options": 2,
+     "questions": 2,
+     "generators": [
+      "media-muestral",
+      "ic-media",
+      "ic-proporcion",
+      "tamano-muestra"
+     ]
+    }
+   ]
+  },
   "mat2": {
    "subject": "mat2",
    "duration_minutes": 90,
@@ -1339,9 +2430,619 @@ export default {
      ]
     }
    ]
+  },
+  "qui": {
+   "subject": "qui",
+   "duration_minutes": 90,
+   "official_url": "https://universitats.gva.es",
+   "sections": [
+    {
+     "id": "1",
+     "title": "Estructura de la materia y enlace",
+     "points": 2,
+     "options": 1,
+     "questions": 2,
+     "generators": [
+      "qui-atomo",
+      "qui-periodica",
+      "qui-enlace",
+      "qui-fuerzas"
+     ]
+    },
+    {
+     "id": "2",
+     "title": "Termoquímica y cinética",
+     "points": 2,
+     "options": 2,
+     "questions": 2,
+     "generators": [
+      "entalpia-combustion",
+      "gibbs",
+      "qui-cinetica",
+      "entalpia-combustion"
+     ]
+    },
+    {
+     "id": "3",
+     "title": "Equilibrio químico",
+     "points": 2,
+     "options": 2,
+     "questions": 2,
+     "generators": [
+      "kc-equilibrio",
+      "qui-equilibrio",
+      "kc-equilibrio",
+      "qui-equilibrio"
+     ]
+    },
+    {
+     "id": "4",
+     "title": "Ácido-base y redox",
+     "points": 2,
+     "options": 2,
+     "questions": 2,
+     "generators": [
+      "ph-fuerte",
+      "ph-debil",
+      "fem-pila",
+      "faraday",
+      "qui-acidobase",
+      "qui-redox"
+     ]
+    },
+    {
+     "id": "5",
+     "title": "Química orgánica",
+     "points": 2,
+     "options": 2,
+     "questions": 2,
+     "generators": [
+      "qui-organica",
+      "qui-reacciones-org",
+      "qui-organica",
+      "qui-reacciones-org"
+     ]
+    }
+   ]
   }
  },
  "lessons": {
+  "bio.cel.estructura.u01": {
+   "id": "bio.cel.estructura.u01",
+   "objectives": [
+    "Comparar células procariotas y eucariotas, animales y vegetales.",
+    "Relacionar cada orgánulo con su función."
+   ],
+   "explanation": [
+    {
+     "title": "Tipos de células",
+     "body": "| | Procariota | Eucariota |\n|---|---|---|\n| Núcleo | no (nucleoide) | sí, con envoltura |\n| ADN | circular | lineal, con histonas |\n| Ribosomas | 70S | 80S (70S en mitocondrias y cloroplastos) |\n| Orgánulos con membrana | no | sí |\n| Ejemplo | bacterias | animales, plantas, hongos |\n\nLa célula **vegetal** tiene, además, **pared de celulosa**, **cloroplastos** y una gran vacuola, y no tiene centriolos.\n"
+    },
+    {
+     "title": "Orgánulos",
+     "body": "- **Núcleo:** guarda el ADN; el nucléolo fabrica los ribosomas.\n- **Retículo endoplasmático:** rugoso (síntesis de proteínas) y liso (lípidos y detoxificación).\n- **Aparato de Golgi:** modifica, empaqueta y distribuye.\n- **Lisosomas:** digestión celular.\n- **Mitocondrias:** respiración celular.\n- **Cloroplastos:** fotosíntesis.\n- **Citoesqueleto:** forma y movimiento; los centriolos organizan el huso.\n\n**Teoría endosimbiótica:** mitocondrias y cloroplastos proceden de bacterias englobadas. Tienen ADN circular propio y ribosomas 70S, y se dividen solos.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Identificar una célula",
+     "statement": "Al microscopio electrónico se observa una célula con pared, ribosomas 70S, ADN circular y sin núcleo. ¿Qué tipo de célula es? ¿Podría ser vegetal?\n",
+     "steps": [
+      "**Sin núcleo y con ADN circular:** es una célula procariota.\n",
+      "**Ribosomas 70S:** lo confirman.\n",
+      "**¿Vegetal?** No: la célula vegetal es eucariota. La pared de una bacteria es de peptidoglucano, no de celulosa.\n"
+     ],
+     "result": "Es una **bacteria** (procariota). Que tenga pared no la convierte en vegetal.\n"
+    }
+   ],
+   "summary": [
+    "Procariota: sin núcleo, ribosomas 70S y ADN circular.\n",
+    "La vegetal tiene, además, pared de celulosa, cloroplastos y una gran vacuola.\n",
+    "Endosimbiosis: mitocondrias y cloroplastos eran bacterias.\n"
+   ],
+   "common_errors": [
+    "Decir que las procariotas no tienen ribosomas.\n",
+    "Atribuir a todas las paredes celulares la celulosa.\n"
+   ]
+  },
+  "bio.cel.estructura.u02": {
+   "id": "bio.cel.estructura.u02",
+   "objectives": [
+    "Describir el modelo de mosaico fluido.",
+    "Clasificar los mecanismos de transporte a través de la membrana."
+   ],
+   "explanation": [
+    {
+     "title": "El mosaico fluido",
+     "body": "La membrana es una **bicapa de fosfolípidos** con proteínas incrustadas (integrales) o adosadas (periféricas), colesterol (regula la fluidez) y, en la cara externa, glúcidos (glucocáliz, que interviene en el reconocimiento celular).\n\nEs **fluida** (los componentes se desplazan lateralmente) y **asimétrica**.\n"
+    },
+    {
+     "title": "Transporte",
+     "body": "| Tipo | Gasto de energía | Ejemplo |\n|---|---|---|\n| Difusión simple | no (a favor de gradiente) | O₂, CO₂ |\n| Difusión facilitada | no | glucosa (permeasas), iones (canales) |\n| Transporte activo | sí, ATP (en contra de gradiente) | bomba Na⁺/K⁺ |\n| Endocitosis / exocitosis | sí | fagocitosis, secreción |\n\nLa bomba de sodio-potasio saca 3 Na⁺ y mete 2 K⁺ por cada ATP: mantiene el potencial de membrana.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Clasificar transportes",
+     "statement": "Indica el mecanismo: (a) entrada de O₂ en la célula; (b) salida de Na⁺ contra gradiente; (c) un macrófago captura una bacteria.\n",
+     "steps": [
+      "**(a)** El O₂ es pequeño y apolar, y va a favor de gradiente: **difusión simple**.\n",
+      "**(b)** Va en contra de gradiente con una proteína: **transporte activo** (bomba Na⁺/K⁺).\n",
+      "**(c)** Entra una partícula grande englobada por la membrana: **fagocitosis**.\n"
+     ],
+     "result": "(a) Difusión simple; (b) transporte activo; (c) endocitosis por fagocitosis.\n"
+    }
+   ],
+   "summary": [
+    "Mosaico fluido: bicapa lipídica + proteínas + colesterol + glucocáliz.\n",
+    "A favor de gradiente, transporte pasivo; en contra, activo (ATP).\n",
+    "Las partículas grandes entran por endocitosis.\n"
+   ],
+   "common_errors": [
+    "Pensar que la difusión facilitada gasta ATP.\n",
+    "Confundir la fagocitosis (sólidos) con la pinocitosis (líquidos).\n"
+   ]
+  },
+  "bio.cel.estructura.u03": {
+   "id": "bio.cel.estructura.u03",
+   "objectives": [
+    "Describir las fases del ciclo celular y de la mitosis.",
+    "Comparar la mitosis y la meiosis y su importancia biológica."
+   ],
+   "explanation": [
+    {
+     "title": "Ciclo celular y mitosis",
+     "body": "**Interfase:**\n- **G1:** la célula crece.\n- **S:** se **replica el ADN**.\n- **G2:** se prepara para dividirse.\n\n**Mitosis:**\n1. **Profase:** los cromosomas se condensan y se forma el huso.\n2. **Metafase:** los cromosomas se alinean en la placa ecuatorial.\n3. **Anafase:** se separan las **cromátidas hermanas**.\n4. **Telofase:** se forman dos núcleos.\n\nDespués, la **citocinesis**: por estrangulamiento en las células animales y por fragmoplasto en las vegetales.\n\nResultado: 2 células **idénticas** con el mismo número de cromosomas (2n → 2n).\n"
+    },
+    {
+     "title": "Meiosis",
+     "body": "Son dos divisiones seguidas tras una sola replicación:\n- **Meiosis I (reduccional):** en la profase I se emparejan los homólogos y hay **sobrecruzamiento**; en la anafase I se separan los **cromosomas homólogos**.\n- **Meiosis II:** como una mitosis; se separan las cromátidas.\n\nResultado: 4 células **haploides** (n) y **distintas**. Origina los gametos y la **variabilidad genética** (sobrecruzamiento + reparto al azar de los cromosomas).\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Contar cromosomas",
+     "statement": "Una célula tiene 2n = 4 cromosomas. ¿Cuántos cromosomas tendrán las células hijas tras una mitosis? ¿Y tras una meiosis?\n",
+     "steps": [
+      "**Mitosis:** reparte una copia de cada cromosoma a cada hija: 2 células con **2n = 4**.\n",
+      "**Meiosis I:** separa los homólogos: 2 células con n = 2 (cada cromosoma con 2 cromátidas).\n",
+      "**Meiosis II:** separa las cromátidas: 4 células con **n = 2**.\n"
+     ],
+     "result": "Mitosis: 2 células 2n = 4 idénticas. Meiosis: 4 células n = 2 genéticamente distintas.\n"
+    }
+   ],
+   "summary": [
+    "El ADN se replica en la fase S.\n",
+    "Mitosis: 2n → dos células 2n idénticas.\n",
+    "Meiosis: 2n → cuatro células n distintas (sobrecruzamiento en la profase I).\n"
+   ],
+   "common_errors": [
+    "Decir que en la anafase de la mitosis se separan los cromosomas homólogos.\n",
+    "Pensar que el ADN se replica entre la meiosis I y la II.\n"
+   ]
+  },
+  "bio.gen.herencia.u01": {
+   "id": "bio.gen.herencia.u01",
+   "objectives": [
+    "Aplicar las leyes de Mendel con cuadros de Punnett.",
+    "Resolver problemas de herencia ligada al sexo."
+   ],
+   "explanation": [
+    {
+     "title": "Leyes de Mendel",
+     "body": "- **1.ª ley (uniformidad):** al cruzar dos razas puras, toda la F1 es igual.\n- **2.ª ley (segregación):** los dos alelos de un gen se separan al formar los gametos. Aa × Aa da la proporción 3:1 (1 AA : 2 Aa : 1 aa).\n- **3.ª ley (transmisión independiente):** genes en cromosomas distintos se heredan por separado. AaBb × AaBb da 9:3:3:1.\n\nVocabulario: gen, alelo, homocigoto (AA, aa), heterocigoto (Aa), genotipo y fenotipo.\n"
+    },
+    {
+     "title": "Más allá de Mendel",
+     "body": "- **Herencia intermedia:** el heterocigoto tiene un fenotipo intermedio (flores rosas).\n- **Codominancia:** se expresan los dos alelos (grupo sanguíneo AB).\n- **Alelismo múltiple:** grupos sanguíneos A, B y 0.\n- **Herencia ligada al sexo** (cromosoma X): daltonismo y hemofilia. Los hombres (XY) la manifiestan con un solo alelo recesivo.\n- **Cruzamiento prueba:** cruzar con un homocigoto recesivo para averiguar el genotipo.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Hemofilia en una familia",
+     "statement": "Una mujer portadora de la hemofilia ($X^HX^h$) tiene hijos con un hombre sano ($X^HY$). ¿Qué probabilidad hay de que un hijo varón sea hemofílico? ¿Y una hija?\n",
+     "steps": [
+      "**Gametos:** la madre da $X^H$ o $X^h$ (1/2 cada uno); el padre, $X^H$ o $Y$.\n",
+      "**Hijas** ($X^H$ del padre): $X^HX^H$ o $X^HX^h$. Ninguna es hemofílica; la mitad son portadoras.\n",
+      "**Hijos** ($Y$ del padre): $X^HY$ o $X^hY$. La mitad son hemofílicos.\n"
+     ],
+     "result": "Hijo varón hemofílico: **1/2**. Hija hemofílica: **0** (pero 1/2 de ser portadora).\n"
+    }
+   ],
+   "summary": [
+    "Aa × Aa da 3:1; AaBb × AaBb da 9:3:3:1.\n",
+    "Varios genes independientes: multiplica las probabilidades.\n",
+    "Ligada al X: los varones la manifiestan con un solo alelo.\n"
+   ],
+   "common_errors": [
+    "Olvidar que la probabilidad \"entre los varones\" no es la misma que \"de tener un hijo varón enfermo\" (1/2 frente a 1/4).\n",
+    "Escribir los genes ligados al sexo sin indicar el cromosoma X.\n"
+   ]
+  },
+  "bio.gen.molecular.u01": {
+   "id": "bio.gen.molecular.u01",
+   "objectives": [
+    "Explicar la replicación semiconservativa del ADN.",
+    "Transcribir y traducir una secuencia con el código genético."
+   ],
+   "explanation": [
+    {
+     "title": "Replicación",
+     "body": "Es **semiconservativa** (experimento de Meselson y Stahl): cada ADN hijo tiene una cadena antigua y una nueva.\n- La **helicasa** abre la doble hélice.\n- La **ADN polimerasa** solo sintetiza en sentido 5′→3′ y necesita un **cebador** (ARN).\n- Una cadena es **continua** (conductora) y la otra **discontinua** (retardada, en **fragmentos de Okazaki**), unidos por la **ADN ligasa**.\n"
+    },
+    {
+     "title": "Expresión génica",
+     "body": "**ADN → ARN → proteína** (dogma central).\n1. **Transcripción** (núcleo): la ARN polimerasa copia la cadena molde de ADN en ARNm, en sentido 5′→3′. En los eucariotas se eliminan los **intrones** y se unen los **exones** (*splicing*).\n2. **Traducción** (ribosomas): el ARNm se lee por **codones** (tripletes). Cada ARNt lleva un aminoácido y tiene el **anticodón** complementario. Empieza en **AUG** (metionina) y acaba en un codón de parada (UAA, UAG, UGA).\n\nEl código genético es **universal** y **degenerado**.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Del gen a la proteína",
+     "statement": "La cadena molde de un fragmento de ADN es 3′-TACGGATTT-5′. Escribe el ARNm y el péptido. (AUG = Met, CCU = Pro, AAA = Lys)\n",
+     "steps": [
+      "**Transcripción:** ARNm complementario y antiparalelo, cambiando T por U: 5′-AUG CCU AAA-3′.\n",
+      "**Codones:** AUG, CCU y AAA.\n",
+      "**Traducción:** Met – Pro – Lys.\n"
+     ],
+     "result": "ARNm 5′-AUGCCUAAA-3′ y péptido **Met-Pro-Lys**.\n"
+    }
+   ],
+   "summary": [
+    "Replicación semiconservativa: cadena continua y fragmentos de Okazaki.\n",
+    "Transcripción en el núcleo y traducción en los ribosomas.\n",
+    "Codón en el ARNm y anticodón en el ARNt; se empieza en AUG.\n"
+   ],
+   "common_errors": [
+    "Poner T en el ARN.\n",
+    "Leer la cadena molde en lugar del ARNm al traducir.\n"
+   ]
+  },
+  "bio.gen.molecular.u02": {
+   "id": "bio.gen.molecular.u02",
+   "objectives": [
+    "Clasificar las mutaciones y sus efectos.",
+    "Explicar las teorías evolutivas y el papel de la mutación."
+   ],
+   "explanation": [
+    {
+     "title": "Mutaciones",
+     "body": "Son cambios en el material genético:\n- **Génicas (puntuales):**\n  - **Sustitución:** puede ser silenciosa, de cambio de sentido o sin sentido (aparece un codón de parada).\n  - **Inserción o deleción:** desplazan el marco de lectura.\n- **Cromosómicas:** afectan a la estructura (deleción, duplicación, inversión, translocación).\n- **Genómicas:** cambia el número de cromosomas. Ejemplo: el síndrome de Down (trisomía del 21).\n\nPueden ser espontáneas o inducidas por **agentes mutágenos**: radiaciones, sustancias químicas o virus. Solo se heredan las que afectan a las **células germinales**.\n"
+    },
+    {
+     "title": "Evolución",
+     "body": "- **Lamarckismo:** uso y desuso, y herencia de los caracteres adquiridos (descartado).\n- **Darwinismo:** variabilidad + **selección natural** de los individuos mejor adaptados.\n- **Neodarwinismo (teoría sintética):** la variabilidad procede de la **mutación** y la **recombinación**; la selección natural actúa sobre las poblaciones; también influye la deriva genética.\n\nLa mutación es la fuente última de la variabilidad.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Efectos de dos mutaciones",
+     "statement": "En el ARNm 5′-AUG CCU AAA-3′ (Met-Pro-Lys), ¿qué efecto tendría cambiar CCU por CCC (también Pro)? ¿Y cambiar AAA por UAA (parada)?\n",
+     "steps": [
+      "**CCU → CCC:** sigue codificando prolina. Es una mutación **silenciosa**, sin efecto en la proteína.\n",
+      "**AAA → UAA:** aparece un codón de parada. Es una mutación **sin sentido**: la proteína queda truncada en Met-Pro.\n"
+     ],
+     "result": "La primera no cambia la proteína (gracias a que el código es degenerado); la segunda la acorta y probablemente la deja sin función.\n"
+    }
+   ],
+   "summary": [
+    "Mutaciones génicas, cromosómicas y genómicas.\n",
+    "Silenciosa: mismo aminoácido. Sin sentido: aparece una parada.\n",
+    "Neodarwinismo: mutación + recombinación + selección natural.\n"
+   ],
+   "common_errors": [
+    "Decir que todas las mutaciones son perjudiciales.\n",
+    "Pensar que se hereda una mutación en una célula de la piel.\n"
+   ]
+  },
+  "bio.met.metabolismo.u01": {
+   "id": "bio.met.metabolismo.u01",
+   "objectives": [
+    "Describir las etapas de la respiración celular y dónde ocurren.",
+    "Comparar la respiración aerobia con las fermentaciones."
+   ],
+   "explanation": [
+    {
+     "title": "Respiración celular aerobia",
+     "body": "$$\\mathrm{C_6H_{12}O_6 + 6\\,O_2 \\to 6\\,CO_2 + 6\\,H_2O + ATP}$$\n1. **Glucólisis** (citosol): glucosa → 2 piruvato + 2 ATP + 2 NADH.\n2. **Descarboxilación oxidativa** (matriz mitocondrial): piruvato → acetil-CoA + CO₂.\n3. **Ciclo de Krebs** (matriz): se libera CO₂ y se obtienen NADH y FADH₂.\n4. **Cadena respiratoria y fosforilación oxidativa** (membrana interna): los electrones llegan al **O₂**, que forma agua; el gradiente de protones mueve la **ATP sintasa**.\n\nBalance: unos 36-38 ATP por glucosa (algunos libros recientes dan unos 30-32).\n"
+    },
+    {
+     "title": "Fermentaciones",
+     "body": "Sin oxígeno, el piruvato se reduce para regenerar el NAD⁺ y que siga la glucólisis:\n- **Láctica:** piruvato → ácido láctico. En el músculo y en las bacterias del yogur.\n- **Alcohólica:** piruvato → etanol + CO₂. En las levaduras (pan, vino y cerveza).\n\nSolo dan **2 ATP** por glucosa, los de la glucólisis.\n\nLos ácidos grasos también se oxidan, por **β-oxidación** a acetil-CoA.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Respiración frente a fermentación",
+     "statement": "Una levadura puede vivir con o sin oxígeno. ¿En qué caso consume más glucosa para obtener la misma energía? ¿Por qué?\n",
+     "steps": [
+      "**Con O₂:** respiración aerobia, unos 36-38 ATP por glucosa.\n",
+      "**Sin O₂:** fermentación alcohólica, solo 2 ATP por glucosa.\n",
+      "**Comparación:** para obtener la misma energía, sin oxígeno necesita unas 18 veces más glucosa.\n"
+     ],
+     "result": "Sin oxígeno consume mucha más glucosa: la fermentación solo aprovecha la glucólisis, porque el piruvato no se oxida por completo.\n"
+    }
+   ],
+   "summary": [
+    "Glucólisis en el citosol; Krebs y cadena respiratoria en la mitocondria.\n",
+    "Aceptor final: O₂ en la respiración y una molécula orgánica en la fermentación.\n",
+    "Fermentación: 2 ATP por glucosa.\n"
+   ],
+   "common_errors": [
+    "Situar la glucólisis dentro de la mitocondria.\n",
+    "Decir que la fermentación produce ATP al formar el ácido láctico (solo regenera NAD⁺).\n"
+   ]
+  },
+  "bio.met.metabolismo.u02": {
+   "id": "bio.met.metabolismo.u02",
+   "objectives": [
+    "Describir las fases de la fotosíntesis y su localización.",
+    "Explicar el origen del oxígeno y los factores que afectan a la fotosíntesis."
+   ],
+   "explanation": [
+    {
+     "title": "Fase luminosa",
+     "body": "En las membranas de los **tilacoides**:\n- La luz excita la clorofila de los **fotosistemas I y II**.\n- **Fotólisis del agua:** $\\mathrm{H_2O \\to 2H^+ + 2e^- + \\tfrac12 O_2}$. De aquí sale el O₂.\n- El transporte de electrones produce **NADPH**, y el gradiente de protones, **ATP** (fotofosforilación).\n"
+    },
+    {
+     "title": "Fase oscura (ciclo de Calvin)",
+     "body": "En el **estroma**, con el ATP y el NADPH de la fase luminosa:\n- La **RuBisCO** fija el CO₂ a la ribulosa-1,5-bisfosfato.\n- Se obtienen azúcares (gliceraldehído-3-fosfato y, después, glucosa y almidón).\n\n$$\\mathrm{6\\,CO_2 + 12\\,H_2O \\xrightarrow{luz} C_6H_{12}O_6 + 6\\,O_2 + 6\\,H_2O}$$\n\n**Factores:** intensidad de luz, concentración de CO₂ y temperatura.\n\nLa **quimiosíntesis** es otro anabolismo autótrofo: usa la energía de oxidar sustancias inorgánicas, sin luz.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "¿De dónde sale el oxígeno?",
+     "statement": "Se riega una planta con agua marcada con ¹⁸O y se le da CO₂ normal. ¿Dónde aparecerá el ¹⁸O?\n",
+     "steps": [
+      "**Fotólisis:** el agua se rompe en la fase luminosa y su oxígeno se libera como O₂.\n",
+      "**El CO₂:** su oxígeno se incorpora a la glucosa en el ciclo de Calvin.\n",
+      "**Conclusión:** el ¹⁸O aparece en el **O₂ liberado**, no en la glucosa.\n"
+     ],
+     "result": "El O₂ que liberan las plantas procede del **agua**, no del CO₂.\n"
+    }
+   ],
+   "summary": [
+    "Fase luminosa (tilacoides): fotólisis, O₂, ATP y NADPH.\n",
+    "Ciclo de Calvin (estroma): la RuBisCO fija el CO₂.\n",
+    "El O₂ procede del agua.\n"
+   ],
+   "common_errors": [
+    "Decir que la fase oscura solo ocurre de noche (ocurre de día, con el ATP y el NADPH).\n",
+    "Afirmar que el O₂ procede del CO₂.\n"
+   ]
+  },
+  "bio.mic.inmuno.u01": {
+   "id": "bio.mic.inmuno.u01",
+   "objectives": [
+    "Distinguir la respuesta inespecífica de la específica.",
+    "Explicar las respuestas primaria y secundaria, las vacunas y las alteraciones del sistema inmunitario."
+   ],
+   "explanation": [
+    {
+     "title": "Defensas",
+     "body": "- **Barreras externas:** piel, mucosas, lágrimas.\n- **Respuesta inespecífica (innata):** inflamación, fagocitos (neutrófilos y macrófagos) y complemento.\n- **Respuesta específica (adaptativa):** reconoce **antígenos** concretos.\n  - **Humoral:** los **linfocitos B** se transforman en células plasmáticas que producen **anticuerpos**.\n  - **Celular:** los **linfocitos T** destruyen células infectadas (T citotóxicos) o coordinan la respuesta (T colaboradores).\n\nUn anticuerpo es una proteína con forma de Y; se une al antígeno de forma específica.\n"
+    },
+    {
+     "title": "Memoria y vacunas",
+     "body": "- **Respuesta primaria:** es lenta y deja **células de memoria**.\n- **Respuesta secundaria:** es más rápida e intensa.\n\n| Inmunidad | Natural | Artificial |\n|---|---|---|\n| Activa | pasar la enfermedad | vacuna |\n| Pasiva | anticuerpos de la madre | suero |\n\n**Alteraciones:** alergias (hipersensibilidad), enfermedades autoinmunes e inmunodeficiencias (como el sida, causado por el VIH, que destruye los linfocitos T colaboradores).\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Vacuna frente a suero",
+     "statement": "Una persona recibe una mordedura de serpiente venenosa. ¿Es mejor una vacuna o un suero? ¿Por qué?\n",
+     "steps": [
+      "**Necesidad:** hay que neutralizar el veneno **ya**.\n",
+      "**Vacuna:** el cuerpo tardaría días en producir anticuerpos (respuesta primaria).\n",
+      "**Suero:** aporta anticuerpos ya fabricados; protege de inmediato, pero dura poco y no deja memoria.\n"
+     ],
+     "result": "Un **suero** (inmunidad pasiva artificial). La vacuna sirve para prevenir, no para curar una urgencia.\n"
+    }
+   ],
+   "summary": [
+    "Inespecífica (innata) frente a específica (linfocitos B y T).\n",
+    "La respuesta secundaria es más rápida gracias a las células de memoria.\n",
+    "Vacuna: activa artificial. Suero: pasiva artificial.\n"
+   ],
+   "common_errors": [
+    "Decir que los anticuerpos los fabrican los linfocitos T.\n",
+    "Pensar que la vacuna da inmunidad pasiva.\n"
+   ]
+  },
+  "bio.mic.micro.u01": {
+   "id": "bio.mic.micro.u01",
+   "objectives": [
+    "Clasificar los microorganismos y describir los ciclos de los virus.",
+    "Explicar las aplicaciones de la biotecnología y la ingeniería genética."
+   ],
+   "explanation": [
+    {
+     "title": "Microorganismos y virus",
+     "body": "- **Bacterias** (procariotas), **protozoos**, **algas microscópicas** y **hongos** (levaduras y mohos).\n- **Virus:** son acelulares, formados por un ácido nucleico (ADN o ARN) y una **cápsida** de proteínas. Son parásitos obligados.\n  - **Ciclo lítico:** el virus se multiplica y rompe la célula.\n  - **Ciclo lisogénico:** el ADN vírico se integra en el de la célula (profago) y puede activarse más tarde.\n- Los **retrovirus** (VIH) usan la **transcriptasa inversa**: ARN → ADN.\n"
+    },
+    {
+     "title": "Biotecnología",
+     "body": "- **Tradicional:** pan, vino, yogur y queso (fermentaciones), antibióticos y depuración de aguas.\n- **Ingeniería genética:**\n  - Las **enzimas de restricción** cortan el ADN; la **ligasa** lo une; los **plásmidos** sirven de vectores.\n  - Producción de insulina con bacterias y organismos transgénicos.\n- **PCR:** amplifica el ADN; cada ciclo duplica las copias.\n- **CRISPR-Cas9:** edición precisa de genes.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Copias en la PCR",
+     "statement": "Se parte de una molécula de ADN y se hacen 20 ciclos de PCR. ¿Cuántas copias se obtienen, como máximo?\n",
+     "steps": [
+      "**Cada ciclo duplica las copias:** 1 → 2 → 4 → 8...\n",
+      "**Tras $n$ ciclos:** $2^n$ moléculas.\n",
+      "**Para 20 ciclos:** $2^{20} = 1\\,048\\,576$.\n"
+     ],
+     "result": "Algo más de **un millón** de copias en un par de horas: por eso la PCR sirve en análisis forenses y en el diagnóstico de enfermedades.\n"
+    }
+   ],
+   "summary": [
+    "Virus: ácido nucleico + cápsida, sin metabolismo propio.\n",
+    "Ciclo lítico (destruye la célula) y lisogénico (se integra).\n",
+    "Herramientas: enzimas de restricción, ligasa, plásmidos, PCR y CRISPR.\n"
+   ],
+   "common_errors": [
+    "Decir que los antibióticos sirven contra los virus.\n",
+    "Considerar a los virus como procariotas.\n"
+   ]
+  },
+  "bio.mol.inorg.u01": {
+   "id": "bio.mol.inorg.u01",
+   "objectives": [
+    "Clasificar los bioelementos y relacionar las propiedades del agua con sus funciones.",
+    "Explicar la ósmosis y la función de las sales minerales."
+   ],
+   "explanation": [
+    {
+     "title": "Bioelementos",
+     "body": "- **Primarios** (el 96 % de la materia viva): C, H, O, N, P y S. El carbono forma cadenas estables con enlaces covalentes.\n- **Secundarios:** Ca, Na, K, Mg, Cl...\n- **Oligoelementos** (en cantidades mínimas, pero imprescindibles): Fe (hemoglobina), I (tiroides), F, Zn...\n"
+    },
+    {
+     "title": "El agua",
+     "body": "La molécula de agua es **polar** y forma **puentes de hidrógeno**. De ahí salen sus propiedades:\n\n| Propiedad | Función biológica |\n|---|---|\n| Gran poder disolvente | medio de las reacciones y de transporte |\n| Elevado calor específico | amortigua los cambios de temperatura |\n| Elevado calor de vaporización | refrigeración (sudor) |\n| Menor densidad del hielo | el hielo flota y aísla lagos y mares |\n| Cohesión y adhesión | capilaridad: el agua sube por los vasos de las plantas |\n"
+    },
+    {
+     "title": "Sales minerales y ósmosis",
+     "body": "- **Precipitadas:** función estructural (fosfato cálcico en los huesos).\n- **Disueltas:** regulan el pH (tampón bicarbonato y fosfato) y la ósmosis.\n\n**Ósmosis:** el agua atraviesa una membrana semipermeable desde el medio **hipotónico** (menos solutos) hacia el **hipertónico** (más solutos).\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Glóbulos rojos en agua destilada",
+     "statement": "¿Qué le ocurre a un glóbulo rojo si se introduce en agua destilada? ¿Y a una célula vegetal?\n",
+     "steps": [
+      "**Comparamos los medios:** el agua destilada es **hipotónica** respecto al interior celular.\n",
+      "**Sentido del agua:** entra en la célula por ósmosis.\n",
+      "**Glóbulo rojo:** no tiene pared, así que se hincha hasta romperse (**hemólisis**).\n",
+      "**Célula vegetal:** la pared de celulosa resiste y la célula queda **turgente**.\n"
+     ],
+     "result": "En un medio hipotónico, la célula animal estalla y la vegetal se pone turgente. En uno hipertónico, ambas pierden agua (crenación y plasmólisis).\n"
+    }
+   ],
+   "summary": [
+    "Bioelementos primarios: C, H, O, N, P y S.\n",
+    "Agua: polar y con puentes de hidrógeno, de ahí sus propiedades.\n",
+    "En la ósmosis, el agua va del medio hipotónico al hipertónico.\n"
+   ],
+   "common_errors": [
+    "Decir que en la ósmosis se mueven los solutos (se mueve el agua).\n",
+    "Confundir hipotónico con hipertónico: \"hiper\" significa más solutos.\n"
+   ]
+  },
+  "bio.mol.org.u01": {
+   "id": "bio.mol.org.u01",
+   "objectives": [
+    "Clasificar los glúcidos y los lípidos y reconocer sus enlaces.",
+    "Relacionar su estructura con su función."
+   ],
+   "explanation": [
+    {
+     "title": "Glúcidos",
+     "body": "- **Monosacáridos:** glucosa, fructosa, ribosa. Se ciclan en disolución (formas α y β).\n- **Disacáridos:** dos monosacáridos unidos por un enlace **O-glucosídico**. Sacarosa (glucosa + fructosa), lactosa (glucosa + galactosa) y maltosa (glucosa + glucosa).\n- **Polisacáridos:**\n  - **Almidón:** reserva vegetal, con enlaces α.\n  - **Glucógeno:** reserva animal, en el hígado y el músculo.\n  - **Celulosa:** estructural en vegetales, con enlaces β(1→4) que no podemos digerir.\n  - **Quitina:** en los artrópodos y los hongos.\n"
+    },
+    {
+     "title": "Lípidos",
+     "body": "Son insolubles en agua. Los principales:\n- **Ácidos grasos:** saturados (sólidos, de origen animal) o insaturados (líquidos, aceites).\n- **Triglicéridos:** glicerina + 3 ácidos grasos unidos por enlaces **éster**. Son reserva energética; con NaOH se **saponifican** (jabones).\n- **Fosfolípidos:** **anfipáticos** (cabeza polar y colas apolares); forman la bicapa de las membranas.\n- **Esteroides:** colesterol, hormonas sexuales y vitamina D.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Hidrólisis de la sacarosa",
+     "statement": "¿Qué se obtiene al hidrolizar la sacarosa? ¿Por qué no es un azúcar reductor?\n",
+     "steps": [
+      "**Hidrólisis:** el agua rompe el enlace O-glucosídico. Sacarosa + H₂O → glucosa + fructosa.\n",
+      "**Enlace:** es α(1→2) y une el carbono anomérico de la glucosa con el de la fructosa.\n",
+      "**Consecuencia:** no queda ningún carbono anomérico libre, así que no reduce el reactivo de Fehling.\n"
+     ],
+     "result": "La sacarosa da glucosa + fructosa y es **no reductora**, porque su enlace une los dos carbonos anoméricos.\n"
+    }
+   ],
+   "summary": [
+    "Enlace O-glucosídico en glúcidos y enlace éster en triglicéridos.\n",
+    "Almidón y glucógeno son de reserva; la celulosa es estructural (enlaces β).\n",
+    "Los fosfolípidos son anfipáticos y forman la bicapa.\n"
+   ],
+   "common_errors": [
+    "Decir que la celulosa no tiene glucosa.\n",
+    "Confundir saturado (sin dobles enlaces) con insaturado.\n"
+   ]
+  },
+  "bio.mol.org.u02": {
+   "id": "bio.mol.org.u02",
+   "objectives": [
+    "Describir los niveles de estructura de las proteínas.",
+    "Explicar el funcionamiento de las enzimas y su regulación."
+   ],
+   "explanation": [
+    {
+     "title": "Estructura de las proteínas",
+     "body": "Los **aminoácidos** se unen por **enlaces peptídicos** (carboxilo + amino, con pérdida de agua).\n1. **Primaria:** la secuencia de aminoácidos (la determina el ADN).\n2. **Secundaria:** hélice α o lámina β, mantenidas por puentes de hidrógeno.\n3. **Terciaria:** el plegamiento tridimensional (puentes disulfuro, interacciones entre cadenas laterales).\n4. **Cuaternaria:** la unión de varias cadenas (hemoglobina).\n\n**Desnaturalización:** con calor o con cambios de pH se pierde la estructura 3D y, con ella, la función. La primaria se mantiene.\n"
+    },
+    {
+     "title": "Enzimas",
+     "body": "Son catalizadores biológicos: **disminuyen la energía de activación** y se recuperan intactas.\n- El sustrato se une al **centro activo** (modelo del ajuste inducido).\n- Son **específicas**.\n- La velocidad depende de la temperatura y del pH (cada enzima tiene su óptimo) y de la concentración de sustrato (hasta la $V_{max}$).\n- **Inhibición competitiva:** el inhibidor ocupa el centro activo; se revierte con más sustrato.\n- **No competitiva:** se une a otra zona y deforma la enzima.\n- **Cofactores:** iones o coenzimas (muchas proceden de vitaminas).\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Efecto de la temperatura",
+     "statement": "Una enzima humana trabaja a 37 °C. Explica qué pasa con su actividad a 10 °C y a 70 °C.\n",
+     "steps": [
+      "**A 10 °C:** hay menos choques entre la enzima y el sustrato, así que la actividad baja. Al volver a 37 °C, se recupera.\n",
+      "**A 37 °C:** es su temperatura óptima y la actividad es máxima.\n",
+      "**A 70 °C:** la enzima se **desnaturaliza**, pierde la forma del centro activo y la actividad cae a cero de forma irreversible.\n"
+     ],
+     "result": "El frío ralentiza la enzima (reversible); el calor excesivo la desnaturaliza (irreversible).\n"
+    }
+   ],
+   "summary": [
+    "Enlace peptídico entre aminoácidos; cuatro niveles de estructura.\n",
+    "Desnaturalizar: se pierde la forma (y la función), pero no la secuencia.\n",
+    "Las enzimas bajan la energía de activación y son específicas.\n"
+   ],
+   "common_errors": [
+    "Decir que la desnaturalización rompe los enlaces peptídicos.\n",
+    "Afirmar que la enzima se gasta en la reacción.\n"
+   ]
+  },
+  "bio.mol.org.u03": {
+   "id": "bio.mol.org.u03",
+   "objectives": [
+    "Describir la estructura de los nucleótidos, del ADN y del ARN.",
+    "Aplicar la complementariedad de bases y la regla de Chargaff."
+   ],
+   "explanation": [
+    {
+     "title": "Nucleótidos",
+     "body": "Un nucleótido tiene: **pentosa** (desoxirribosa en el ADN, ribosa en el ARN) + **base nitrogenada** + **grupo fosfato**.\n- **Bases púricas:** adenina (A) y guanina (G).\n- **Bases pirimidínicas:** citosina (C), timina (T, solo en el ADN) y uracilo (U, solo en el ARN).\n\nLos nucleótidos se unen por **enlaces fosfodiéster** 5′→3′.\n"
+    },
+    {
+     "title": "ADN y ARN",
+     "body": "**ADN (modelo de Watson y Crick):** doble hélice de dos cadenas **antiparalelas** y complementarias, A=T (2 puentes de hidrógeno) y G≡C (3).\n- **Regla de Chargaff:** %A = %T y %G = %C.\n\n**ARN:** una sola cadena.\n- **ARNm:** lleva el mensaje.\n- **ARNt:** transporta los aminoácidos.\n- **ARNr:** forma los ribosomas.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Completar una cadena",
+     "statement": "Una cadena de ADN es 5′-ATGCCA-3′. Escribe la complementaria. Si el ADN de un organismo tiene un 30 % de A, ¿qué porcentaje tiene de cada base?\n",
+     "steps": [
+      "**Complementaria y antiparalela:** 3′-TACGGT-5′ (o, escrita en sentido 5′→3′, 5′-TGGCAT-3′).\n",
+      "**Chargaff:** A = T = 30 %, así que A + T = 60 %.\n",
+      "**Lo que queda:** G + C = 40 %, por lo que G = C = 20 %.\n"
+     ],
+     "result": "Complementaria: 3′-TACGGT-5′. Composición: **A = T = 30 %** y **G = C = 20 %**.\n"
+    }
+   ],
+   "summary": [
+    "Nucleótido = pentosa + base + fosfato.\n",
+    "ADN: doble hélice antiparalela, A=T y G≡C.\n",
+    "El ARN lleva uracilo en lugar de timina.\n"
+   ],
+   "common_errors": [
+    "Escribir la complementaria sin invertir el sentido 5′/3′.\n",
+    "Aplicar la regla de Chargaff a un ARN o a un ADN de una sola cadena.\n"
+   ]
+  },
   "fis.em.electrico.u01": {
    "id": "fis.em.electrico.u01",
    "objectives": [
@@ -3122,6 +4823,502 @@ export default {
    "common_errors": [
     "Confundir la ecuación de las lentes (resta) con la de los espejos (suma).",
     "Calcular la potencia con $f'$ en cm."
+   ]
+  },
+  "macs2.alg.matrices.u01": {
+   "id": "macs2.alg.matrices.u01",
+   "objectives": [
+    "Operar con matrices: suma, producto por un número y producto de matrices.",
+    "Calcular la inversa de una matriz y resolver ecuaciones matriciales."
+   ],
+   "explanation": [
+    {
+     "title": "Operaciones con matrices",
+     "body": "- **Suma:** elemento a elemento (las matrices deben tener la misma dimensión).\n- **Producto $A\\cdot B$:** se puede hacer si las columnas de $A$ coinciden con las filas de $B$. El elemento $c_{ij}$ es la fila $i$ de $A$ por la columna $j$ de $B$.\n- El producto **no es conmutativo**: en general, $AB \\ne BA$.\n- **Traspuesta $A^t$:** las filas pasan a ser columnas.\n\nLas matrices sirven para organizar datos: producción por fábrica, precios por producto... y el producto los combina.\n"
+    },
+    {
+     "title": "Matriz inversa",
+     "body": "$A^{-1}$ cumple $A\\cdot A^{-1} = I$. Existe si y solo si $|A| \\ne 0$.\n\nPara una matriz 2×2:\n$$A = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} \\Rightarrow A^{-1} = \\frac{1}{ad - bc}\\begin{pmatrix} d & -b \\\\ -c & a \\end{pmatrix}$$\n\n**Ecuaciones matriciales:** si $AX = B$, entonces $X = A^{-1}B$ (multiplicando por la **izquierda**). Si $XA = B$, entonces $X = BA^{-1}$.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Inversa de una matriz 2×2",
+     "statement": "Calcula la inversa de $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$ y comprueba el resultado.\n",
+     "steps": [
+      "**Determinante:** $|A| = 1\\cdot4 - 2\\cdot3 = -2 \\ne 0$, así que tiene inversa.\n",
+      "**Fórmula:** $A^{-1} = \\dfrac{1}{-2}\\begin{pmatrix} 4 & -2 \\\\ -3 & 1 \\end{pmatrix} = \\begin{pmatrix} -2 & 1 \\\\ 1{,}5 & -0{,}5 \\end{pmatrix}$.\n",
+      "**Comprobación (primera fila):** $(1, 2)\\cdot$ primera columna $= 1(-2) + 2(1{,}5) = 1$ y $(1, 2)\\cdot$ segunda columna $= 1(1) + 2(-0{,}5) = 0$. Correcto.\n"
+     ],
+     "result": "$A^{-1} = \\begin{pmatrix} -2 & 1 \\\\ 1{,}5 & -0{,}5 \\end{pmatrix}$.\n"
+    }
+   ],
+   "summary": [
+    "$AB$ existe si las columnas de $A$ coinciden con las filas de $B$; $AB \\ne BA$ en general.\n",
+    "Tiene inversa si $|A| \\ne 0$.\n",
+    "$AX = B \\Rightarrow X = A^{-1}B$.\n"
+   ],
+   "common_errors": [
+    "Escribir $X = BA^{-1}$ cuando la ecuación es $AX = B$.\n",
+    "Multiplicar matrices elemento a elemento.\n"
+   ]
+  },
+  "macs2.alg.matrices.u02": {
+   "id": "macs2.alg.matrices.u02",
+   "objectives": [
+    "Resolver sistemas por el método de Gauss.",
+    "Clasificar un sistema y plantear problemas con sistemas."
+   ],
+   "explanation": [
+    {
+     "title": "Método de Gauss",
+     "body": "Se transforma el sistema en uno **escalonado** con operaciones que no cambian las soluciones:\n- intercambiar ecuaciones;\n- multiplicar una ecuación por un número distinto de 0;\n- sumar a una ecuación un múltiplo de otra.\n\nDespués se resuelve de abajo arriba.\n"
+    },
+    {
+     "title": "Clasificación",
+     "body": "- **Compatible determinado:** una única solución.\n- **Compatible indeterminado:** infinitas soluciones (queda una ecuación $0 = 0$).\n- **Incompatible:** sin solución (aparece $0 = k$ con $k \\ne 0$).\n\nCon rangos (teorema de Rouché-Frobenius): si $\\mathrm{rg}(A) = \\mathrm{rg}(A^*) = $ número de incógnitas, es compatible determinado.\n\n**Al plantear un problema**, define primero las incógnitas con sus unidades (\"$x$ = número de entradas de adulto\").\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Un sistema 3×3",
+     "statement": "Resuelve el sistema $x + y + z = 6$, $x - y + z = 2$, $2x + y - z = 1$.\n",
+     "steps": [
+      "**E2 − E1:** $-2y = -4$, así que $y = 2$.\n",
+      "**Sustituimos $y = 2$:** E1 queda $x + z = 4$ y E3, $2x - z = -1$.\n",
+      "**Sumamos las dos:** $3x = 3$, así que $x = 1$ y $z = 3$.\n",
+      "**Comprobación:** $1 + 2 + 3 = 6$; $1 - 2 + 3 = 2$; $2 + 2 - 3 = 1$.\n"
+     ],
+     "result": "Sistema compatible determinado: $(x, y, z) = (1, 2, 3)$.\n"
+    }
+   ],
+   "summary": [
+    "Gauss: escalona y resuelve de abajo arriba.\n",
+    "Una ecuación $0 = 0$ indica indeterminado; $0 = k \\ne 0$, incompatible.\n",
+    "En los problemas, define las incógnitas antes de plantear.\n"
+   ],
+   "common_errors": [
+    "Cambiar solo un miembro de la ecuación al operar.\n",
+    "No comprobar la solución en las tres ecuaciones.\n"
+   ]
+  },
+  "macs2.alg.pl.u01": {
+   "id": "macs2.alg.pl.u01",
+   "objectives": [
+    "Representar inecuaciones lineales con dos incógnitas.",
+    "Dibujar la región factible y calcular sus vértices."
+   ],
+   "explanation": [
+    {
+     "title": "Semiplanos",
+     "body": "Una inecuación $ax + by \\le c$ representa un **semiplano**:\n1. Dibuja la recta $ax + by = c$ (dando dos puntos, por ejemplo los cortes con los ejes).\n2. Prueba un punto que no esté en la recta, normalmente el $(0, 0)$: si cumple la inecuación, su lado es la solución.\n\nLas condiciones $x \\ge 0$, $y \\ge 0$ limitan la región al primer cuadrante.\n"
+    },
+    {
+     "title": "Región factible",
+     "body": "La **región factible** es la intersección de todos los semiplanos: el conjunto de soluciones que cumplen **todas** las restricciones.\n- Puede estar **acotada** (un polígono) o no.\n- Sus **vértices** se obtienen resolviendo, de dos en dos, los sistemas formados por las rectas que se cortan.\n- Comprueba siempre que cada vértice cumple todas las restricciones.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Una región de cuatro vértices",
+     "statement": "Dibuja la región $x + y \\le 5$, $x \\le 3$, $x \\ge 0$, $y \\ge 0$ y calcula sus vértices.\n",
+     "steps": [
+      "**Recta $x + y = 5$:** pasa por $(5, 0)$ y $(0, 5)$; el $(0, 0)$ cumple $0 \\le 5$, así que la región queda por debajo.\n",
+      "**Recta $x = 3$:** vertical; la región queda a la izquierda.\n",
+      "**Cortes:** $x = 3$ con $x + y = 5$ da $(3, 2)$; $x = 3$ con $y = 0$ da $(3, 0)$; $x + y = 5$ con $x = 0$ da $(0, 5)$.\n"
+     ],
+     "result": "Es un cuadrilátero de vértices $(0, 0)$, $(3, 0)$, $(3, 2)$ y $(0, 5)$.\n"
+    }
+   ],
+   "summary": [
+    "Recta + punto de prueba para elegir el semiplano.\n",
+    "Región factible: intersección de todas las restricciones.\n",
+    "Vértices: cortes de las rectas que la limitan.\n"
+   ],
+   "common_errors": [
+    "Elegir el semiplano sin probar ningún punto.\n",
+    "Incluir como vértice un corte que no cumple alguna restricción.\n"
+   ]
+  },
+  "macs2.alg.pl.u02": {
+   "id": "macs2.alg.pl.u02",
+   "objectives": [
+    "Plantear un problema de programación lineal a partir de un enunciado.",
+    "Encontrar el óptimo evaluando la función objetivo en los vértices."
+   ],
+   "explanation": [
+    {
+     "title": "Planteamiento",
+     "body": "1. **Incógnitas:** qué decides ($x$ = unidades de A, $y$ = unidades de B).\n2. **Función objetivo:** lo que se maximiza (beneficio) o minimiza (coste), $z = px + qy$.\n3. **Restricciones:** recursos limitados, mínimos, y $x, y \\ge 0$.\n\nUna tabla con los datos ayuda mucho a no equivocarse.\n"
+    },
+    {
+     "title": "Teorema fundamental",
+     "body": "Si la región factible está acotada, el máximo y el mínimo de una función lineal se alcanzan en un **vértice** (o en todo un lado, si dos vértices dan el mismo valor).\n\nMétodo: calcula los vértices, evalúa $z$ en cada uno y compara. Responde en el contexto: \"hay que fabricar 3 mesas y 2 sillas, con un beneficio de 130 €\".\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Mesas y sillas",
+     "statement": "Un taller fabrica mesas ($x$) y sillas ($y$). Puede hacer como máximo 5 piezas al día y como máximo 3 mesas. Cada mesa deja 30 € y cada silla, 20 €. ¿Cuántas debe fabricar para maximizar el beneficio?\n",
+     "steps": [
+      "**Planteamiento:** maximizar $z = 30x + 20y$ con $x + y \\le 5$, $x \\le 3$, $x, y \\ge 0$.\n",
+      "**Vértices** (los de la clase anterior): $(0, 0)$, $(3, 0)$, $(3, 2)$ y $(0, 5)$.\n",
+      "**Evaluamos:** $z(0, 0) = 0$; $z(3, 0) = 90$; $z(3, 2) = 130$; $z(0, 5) = 100$.\n"
+     ],
+     "result": "El máximo es **130 €**, fabricando **3 mesas y 2 sillas** al día.\n"
+    }
+   ],
+   "summary": [
+    "Incógnitas, función objetivo y restricciones (con $x, y \\ge 0$).\n",
+    "El óptimo está en un vértice de la región factible.\n",
+    "Da la respuesta con las unidades del problema.\n"
+   ],
+   "common_errors": [
+    "Olvidar las restricciones de no negatividad.\n",
+    "Dar solo el valor de $z$ sin decir cuántas unidades hay que fabricar.\n"
+   ]
+  },
+  "macs2.ana.funciones.u01": {
+   "id": "macs2.ana.funciones.u01",
+   "objectives": [
+    "Calcular límites, incluidas las indeterminaciones más frecuentes.",
+    "Estudiar la continuidad de funciones definidas a trozos."
+   ],
+   "explanation": [
+    {
+     "title": "Límites",
+     "body": "- **Cociente de polinomios en el infinito ($\\infty/\\infty$):** compara los grados. Si son iguales, el límite es el cociente de los coeficientes principales; si el numerador tiene mayor grado, $\\pm\\infty$; si el denominador, $0$.\n- **$0/0$ con polinomios:** factoriza y simplifica.\n- **$k/0$:** estudia los límites laterales (asíntota vertical).\n\n**Asíntotas:** vertical en $x = a$ si $\\lim_{x\\to a} f = \\pm\\infty$; horizontal en $y = L$ si $\\lim_{x\\to\\pm\\infty} f = L$.\n"
+    },
+    {
+     "title": "Continuidad",
+     "body": "$f$ es continua en $x = a$ si:\n$$\\lim_{x\\to a^-} f(x) = \\lim_{x\\to a^+} f(x) = f(a)$$\nEn una función a trozos, los polinomios son continuos en su tramo: solo hay que estudiar los **puntos de unión**.\n\nEn Ciencias Sociales aparecen muchas funciones a trozos: tarifas, impuestos por tramos...\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Hacer continua una función",
+     "statement": "Halla $a$ para que sea continua $f(x) = \\begin{cases} x^2 + 1 & x < 1 \\\\ ax + 3 & x \\ge 1 \\end{cases}$\n",
+     "steps": [
+      "**Límite por la izquierda:** $\\lim_{x\\to1^-}(x^2 + 1) = 2$.\n",
+      "**Límite por la derecha y valor:** $\\lim_{x\\to1^+}(ax + 3) = a + 3 = f(1)$.\n",
+      "**Igualamos:** $2 = a + 3$, así que $a = -1$.\n"
+     ],
+     "result": "Con $a = -1$ la función es continua en todo $\\mathbb R$.\n"
+    }
+   ],
+   "summary": [
+    "$\\infty/\\infty$ en cocientes de polinomios: compara los grados.\n",
+    "$0/0$: factoriza y simplifica.\n",
+    "A trozos: estudia solo los puntos de unión.\n"
+   ],
+   "common_errors": [
+    "Calcular un solo límite lateral en el punto de unión.\n",
+    "Decir que el límite de $\\infty/\\infty$ es 1.\n"
+   ]
+  },
+  "macs2.ana.funciones.u02": {
+   "id": "macs2.ana.funciones.u02",
+   "objectives": [
+    "Calcular derivadas con las reglas básicas.",
+    "Estudiar la monotonía y los extremos de una función."
+   ],
+   "explanation": [
+    {
+     "title": "Reglas de derivación",
+     "body": "| Función | Derivada |\n|---|---|\n| $x^n$ | $nx^{n-1}$ |\n| $e^x$ | $e^x$ |\n| $\\ln x$ | $1/x$ |\n| $f\\cdot g$ | $f'g + fg'$ |\n| $f/g$ | $(f'g - fg')/g^2$ |\n| $f(g(x))$ | $f'(g(x))\\cdot g'(x)$ |\n\nLa derivada en un punto es la **pendiente de la tangente**: $y - f(a) = f'(a)(x - a)$.\n"
+    },
+    {
+     "title": "Monotonía y extremos",
+     "body": "1. Calcula $f'(x)$ y resuelve $f'(x) = 0$ (puntos críticos).\n2. Estudia el signo de $f'$ en cada intervalo: si $f' > 0$, crece; si $f' < 0$, decrece.\n3. Si pasa de crecer a decrecer, hay un **máximo**; al revés, un **mínimo**. (También: $f'' < 0$ máximo, $f'' > 0$ mínimo.)\n\nNo olvides calcular la coordenada $y$ del extremo: $f(a)$.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Extremos de una cúbica",
+     "statement": "Estudia la monotonía y los extremos de $f(x) = x^3 - 3x$.\n",
+     "steps": [
+      "**Derivada:** $f'(x) = 3x^2 - 3 = 0$, así que $x = \\pm1$.\n",
+      "**Signo de $f'$:** positivo en $(-\\infty, -1)$, negativo en $(-1, 1)$ y positivo en $(1, +\\infty)$.\n",
+      "**Valores:** $f(-1) = -1 + 3 = 2$ y $f(1) = 1 - 3 = -2$.\n"
+     ],
+     "result": "Crece en $(-\\infty, -1)\\cup(1, +\\infty)$ y decrece en $(-1, 1)$. Máximo relativo en $(-1, 2)$ y mínimo relativo en $(1, -2)$.\n"
+    }
+   ],
+   "summary": [
+    "Puntos críticos: $f'(x) = 0$.\n",
+    "$f' > 0$ crece y $f' < 0$ decrece.\n",
+    "El extremo es un punto: da la $x$ y la $y$.\n"
+   ],
+   "common_errors": [
+    "Olvidar la regla de la cadena.\n",
+    "Dar solo la $x$ del máximo o del mínimo.\n"
+   ]
+  },
+  "macs2.ana.funciones.u03": {
+   "id": "macs2.ana.funciones.u03",
+   "objectives": [
+    "Interpretar funciones de ingreso, coste y beneficio.",
+    "Resolver problemas de optimización con derivadas."
+   ],
+   "explanation": [
+    {
+     "title": "Funciones económicas",
+     "body": "- **Ingreso:** $I(x) = p(x)\\cdot x$ (precio por cantidad).\n- **Coste:** $C(x) = $ costes fijos + costes variables.\n- **Beneficio:** $B(x) = I(x) - C(x)$.\n- **Coste medio:** $C(x)/x$.\n\nLas derivadas tienen sentido económico: $C'(x)$ es el **coste marginal** (lo que cuesta, aproximadamente, una unidad más).\n"
+    },
+    {
+     "title": "Método de optimización",
+     "body": "1. Escribe la función que hay que optimizar con **una sola variable** (usa los datos para despejar).\n2. Fija el **dominio** con sentido: cantidades $\\ge 0$, capacidad máxima...\n3. Resuelve $f'(x) = 0$ y comprueba que es un máximo o un mínimo ($f''$ o el signo de $f'$).\n4. Si el dominio es un intervalo cerrado, compara también los extremos del intervalo.\n5. Responde a la pregunta con las unidades.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Beneficio máximo",
+     "statement": "Una empresa ingresa $I(x) = 100x - x^2$ euros al vender $x$ unidades, y su coste es $C(x) = 20x + 1200$. ¿Cuántas unidades maximizan el beneficio? ¿Cuál es ese beneficio?\n",
+     "steps": [
+      "**Beneficio:** $B(x) = 100x - x^2 - 20x - 1200 = -x^2 + 80x - 1200$.\n",
+      "**Derivada:** $B'(x) = -2x + 80 = 0$, así que $x = 40$.\n",
+      "**Comprobación:** $B''(x) = -2 < 0$, luego es un máximo.\n",
+      "**Valor:** $B(40) = -1600 + 3200 - 1200 = 400$.\n"
+     ],
+     "result": "Hay que vender **40 unidades**, con un beneficio máximo de **400 €**.\n"
+    }
+   ],
+   "summary": [
+    "$B = I - C$; $C'$ es el coste marginal.\n",
+    "Una sola variable, dominio con sentido, $f' = 0$ y comprobar.\n",
+    "Responde en el contexto y con unidades.\n"
+   ],
+   "common_errors": [
+    "Restar mal los costes fijos al construir $B(x)$.\n",
+    "No comprobar que el punto crítico es un máximo.\n"
+   ]
+  },
+  "macs2.ana.integrales.u01": {
+   "id": "macs2.ana.integrales.u01",
+   "objectives": [
+    "Calcular primitivas inmediatas.",
+    "Aplicar la regla de Barrow al cálculo de áreas."
+   ],
+   "explanation": [
+    {
+     "title": "Primitivas",
+     "body": "$F$ es una primitiva de $f$ si $F' = f$. Inmediatas:\n$$\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C\\ (n \\ne -1), \\qquad \\int \\frac{1}{x}\\,dx = \\ln|x| + C, \\qquad \\int e^x\\,dx = e^x + C$$\nLa integral es lineal: las constantes salen fuera y la integral de una suma es la suma de integrales.\n"
+    },
+    {
+     "title": "Regla de Barrow y áreas",
+     "body": "$$\\int_a^b f(x)\\,dx = F(b) - F(a)$$\n**Área encerrada por una función y el eje $X$:**\n1. Calcula los cortes con el eje ($f(x) = 0$).\n2. Integra en cada tramo.\n3. Suma los **valores absolutos** (las zonas por debajo del eje dan integrales negativas).\n\n**Área entre dos curvas:** $\\int_a^b |f(x) - g(x)|\\,dx$, con $a$ y $b$ los puntos de corte.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Área bajo una parábola",
+     "statement": "Calcula el área del recinto limitado por $f(x) = -x^2 + 4x$ y el eje $X$.\n",
+     "steps": [
+      "**Cortes:** $-x^2 + 4x = 0$, es decir, $x(4 - x) = 0$, así que $x = 0$ y $x = 4$.\n",
+      "**Primitiva:** $F(x) = -\\dfrac{x^3}{3} + 2x^2$.\n",
+      "**Barrow:** $F(4) - F(0) = -\\dfrac{64}{3} + 32 = \\dfrac{32}{3}$.\n"
+     ],
+     "result": "Área $= \\dfrac{32}{3} \\approx 10{,}67\\ \\mathrm{u^2}$.\n"
+    }
+   ],
+   "summary": [
+    "$\\int x^n\\,dx = x^{n+1}/(n+1) + C$.\n",
+    "Barrow: $F(b) - F(a)$.\n",
+    "Para áreas, busca los cortes y suma valores absolutos.\n"
+   ],
+   "common_errors": [
+    "Integrar de golpe un tramo que cruza el eje: las áreas se compensan.\n",
+    "Olvidar dividir entre $n + 1$.\n"
+   ]
+  },
+  "macs2.inf.muestreo.u01": {
+   "id": "macs2.inf.muestreo.u01",
+   "objectives": [
+    "Distinguir población y muestra, y los tipos de muestreo.",
+    "Usar la distribución de la media muestral."
+   ],
+   "explanation": [
+    {
+     "title": "Población y muestra",
+     "body": "- **Población:** todos los individuos que se estudian. **Muestra:** una parte, que debe ser **representativa**.\n- **Muestreo aleatorio simple:** todos tienen la misma probabilidad de ser elegidos.\n- **Sistemático:** de $k$ en $k$.\n- **Estratificado:** se divide en grupos (estratos) y se elige en cada uno de forma **proporcional** a su tamaño.\n"
+    },
+    {
+     "title": "La media muestral",
+     "body": "Si la población es $N(\\mu, \\sigma)$ (o si $n \\ge 30$, por el **teorema central del límite**), la media de las muestras de tamaño $n$ sigue:\n$$\\bar X \\sim N\\left(\\mu,\\ \\frac{\\sigma}{\\sqrt n}\\right)$$\nCuanto mayor es la muestra, más se concentran las medias alrededor de $\\mu$.\n\nPara la proporción: $\\hat p \\sim N\\left(p, \\sqrt{\\dfrac{p(1 - p)}{n}}\\right)$.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Media de 36 personas",
+     "statement": "Una variable sigue una $N(100, 12)$. Se toman muestras de 36 personas. ¿Cuál es la probabilidad de que la media muestral supere 103?\n",
+     "steps": [
+      "**Distribución de la media:** $\\bar X \\sim N\\left(100, \\dfrac{12}{\\sqrt{36}}\\right) = N(100, 2)$.\n",
+      "**Tipificamos:** $z = \\dfrac{103 - 100}{2} = 1{,}5$.\n",
+      "**Tabla:** $P(\\bar X > 103) = 1 - 0{,}9332 = 0{,}0668$.\n"
+     ],
+     "result": "La probabilidad es **0,0668**. (Para un individuo solo, $P(X > 103)$ sería mucho mayor: 0,40.)\n"
+    }
+   ],
+   "summary": [
+    "Muestreos aleatorio simple, sistemático y estratificado (proporcional).\n",
+    "$\\bar X \\sim N(\\mu, \\sigma/\\sqrt n)$.\n",
+    "Teorema central del límite: con $n \\ge 30$ vale aunque la población no sea normal.\n"
+   ],
+   "common_errors": [
+    "Usar $\\sigma$ en lugar de $\\sigma/\\sqrt n$ para la media.\n",
+    "Hacer un muestreo estratificado sin respetar las proporciones.\n"
+   ]
+  },
+  "macs2.inf.muestreo.u02": {
+   "id": "macs2.inf.muestreo.u02",
+   "objectives": [
+    "Construir e interpretar intervalos de confianza.",
+    "Relacionar el nivel de confianza, el error y el tamaño de la muestra."
+   ],
+   "explanation": [
+    {
+     "title": "Intervalo para la media",
+     "body": "$$\\left(\\bar x - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt n},\\ \\ \\bar x + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt n}\\right)$$\n\n| Confianza | 90 % | 95 % | 99 % |\n|---|---|---|---|\n| $z_{\\alpha/2}$ | 1,645 | 1,96 | 2,575 |\n\nEl **error máximo** es $E = z_{\\alpha/2}\\,\\sigma/\\sqrt n$ (la mitad de la amplitud del intervalo).\n"
+    },
+    {
+     "title": "Intervalo para la proporción e interpretación",
+     "body": "$$\\left(\\hat p - z_{\\alpha/2}\\sqrt{\\frac{\\hat p(1 - \\hat p)}{n}},\\ \\ \\hat p + z_{\\alpha/2}\\sqrt{\\frac{\\hat p(1 - \\hat p)}{n}}\\right)$$\n**Interpretación:** \"Con una confianza del 95 %, la media poblacional está entre...\"; si repitiéramos el muestreo muchas veces, el 95 % de los intervalos contendría el valor real.\n\n- Más confianza implica un intervalo más **ancho**.\n- Una muestra más grande implica un intervalo más **estrecho**.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Proporción de usuarios",
+     "statement": "En una encuesta a 400 personas, 120 usan el transporte público. Calcula el intervalo de confianza al 95 % para la proporción.\n",
+     "steps": [
+      "**Proporción muestral:** $\\hat p = 120/400 = 0{,}30$.\n",
+      "**Error:** $E = 1{,}96\\sqrt{\\dfrac{0{,}30\\cdot0{,}70}{400}} = 1{,}96\\cdot0{,}0229 = 0{,}0449$.\n",
+      "**Intervalo:** $(0{,}30 - 0{,}0449,\\ 0{,}30 + 0{,}0449) = (0{,}255,\\ 0{,}345)$.\n"
+     ],
+     "result": "Con un 95 % de confianza, entre el **25,5 %** y el **34,5 %** de la población usa el transporte público.\n"
+    }
+   ],
+   "summary": [
+    "$E = z_{\\alpha/2}\\,\\sigma/\\sqrt n$ para la media.\n",
+    "Valores críticos: 1,645 (90 %), 1,96 (95 %) y 2,575 (99 %).\n",
+    "Más confianza, intervalo más ancho; más muestra, intervalo más estrecho.\n"
+   ],
+   "common_errors": [
+    "Decir que \"hay un 95 % de probabilidad de que la media esté en ESTE intervalo\" (el intervalo es el aleatorio, no la media).\n",
+    "Usar 1,96 para cualquier nivel de confianza.\n"
+   ]
+  },
+  "macs2.inf.muestreo.u03": {
+   "id": "macs2.inf.muestreo.u03",
+   "objectives": [
+    "Calcular el tamaño mínimo de muestra para un error y una confianza dados.",
+    "Analizar cómo influye cada factor en el tamaño."
+   ],
+   "explanation": [
+    {
+     "title": "Despejar n",
+     "body": "De $E = z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt n}$:\n$$n \\ge \\left(\\frac{z_{\\alpha/2}\\,\\sigma}{E}\\right)^2$$\nPara una proporción (si no se conoce, se toma $\\hat p = 0{,}5$, el caso más desfavorable):\n$$n \\ge \\frac{z_{\\alpha/2}^2\\,\\hat p(1 - \\hat p)}{E^2}$$\n**Siempre se redondea hacia arriba.**\n"
+    },
+    {
+     "title": "¿Qué influye?",
+     "body": "- **Reducir el error a la mitad** obliga a multiplicar el tamaño por **4**.\n- **Más confianza** (mayor $z$) requiere más muestra.\n- **Más dispersión** ($\\sigma$ mayor) requiere más muestra.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Tamaño mínimo",
+     "statement": "La desviación típica de una variable es 12. ¿Qué muestra mínima hace falta para estimar la media con un error menor que 2 y una confianza del 95 %?\n",
+     "steps": [
+      "**Fórmula:** $n \\ge \\left(\\dfrac{1{,}96\\cdot12}{2}\\right)^2 = 11{,}76^2$.\n",
+      "**Cálculo:** $11{,}76^2 = 138{,}30$.\n",
+      "**Redondeo hacia arriba:** $n = 139$.\n"
+     ],
+     "result": "Hacen falta como mínimo **139** personas.\n"
+    }
+   ],
+   "summary": [
+    "$n \\ge (z_{\\alpha/2}\\sigma/E)^2$.\n",
+    "Redondea siempre hacia arriba.\n",
+    "Error a la mitad implica una muestra 4 veces mayor.\n"
+   ],
+   "common_errors": [
+    "Redondear 138,3 a 138 (no se cumpliría el error pedido).\n",
+    "Olvidar elevar al cuadrado.\n"
+   ]
+  },
+  "macs2.pro.probabilidad.u01": {
+   "id": "macs2.pro.probabilidad.u01",
+   "objectives": [
+    "Calcular probabilidades condicionadas con tablas y diagramas de árbol.",
+    "Aplicar el teorema de la probabilidad total y el de Bayes."
+   ],
+   "explanation": [
+    {
+     "title": "Probabilidad condicionada",
+     "body": "$$P(A\\mid B) = \\frac{P(A\\cap B)}{P(B)}$$\n- $A$ y $B$ son **independientes** si $P(A\\cap B) = P(A)\\cdot P(B)$.\n- **Unión:** $P(A\\cup B) = P(A) + P(B) - P(A\\cap B)$.\n- **Contrario:** $P(\\bar A) = 1 - P(A)$.\n\nCon datos de dos características, una **tabla de contingencia** lo hace todo más fácil.\n"
+    },
+    {
+     "title": "Probabilidad total y Bayes",
+     "body": "Si $A_1, \\dots, A_n$ reparten todos los casos:\n$$P(B) = \\sum P(A_i)\\,P(B\\mid A_i)$$\n$$P(A_i\\mid B) = \\frac{P(A_i)\\,P(B\\mid A_i)}{P(B)}$$\nEn un **diagrama de árbol**: la probabilidad total suma todas las ramas que acaban en $B$; Bayes es \"mi rama entre todas las de $B$\".\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Piezas defectuosas",
+     "statement": "La fábrica A produce el 60 % de las piezas, con un 2 % defectuosas, y la B el 40 %, con un 5 % defectuosas. Se elige una pieza al azar y es defectuosa. ¿Qué probabilidad hay de que venga de B?\n",
+     "steps": [
+      "**Ramas que acaban en defectuosa:** $0{,}6\\cdot0{,}02 = 0{,}012$ y $0{,}4\\cdot0{,}05 = 0{,}020$.\n",
+      "**Probabilidad total:** $P(D) = 0{,}012 + 0{,}020 = 0{,}032$.\n",
+      "**Bayes:** $P(B\\mid D) = \\dfrac{0{,}020}{0{,}032} = 0{,}625$.\n"
+     ],
+     "result": "$P(B\\mid D) = $ **0,625**: aunque B fabrica menos, produce la mayoría de las piezas defectuosas.\n"
+    }
+   ],
+   "summary": [
+    "$P(A\\mid B) = P(A\\cap B)/P(B)$.\n",
+    "Probabilidad total: suma de las ramas.\n",
+    "Bayes: tu rama entre el total.\n"
+   ],
+   "common_errors": [
+    "Confundir $P(D\\mid B)$ con $P(B\\mid D)$.\n",
+    "Sumar probabilidades de sucesos que no son incompatibles sin restar la intersección.\n"
+   ]
+  },
+  "macs2.pro.probabilidad.u02": {
+   "id": "macs2.pro.probabilidad.u02",
+   "objectives": [
+    "Reconocer y usar la distribución binomial.",
+    "Tipificar y usar la tabla de la normal, incluida la aproximación de la binomial."
+   ],
+   "explanation": [
+    {
+     "title": "Distribución binomial",
+     "body": "Se repite $n$ veces un experimento con dos resultados (éxito con probabilidad $p$), de forma **independiente**. $X$ = número de éxitos:\n$$P(X = k) = \\binom{n}{k}p^k(1 - p)^{n-k}$$\nMedia $\\mu = np$; desviación típica $\\sigma = \\sqrt{np(1 - p)}$.\n"
+    },
+    {
+     "title": "Distribución normal",
+     "body": "$X \\sim N(\\mu, \\sigma)$ tiene forma de campana. Se **tipifica** para usar la tabla de $N(0, 1)$:\n$$Z = \\frac{X - \\mu}{\\sigma}$$\n- La tabla da $P(Z \\le z)$.\n- $P(Z > z) = 1 - P(Z \\le z)$ y $P(Z \\le -z) = 1 - P(Z \\le z)$.\n\n**Aproximación:** si $np \\ge 5$ y $n(1 - p) \\ge 5$, la binomial se aproxima por $N(np, \\sqrt{npq})$, con la corrección de continuidad (±0,5).\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Estaturas",
+     "statement": "La estatura de un grupo sigue una $N(170, 10)$ en cm. ¿Qué proporción mide más de 186 cm?\n",
+     "steps": [
+      "**Tipificamos:** $z = \\dfrac{186 - 170}{10} = 1{,}6$.\n",
+      "**Tabla:** $P(Z \\le 1{,}6) = 0{,}9452$.\n",
+      "**Contrario:** $P(Z > 1{,}6) = 1 - 0{,}9452 = 0{,}0548$.\n"
+     ],
+     "result": "Aproximadamente el **5,5 %** del grupo mide más de 186 cm.\n"
+    }
+   ],
+   "summary": [
+    "Binomial: $\\binom nk p^k q^{n-k}$, con $\\mu = np$.\n",
+    "Normal: tipifica con $Z = (X - \\mu)/\\sigma$.\n",
+    "La tabla da $P(Z \\le z)$; para \"mayor que\", usa $1 - $ tabla.\n"
+   ],
+   "common_errors": [
+    "Leer la tabla directamente para un \"mayor que\".\n",
+    "Usar la binomial cuando los intentos no son independientes.\n"
    ]
   },
   "mat2.alg.determinantes.u01": {
@@ -4984,6 +7181,581 @@ export default {
    "common_errors": [
     "Dar como resultado el numerador $P(A_i\\cap B)$ sin dividir.",
     "Olvidar alguna rama al calcular $P(B)$."
+   ]
+  },
+  "qui.ab.acidobase.u01": {
+   "id": "qui.ab.acidobase.u01",
+   "objectives": [
+    "Aplicar las teorías de Arrhenius y Brønsted-Lowry.",
+    "Calcular el pH de disoluciones de ácidos y bases fuertes."
+   ],
+   "explanation": [
+    {
+     "title": "Ácidos y bases",
+     "body": "- **Arrhenius:** un ácido libera H⁺ en agua; una base, OH⁻.\n- **Brønsted-Lowry:** un ácido **cede** un protón y una base lo **acepta**. Cada ácido tiene su **base conjugada**: $\\mathrm{HCl/Cl^-}$, $\\mathrm{NH_4^+/NH_3}$.\n\nUn ácido **fuerte** se disocia por completo (HCl, HNO₃, H₂SO₄ en su primera etapa); una base fuerte también (NaOH, KOH).\n"
+    },
+    {
+     "title": "El pH",
+     "body": "$$\\mathrm{pH} = -\\log[\\mathrm{H_3O^+}], \\qquad \\mathrm{pOH} = -\\log[\\mathrm{OH^-}]$$\nA 25 °C, $K_w = [\\mathrm{H_3O^+}][\\mathrm{OH^-}] = 10^{-14}$, así que $\\mathrm{pH} + \\mathrm{pOH} = 14$.\n\n- pH < 7 ácido, pH = 7 neutro y pH > 7 básico.\n- Con un ácido fuerte monoprótico: $[\\mathrm{H_3O^+}] = c$.\n- En una **neutralización** fuerte-fuerte, en el punto de equivalencia el pH es 7 y se cumple $n_{ácido} = n_{base}$ (para especies monopróticas).\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "pH de un ácido y de una base fuertes",
+     "statement": "Calcula el pH de una disolución 0,020 M de HCl y el de una 0,0050 M de NaOH.\n",
+     "steps": [
+      "**HCl:** se disocia por completo, $[\\mathrm{H_3O^+}] = 0{,}020$ M, y $\\mathrm{pH} = -\\log 0{,}020 = 1{,}70$.\n",
+      "**NaOH:** $[\\mathrm{OH^-}] = 0{,}0050$ M, y $\\mathrm{pOH} = -\\log 0{,}0050 = 2{,}30$.\n",
+      "**pH:** $14 - 2{,}30 = 11{,}70$.\n"
+     ],
+     "result": "HCl 0,020 M: pH = **1,70**. NaOH 0,0050 M: pH = **11,70**.\n"
+    }
+   ],
+   "summary": [
+    "Ácido fuerte: $[\\mathrm{H_3O^+}] = c$.\n",
+    "$\\mathrm{pH} + \\mathrm{pOH} = 14$ a 25 °C.\n",
+    "Brønsted: el ácido cede H⁺ y la base lo acepta.\n"
+   ],
+   "common_errors": [
+    "Calcular el pH de una base usando $[\\mathrm{OH^-}]$ directamente, sin pasar por el pOH.\n",
+    "Olvidar el signo menos del logaritmo.\n"
+   ]
+  },
+  "qui.ab.acidobase.u02": {
+   "id": "qui.ab.acidobase.u02",
+   "objectives": [
+    "Calcular el pH y el grado de disociación de un ácido débil.",
+    "Predecir el carácter ácido, básico o neutro de una sal."
+   ],
+   "explanation": [
+    {
+     "title": "Ácidos débiles",
+     "body": "Un ácido débil se disocia solo parcialmente:\n$$\\mathrm{HA + H_2O \\rightleftharpoons A^- + H_3O^+}, \\qquad K_a = \\frac{[\\mathrm{A^-}][\\mathrm{H_3O^+}]}{[\\mathrm{HA}]} = \\frac{x^2}{c - x}$$\n- Si $K_a$ es pequeña, se puede aproximar $c - x \\approx c$, así que $x \\approx \\sqrt{K_a\\,c}$ (comprueba que $x$ es menor del 5 % de $c$).\n- **Grado de disociación:** $\\alpha = x / c$.\n- Para un par conjugado: $K_a\\cdot K_b = K_w$.\n"
+    },
+    {
+     "title": "Hidrólisis de sales",
+     "body": "| Sal procedente de | Ejemplo | Disolución |\n|---|---|---|\n| ácido fuerte + base fuerte | NaCl | neutra |\n| ácido débil + base fuerte | CH₃COONa | básica |\n| ácido fuerte + base débil | NH₄Cl | ácida |\n\nEl ion que procede del electrolito débil reacciona con el agua. Por ejemplo, $\\mathrm{CH_3COO^- + H_2O \\rightleftharpoons CH_3COOH + OH^-}$.\n\nUna **disolución reguladora** (ácido débil + su sal) amortigua los cambios de pH.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "pH del ácido acético",
+     "statement": "Calcula el pH y el grado de disociación de una disolución 0,10 M de ácido acético ($K_a = 1{,}8\\cdot10^{-5}$).\n",
+     "steps": [
+      "**Planteamiento:** $K_a = \\dfrac{x^2}{0{,}10 - x} = 1{,}8\\cdot10^{-5}$.\n",
+      "**Aproximación:** $x \\approx \\sqrt{1{,}8\\cdot10^{-5}\\cdot0{,}10} = 1{,}34\\cdot10^{-3}$ M (es el 1,3 % de 0,10, así que la aproximación es válida).\n",
+      "**pH:** $-\\log(1{,}34\\cdot10^{-3}) = 2{,}87$.\n",
+      "**Grado de disociación:** $\\alpha = 1{,}34\\cdot10^{-3}/0{,}10 = 0{,}013$, es decir, el 1,3 %.\n"
+     ],
+     "result": "pH ≈ **2,87** y $\\alpha \\approx 1{,}3\\ \\%$. (Resolviendo la ecuación de segundo grado se obtiene 2,88.)\n"
+    }
+   ],
+   "summary": [
+    "Ácido débil: $K_a = x^2/(c - x)$, y $x \\approx \\sqrt{K_a c}$ si $K_a$ es pequeña.\n",
+    "$\\alpha = x/c$ y $K_aK_b = K_w$.\n",
+    "El ion que viene del electrolito débil es el que se hidroliza.\n"
+   ],
+   "common_errors": [
+    "Tomar $[\\mathrm{H_3O^+}] = c$ para un ácido débil.\n",
+    "Decir que el CH₃COONa da una disolución ácida \"porque viene de un ácido\".\n"
+   ]
+  },
+  "qui.ab.redox.u01": {
+   "id": "qui.ab.redox.u01",
+   "objectives": [
+    "Ajustar reacciones redox por el método del ion-electrón.",
+    "Calcular la fuerza electromotriz de una pila y predecir la espontaneidad."
+   ],
+   "explanation": [
+    {
+     "title": "Oxidación y reducción",
+     "body": "- **Oxidación:** pérdida de electrones (sube el número de oxidación). La especie que se oxida es el **reductor**.\n- **Reducción:** ganancia de electrones (baja el número de oxidación). La especie que se reduce es el **oxidante**.\n\n**Ajuste por ion-electrón** (medio ácido):\n1. Escribe las semirreacciones.\n2. Ajusta los átomos distintos de O e H.\n3. Ajusta el O con H₂O y el H con H⁺.\n4. Ajusta las cargas con electrones.\n5. Iguala los electrones y suma.\n"
+    },
+    {
+     "title": "Pilas galvánicas",
+     "body": "En una pila, una reacción redox espontánea produce corriente:\n- **Ánodo:** oxidación (polo −).\n- **Cátodo:** reducción (polo +).\n- El **puente salino** cierra el circuito.\n\n$$E^\\circ_{pila} = E^\\circ_{cátodo} - E^\\circ_{ánodo}$$\nLa especie con el potencial de reducción **mayor** se reduce. Si $E^\\circ > 0$, la reacción es espontánea ($\\Delta G^\\circ = -nFE^\\circ < 0$).\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "La pila Daniell",
+     "statement": "Una pila tiene un electrodo de Zn en Zn²⁺ y otro de Cu en Cu²⁺. Datos: $E^\\circ(\\mathrm{Zn^{2+}/Zn}) = -0{,}76$ V y $E^\\circ(\\mathrm{Cu^{2+}/Cu}) = +0{,}34$ V. Escribe la reacción global y calcula la fuerza electromotriz.\n",
+     "steps": [
+      "**¿Quién se reduce?** El Cu²⁺, que tiene el potencial mayor: cátodo $\\mathrm{Cu^{2+} + 2e^- \\to Cu}$.\n",
+      "**Ánodo:** $\\mathrm{Zn \\to Zn^{2+} + 2e^-}$.\n",
+      "**Reacción global:** $\\mathrm{Zn + Cu^{2+} \\to Zn^{2+} + Cu}$.\n",
+      "**Fuerza electromotriz:** $E^\\circ = 0{,}34 - (-0{,}76) = 1{,}10$ V.\n"
+     ],
+     "result": "$E^\\circ = $ **1,10 V**: es espontánea. El zinc se disuelve y el cobre se deposita.\n"
+    }
+   ],
+   "summary": [
+    "Oxidación: pierde e⁻ (ánodo). Reducción: gana e⁻ (cátodo).\n",
+    "$E^\\circ_{pila} = E^\\circ_{cátodo} - E^\\circ_{ánodo}$.\n",
+    "$E^\\circ > 0$ implica que la reacción es espontánea.\n"
+   ],
+   "common_errors": [
+    "Multiplicar el potencial por el coeficiente de la semirreacción (el potencial no depende de la cantidad).\n",
+    "Confundir los papeles: el oxidante es la especie que se REDUCE.\n"
+   ]
+  },
+  "qui.ab.redox.u02": {
+   "id": "qui.ab.redox.u02",
+   "objectives": [
+    "Describir una cuba electrolítica.",
+    "Calcular masas depositadas con las leyes de Faraday."
+   ],
+   "explanation": [
+    {
+     "title": "La electrólisis",
+     "body": "Es el proceso inverso a la pila: una corriente externa fuerza una reacción **no espontánea**.\n- **Ánodo (+):** oxidación.\n- **Cátodo (−):** reducción.\n\nEjemplos: obtención de Na y Cl₂ a partir de NaCl fundido, electrólisis del agua y recubrimientos metálicos (galvanoplastia).\n"
+    },
+    {
+     "title": "Leyes de Faraday",
+     "body": "La carga que circula es $Q = I\\,t$ (amperios por segundos). Un mol de electrones transporta $F = 96\\,500$ C (constante de Faraday).\n$$m = \\frac{M\\,I\\,t}{n\\,F}$$\ndonde $M$ es la masa molar y $n$, el número de electrones que intercambia cada ion.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Depositar cobre",
+     "statement": "Se hace pasar una corriente de 2,0 A durante 30 min por una disolución de CuSO₄. ¿Qué masa de cobre se deposita? ($M_{Cu} = 63{,}5$ g/mol)\n",
+     "steps": [
+      "**Carga:** $Q = 2{,}0 \\cdot 1800 = 3600$ C.\n",
+      "**Semirreacción:** $\\mathrm{Cu^{2+} + 2e^- \\to Cu}$, así que $n = 2$.\n",
+      "**Masa:** $m = \\dfrac{63{,}5\\cdot3600}{2\\cdot96\\,500} = 1{,}18$ g.\n"
+     ],
+     "result": "Se depositan **1,18 g** de cobre en el cátodo.\n"
+    }
+   ],
+   "summary": [
+    "Electrólisis: reacción no espontánea forzada por una corriente.\n",
+    "$Q = It$ y $F = 96\\,500$ C/mol.\n",
+    "$m = MIt/(nF)$.\n"
+   ],
+   "common_errors": [
+    "Dejar el tiempo en minutos.\n",
+    "Olvidar dividir entre el número de electrones $n$.\n"
+   ]
+  },
+  "qui.eq.equilibrio.u01": {
+   "id": "qui.eq.equilibrio.u01",
+   "objectives": [
+    "Plantear la tabla de concentraciones inicial-cambio-equilibrio.",
+    "Calcular $K_c$ y $K_p$ y relacionarlas."
+   ],
+   "explanation": [
+    {
+     "title": "El equilibrio químico",
+     "body": "En una reacción reversible, el equilibrio se alcanza cuando la velocidad directa iguala a la inversa: las concentraciones dejan de cambiar (pero la reacción no se para; es un equilibrio **dinámico**).\n\nPara $a\\,A + b\\,B \\rightleftharpoons c\\,C + d\\,D$:\n$$K_c = \\frac{[C]^c[D]^d}{[A]^a[B]^b}$$\nLos sólidos y los líquidos puros **no** aparecen en la expresión.\n"
+    },
+    {
+     "title": "Kp y el método de la tabla",
+     "body": "Con gases se usan presiones parciales: $K_p = K_c\\,(RT)^{\\Delta n}$, siendo $\\Delta n$ = moles de gas de productos − de reactivos y $R = 0{,}082$ atm·L/(mol·K).\n\nMétodo de la tabla (**ICE**):\n1. Concentraciones **iniciales**.\n2. **Cambio**: $-ax$, $-bx$, $+cx$, $+dx$.\n3. **Equilibrio**: inicial + cambio. Sustituye en $K_c$.\n\nEl **cociente de reacción** $Q$ tiene la misma forma: si $Q < K$, la reacción avanza hacia los productos.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Equilibrio del yoduro de hidrógeno",
+     "statement": "En un matraz de 1 L se ponen 1,00 mol de H₂ y 1,00 mol de I₂. En el equilibrio hay 1,56 mol de HI. Calcula $K_c$ y $K_p$ para $\\mathrm{H_2 + I_2 \\rightleftharpoons 2\\,HI}$.\n",
+     "steps": [
+      "**Cambio:** se forman $2x = 1{,}56$ mol de HI, así que $x = 0{,}78$ mol.\n",
+      "**Equilibrio:** $[\\mathrm{H_2}] = [\\mathrm{I_2}] = 1{,}00 - 0{,}78 = 0{,}22$ M y $[\\mathrm{HI}] = 1{,}56$ M.\n",
+      "**Constante:** $K_c = \\dfrac{1{,}56^2}{0{,}22\\cdot0{,}22} = 50{,}3$.\n",
+      "**Kp:** $\\Delta n = 2 - 2 = 0$, así que $K_p = K_c$.\n"
+     ],
+     "result": "$K_c = K_p \\approx 50$.\n"
+    }
+   ],
+   "summary": [
+    "$K_c$: productos entre reactivos, elevados a sus coeficientes.\n",
+    "Sólidos y líquidos puros no aparecen.\n",
+    "$K_p = K_c(RT)^{\\Delta n}$.\n"
+   ],
+   "common_errors": [
+    "Usar moles en lugar de concentraciones cuando el volumen no es 1 L.\n",
+    "Olvidar elevar a los coeficientes estequiométricos.\n"
+   ]
+  },
+  "qui.eq.equilibrio.u02": {
+   "id": "qui.eq.equilibrio.u02",
+   "objectives": [
+    "Predecir hacia dónde se desplaza un equilibrio ante un cambio.",
+    "Distinguir los factores que cambian K de los que no."
+   ],
+   "explanation": [
+    {
+     "title": "El principio",
+     "body": "Si se altera un sistema en equilibrio, este evoluciona en el sentido que **contrarresta** la perturbación.\n\n- **Añadir un reactivo** (o quitar un producto): se desplaza hacia los productos.\n- **Aumentar la presión** (reducir el volumen): se desplaza hacia donde hay **menos moles de gas**.\n- **Subir la temperatura:** se desplaza en el sentido **endotérmico**.\n"
+    },
+    {
+     "title": "¿Cambia la constante?",
+     "body": "- Solo la **temperatura** cambia el valor de $K$.\n- Cambiar concentraciones o presión desplaza el equilibrio, pero $K$ se mantiene.\n- Un **catalizador** no lo desplaza: solo hace que se alcance antes.\n- Añadir un gas inerte a volumen constante no lo altera.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "La síntesis del amoniaco",
+     "statement": "Para $\\mathrm{N_2 + 3\\,H_2 \\rightleftharpoons 2\\,NH_3}$, con $\\Delta H < 0$, ¿cómo se puede aumentar el rendimiento de amoniaco?\n",
+     "steps": [
+      "**Presión:** a la izquierda hay 4 moles de gas y a la derecha 2. Aumentar la presión desplaza el equilibrio hacia el NH₃.\n",
+      "**Temperatura:** la reacción directa es exotérmica. Bajar la temperatura favorece el NH₃ (aunque la reacción es más lenta).\n",
+      "**Concentraciones:** retirar el NH₃ a medida que se forma desplaza el equilibrio hacia la derecha.\n"
+     ],
+     "result": "Presión alta, temperatura moderada (equilibrio entre rendimiento y velocidad), catalizador de hierro y retirar el NH₃: es el proceso **Haber-Bosch**.\n"
+    }
+   ],
+   "summary": [
+    "El equilibrio contrarresta la perturbación.\n",
+    "Más presión: hacia menos moles de gas. Más temperatura: hacia el sentido endotérmico.\n",
+    "Solo la temperatura cambia K.\n"
+   ],
+   "common_errors": [
+    "Decir que el catalizador aumenta el rendimiento.\n",
+    "Pensar que añadir reactivo cambia el valor de $K$.\n"
+   ]
+  },
+  "qui.est.atomo.u01": {
+   "id": "qui.est.atomo.u01",
+   "objectives": [
+    "Describir los orbitales con los cuatro números cuánticos.",
+    "Escribir configuraciones electrónicas con el diagrama de Moeller."
+   ],
+   "explanation": [
+    {
+     "title": "Del modelo de Bohr al modelo cuántico",
+     "body": "Bohr explicó el espectro del hidrógeno con órbitas fijas, pero falló con átomos de más electrones. El modelo actual sustituye la órbita por el **orbital**: la zona donde es muy probable encontrar al electrón.\n\nCada electrón queda descrito por cuatro **números cuánticos**:\n- $n$ (principal): nivel de energía y tamaño, $n = 1, 2, 3, \\dots$\n- $l$ (secundario): forma del orbital, de $0$ a $n-1$ ($l = 0$: s, $1$: p, $2$: d, $3$: f).\n- $m_l$ (magnético): orientación, de $-l$ a $+l$.\n- $m_s$ (espín): $+\\tfrac12$ o $-\\tfrac12$.\n"
+    },
+    {
+     "title": "Reglas para llenar los orbitales",
+     "body": "1. **Principio de mínima energía:** se llenan por orden de $n + l$ (diagrama de Moeller): 1s 2s 2p 3s 3p 4s 3d 4p 5s 4d...\n2. **Principio de exclusión de Pauli:** no hay dos electrones con los cuatro números cuánticos iguales, así que caben 2 electrones por orbital.\n3. **Regla de Hund:** en orbitales de igual energía, los electrones se colocan primero desapareados.\n\nCapacidad de cada subnivel: s = 2, p = 6, d = 10, f = 14.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Configuración del hierro",
+     "statement": "Escribe la configuración electrónica del hierro ($Z = 26$) y la del ion $\\mathrm{Fe^{2+}}$.\n",
+     "steps": [
+      "**Orden de llenado:** 1s² 2s² 2p⁶ 3s² 3p⁶ suman 18 electrones.\n",
+      "**Siguen el 4s y el 3d:** 4s² (20) y 3d⁶ (26). Configuración: $1s^2\\,2s^2\\,2p^6\\,3s^2\\,3p^6\\,4s^2\\,3d^6$.\n",
+      "**El ion pierde primero los electrones del nivel más externo** ($n = 4$), no los últimos que entraron: $\\mathrm{Fe^{2+}}$: $[\\mathrm{Ar}]\\,3d^6$.\n"
+     ],
+     "result": "Fe: $[\\mathrm{Ar}]\\,4s^2\\,3d^6$; Fe²⁺: $[\\mathrm{Ar}]\\,3d^6$.\n"
+    }
+   ],
+   "summary": [
+    "Cuatro números cuánticos: $n$, $l$, $m_l$ y $m_s$.\n",
+    "Llenado por $n + l$ creciente (Moeller), Pauli y Hund.\n",
+    "Los cationes pierden primero los electrones de mayor $n$.\n"
+   ],
+   "common_errors": [
+    "Quitar los electrones del 3d antes que los del 4s al formar un catión.\n",
+    "Dar a $l$ el valor $n$ (el máximo es $n - 1$).\n"
+   ]
+  },
+  "qui.est.atomo.u02": {
+   "id": "qui.est.atomo.u02",
+   "objectives": [
+    "Relacionar la posición en la tabla con la configuración electrónica.",
+    "Predecir cómo varían el radio, la energía de ionización, la afinidad electrónica y la electronegatividad."
+   ],
+   "explanation": [
+    {
+     "title": "La tabla periódica y la configuración",
+     "body": "El **periodo** coincide con el nivel más externo ($n$) y el **grupo**, con los electrones de valencia. Bloques: s (grupos 1-2), p (13-18), d (metales de transición) y f.\n\nLa clave de todas las tendencias es la **carga nuclear efectiva**: en un periodo, de izquierda a derecha, aumenta la carga del núcleo pero los electrones entran en el mismo nivel, así que se sienten más atraídos.\n"
+    },
+    {
+     "title": "Tendencias",
+     "body": "| Propiedad | En un periodo (→) | En un grupo (↓) |\n|---|---|---|\n| Radio atómico | disminuye | aumenta |\n| Energía de ionización | aumenta | disminuye |\n| Afinidad electrónica (en valor absoluto) | aumenta | disminuye |\n| Electronegatividad | aumenta | disminuye |\n\n- Un **catión** es más pequeño que su átomo; un **anión**, más grande.\n- El flúor es el elemento más electronegativo y el cesio, de los menos.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Ordenar tres elementos",
+     "statement": "Ordena Na ($Z = 11$), Mg ($Z = 12$) y K ($Z = 19$) de menor a mayor energía de ionización.\n",
+     "steps": [
+      "**Situamos los elementos:** Na y Mg están en el periodo 3 (grupos 1 y 2); K está en el periodo 4, grupo 1.\n",
+      "**Mismo grupo (Na y K):** la energía de ionización disminuye al bajar, porque el electrón está más lejos. $EI(\\mathrm K) < EI(\\mathrm{Na})$.\n",
+      "**Mismo periodo (Na y Mg):** aumenta hacia la derecha por la mayor carga nuclear efectiva. $EI(\\mathrm{Na}) < EI(\\mathrm{Mg})$.\n"
+     ],
+     "result": "$EI(\\mathrm K) < EI(\\mathrm{Na}) < EI(\\mathrm{Mg})$.\n"
+    }
+   ],
+   "summary": [
+    "Hacia la derecha: radio ↓, energía de ionización ↑ y electronegatividad ↑.\n",
+    "Hacia abajo: radio ↑, energía de ionización ↓ y electronegatividad ↓.\n",
+    "Justifica siempre con la carga nuclear efectiva y el número de niveles.\n"
+   ],
+   "common_errors": [
+    "Decir solo \"porque está a la derecha\" sin justificarlo con la carga nuclear o la distancia.\n",
+    "Pensar que un catión es más grande que su átomo neutro.\n"
+   ]
+  },
+  "qui.est.enlace.u01": {
+   "id": "qui.est.enlace.u01",
+   "objectives": [
+    "Distinguir los tipos de enlace y sus propiedades.",
+    "Predecir la geometría y la polaridad de una molécula con la TRPECV."
+   ],
+   "explanation": [
+    {
+     "title": "Tres tipos de enlace",
+     "body": "- **Iónico:** entre un metal y un no metal (gran diferencia de electronegatividad). Hay transferencia de electrones y se forman redes cristalinas. Ejemplo: NaCl. La **energía reticular** se calcula con el ciclo de Born-Haber.\n- **Covalente:** entre no metales, que comparten electrones. Forma moléculas (H₂O) o redes covalentes (diamante, SiO₂).\n- **Metálico:** red de cationes en un \"mar\" de electrones deslocalizados, que explica la conductividad y el brillo.\n"
+    },
+    {
+     "title": "Geometría: la TRPECV",
+     "body": "Los pares de electrones de la capa de valencia se repelen y se colocan lo más lejos posible:\n\n| Pares totales | Pares libres | Geometría | Ejemplo |\n|---|---|---|---|\n| 2 | 0 | lineal (180°) | BeCl₂, CO₂ |\n| 3 | 0 | triangular plana (120°) | BF₃ |\n| 4 | 0 | tetraédrica (109,5°) | CH₄ |\n| 4 | 1 | pirámide trigonal | NH₃ |\n| 4 | 2 | angular | H₂O |\n\nUna molécula es **polar** si sus enlaces son polares y sus momentos dipolares **no se anulan** por la geometría.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Geometría y polaridad del amoniaco",
+     "statement": "Predice la geometría, la hibridación y la polaridad de la molécula de NH₃.\n",
+     "steps": [
+      "**Estructura de Lewis:** el N tiene 5 electrones de valencia; forma 3 enlaces con H y le queda 1 par libre.\n",
+      "**Pares alrededor del N:** 4 (3 enlazantes + 1 libre), así que se disponen en tetraedro e hibridación $sp^3$.\n",
+      "**Geometría (solo cuentan los átomos):** pirámide trigonal; el par libre cierra el ángulo a unos 107°.\n",
+      "**Polaridad:** los enlaces N–H son polares y, por la forma piramidal, sus dipolos no se anulan.\n"
+     ],
+     "result": "NH₃: pirámide trigonal, $sp^3$ y **polar**.\n"
+    }
+   ],
+   "summary": [
+    "Iónico: metal + no metal. Covalente: no metales. Metálico: metales.\n",
+    "TRPECV: cuenta los pares totales, coloca los pares libres y nombra la forma solo por los átomos.\n",
+    "Polar = enlaces polares + geometría que no anula los dipolos.\n"
+   ],
+   "common_errors": [
+    "Decir que el CO₂ es polar: sus enlaces lo son, pero la molécula lineal anula los dipolos.\n",
+    "Contar los pares libres como \"brazos\" al nombrar la geometría.\n"
+   ]
+  },
+  "qui.est.enlace.u02": {
+   "id": "qui.est.enlace.u02",
+   "objectives": [
+    "Identificar las fuerzas intermoleculares de una sustancia.",
+    "Explicar los puntos de fusión y ebullición y la solubilidad."
+   ],
+   "explanation": [
+    {
+     "title": "Fuerzas entre moléculas",
+     "body": "De más débil a más fuerte:\n- **Fuerzas de dispersión (London):** en todas las moléculas; crecen con el tamaño (masa molar).\n- **Dipolo-dipolo:** entre moléculas polares.\n- **Puente de hidrógeno:** cuando el H está unido a **F, O o N** y se acerca a otro de esos átomos. Es la más intensa.\n\nSon mucho más débiles que los enlaces: al hervir agua **no se rompen** los enlaces O–H.\n"
+    },
+    {
+     "title": "Propiedades de cada tipo de sustancia",
+     "body": "| Sustancia | Ejemplo | Fusión | Conduce |\n|---|---|---|---|\n| Iónica | NaCl | alta | fundida o disuelta |\n| Covalente molecular | H₂O, CH₄ | baja | no |\n| Red covalente | diamante | muy alta | no (salvo grafito) |\n| Metálica | Cu | variable | sí, en sólido |\n\n\"Lo semejante disuelve a lo semejante\": las sustancias polares se disuelven en agua y las apolares, en disolventes apolares.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Ordenar puntos de ebullición",
+     "statement": "Ordena de menor a mayor punto de ebullición: CH₄, H₂O y H₂S.\n",
+     "steps": [
+      "**CH₄:** apolar, solo fuerzas de dispersión y es pequeña. Punto de ebullición muy bajo.\n",
+      "**H₂S:** polar (angular), con dipolo-dipolo; el S no forma puentes de hidrógeno.\n",
+      "**H₂O:** forma **puentes de hidrógeno** (H unido a O), mucho más intensos.\n"
+     ],
+     "result": "$T_{eb}(\\mathrm{CH_4}) < T_{eb}(\\mathrm{H_2S}) < T_{eb}(\\mathrm{H_2O})$. El agua hierve a 100 °C y el H₂S, a unos −60 °C, pese a ser más pesado.\n"
+    }
+   ],
+   "summary": [
+    "Dispersión < dipolo-dipolo < puente de hidrógeno.\n",
+    "Puente de hidrógeno: H unido a F, O o N.\n",
+    "Al cambiar de estado una sustancia molecular, se rompen fuerzas intermoleculares, no enlaces.\n"
+   ],
+   "common_errors": [
+    "Decir que al hervir el agua se rompen los enlaces O–H.\n",
+    "Atribuir puentes de hidrógeno a moléculas como CH₄ o HCl.\n"
+   ]
+  },
+  "qui.org.organica.u01": {
+   "id": "qui.org.organica.u01",
+   "objectives": [
+    "Reconocer y nombrar los principales grupos funcionales.",
+    "Identificar los distintos tipos de isomería."
+   ],
+   "explanation": [
+    {
+     "title": "Grupos funcionales",
+     "body": "| Grupo | Fórmula | Terminación | Ejemplo |\n|---|---|---|---|\n| Alcohol | –OH | -ol | etanol |\n| Aldehído | –CHO | -al | etanal |\n| Cetona | –CO– | -ona | propanona |\n| Ácido carboxílico | –COOH | ácido -oico | ácido etanoico |\n| Éster | –COO– | -ato de -ilo | etanoato de metilo |\n| Amina | –NH₂ | -amina | metilamina |\n| Amida | –CONH₂ | -amida | etanamida |\n\nPara nombrar: elige la cadena más larga que contenga el grupo principal y numera para darle el localizador más bajo.\n"
+    },
+    {
+     "title": "Isomería",
+     "body": "Los isómeros tienen la misma fórmula molecular y distinta estructura:\n- **Estructural:** de cadena (butano y metilpropano), de posición (propan-1-ol y propan-2-ol) o de función (etanol y dimetiléter).\n- **Geométrica (cis-trans):** en dobles enlaces C=C con dos sustituyentes distintos en cada carbono.\n- **Óptica:** con un **carbono asimétrico** (quiral), unido a cuatro grupos distintos. Los dos isómeros (enantiómeros) desvían la luz polarizada en sentidos opuestos.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Isómeros del C₃H₈O",
+     "statement": "Escribe y nombra todos los isómeros de fórmula C₃H₈O. ¿Qué tipo de isomería hay entre ellos?\n",
+     "steps": [
+      "**Alcoholes:** $\\mathrm{CH_3CH_2CH_2OH}$ (propan-1-ol) y $\\mathrm{CH_3CH(OH)CH_3}$ (propan-2-ol).\n",
+      "**Éter:** $\\mathrm{CH_3OCH_2CH_3}$ (etil metil éter, o metoxietano).\n",
+      "**Relaciones:** entre los dos alcoholes hay isomería de posición; entre un alcohol y el éter, isomería de función.\n"
+     ],
+     "result": "Hay **tres** isómeros: dos alcoholes (isómeros de posición) y un éter (isómero de función de ambos).\n"
+    }
+   ],
+   "summary": [
+    "Reconoce el grupo funcional por su terminación: -ol, -al, -ona, -oico, -amina...\n",
+    "Isomería estructural: de cadena, de posición o de función.\n",
+    "Un carbono asimétrico (cuatro grupos distintos) implica isomería óptica.\n"
+   ],
+   "common_errors": [
+    "Numerar la cadena desde el extremo que da el localizador más alto.\n",
+    "Ver isomería cis-trans en un C=C con dos grupos iguales en el mismo carbono.\n"
+   ]
+  },
+  "qui.org.organica.u02": {
+   "id": "qui.org.organica.u02",
+   "objectives": [
+    "Clasificar las reacciones orgánicas y predecir sus productos.",
+    "Distinguir los polímeros de adición de los de condensación."
+   ],
+   "explanation": [
+    {
+     "title": "Tipos de reacciones",
+     "body": "- **Sustitución:** un átomo o grupo se cambia por otro. $\\mathrm{CH_4 + Cl_2 \\xrightarrow{luz} CH_3Cl + HCl}$.\n- **Adición:** a un doble o triple enlace. $\\mathrm{CH_2{=}CH_2 + HBr \\to CH_3CH_2Br}$. Con alquenos asimétricos se sigue la **regla de Markovnikov**: el H va al carbono que ya tenía más H.\n- **Eliminación:** se forma un doble enlace. Ejemplo: la deshidratación de un alcohol con H₂SO₄ y calor.\n- **Condensación:** se unen dos moléculas liberando una pequeña (H₂O). Ejemplo: la **esterificación**, ácido + alcohol ⇌ éster + agua.\n- **Redox:** alcohol primario → aldehído → ácido; alcohol secundario → cetona.\n"
+    },
+    {
+     "title": "Polímeros",
+     "body": "- **De adición:** los monómeros tienen un doble enlace que se abre. Ejemplos: polietileno, PVC y poliestireno.\n- **De condensación:** se libera una molécula pequeña en cada unión. Ejemplos: poliésteres (PET) y poliamidas (nailon).\n\nLos polímeros sintéticos son muy útiles, pero muchos no son biodegradables: de ahí la importancia del reciclaje.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Una esterificación",
+     "statement": "Escribe la reacción entre el ácido etanoico y el etanol. ¿De qué tipo es y cómo se llama el producto?\n",
+     "steps": [
+      "**Reactivos:** $\\mathrm{CH_3COOH + CH_3CH_2OH}$.\n",
+      "**Se elimina agua:** el OH del ácido y el H del alcohol.\n",
+      "**Producto:** $\\mathrm{CH_3COOCH_2CH_3 + H_2O}$.\n"
+     ],
+     "result": "Es una reacción de **condensación** (esterificación). Se forma **etanoato de etilo**, un éster con olor afrutado.\n"
+    }
+   ],
+   "summary": [
+    "Adición: a enlaces dobles (Markovnikov). Sustitución: en alcanos y aromáticos.\n",
+    "Ácido + alcohol ⇌ éster + agua.\n",
+    "Polímeros de adición (polietileno) y de condensación (PET, nailon).\n"
+   ],
+   "common_errors": [
+    "Nombrar el éster al revés: la parte del ácido va primero (etanoato) y la del alcohol después (de etilo).\n",
+    "Llamar sustitución a una adición a un doble enlace.\n"
+   ]
+  },
+  "qui.reac.energia.u01": {
+   "id": "qui.reac.energia.u01",
+   "objectives": [
+    "Calcular entalpías de reacción con entalpías de formación y con la ley de Hess.",
+    "Relacionar la entalpía con el calor desprendido por una cantidad de sustancia."
+   ],
+   "explanation": [
+    {
+     "title": "Entalpía de reacción",
+     "body": "A presión constante, el calor intercambiado es la variación de **entalpía** $\\Delta H$:\n- $\\Delta H < 0$: reacción **exotérmica** (desprende calor).\n- $\\Delta H > 0$: reacción **endotérmica** (absorbe calor).\n\nCon entalpías de formación (las de los elementos en su estado estándar valen 0):\n$$\\Delta H^\\circ_r = \\sum n\\,\\Delta H^\\circ_f(\\text{productos}) - \\sum n\\,\\Delta H^\\circ_f(\\text{reactivos})$$\n"
+    },
+    {
+     "title": "Ley de Hess",
+     "body": "La entalpía es una **función de estado**: solo depende del estado inicial y final. Por eso puedes combinar reacciones conocidas como si fueran ecuaciones:\n- Si inviertes una reacción, cambia el signo de $\\Delta H$.\n- Si la multiplicas por un número, multiplica también $\\Delta H$.\n\nTambién se puede estimar con **energías de enlace**: $\\Delta H \\approx \\sum E(\\text{rotos}) - \\sum E(\\text{formados})$.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Combustión del metano",
+     "statement": "Calcula la entalpía de combustión del metano y el calor que desprenden 32 g. Datos: $\\Delta H^\\circ_f$ (kJ/mol): CH₄ −74,8; CO₂ −393,5; H₂O(l) −285,8.\n",
+     "steps": [
+      "**Reacción ajustada:** $\\mathrm{CH_4 + 2\\,O_2 \\to CO_2 + 2\\,H_2O(l)}$.\n",
+      "**Productos − reactivos:** $\\Delta H = [-393{,}5 + 2(-285{,}8)] - [-74{,}8 + 0] = -890{,}3$ kJ/mol.\n",
+      "**Moles de metano:** $32\\ \\mathrm g / 16\\ \\mathrm{g/mol} = 2$ mol.\n",
+      "**Calor:** $Q = 2 \\cdot (-890{,}3) = -1780{,}6$ kJ.\n"
+     ],
+     "result": "$\\Delta H_c = -890{,}3$ kJ/mol; 32 g desprenden **1780,6 kJ**.\n"
+    }
+   ],
+   "summary": [
+    "$\\Delta H < 0$ exotérmica y $\\Delta H > 0$ endotérmica.\n",
+    "$\\Delta H_r = \\sum \\Delta H_f(\\text{prod}) - \\sum \\Delta H_f(\\text{reac})$.\n",
+    "Hess: invierte y cambia el signo; multiplica y multiplica $\\Delta H$.\n"
+   ],
+   "common_errors": [
+    "Olvidar multiplicar cada $\\Delta H_f$ por su coeficiente.\n",
+    "Dar a los elementos (O₂) una entalpía de formación distinta de cero.\n"
+   ]
+  },
+  "qui.reac.energia.u02": {
+   "id": "qui.reac.energia.u02",
+   "objectives": [
+    "Predecir el signo de la variación de entropía.",
+    "Usar la energía libre de Gibbs para decidir si una reacción es espontánea."
+   ],
+   "explanation": [
+    {
+     "title": "Entropía",
+     "body": "La **entropía** $S$ mide el desorden (el número de formas de repartir la energía). Aumenta ($\\Delta S > 0$) cuando:\n- se pasa de sólido a líquido o de líquido a gas;\n- aumenta el número de moles de gas;\n- un sólido se disuelve.\n\nSe mide en J/(mol·K): ¡cuidado al combinarla con $\\Delta H$ en kJ!\n"
+    },
+    {
+     "title": "Energía libre de Gibbs",
+     "body": "$$\\Delta G = \\Delta H - T\\,\\Delta S$$\nUna reacción es **espontánea** si $\\Delta G < 0$.\n\n| $\\Delta H$ | $\\Delta S$ | Espontánea |\n|---|---|---|\n| − | + | siempre |\n| + | − | nunca |\n| − | − | a temperatura baja |\n| + | + | a temperatura alta |\n\nLa temperatura de cambio es $T = \\Delta H / \\Delta S$ (con las mismas unidades).\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Síntesis del amoniaco",
+     "statement": "Para $\\mathrm{N_2 + 3\\,H_2 \\to 2\\,NH_3}$, $\\Delta H = -92$ kJ y $\\Delta S = -199$ J/K. ¿A qué temperaturas es espontánea?\n",
+     "steps": [
+      "**Signos:** $\\Delta H < 0$ (favorable) y $\\Delta S < 0$ (desfavorable, porque se pasa de 4 a 2 moles de gas). Será espontánea a temperatura baja.\n",
+      "**Mismas unidades:** $\\Delta H = -92\\,000$ J.\n",
+      "**Temperatura de equilibrio:** $T = \\dfrac{\\Delta H}{\\Delta S} = \\dfrac{-92\\,000}{-199} = 462$ K.\n"
+     ],
+     "result": "Es espontánea por debajo de **462 K** (unos 189 °C).\n"
+    }
+   ],
+   "summary": [
+    "$\\Delta G = \\Delta H - T\\Delta S$; espontánea si $\\Delta G < 0$.\n",
+    "Más moles de gas implica $\\Delta S > 0$.\n",
+    "Pasa $\\Delta S$ a kJ (o $\\Delta H$ a J) antes de operar.\n"
+   ],
+   "common_errors": [
+    "Mezclar kJ y J en la misma fórmula.\n",
+    "Usar la temperatura en °C en lugar de en kelvin.\n"
+   ]
+  },
+  "qui.reac.energia.u03": {
+   "id": "qui.reac.energia.u03",
+   "objectives": [
+    "Escribir y usar ecuaciones de velocidad y órdenes de reacción.",
+    "Explicar los factores que modifican la velocidad."
+   ],
+   "explanation": [
+    {
+     "title": "Velocidad y ecuación de velocidad",
+     "body": "Para $a\\,A + b\\,B \\to \\text{productos}$:\n$$v = k\\,[A]^m[B]^n$$\n- $m$ y $n$ son los **órdenes parciales**, y **no** tienen por qué coincidir con los coeficientes: se obtienen experimentalmente.\n- El orden total es $m + n$.\n- $k$ es la **constante de velocidad**; sus unidades dependen del orden total.\n"
+    },
+    {
+     "title": "Teoría de colisiones y factores",
+     "body": "Para reaccionar, las moléculas deben chocar con la orientación adecuada y con una energía mínima, la **energía de activación** $E_a$. Por eso la velocidad aumenta con:\n- **La concentración:** hay más choques.\n- **La temperatura:** más moléculas superan $E_a$ (ecuación de Arrhenius, $k = A\\,e^{-E_a/RT}$).\n- **La superficie de contacto.**\n- **Un catalizador:** abre un camino con menor $E_a$, sin cambiar $\\Delta H$ ni el equilibrio.\n"
+    }
+   ],
+   "examples": [
+    {
+     "title": "Efecto de duplicar la concentración",
+     "statement": "La reacción $2\\,\\mathrm{NO + O_2 \\to 2\\,NO_2}$ tiene la ecuación de velocidad $v = k[\\mathrm{NO}]^2[\\mathrm{O_2}]$. ¿Qué pasa con la velocidad si se duplica $[\\mathrm{NO}]$? ¿Cuál es el orden total?\n",
+     "steps": [
+      "**Nueva velocidad:** $v' = k(2[\\mathrm{NO}])^2[\\mathrm{O_2}] = 4\\,k[\\mathrm{NO}]^2[\\mathrm{O_2}]$.\n",
+      "**Comparación:** $v'= 4v$.\n",
+      "**Orden total:** $2 + 1 = 3$.\n"
+     ],
+     "result": "La velocidad se **multiplica por 4**; la reacción es de orden 3.\n"
+    }
+   ],
+   "summary": [
+    "$v = k[A]^m[B]^n$: los órdenes son experimentales.\n",
+    "Catalizador: baja $E_a$, pero no cambia $\\Delta H$ ni la constante de equilibrio.\n",
+    "Más temperatura implica mayor $k$.\n"
+   ],
+   "common_errors": [
+    "Tomar los coeficientes estequiométricos como órdenes sin que lo diga el enunciado.\n",
+    "Decir que el catalizador desplaza el equilibrio.\n"
    ]
   }
  }

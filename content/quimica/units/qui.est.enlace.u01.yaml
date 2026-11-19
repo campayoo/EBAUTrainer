@@ -1,0 +1,51 @@
+# Clase completa: Enlace iónico, covalente y metálico; geometría molecular
+id: qui.est.enlace.u01
+objectives:
+- Distinguir los tipos de enlace y sus propiedades.
+- Predecir la geometría y la polaridad de una molécula con la TRPECV.
+explanation:
+- title: Tres tipos de enlace
+  body: |
+    - **Iónico:** entre un metal y un no metal (gran diferencia de electronegatividad). Hay transferencia de electrones y se forman redes cristalinas. Ejemplo: NaCl. La **energía reticular** se calcula con el ciclo de Born-Haber.
+    - **Covalente:** entre no metales, que comparten electrones. Forma moléculas (H₂O) o redes covalentes (diamante, SiO₂).
+    - **Metálico:** red de cationes en un "mar" de electrones deslocalizados, que explica la conductividad y el brillo.
+- title: 'Geometría: la TRPECV'
+  body: |
+    Los pares de electrones de la capa de valencia se repelen y se colocan lo más lejos posible:
+
+    | Pares totales | Pares libres | Geometría | Ejemplo |
+    |---|---|---|---|
+    | 2 | 0 | lineal (180°) | BeCl₂, CO₂ |
+    | 3 | 0 | triangular plana (120°) | BF₃ |
+    | 4 | 0 | tetraédrica (109,5°) | CH₄ |
+    | 4 | 1 | pirámide trigonal | NH₃ |
+    | 4 | 2 | angular | H₂O |
+
+    Una molécula es **polar** si sus enlaces son polares y sus momentos dipolares **no se anulan** por la geometría.
+examples:
+- title: Geometría y polaridad del amoniaco
+  statement: |
+    Predice la geometría, la hibridación y la polaridad de la molécula de NH₃.
+  steps:
+  - |
+    **Estructura de Lewis:** el N tiene 5 electrones de valencia; forma 3 enlaces con H y le queda 1 par libre.
+  - |
+    **Pares alrededor del N:** 4 (3 enlazantes + 1 libre), así que se disponen en tetraedro e hibridación $sp^3$.
+  - |
+    **Geometría (solo cuentan los átomos):** pirámide trigonal; el par libre cierra el ángulo a unos 107°.
+  - |
+    **Polaridad:** los enlaces N–H son polares y, por la forma piramidal, sus dipolos no se anulan.
+  result: |
+    NH₃: pirámide trigonal, $sp^3$ y **polar**.
+summary:
+- |
+  Iónico: metal + no metal. Covalente: no metales. Metálico: metales.
+- |
+  TRPECV: cuenta los pares totales, coloca los pares libres y nombra la forma solo por los átomos.
+- |
+  Polar = enlaces polares + geometría que no anula los dipolos.
+common_errors:
+- |
+  Decir que el CO₂ es polar: sus enlaces lo son, pero la molécula lineal anula los dipolos.
+- |
+  Contar los pares libres como "brazos" al nombrar la geometría.

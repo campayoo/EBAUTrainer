@@ -1,0 +1,47 @@
+# Clase completa: Propiedades periódicas
+id: qui.est.atomo.u02
+objectives:
+- Relacionar la posición en la tabla con la configuración electrónica.
+- Predecir cómo varían el radio, la energía de ionización, la afinidad electrónica y la electronegatividad.
+explanation:
+- title: La tabla periódica y la configuración
+  body: |
+    El **periodo** coincide con el nivel más externo ($n$) y el **grupo**, con los electrones de valencia. Bloques: s (grupos 1-2), p (13-18), d (metales de transición) y f.
+
+    La clave de todas las tendencias es la **carga nuclear efectiva**: en un periodo, de izquierda a derecha, aumenta la carga del núcleo pero los electrones entran en el mismo nivel, así que se sienten más atraídos.
+- title: Tendencias
+  body: |
+    | Propiedad | En un periodo (→) | En un grupo (↓) |
+    |---|---|---|
+    | Radio atómico | disminuye | aumenta |
+    | Energía de ionización | aumenta | disminuye |
+    | Afinidad electrónica (en valor absoluto) | aumenta | disminuye |
+    | Electronegatividad | aumenta | disminuye |
+
+    - Un **catión** es más pequeño que su átomo; un **anión**, más grande.
+    - El flúor es el elemento más electronegativo y el cesio, de los menos.
+examples:
+- title: Ordenar tres elementos
+  statement: |
+    Ordena Na ($Z = 11$), Mg ($Z = 12$) y K ($Z = 19$) de menor a mayor energía de ionización.
+  steps:
+  - |
+    **Situamos los elementos:** Na y Mg están en el periodo 3 (grupos 1 y 2); K está en el periodo 4, grupo 1.
+  - |
+    **Mismo grupo (Na y K):** la energía de ionización disminuye al bajar, porque el electrón está más lejos. $EI(\mathrm K) < EI(\mathrm{Na})$.
+  - |
+    **Mismo periodo (Na y Mg):** aumenta hacia la derecha por la mayor carga nuclear efectiva. $EI(\mathrm{Na}) < EI(\mathrm{Mg})$.
+  result: |
+    $EI(\mathrm K) < EI(\mathrm{Na}) < EI(\mathrm{Mg})$.
+summary:
+- |
+  Hacia la derecha: radio ↓, energía de ionización ↑ y electronegatividad ↑.
+- |
+  Hacia abajo: radio ↑, energía de ionización ↓ y electronegatividad ↓.
+- |
+  Justifica siempre con la carga nuclear efectiva y el número de niveles.
+common_errors:
+- |
+  Decir solo "porque está a la derecha" sin justificarlo con la carga nuclear o la distancia.
+- |
+  Pensar que un catión es más grande que su átomo neutro.

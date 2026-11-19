@@ -5,7 +5,7 @@
 import { html } from '../ui/html.js';
 import { icon } from '../ui/icons.js';
 import { sessionCard, teacherSays, statCard } from '../ui/components.js';
-import { todayISO, formatLong, diffDays } from '../core/dates.js';
+import { todayISO, formatLong, formatShort, diffDays } from '../core/dates.js';
 import { streak, compliance } from '../core/stats.js';
 import { allUnits } from '../data/content.js';
 
@@ -83,7 +83,7 @@ export default {
       ${lastChange ? html`
       <section class="section">
         <h2>Último ajuste del profesor</h2>
-        ${teacherSays(lastChange.messages, { title: `${lastChange.at}` })}
+        ${teacherSays(lastChange.messages, { title: `${formatShort(lastChange.at)}` })}
         <a class="link" href="#/planning">Ver el planning completo ${icon('right', 14)}</a>
       </section>` : ''}
     `;

@@ -1,0 +1,44 @@
+# Clase completa: Principio de Le Chatelier
+id: qui.eq.equilibrio.u02
+objectives:
+- Predecir hacia dónde se desplaza un equilibrio ante un cambio.
+- Distinguir los factores que cambian K de los que no.
+explanation:
+- title: El principio
+  body: |
+    Si se altera un sistema en equilibrio, este evoluciona en el sentido que **contrarresta** la perturbación.
+
+    - **Añadir un reactivo** (o quitar un producto): se desplaza hacia los productos.
+    - **Aumentar la presión** (reducir el volumen): se desplaza hacia donde hay **menos moles de gas**.
+    - **Subir la temperatura:** se desplaza en el sentido **endotérmico**.
+- title: ¿Cambia la constante?
+  body: |
+    - Solo la **temperatura** cambia el valor de $K$.
+    - Cambiar concentraciones o presión desplaza el equilibrio, pero $K$ se mantiene.
+    - Un **catalizador** no lo desplaza: solo hace que se alcance antes.
+    - Añadir un gas inerte a volumen constante no lo altera.
+examples:
+- title: La síntesis del amoniaco
+  statement: |
+    Para $\mathrm{N_2 + 3\,H_2 \rightleftharpoons 2\,NH_3}$, con $\Delta H < 0$, ¿cómo se puede aumentar el rendimiento de amoniaco?
+  steps:
+  - |
+    **Presión:** a la izquierda hay 4 moles de gas y a la derecha 2. Aumentar la presión desplaza el equilibrio hacia el NH₃.
+  - |
+    **Temperatura:** la reacción directa es exotérmica. Bajar la temperatura favorece el NH₃ (aunque la reacción es más lenta).
+  - |
+    **Concentraciones:** retirar el NH₃ a medida que se forma desplaza el equilibrio hacia la derecha.
+  result: |
+    Presión alta, temperatura moderada (equilibrio entre rendimiento y velocidad), catalizador de hierro y retirar el NH₃: es el proceso **Haber-Bosch**.
+summary:
+- |
+  El equilibrio contrarresta la perturbación.
+- |
+  Más presión: hacia menos moles de gas. Más temperatura: hacia el sentido endotérmico.
+- |
+  Solo la temperatura cambia K.
+common_errors:
+- |
+  Decir que el catalizador aumenta el rendimiento.
+- |
+  Pensar que añadir reactivo cambia el valor de $K$.

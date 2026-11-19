@@ -7,6 +7,7 @@ import { html, raw, cls } from './html.js';
 import { renderMarkdown, renderInline } from './markdown.js';
 import { icon } from './icons.js';
 import { subjectsById, unitsById } from '../data/content.js';
+import { formatShort } from '../core/dates.js';
 
 export const KIND_LABELS = { lesson: 'Clase', review: 'Repaso', reinforce: 'Refuerzo', mock: 'Simulacro' };
 
@@ -49,7 +50,7 @@ export function sessionCard(session, { status, showDate = false, action = true }
           <span class="kind">${KIND_LABELS[session.kind]}</span>
           ${subjectBadge(session.subjectId)}
           <span class="muted">${icon('clock', 14)} ${session.minutes} min</span>
-          ${showDate ? html`<span class="muted">${session.date}</span>` : ''}
+          ${showDate ? html`<span class="muted">${formatShort(session.date)}</span>` : ''}
         </div>
         <h3 class="session-title">${sessionTitle(session)}</h3>
       </div>
@@ -131,4 +132,37 @@ export function exerciseView(ex, result, { mode = 'practice' } = {}) {
 /** Contenedor vacío con mensaje. */
 export function emptyState(text, actionHtml = '') {
   return html`<div class="empty">${raw(renderMarkdown(text))}${actionHtml}</div>`;
+}
+
+/**
+ * Selector "¿Por dónde vais en clase?": las unidades de una asignatura,
+ * agrupadas por bloque, como botones que se marcan y desmarcan.
+ * Lo usan la bienvenida y la vista Asignaturas (cada una maneja las acciones
+ * `class-toggle` y `class-block`, que reciben data-unit / data-block).
+ * @param subject   asignatura del contenido
+ * @param seen      Set con los ids marcados
+ * @param locked    Set con los ids ya completados en la app (no se pueden desmarcar)
+ */
+export function classPicker(subject, seen, locked = new Set()) {
+  return html`<div class="class-picker" style="--c:${subject.color}">
+    ${subject.blocks.map((b) => {
+      const units = b.topics.flatMap((t) => t.units);
+      const all = units.every((u) => seen.has(u.id) || locked.has(u.id));
+      return html`<fieldset class="cp-block">
+        <legend>${b.title}</legend>
+        <div class="cp-units">
+          ${units.map((u) => locked.has(u.id)
+            ? html`<span class="cp-unit done" title="Ya la has estudiado en Pauta">${icon('check', 14)} ${u.title}</span>`
+            : html`<button type="button" class="${cls('cp-unit', seen.has(u.id) && 'on')}" aria-pressed="${seen.has(u.id)}" data-action="class-toggle" data-unit="${u.id}">${seen.has(u.id) ? icon('check', 14) : ''} ${u.title}</button>`)}
+        </div>
+        <button type="button" class="link-btn" data-action="class-block" data-block="${b.id}" data-on="${all ? '0' : '1'}">${all ? 'Desmarcar el bloque' : 'Ya hemos dado todo este bloque'}</button>
+      </fieldset>`;
+    })}
+  </div>`;
+}
+
+/** Ids de las unidades de un bloque (para el botón "todo el bloque"). */
+export function unitIdsOfBlock(subject, blockId) {
+  const b = subject.blocks.find((x) => x.id === blockId);
+  return b ? b.topics.flatMap((t) => t.units.map((u) => u.id)) : [];
 }

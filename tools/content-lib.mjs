@@ -66,6 +66,8 @@ export function loadContent(root) {
       }
     }
   }
+  // Orden de presentación: el campo opcional `order` de subject.yaml (y si no, el de la carpeta).
+  subjects.sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
   return { version: hash.digest('hex').slice(0, 12), subjects, exams, lessons };
 }
 

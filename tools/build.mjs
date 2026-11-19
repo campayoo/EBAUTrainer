@@ -59,7 +59,7 @@ const css = await build({
   bundle: true,
   minify: true,
   write: false,
-  loader: { '.woff2': 'dataurl' },
+  loader: { '.woff2': 'dataurl', '.woff': 'dataurl' },
 });
 const cssCode = css.outputFiles[0].text;
 
@@ -78,12 +78,30 @@ writeFileSync(join(dist, 'Pauta.html'), page);
 const kb = Math.round(Buffer.byteLength(page) / 1024);
 console.log(`✓ dist/Pauta.html (${kb} KB): ábrelo con doble clic.`);
 
-// 5. Carpeta de GitHub Pages.
+// 5. Carpeta de GitHub Pages:
+//      _site/index.html   portada (site/index.html, con la lista de asignaturas generada)
+//      _site/app/         la aplicación
+//      _site/Pauta.html   la versión descargable (también en app/, para el enlace de Ajustes)
 if (existsSync(site)) rmSync(site, { recursive: true });
-mkdirSync(site);
+mkdirSync(join(site, 'app'), { recursive: true });
 for (const item of ['index.html', 'manifest.webmanifest', 'sw.js', 'src', 'vendor', 'assets']) {
-  cpSync(join(root, item), join(site, item), { recursive: true });
+  cpSync(join(root, item), join(site, 'app', item), { recursive: true });
 }
 cpSync(join(dist, 'Pauta.html'), join(site, 'Pauta.html'));
+cpSync(join(dist, 'Pauta.html'), join(site, 'app', 'Pauta.html'));
+cpSync(join(root, 'site', 'landing.css'), join(site, 'landing.css'));
+writeFileSync(join(site, 'index.html'), readFileSync(join(root, 'site', 'index.html'), 'utf8')
+  .replace(/<!-- build:subjects -->[\s\S]*?<!-- \/build:subjects -->/, () => subjectsHtml(compileContent(content))));
 writeFileSync(join(site, '.nojekyll'), ''); // que GitHub Pages no procese la web con Jekyll
-console.log('✓ _site/ listo para GitHub Pages.');
+console.log('✓ _site/ listo para GitHub Pages (portada + app/ + Pauta.html).');
+
+/** Lista de asignaturas de la portada, a partir del contenido (con el texto escapado). */
+function subjectsHtml(compiled) {
+  const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  const items = compiled.subjects.map((s) => {
+    const units = s.blocks.reduce((n, b) => n + b.topics.reduce((m, t) => m + t.units.length, 0), 0);
+    const blocks = s.blocks.map((b) => b.title.replace(/^[A-Z]\.\s*/, '')).join(' · ');
+    return `<li style="--c:${esc(s.color)}"><h3>${esc(s.name)} <small>${units} unidades</small></h3><p>${esc(s.description)}</p><p class="blocks">${esc(blocks)}</p></li>`;
+  });
+  return `<ul class="subjects">\n        ${items.join('\n        ')}\n      </ul>`;
+}

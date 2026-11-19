@@ -1,0 +1,11 @@
+# Simulacro de MACS II (estructura ORIENTATIVA: 4 ejercicios de 2,5 puntos).
+# La comisión valenciana anunció cambios para 2026: la estructura exacta está
+# POR CONFIRMAR con la guía oficial. Cámbiala aquí cuando la consultes.
+subject: macs2
+duration_minutes: 90
+official_url: https://universitats.gva.es
+sections:
+  - { id: '1', title: Álgebra y programación lineal, points: 2.5, options: 2, questions: 2, generators: [prog-lineal, mat-producto, inversa-2x2, sistema-gauss] }
+  - { id: '2', title: Análisis, points: 2.5, options: 2, questions: 2, generators: [beneficio-max, derivada-punto, integral-definida, area-parabola, limite-infinito] }
+  - { id: '3', title: Probabilidad, points: 2.5, options: 1, questions: 2, generators: [prob-total, bayes, binomial-exacta, normal-tipificar] }
+  - { id: '4', title: Inferencia estadística, points: 2.5, options: 2, questions: 2, generators: [media-muestral, ic-media, ic-proporcion, tamano-muestra] }

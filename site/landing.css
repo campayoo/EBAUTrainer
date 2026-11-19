@@ -1,0 +1,136 @@
+/*
+ * landing.css — Portada de Pauta en GitHub Pages.
+ * Misma identidad que la app (ver src/styles/main.css): papel de cuadrícula,
+ * tinta azul, boli rojo y fosforito, con Bitter y Fira Sans.
+ * El único momento animado es el de la portada: el profe "corrige" el ejercicio.
+ */
+@font-face { font-family: "Bitter"; src: url("app/vendor/fonts/bitter-var.woff") format("woff"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Bitter"; src: url("app/vendor/fonts/bitter-italic-var.woff") format("woff"); font-weight: 100 900; font-style: italic; font-display: swap; }
+@font-face { font-family: "Fira Sans"; src: url("app/vendor/fonts/firasans-400.woff") format("woff"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Fira Sans"; src: url("app/vendor/fonts/firasans-400-italic.woff") format("woff"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Fira Sans"; src: url("app/vendor/fonts/firasans-600.woff") format("woff"); font-weight: 500 800; font-display: swap; }
+
+:root {
+  --paper: #fbfcfd; --sheet: #fff; --grid: #e3eaf1; --margin: #e9a3a3; --line: #d6dde6;
+  --text: #23262d; --muted: #5e6470; --ink: #1d3a8a; --pen: #c42b2b; --marker: #ffeb6b;
+  --serif: "Bitter", Georgia, serif; --sans: "Fira Sans", system-ui, sans-serif;
+  --square: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font: 17px/1.6 var(--sans); color: var(--text); background-color: var(--paper);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: var(--square) var(--square);
+}
+h1, h2, h3 { font-family: var(--serif); line-height: 1.15; margin: 0 0 .6rem; }
+a { color: var(--ink); text-underline-offset: .18em; }
+code { font-size: .92em; background: #eef2f7; padding: .05em .35em; border-radius: 4px; }
+mark { color: inherit; background: linear-gradient(transparent 42%, var(--marker) 42%, var(--marker) 92%, transparent 92%); padding: 0 .15em; }
+:focus-visible { outline: 2.5px solid var(--ink); outline-offset: 3px; border-radius: 4px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: -999px; top: .5rem; background: var(--ink); color: #fff; padding: .5rem 1rem; z-index: 10; }
+.skip-link:focus { left: .5rem; }
+
+/* Botones (iguales que en la app) */
+.btn { display: inline-flex; align-items: center; justify-content: center; font: 600 .98rem/1 var(--sans); padding: .75rem 1.15rem; border-radius: 6px; border: 1.5px solid var(--line); background: var(--sheet); color: var(--text); text-decoration: none; }
+.btn:hover { border-color: var(--ink); color: var(--ink); }
+.btn-primary { background: var(--ink); border-color: var(--ink); color: #fff; }
+.btn-primary:hover { color: #fff; filter: brightness(1.12); }
+.btn-lg { padding: .95rem 1.4rem; font-size: 1.05rem; }
+
+/* Cabecera */
+.top { display: flex; align-items: center; gap: 1.5rem; max-width: 1180px; margin: 0 auto; padding: 1.1rem 1.5rem; }
+.brand { display: flex; align-items: center; gap: .6rem; font: 700 1.45rem var(--serif); color: var(--text); text-decoration: none; }
+.brand-mark { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 4px; background: var(--ink); color: #fff; font: 800 1.2rem var(--serif); box-shadow: 3px 3px 0 var(--marker); }
+.top nav { display: flex; gap: 1.25rem; margin-left: auto; }
+.top nav a { color: var(--muted); text-decoration: none; font-weight: 500; }
+.top nav a:hover { color: var(--text); }
+
+main { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* Portada */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; padding: clamp(2rem, 6vw, 5rem) 0 clamp(3rem, 7vw, 6rem); }
+.hero h1 { font-size: clamp(2.3rem, 5vw, 3.9rem); font-weight: 750; letter-spacing: -.015em; max-width: 14ch; }
+.lead { font-size: 1.2rem; max-width: 36ch; color: var(--text); margin: 1rem 0 1.6rem; }
+.cta { display: flex; gap: .75rem; flex-wrap: wrap; }
+.fine { color: var(--muted); font-size: .92rem; margin-top: 1rem; font-family: var(--serif); font-style: italic; }
+
+/* La hoja corregida */
+.sheet {
+  position: relative; margin: 0; background: var(--sheet); border: 1px solid var(--line); border-radius: 4px;
+  padding: 1.6rem 1.75rem 1.75rem 3.4rem; box-shadow: 0 1px 0 rgb(30 40 60 / 6%), 0 24px 50px -28px rgb(30 50 90 / 35%);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: var(--square) var(--square);
+  transform: rotate(.6deg);
+}
+.sheet::before { content: ""; position: absolute; top: 0; bottom: 0; left: 1.7rem; width: 5px; border-left: 1px solid var(--margin); border-right: 1px solid var(--margin); }
+.sheet-head { display: flex; justify-content: space-between; font: italic .95rem var(--serif); color: var(--muted); margin-bottom: .75rem; }
+.statement { font-weight: 500; margin: 0 0 1.1rem; }
+.work { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+.work li { display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: var(--ink); font-style: italic; font-size: 1.12rem; }
+.work sub, .work sup, .statement sub, .statement sup { font-size: .68em; }
+.tick { width: 28px; height: 24px; flex: none; }
+.tick path, .grade ellipse { fill: none; stroke: var(--pen); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.grade { position: relative; width: 120px; height: 72px; margin: 1.1rem 0 0 auto; display: grid; place-items: center; transform: rotate(-6deg); }
+.grade svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.grade > span { font: 800 2.1rem var(--serif); color: var(--pen); }
+.note { margin: .4rem 0 0; padding-left: .9rem; border-left: 2px solid var(--pen); color: var(--pen); font: italic 1.02rem/1.5 var(--serif); max-width: 32ch; }
+
+/* La corrección se dibuja una vez: los tics de uno en uno, luego la nota */
+@media (prefers-reduced-motion: no-preference) {
+  .tick path { stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw .35s ease-out forwards; }
+  .work li:nth-child(1) .tick path { animation-delay: .5s; }
+  .work li:nth-child(2) .tick path { animation-delay: .85s; }
+  .work li:nth-child(3) .tick path { animation-delay: 1.2s; }
+  .grade ellipse { stroke-dasharray: 230; stroke-dashoffset: 230; animation: draw .7s ease-in-out 1.6s forwards; }
+  .grade > span, .note { opacity: 0; animation: appear .4s ease-out forwards; }
+  .grade > span { animation-delay: 1.75s; }
+  .note { animation-delay: 2.2s; }
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes appear { to { opacity: 1; } }
+
+/* Secciones */
+.band { padding: clamp(2.5rem, 6vw, 4.5rem) 0; border-top: 1px solid var(--line); }
+.band h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
+.sub { max-width: 62ch; color: var(--muted); margin: 0 0 1.75rem; }
+
+/* Cómo funciona: es una secuencia, así que va numerada */
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 1.5rem 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.75rem; }
+.steps li { counter-increment: step; }
+.steps li::before { content: counter(step); display: inline-grid; place-items: center; width: 2.2rem; height: 2.2rem; border: 2px solid var(--pen); border-radius: 50%; color: var(--pen); font: italic 700 1.1rem var(--serif); margin-bottom: .75rem; }
+.steps h3 { font-size: 1.2rem; }
+.steps p { margin: 0; color: var(--text); max-width: 34ch; }
+
+/* Asignaturas: pestañas de colores, como un archivador */
+.subjects { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+.subjects li { background: var(--sheet); border: 1px solid var(--line); border-top: 6px solid var(--c); border-radius: 4px; padding: 1.1rem 1.25rem 1.2rem; }
+.subjects h3 { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-size: 1.25rem; margin-bottom: .35rem; }
+.subjects h3 small { font: 500 .9rem var(--sans); color: var(--muted); white-space: nowrap; }
+.subjects p { margin: 0 0 .6rem; color: var(--muted); font-size: .95rem; }
+.subjects .blocks { font: italic .95rem/1.5 var(--serif); color: var(--text); margin: 0; }
+
+/* Descarga */
+.download { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 2.5rem; align-items: center; }
+.facts { padding: 0; list-style: none; display: grid; gap: .9rem; margin: 1rem 0 0; max-width: 60ch; }
+.facts li { padding-left: 1.1rem; border-left: 3px solid var(--marker); }
+.download-box { display: grid; gap: .75rem; justify-items: stretch; background: var(--sheet); border: 1px solid var(--line); border-radius: 4px; padding: 1.5rem; }
+
+.foot { max-width: 1180px; margin: 0 auto; padding: 2rem 1.5rem 3rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+.foot p { margin: 0 0 .4rem; max-width: 80ch; }
+
+@media (max-width: 900px) {
+  .hero, .download { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .top nav { display: none; }
+  .top .btn { margin-left: auto; }
+  .sheet { transform: none; }
+}
+@media (max-width: 560px) {
+  .steps { grid-template-columns: 1fr; }
+  .sheet { padding-left: 2.6rem; }
+  .sheet::before { left: 1.2rem; }
+  .work li { font-size: 1rem; }
+}

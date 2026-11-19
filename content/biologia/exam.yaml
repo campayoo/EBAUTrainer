@@ -1,0 +1,11 @@
+# Simulacro de Biología (estructura ORIENTATIVA: 4 preguntas de 2,5 puntos).
+# El formato exacto de la PAU valenciana está POR CONFIRMAR con la guía
+# oficial: cámbialo aquí cuando la consultes.
+subject: bio
+duration_minutes: 90
+official_url: https://universitats.gva.es
+sections:
+  - { id: '1', title: Biomoléculas y célula, points: 2.5, options: 1, questions: 3, generators: [bio-agua, bio-glucidos-lipidos, bio-proteinas, bio-nucleicos, bio-celula, bio-membrana, bio-division] }
+  - { id: '2', title: Metabolismo, points: 2.5, options: 2, questions: 2, generators: [bio-catabolismo, bio-fotosintesis, bio-catabolismo, bio-fotosintesis] }
+  - { id: '3', title: Genética, points: 2.5, options: 2, questions: 2, generators: [bio-expresion, bio-mutaciones, mendel-prob, bio-herencia, chargaff] }
+  - { id: '4', title: Microbiología e inmunología, points: 2.5, options: 2, questions: 2, generators: [bio-microbiologia, bio-inmuno, bio-microbiologia, bio-inmuno] }

@@ -9,7 +9,7 @@
  * Al publicar una versión nueva, cambia CACHE para que se descarte la antigua.
  */
 
-const CACHE = 'pauta-v1';
+const CACHE = 'pauta-v2';
 const CORE = [
   './',
   './index.html',

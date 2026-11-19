@@ -6,15 +6,19 @@
 
 You tell it which subjects you study, how much time you have and when your exam is. It builds an **adaptive weekly plan**, teaches each unit step by step (theory → worked example → guided practice with progressive hints → quiz → summary), and **re-plans automatically** when you miss a day, struggle with a topic or add a new subject. It also explains what changed and why.
 
+![Landing page](docs/capturas/00-portada.png)
+
 ![Today view](docs/capturas/02-hoy.png)
 
-**Use it:** online at `campayoo.github.io/EBAUTrainer` once published ([how](docs/despliegue.md)), installed as an app (Chrome/Edge → *Install Pauta*), or download `Pauta.html` (a single file that works offline: just double-click it).
+**Use it:** online at `campayoo.github.io/EBAUTrainer` (landing page; the app itself is at `/app/`) once published ([how](docs/despliegue.md)), installed as an app (Chrome/Edge → *Install Pauta*), or download `Pauta.html` (a single file that works offline: just double-click it).
 
 ## Features
 
 - 🧑‍🏫 **Conversational onboarding**: subjects, level, optional placement quiz, availability, exam date and target grade.
 - 📅 **Automatic, adaptive weekly plan**: interleaves subjects, respects prerequisites, paces the syllabus, adds spaced repetition (SM-2), reinforcement sessions and mock exams in the final weeks. Exports to calendar (`.ics`).
-- 📖 **Full PAU syllabus**: 55 units (30 Maths II + 25 Physics), every one with a complete lesson: theory, worked example, practice, quiz and summary.
+- 📖 **Five PAU subjects, 97 units**: Maths II (30), Physics (25), Chemistry (15), Biology (14) and Maths for Social Sciences II (13), every one with a complete lesson: theory, worked example, practice, quiz and summary. 105 exercise generators (numeric problems with seeded random data, plus hand-written multiple-choice banks).
+- 🏫 **"Where are you in class?"**: the student marks the units already taught at school; Pauta skips re-teaching them, schedules spaced reviews instead and starts from the next unit.
+- 📓 **Distinctive design**: the student's squared notebook corrected by the teacher — blue ink for the student, red pen for the teacher's notes, highlighter for key ideas, a chalkboard dark mode ([docs/diseno.md](docs/diseno.md)).
 - 📚 **Daily guided class** with a fixed structure and 3-level hints (idea → method → first step → full solution).
 - ✅ **Automatic grading** of numeric answers with tolerance, **unit conversion** (km/s ↔ m/s, N/kg ↔ m/s²) and **diagnosis of the most likely mistake** (wrong sign, powers of ten, using *h* instead of *R + h*...).
 - 🎲 **66 parametrised exercise generators** (seeded): every unit of the syllabus can be practised, and solutions are computed in code.
@@ -34,7 +38,7 @@ You tell it which subjects you study, how much time you have and when your exam 
 | **Maths rendering** | KaTeX (vendored, works offline) |
 | **Storage** | `localStorage` + JSON backup export/import |
 | **Packaging** | esbuild bundles everything into one self-contained `Pauta.html` |
-| **Quality** | Node's built-in test runner (41 tests, including property-based tests of the planner), ESLint, GitHub Actions CI |
+| **Quality** | Node's built-in test runner (45 tests, including property-based tests of the planner), ESLint, GitHub Actions CI |
 | **Deploy** | GitHub Pages (Actions workflow) + GitHub Releases for the downloadable file |
 
 See [docs/arquitectura.md](docs/arquitectura.md) and the decision records in [docs/adr/](docs/adr/).
@@ -50,7 +54,7 @@ npm install                   # esbuild, eslint, yaml
 npm test                      # unit + property-based tests
 npm run lint
 npm run build:content         # validate content/ and regenerate the content module
-npm run build                 # → dist/Pauta.html (single file) and _site/ (GitHub Pages)
+npm run build                 # → dist/Pauta.html (single file) and _site/ (GitHub Pages: landing + app/)
 ```
 
 ## Project structure

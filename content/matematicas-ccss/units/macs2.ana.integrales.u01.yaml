@@ -1,0 +1,45 @@
+# Clase completa: Integrales y cálculo de áreas
+id: macs2.ana.integrales.u01
+objectives:
+- Calcular primitivas inmediatas.
+- Aplicar la regla de Barrow al cálculo de áreas.
+explanation:
+- title: Primitivas
+  body: |
+    $F$ es una primitiva de $f$ si $F' = f$. Inmediatas:
+    $$\int x^n\,dx = \frac{x^{n+1}}{n+1} + C\ (n \ne -1), \qquad \int \frac{1}{x}\,dx = \ln|x| + C, \qquad \int e^x\,dx = e^x + C$$
+    La integral es lineal: las constantes salen fuera y la integral de una suma es la suma de integrales.
+- title: Regla de Barrow y áreas
+  body: |
+    $$\int_a^b f(x)\,dx = F(b) - F(a)$$
+    **Área encerrada por una función y el eje $X$:**
+    1. Calcula los cortes con el eje ($f(x) = 0$).
+    2. Integra en cada tramo.
+    3. Suma los **valores absolutos** (las zonas por debajo del eje dan integrales negativas).
+
+    **Área entre dos curvas:** $\int_a^b |f(x) - g(x)|\,dx$, con $a$ y $b$ los puntos de corte.
+examples:
+- title: Área bajo una parábola
+  statement: |
+    Calcula el área del recinto limitado por $f(x) = -x^2 + 4x$ y el eje $X$.
+  steps:
+  - |
+    **Cortes:** $-x^2 + 4x = 0$, es decir, $x(4 - x) = 0$, así que $x = 0$ y $x = 4$.
+  - |
+    **Primitiva:** $F(x) = -\dfrac{x^3}{3} + 2x^2$.
+  - |
+    **Barrow:** $F(4) - F(0) = -\dfrac{64}{3} + 32 = \dfrac{32}{3}$.
+  result: |
+    Área $= \dfrac{32}{3} \approx 10{,}67\ \mathrm{u^2}$.
+summary:
+- |
+  $\int x^n\,dx = x^{n+1}/(n+1) + C$.
+- |
+  Barrow: $F(b) - F(a)$.
+- |
+  Para áreas, busca los cortes y suma valores absolutos.
+common_errors:
+- |
+  Integrar de golpe un tramo que cruza el eje: las áreas se compensan.
+- |
+  Olvidar dividir entre $n + 1$.

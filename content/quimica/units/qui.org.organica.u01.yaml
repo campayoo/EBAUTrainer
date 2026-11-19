@@ -1,0 +1,50 @@
+# Clase completa: Grupos funcionales, nomenclatura e isomería
+id: qui.org.organica.u01
+objectives:
+- Reconocer y nombrar los principales grupos funcionales.
+- Identificar los distintos tipos de isomería.
+explanation:
+- title: Grupos funcionales
+  body: |
+    | Grupo | Fórmula | Terminación | Ejemplo |
+    |---|---|---|---|
+    | Alcohol | –OH | -ol | etanol |
+    | Aldehído | –CHO | -al | etanal |
+    | Cetona | –CO– | -ona | propanona |
+    | Ácido carboxílico | –COOH | ácido -oico | ácido etanoico |
+    | Éster | –COO– | -ato de -ilo | etanoato de metilo |
+    | Amina | –NH₂ | -amina | metilamina |
+    | Amida | –CONH₂ | -amida | etanamida |
+
+    Para nombrar: elige la cadena más larga que contenga el grupo principal y numera para darle el localizador más bajo.
+- title: Isomería
+  body: |
+    Los isómeros tienen la misma fórmula molecular y distinta estructura:
+    - **Estructural:** de cadena (butano y metilpropano), de posición (propan-1-ol y propan-2-ol) o de función (etanol y dimetiléter).
+    - **Geométrica (cis-trans):** en dobles enlaces C=C con dos sustituyentes distintos en cada carbono.
+    - **Óptica:** con un **carbono asimétrico** (quiral), unido a cuatro grupos distintos. Los dos isómeros (enantiómeros) desvían la luz polarizada en sentidos opuestos.
+examples:
+- title: Isómeros del C₃H₈O
+  statement: |
+    Escribe y nombra todos los isómeros de fórmula C₃H₈O. ¿Qué tipo de isomería hay entre ellos?
+  steps:
+  - |
+    **Alcoholes:** $\mathrm{CH_3CH_2CH_2OH}$ (propan-1-ol) y $\mathrm{CH_3CH(OH)CH_3}$ (propan-2-ol).
+  - |
+    **Éter:** $\mathrm{CH_3OCH_2CH_3}$ (etil metil éter, o metoxietano).
+  - |
+    **Relaciones:** entre los dos alcoholes hay isomería de posición; entre un alcohol y el éter, isomería de función.
+  result: |
+    Hay **tres** isómeros: dos alcoholes (isómeros de posición) y un éter (isómero de función de ambos).
+summary:
+- |
+  Reconoce el grupo funcional por su terminación: -ol, -al, -ona, -oico, -amina...
+- |
+  Isomería estructural: de cadena, de posición o de función.
+- |
+  Un carbono asimétrico (cuatro grupos distintos) implica isomería óptica.
+common_errors:
+- |
+  Numerar la cadena desde el extremo que da el localizador más alto.
+- |
+  Ver isomería cis-trans en un C=C con dos grupos iguales en el mismo carbono.

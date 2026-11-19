@@ -1,0 +1,45 @@
+# Clase completa: Genética mendeliana
+id: bio.gen.herencia.u01
+objectives:
+- Aplicar las leyes de Mendel con cuadros de Punnett.
+- Resolver problemas de herencia ligada al sexo.
+explanation:
+- title: Leyes de Mendel
+  body: |
+    - **1.ª ley (uniformidad):** al cruzar dos razas puras, toda la F1 es igual.
+    - **2.ª ley (segregación):** los dos alelos de un gen se separan al formar los gametos. Aa × Aa da la proporción 3:1 (1 AA : 2 Aa : 1 aa).
+    - **3.ª ley (transmisión independiente):** genes en cromosomas distintos se heredan por separado. AaBb × AaBb da 9:3:3:1.
+
+    Vocabulario: gen, alelo, homocigoto (AA, aa), heterocigoto (Aa), genotipo y fenotipo.
+- title: Más allá de Mendel
+  body: |
+    - **Herencia intermedia:** el heterocigoto tiene un fenotipo intermedio (flores rosas).
+    - **Codominancia:** se expresan los dos alelos (grupo sanguíneo AB).
+    - **Alelismo múltiple:** grupos sanguíneos A, B y 0.
+    - **Herencia ligada al sexo** (cromosoma X): daltonismo y hemofilia. Los hombres (XY) la manifiestan con un solo alelo recesivo.
+    - **Cruzamiento prueba:** cruzar con un homocigoto recesivo para averiguar el genotipo.
+examples:
+- title: Hemofilia en una familia
+  statement: |
+    Una mujer portadora de la hemofilia ($X^HX^h$) tiene hijos con un hombre sano ($X^HY$). ¿Qué probabilidad hay de que un hijo varón sea hemofílico? ¿Y una hija?
+  steps:
+  - |
+    **Gametos:** la madre da $X^H$ o $X^h$ (1/2 cada uno); el padre, $X^H$ o $Y$.
+  - |
+    **Hijas** ($X^H$ del padre): $X^HX^H$ o $X^HX^h$. Ninguna es hemofílica; la mitad son portadoras.
+  - |
+    **Hijos** ($Y$ del padre): $X^HY$ o $X^hY$. La mitad son hemofílicos.
+  result: |
+    Hijo varón hemofílico: **1/2**. Hija hemofílica: **0** (pero 1/2 de ser portadora).
+summary:
+- |
+  Aa × Aa da 3:1; AaBb × AaBb da 9:3:3:1.
+- |
+  Varios genes independientes: multiplica las probabilidades.
+- |
+  Ligada al X: los varones la manifiestan con un solo alelo.
+common_errors:
+- |
+  Olvidar que la probabilidad "entre los varones" no es la misma que "de tener un hijo varón enfermo" (1/2 frente a 1/4).
+- |
+  Escribir los genes ligados al sexo sin indicar el cromosoma X.

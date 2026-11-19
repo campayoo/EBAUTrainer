@@ -8,11 +8,15 @@
 
 import { algebra, geometry, analysis, integrals, probability } from './math.js';
 import { gravitation, electromagnetism, waves, modern } from './physics.js';
+import { chemistry } from './chemistry.js';
+import { biology } from './biology.js';
+import { macs } from './macs.js';
 import { createRng } from '../random.js';
 
 const ALL = [
   ...algebra, ...geometry, ...analysis, ...integrals, ...probability,
   ...gravitation, ...electromagnetism, ...waves, ...modern,
+  ...chemistry, ...biology, ...macs,
 ];
 
 /** Mapa id -> generador (como un HashMap<String, Generator> de Java). */

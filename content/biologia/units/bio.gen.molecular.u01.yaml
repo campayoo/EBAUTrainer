@@ -1,0 +1,44 @@
+# Clase completa: Replicación, transcripción y traducción
+id: bio.gen.molecular.u01
+objectives:
+- Explicar la replicación semiconservativa del ADN.
+- Transcribir y traducir una secuencia con el código genético.
+explanation:
+- title: Replicación
+  body: |
+    Es **semiconservativa** (experimento de Meselson y Stahl): cada ADN hijo tiene una cadena antigua y una nueva.
+    - La **helicasa** abre la doble hélice.
+    - La **ADN polimerasa** solo sintetiza en sentido 5′→3′ y necesita un **cebador** (ARN).
+    - Una cadena es **continua** (conductora) y la otra **discontinua** (retardada, en **fragmentos de Okazaki**), unidos por la **ADN ligasa**.
+- title: Expresión génica
+  body: |
+    **ADN → ARN → proteína** (dogma central).
+    1. **Transcripción** (núcleo): la ARN polimerasa copia la cadena molde de ADN en ARNm, en sentido 5′→3′. En los eucariotas se eliminan los **intrones** y se unen los **exones** (*splicing*).
+    2. **Traducción** (ribosomas): el ARNm se lee por **codones** (tripletes). Cada ARNt lleva un aminoácido y tiene el **anticodón** complementario. Empieza en **AUG** (metionina) y acaba en un codón de parada (UAA, UAG, UGA).
+
+    El código genético es **universal** y **degenerado**.
+examples:
+- title: Del gen a la proteína
+  statement: |
+    La cadena molde de un fragmento de ADN es 3′-TACGGATTT-5′. Escribe el ARNm y el péptido. (AUG = Met, CCU = Pro, AAA = Lys)
+  steps:
+  - |
+    **Transcripción:** ARNm complementario y antiparalelo, cambiando T por U: 5′-AUG CCU AAA-3′.
+  - |
+    **Codones:** AUG, CCU y AAA.
+  - |
+    **Traducción:** Met – Pro – Lys.
+  result: |
+    ARNm 5′-AUGCCUAAA-3′ y péptido **Met-Pro-Lys**.
+summary:
+- |
+  Replicación semiconservativa: cadena continua y fragmentos de Okazaki.
+- |
+  Transcripción en el núcleo y traducción en los ribosomas.
+- |
+  Codón en el ARNm y anticodón en el ARNt; se empieza en AUG.
+common_errors:
+- |
+  Poner T en el ARN.
+- |
+  Leer la cadena molde en lugar del ARNm al traducir.

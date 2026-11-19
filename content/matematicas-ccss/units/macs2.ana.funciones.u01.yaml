@@ -1,0 +1,45 @@
+# Clase completa: Límites, continuidad y funciones a trozos
+id: macs2.ana.funciones.u01
+objectives:
+- Calcular límites, incluidas las indeterminaciones más frecuentes.
+- Estudiar la continuidad de funciones definidas a trozos.
+explanation:
+- title: Límites
+  body: |
+    - **Cociente de polinomios en el infinito ($\infty/\infty$):** compara los grados. Si son iguales, el límite es el cociente de los coeficientes principales; si el numerador tiene mayor grado, $\pm\infty$; si el denominador, $0$.
+    - **$0/0$ con polinomios:** factoriza y simplifica.
+    - **$k/0$:** estudia los límites laterales (asíntota vertical).
+
+    **Asíntotas:** vertical en $x = a$ si $\lim_{x\to a} f = \pm\infty$; horizontal en $y = L$ si $\lim_{x\to\pm\infty} f = L$.
+- title: Continuidad
+  body: |
+    $f$ es continua en $x = a$ si:
+    $$\lim_{x\to a^-} f(x) = \lim_{x\to a^+} f(x) = f(a)$$
+    En una función a trozos, los polinomios son continuos en su tramo: solo hay que estudiar los **puntos de unión**.
+
+    En Ciencias Sociales aparecen muchas funciones a trozos: tarifas, impuestos por tramos...
+examples:
+- title: Hacer continua una función
+  statement: |
+    Halla $a$ para que sea continua $f(x) = \begin{cases} x^2 + 1 & x < 1 \\ ax + 3 & x \ge 1 \end{cases}$
+  steps:
+  - |
+    **Límite por la izquierda:** $\lim_{x\to1^-}(x^2 + 1) = 2$.
+  - |
+    **Límite por la derecha y valor:** $\lim_{x\to1^+}(ax + 3) = a + 3 = f(1)$.
+  - |
+    **Igualamos:** $2 = a + 3$, así que $a = -1$.
+  result: |
+    Con $a = -1$ la función es continua en todo $\mathbb R$.
+summary:
+- |
+  $\infty/\infty$ en cocientes de polinomios: compara los grados.
+- |
+  $0/0$: factoriza y simplifica.
+- |
+  A trozos: estudia solo los puntos de unión.
+common_errors:
+- |
+  Calcular un solo límite lateral en el punto de unión.
+- |
+  Decir que el límite de $\infty/\infty$ es 1.

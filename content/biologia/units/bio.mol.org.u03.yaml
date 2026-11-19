@@ -1,0 +1,47 @@
+# Clase completa: Ácidos nucleicos
+id: bio.mol.org.u03
+objectives:
+- Describir la estructura de los nucleótidos, del ADN y del ARN.
+- Aplicar la complementariedad de bases y la regla de Chargaff.
+explanation:
+- title: Nucleótidos
+  body: |
+    Un nucleótido tiene: **pentosa** (desoxirribosa en el ADN, ribosa en el ARN) + **base nitrogenada** + **grupo fosfato**.
+    - **Bases púricas:** adenina (A) y guanina (G).
+    - **Bases pirimidínicas:** citosina (C), timina (T, solo en el ADN) y uracilo (U, solo en el ARN).
+
+    Los nucleótidos se unen por **enlaces fosfodiéster** 5′→3′.
+- title: ADN y ARN
+  body: |
+    **ADN (modelo de Watson y Crick):** doble hélice de dos cadenas **antiparalelas** y complementarias, A=T (2 puentes de hidrógeno) y G≡C (3).
+    - **Regla de Chargaff:** %A = %T y %G = %C.
+
+    **ARN:** una sola cadena.
+    - **ARNm:** lleva el mensaje.
+    - **ARNt:** transporta los aminoácidos.
+    - **ARNr:** forma los ribosomas.
+examples:
+- title: Completar una cadena
+  statement: |
+    Una cadena de ADN es 5′-ATGCCA-3′. Escribe la complementaria. Si el ADN de un organismo tiene un 30 % de A, ¿qué porcentaje tiene de cada base?
+  steps:
+  - |
+    **Complementaria y antiparalela:** 3′-TACGGT-5′ (o, escrita en sentido 5′→3′, 5′-TGGCAT-3′).
+  - |
+    **Chargaff:** A = T = 30 %, así que A + T = 60 %.
+  - |
+    **Lo que queda:** G + C = 40 %, por lo que G = C = 20 %.
+  result: |
+    Complementaria: 3′-TACGGT-5′. Composición: **A = T = 30 %** y **G = C = 20 %**.
+summary:
+- |
+  Nucleótido = pentosa + base + fosfato.
+- |
+  ADN: doble hélice antiparalela, A=T y G≡C.
+- |
+  El ARN lleva uracilo en lugar de timina.
+common_errors:
+- |
+  Escribir la complementaria sin invertir el sentido 5′/3′.
+- |
+  Aplicar la regla de Chargaff a un ARN o a un ADN de una sola cadena.

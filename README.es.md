@@ -6,13 +6,15 @@
 
 Le dices qué asignaturas estudias, cuánto tiempo tienes y cuándo es tu examen. Pauta crea un **planning semanal adaptable**, te da clase paso a paso (teoría → ejemplo resuelto → práctica guiada con pistas → mini test → resumen) y **replanifica solo** cuando faltas un día, un tema se te atraganta o añades una asignatura. Además, te explica qué ha cambiado y por qué.
 
+![Portada](docs/capturas/00-portada.png)
+
 ![Vista Hoy](docs/capturas/02-hoy.png)
 
 ## Cómo usarla
 
 | Opción | Cómo |
 |---|---|
-| 🌐 **Web** | Entra en `https://campayoo.github.io/EBAUTrainer` (cuando esté publicada, ver [docs/despliegue.md](docs/despliegue.md)) |
+| 🌐 **Web** | Entra en `https://campayoo.github.io/EBAUTrainer`: verás la portada, y la app está en `/app/` (cuando esté publicada, ver [docs/despliegue.md](docs/despliegue.md)) |
 | 💻 **Instalarla como app** | En Chrome o Edge, menú ⋮ → **Instalar Pauta**. Se abre en su propia ventana y funciona sin internet |
 | 📦 **Descargarla** | Descarga **`Pauta.html`** (desde *Ajustes* en la web o desde *Releases* en GitHub) y ábrela con doble clic. Es un único archivo con todo dentro |
 
@@ -23,7 +25,9 @@ Tu progreso se guarda en tu navegador. Desde **Ajustes** puedes exportar una cop
 - **Bienvenida conversacional**: asignaturas, nivel, prueba inicial opcional, días y horas, fecha de examen y nota objetivo.
 - **Planning automático**: intercala asignaturas, respeta los prerrequisitos (determinantes antes que sistemas con parámetros), reparte el temario, añade repasos espaciados (SM-2), refuerzos y simulacros al final. Se exporta a Google Calendar u Outlook (`.ics`).
 - **Replanificación automática** al faltar, al ir mal o bien, o al cambiar asignaturas, horario o fecha. El profesor explica cada cambio.
-- **Temario completo de la PAU valenciana**: 55 unidades (30 de Matemáticas II y 25 de Física), todas con clase completa: teoría, ejemplo resuelto, práctica, test y resumen.
+- **Cinco asignaturas de la PAU valenciana, 97 unidades**: Matemáticas II (30), Física (25), Química (15), Biología (14) y Matemáticas Aplicadas a las CC. SS. II (13), todas con clase completa: teoría, ejemplo resuelto, práctica, test y resumen. 105 generadores de ejercicios.
+- **«¿Por dónde vas en clase?»**: en la bienvenida (y luego en Asignaturas) marcas lo que ya habéis dado en el instituto; Pauta no te lo vuelve a explicar, te pone repasos espaciados y empieza por la siguiente unidad.
+- **Diseño propio**: tu cuaderno de cuadrícula corregido por el profe (tinta azul, boli rojo, fosforito; modo oscuro de pizarra). Ver [docs/diseno.md](docs/diseno.md).
 - **Clase diaria guiada**, con pistas en 3 niveles y solución paso a paso.
 - **Corrección automática** con tolerancia, unidades (km/s ↔ m/s, N/kg ↔ m/s²) y **diagnóstico del error más probable**.
 - **66 generadores de ejercicios** con parámetros aleatorios: todas las unidades del temario tienen práctica.
@@ -39,10 +43,10 @@ Tu progreso se guarda en tu navegador. Desde **Ajustes** puedes exportar una cop
 ```bash
 node tools/serve.mjs     # arrancar sin instalar nada → http://localhost:5173
 npm install              # herramientas de desarrollo (esbuild, eslint, yaml)
-npm test                 # 41 tests (incluye tests de propiedades del planificador)
+npm test                 # 45 tests (incluye tests de propiedades del planificador)
 npm run lint             # ESLint
 npm run build:content    # validar content/ y regenerar el módulo de contenido
-npm run build            # dist/Pauta.html (un archivo) y _site/ (GitHub Pages)
+npm run build            # dist/Pauta.html (un archivo) y _site/ (GitHub Pages: portada + app/)
 ```
 
 ## Documentación

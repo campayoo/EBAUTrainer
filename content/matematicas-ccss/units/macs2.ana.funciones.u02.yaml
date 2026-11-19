@@ -1,0 +1,50 @@
+# Clase completa: Derivadas, monotonía y extremos
+id: macs2.ana.funciones.u02
+objectives:
+- Calcular derivadas con las reglas básicas.
+- Estudiar la monotonía y los extremos de una función.
+explanation:
+- title: Reglas de derivación
+  body: |
+    | Función | Derivada |
+    |---|---|
+    | $x^n$ | $nx^{n-1}$ |
+    | $e^x$ | $e^x$ |
+    | $\ln x$ | $1/x$ |
+    | $f\cdot g$ | $f'g + fg'$ |
+    | $f/g$ | $(f'g - fg')/g^2$ |
+    | $f(g(x))$ | $f'(g(x))\cdot g'(x)$ |
+
+    La derivada en un punto es la **pendiente de la tangente**: $y - f(a) = f'(a)(x - a)$.
+- title: Monotonía y extremos
+  body: |
+    1. Calcula $f'(x)$ y resuelve $f'(x) = 0$ (puntos críticos).
+    2. Estudia el signo de $f'$ en cada intervalo: si $f' > 0$, crece; si $f' < 0$, decrece.
+    3. Si pasa de crecer a decrecer, hay un **máximo**; al revés, un **mínimo**. (También: $f'' < 0$ máximo, $f'' > 0$ mínimo.)
+
+    No olvides calcular la coordenada $y$ del extremo: $f(a)$.
+examples:
+- title: Extremos de una cúbica
+  statement: |
+    Estudia la monotonía y los extremos de $f(x) = x^3 - 3x$.
+  steps:
+  - |
+    **Derivada:** $f'(x) = 3x^2 - 3 = 0$, así que $x = \pm1$.
+  - |
+    **Signo de $f'$:** positivo en $(-\infty, -1)$, negativo en $(-1, 1)$ y positivo en $(1, +\infty)$.
+  - |
+    **Valores:** $f(-1) = -1 + 3 = 2$ y $f(1) = 1 - 3 = -2$.
+  result: |
+    Crece en $(-\infty, -1)\cup(1, +\infty)$ y decrece en $(-1, 1)$. Máximo relativo en $(-1, 2)$ y mínimo relativo en $(1, -2)$.
+summary:
+- |
+  Puntos críticos: $f'(x) = 0$.
+- |
+  $f' > 0$ crece y $f' < 0$ decrece.
+- |
+  El extremo es un punto: da la $x$ y la $y$.
+common_errors:
+- |
+  Olvidar la regla de la cadena.
+- |
+  Dar solo la $x$ del máximo o del mínimo.

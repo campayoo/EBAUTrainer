@@ -1,0 +1,53 @@
+# Clase completa: Oxidación-reducción y pilas
+id: qui.ab.redox.u01
+objectives:
+- Ajustar reacciones redox por el método del ion-electrón.
+- Calcular la fuerza electromotriz de una pila y predecir la espontaneidad.
+explanation:
+- title: Oxidación y reducción
+  body: |
+    - **Oxidación:** pérdida de electrones (sube el número de oxidación). La especie que se oxida es el **reductor**.
+    - **Reducción:** ganancia de electrones (baja el número de oxidación). La especie que se reduce es el **oxidante**.
+
+    **Ajuste por ion-electrón** (medio ácido):
+    1. Escribe las semirreacciones.
+    2. Ajusta los átomos distintos de O e H.
+    3. Ajusta el O con H₂O y el H con H⁺.
+    4. Ajusta las cargas con electrones.
+    5. Iguala los electrones y suma.
+- title: Pilas galvánicas
+  body: |
+    En una pila, una reacción redox espontánea produce corriente:
+    - **Ánodo:** oxidación (polo −).
+    - **Cátodo:** reducción (polo +).
+    - El **puente salino** cierra el circuito.
+
+    $$E^\circ_{pila} = E^\circ_{cátodo} - E^\circ_{ánodo}$$
+    La especie con el potencial de reducción **mayor** se reduce. Si $E^\circ > 0$, la reacción es espontánea ($\Delta G^\circ = -nFE^\circ < 0$).
+examples:
+- title: La pila Daniell
+  statement: |
+    Una pila tiene un electrodo de Zn en Zn²⁺ y otro de Cu en Cu²⁺. Datos: $E^\circ(\mathrm{Zn^{2+}/Zn}) = -0{,}76$ V y $E^\circ(\mathrm{Cu^{2+}/Cu}) = +0{,}34$ V. Escribe la reacción global y calcula la fuerza electromotriz.
+  steps:
+  - |
+    **¿Quién se reduce?** El Cu²⁺, que tiene el potencial mayor: cátodo $\mathrm{Cu^{2+} + 2e^- \to Cu}$.
+  - |
+    **Ánodo:** $\mathrm{Zn \to Zn^{2+} + 2e^-}$.
+  - |
+    **Reacción global:** $\mathrm{Zn + Cu^{2+} \to Zn^{2+} + Cu}$.
+  - |
+    **Fuerza electromotriz:** $E^\circ = 0{,}34 - (-0{,}76) = 1{,}10$ V.
+  result: |
+    $E^\circ = $ **1,10 V**: es espontánea. El zinc se disuelve y el cobre se deposita.
+summary:
+- |
+  Oxidación: pierde e⁻ (ánodo). Reducción: gana e⁻ (cátodo).
+- |
+  $E^\circ_{pila} = E^\circ_{cátodo} - E^\circ_{ánodo}$.
+- |
+  $E^\circ > 0$ implica que la reacción es espontánea.
+common_errors:
+- |
+  Multiplicar el potencial por el coeficiente de la semirreacción (el potencial no depende de la cantidad).
+- |
+  Confundir los papeles: el oxidante es la especie que se REDUCE.

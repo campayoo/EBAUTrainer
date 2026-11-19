@@ -1,0 +1,45 @@
+# Clase completa: Probabilidad condicionada, total y Bayes
+id: macs2.pro.probabilidad.u01
+objectives:
+- Calcular probabilidades condicionadas con tablas y diagramas de árbol.
+- Aplicar el teorema de la probabilidad total y el de Bayes.
+explanation:
+- title: Probabilidad condicionada
+  body: |
+    $$P(A\mid B) = \frac{P(A\cap B)}{P(B)}$$
+    - $A$ y $B$ son **independientes** si $P(A\cap B) = P(A)\cdot P(B)$.
+    - **Unión:** $P(A\cup B) = P(A) + P(B) - P(A\cap B)$.
+    - **Contrario:** $P(\bar A) = 1 - P(A)$.
+
+    Con datos de dos características, una **tabla de contingencia** lo hace todo más fácil.
+- title: Probabilidad total y Bayes
+  body: |
+    Si $A_1, \dots, A_n$ reparten todos los casos:
+    $$P(B) = \sum P(A_i)\,P(B\mid A_i)$$
+    $$P(A_i\mid B) = \frac{P(A_i)\,P(B\mid A_i)}{P(B)}$$
+    En un **diagrama de árbol**: la probabilidad total suma todas las ramas que acaban en $B$; Bayes es "mi rama entre todas las de $B$".
+examples:
+- title: Piezas defectuosas
+  statement: |
+    La fábrica A produce el 60 % de las piezas, con un 2 % defectuosas, y la B el 40 %, con un 5 % defectuosas. Se elige una pieza al azar y es defectuosa. ¿Qué probabilidad hay de que venga de B?
+  steps:
+  - |
+    **Ramas que acaban en defectuosa:** $0{,}6\cdot0{,}02 = 0{,}012$ y $0{,}4\cdot0{,}05 = 0{,}020$.
+  - |
+    **Probabilidad total:** $P(D) = 0{,}012 + 0{,}020 = 0{,}032$.
+  - |
+    **Bayes:** $P(B\mid D) = \dfrac{0{,}020}{0{,}032} = 0{,}625$.
+  result: |
+    $P(B\mid D) = $ **0,625**: aunque B fabrica menos, produce la mayoría de las piezas defectuosas.
+summary:
+- |
+  $P(A\mid B) = P(A\cap B)/P(B)$.
+- |
+  Probabilidad total: suma de las ramas.
+- |
+  Bayes: tu rama entre el total.
+common_errors:
+- |
+  Confundir $P(D\mid B)$ con $P(B\mid D)$.
+- |
+  Sumar probabilidades de sucesos que no son incompatibles sin restar la intersección.

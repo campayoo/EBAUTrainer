@@ -1,0 +1,43 @@
+# Clase completa: Tamaño de la muestra
+id: macs2.inf.muestreo.u03
+objectives:
+- Calcular el tamaño mínimo de muestra para un error y una confianza dados.
+- Analizar cómo influye cada factor en el tamaño.
+explanation:
+- title: Despejar n
+  body: |
+    De $E = z_{\alpha/2}\dfrac{\sigma}{\sqrt n}$:
+    $$n \ge \left(\frac{z_{\alpha/2}\,\sigma}{E}\right)^2$$
+    Para una proporción (si no se conoce, se toma $\hat p = 0{,}5$, el caso más desfavorable):
+    $$n \ge \frac{z_{\alpha/2}^2\,\hat p(1 - \hat p)}{E^2}$$
+    **Siempre se redondea hacia arriba.**
+- title: ¿Qué influye?
+  body: |
+    - **Reducir el error a la mitad** obliga a multiplicar el tamaño por **4**.
+    - **Más confianza** (mayor $z$) requiere más muestra.
+    - **Más dispersión** ($\sigma$ mayor) requiere más muestra.
+examples:
+- title: Tamaño mínimo
+  statement: |
+    La desviación típica de una variable es 12. ¿Qué muestra mínima hace falta para estimar la media con un error menor que 2 y una confianza del 95 %?
+  steps:
+  - |
+    **Fórmula:** $n \ge \left(\dfrac{1{,}96\cdot12}{2}\right)^2 = 11{,}76^2$.
+  - |
+    **Cálculo:** $11{,}76^2 = 138{,}30$.
+  - |
+    **Redondeo hacia arriba:** $n = 139$.
+  result: |
+    Hacen falta como mínimo **139** personas.
+summary:
+- |
+  $n \ge (z_{\alpha/2}\sigma/E)^2$.
+- |
+  Redondea siempre hacia arriba.
+- |
+  Error a la mitad implica una muestra 4 veces mayor.
+common_errors:
+- |
+  Redondear 138,3 a 138 (no se cumpliría el error pedido).
+- |
+  Olvidar elevar al cuadrado.

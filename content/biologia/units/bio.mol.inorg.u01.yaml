@@ -1,0 +1,55 @@
+# Clase completa: Bioelementos, agua y sales minerales
+id: bio.mol.inorg.u01
+objectives:
+- Clasificar los bioelementos y relacionar las propiedades del agua con sus funciones.
+- Explicar la ósmosis y la función de las sales minerales.
+explanation:
+- title: Bioelementos
+  body: |
+    - **Primarios** (el 96 % de la materia viva): C, H, O, N, P y S. El carbono forma cadenas estables con enlaces covalentes.
+    - **Secundarios:** Ca, Na, K, Mg, Cl...
+    - **Oligoelementos** (en cantidades mínimas, pero imprescindibles): Fe (hemoglobina), I (tiroides), F, Zn...
+- title: El agua
+  body: |
+    La molécula de agua es **polar** y forma **puentes de hidrógeno**. De ahí salen sus propiedades:
+
+    | Propiedad | Función biológica |
+    |---|---|
+    | Gran poder disolvente | medio de las reacciones y de transporte |
+    | Elevado calor específico | amortigua los cambios de temperatura |
+    | Elevado calor de vaporización | refrigeración (sudor) |
+    | Menor densidad del hielo | el hielo flota y aísla lagos y mares |
+    | Cohesión y adhesión | capilaridad: el agua sube por los vasos de las plantas |
+- title: Sales minerales y ósmosis
+  body: |
+    - **Precipitadas:** función estructural (fosfato cálcico en los huesos).
+    - **Disueltas:** regulan el pH (tampón bicarbonato y fosfato) y la ósmosis.
+
+    **Ósmosis:** el agua atraviesa una membrana semipermeable desde el medio **hipotónico** (menos solutos) hacia el **hipertónico** (más solutos).
+examples:
+- title: Glóbulos rojos en agua destilada
+  statement: |
+    ¿Qué le ocurre a un glóbulo rojo si se introduce en agua destilada? ¿Y a una célula vegetal?
+  steps:
+  - |
+    **Comparamos los medios:** el agua destilada es **hipotónica** respecto al interior celular.
+  - |
+    **Sentido del agua:** entra en la célula por ósmosis.
+  - |
+    **Glóbulo rojo:** no tiene pared, así que se hincha hasta romperse (**hemólisis**).
+  - |
+    **Célula vegetal:** la pared de celulosa resiste y la célula queda **turgente**.
+  result: |
+    En un medio hipotónico, la célula animal estalla y la vegetal se pone turgente. En uno hipertónico, ambas pierden agua (crenación y plasmólisis).
+summary:
+- |
+  Bioelementos primarios: C, H, O, N, P y S.
+- |
+  Agua: polar y con puentes de hidrógeno, de ahí sus propiedades.
+- |
+  En la ósmosis, el agua va del medio hipotónico al hipertónico.
+common_errors:
+- |
+  Decir que en la ósmosis se mueven los solutos (se mueve el agua).
+- |
+  Confundir hipotónico con hipertónico: "hiper" significa más solutos.

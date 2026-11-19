@@ -1,0 +1,46 @@
+# Clase completa: Mutaciones y evolución
+id: bio.gen.molecular.u02
+objectives:
+- Clasificar las mutaciones y sus efectos.
+- Explicar las teorías evolutivas y el papel de la mutación.
+explanation:
+- title: Mutaciones
+  body: |
+    Son cambios en el material genético:
+    - **Génicas (puntuales):**
+      - **Sustitución:** puede ser silenciosa, de cambio de sentido o sin sentido (aparece un codón de parada).
+      - **Inserción o deleción:** desplazan el marco de lectura.
+    - **Cromosómicas:** afectan a la estructura (deleción, duplicación, inversión, translocación).
+    - **Genómicas:** cambia el número de cromosomas. Ejemplo: el síndrome de Down (trisomía del 21).
+
+    Pueden ser espontáneas o inducidas por **agentes mutágenos**: radiaciones, sustancias químicas o virus. Solo se heredan las que afectan a las **células germinales**.
+- title: Evolución
+  body: |
+    - **Lamarckismo:** uso y desuso, y herencia de los caracteres adquiridos (descartado).
+    - **Darwinismo:** variabilidad + **selección natural** de los individuos mejor adaptados.
+    - **Neodarwinismo (teoría sintética):** la variabilidad procede de la **mutación** y la **recombinación**; la selección natural actúa sobre las poblaciones; también influye la deriva genética.
+
+    La mutación es la fuente última de la variabilidad.
+examples:
+- title: Efectos de dos mutaciones
+  statement: |
+    En el ARNm 5′-AUG CCU AAA-3′ (Met-Pro-Lys), ¿qué efecto tendría cambiar CCU por CCC (también Pro)? ¿Y cambiar AAA por UAA (parada)?
+  steps:
+  - |
+    **CCU → CCC:** sigue codificando prolina. Es una mutación **silenciosa**, sin efecto en la proteína.
+  - |
+    **AAA → UAA:** aparece un codón de parada. Es una mutación **sin sentido**: la proteína queda truncada en Met-Pro.
+  result: |
+    La primera no cambia la proteína (gracias a que el código es degenerado); la segunda la acorta y probablemente la deja sin función.
+summary:
+- |
+  Mutaciones génicas, cromosómicas y genómicas.
+- |
+  Silenciosa: mismo aminoácido. Sin sentido: aparece una parada.
+- |
+  Neodarwinismo: mutación + recombinación + selección natural.
+common_errors:
+- |
+  Decir que todas las mutaciones son perjudiciales.
+- |
+  Pensar que se hereda una mutación en una célula de la piel.

@@ -1,0 +1,47 @@
+# Clase completa: Glúcidos y lípidos
+id: bio.mol.org.u01
+objectives:
+- Clasificar los glúcidos y los lípidos y reconocer sus enlaces.
+- Relacionar su estructura con su función.
+explanation:
+- title: Glúcidos
+  body: |
+    - **Monosacáridos:** glucosa, fructosa, ribosa. Se ciclan en disolución (formas α y β).
+    - **Disacáridos:** dos monosacáridos unidos por un enlace **O-glucosídico**. Sacarosa (glucosa + fructosa), lactosa (glucosa + galactosa) y maltosa (glucosa + glucosa).
+    - **Polisacáridos:**
+      - **Almidón:** reserva vegetal, con enlaces α.
+      - **Glucógeno:** reserva animal, en el hígado y el músculo.
+      - **Celulosa:** estructural en vegetales, con enlaces β(1→4) que no podemos digerir.
+      - **Quitina:** en los artrópodos y los hongos.
+- title: Lípidos
+  body: |
+    Son insolubles en agua. Los principales:
+    - **Ácidos grasos:** saturados (sólidos, de origen animal) o insaturados (líquidos, aceites).
+    - **Triglicéridos:** glicerina + 3 ácidos grasos unidos por enlaces **éster**. Son reserva energética; con NaOH se **saponifican** (jabones).
+    - **Fosfolípidos:** **anfipáticos** (cabeza polar y colas apolares); forman la bicapa de las membranas.
+    - **Esteroides:** colesterol, hormonas sexuales y vitamina D.
+examples:
+- title: Hidrólisis de la sacarosa
+  statement: |
+    ¿Qué se obtiene al hidrolizar la sacarosa? ¿Por qué no es un azúcar reductor?
+  steps:
+  - |
+    **Hidrólisis:** el agua rompe el enlace O-glucosídico. Sacarosa + H₂O → glucosa + fructosa.
+  - |
+    **Enlace:** es α(1→2) y une el carbono anomérico de la glucosa con el de la fructosa.
+  - |
+    **Consecuencia:** no queda ningún carbono anomérico libre, así que no reduce el reactivo de Fehling.
+  result: |
+    La sacarosa da glucosa + fructosa y es **no reductora**, porque su enlace une los dos carbonos anoméricos.
+summary:
+- |
+  Enlace O-glucosídico en glúcidos y enlace éster en triglicéridos.
+- |
+  Almidón y glucógeno son de reserva; la celulosa es estructural (enlaces β).
+- |
+  Los fosfolípidos son anfipáticos y forman la bicapa.
+common_errors:
+- |
+  Decir que la celulosa no tiene glucosa.
+- |
+  Confundir saturado (sin dobles enlaces) con insaturado.

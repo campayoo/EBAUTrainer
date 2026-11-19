@@ -1,0 +1,47 @@
+# Clase completa: Modelo cuántico y configuración electrónica
+id: qui.est.atomo.u01
+objectives:
+- Describir los orbitales con los cuatro números cuánticos.
+- Escribir configuraciones electrónicas con el diagrama de Moeller.
+explanation:
+- title: Del modelo de Bohr al modelo cuántico
+  body: |
+    Bohr explicó el espectro del hidrógeno con órbitas fijas, pero falló con átomos de más electrones. El modelo actual sustituye la órbita por el **orbital**: la zona donde es muy probable encontrar al electrón.
+
+    Cada electrón queda descrito por cuatro **números cuánticos**:
+    - $n$ (principal): nivel de energía y tamaño, $n = 1, 2, 3, \dots$
+    - $l$ (secundario): forma del orbital, de $0$ a $n-1$ ($l = 0$: s, $1$: p, $2$: d, $3$: f).
+    - $m_l$ (magnético): orientación, de $-l$ a $+l$.
+    - $m_s$ (espín): $+\tfrac12$ o $-\tfrac12$.
+- title: Reglas para llenar los orbitales
+  body: |
+    1. **Principio de mínima energía:** se llenan por orden de $n + l$ (diagrama de Moeller): 1s 2s 2p 3s 3p 4s 3d 4p 5s 4d...
+    2. **Principio de exclusión de Pauli:** no hay dos electrones con los cuatro números cuánticos iguales, así que caben 2 electrones por orbital.
+    3. **Regla de Hund:** en orbitales de igual energía, los electrones se colocan primero desapareados.
+
+    Capacidad de cada subnivel: s = 2, p = 6, d = 10, f = 14.
+examples:
+- title: Configuración del hierro
+  statement: |
+    Escribe la configuración electrónica del hierro ($Z = 26$) y la del ion $\mathrm{Fe^{2+}}$.
+  steps:
+  - |
+    **Orden de llenado:** 1s² 2s² 2p⁶ 3s² 3p⁶ suman 18 electrones.
+  - |
+    **Siguen el 4s y el 3d:** 4s² (20) y 3d⁶ (26). Configuración: $1s^2\,2s^2\,2p^6\,3s^2\,3p^6\,4s^2\,3d^6$.
+  - |
+    **El ion pierde primero los electrones del nivel más externo** ($n = 4$), no los últimos que entraron: $\mathrm{Fe^{2+}}$: $[\mathrm{Ar}]\,3d^6$.
+  result: |
+    Fe: $[\mathrm{Ar}]\,4s^2\,3d^6$; Fe²⁺: $[\mathrm{Ar}]\,3d^6$.
+summary:
+- |
+  Cuatro números cuánticos: $n$, $l$, $m_l$ y $m_s$.
+- |
+  Llenado por $n + l$ creciente (Moeller), Pauli y Hund.
+- |
+  Los cationes pierden primero los electrones de mayor $n$.
+common_errors:
+- |
+  Quitar los electrones del 3d antes que los del 4s al formar un catión.
+- |
+  Dar a $l$ el valor $n$ (el máximo es $n - 1$).

@@ -55,8 +55,18 @@ export function normalizeExercise(raw) {
 export function buildLesson({ unit, lessonDef, warmup = [], seed = 1 }) {
   const rng = createRng(seed);
   const generators = (unit.generators ?? []).filter(hasGenerator);
-  const gen = (count) =>
-    Array.from({ length: count }, (_, i) => generateExercise(generators[i % generators.length], rng.int(1, 2 ** 31 - 1)));
+  // Genera `count` ejercicios sin repetir enunciado (los bancos de preguntas
+  // podrían devolver la misma pregunta dos veces).
+  const used = new Set();
+  const gen = (count) => Array.from({ length: count }, (_, i) => {
+    let ex;
+    for (let tries = 0; tries < 12; tries++) {
+      ex = generateExercise(generators[i % generators.length], rng.int(1, 2 ** 31 - 1));
+      if (!used.has(ex.statement)) break;
+    }
+    used.add(ex.statement);
+    return ex;
+  });
 
   const steps = [];
   const warmupItems = warmup.length > 0 ? warmup : (lessonDef?.warmup ?? []).map(normalizeExercise);

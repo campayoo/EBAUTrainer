@@ -1,0 +1,47 @@
+# Clase completa: Intervalos de confianza para la media y la proporción
+id: macs2.inf.muestreo.u02
+objectives:
+- Construir e interpretar intervalos de confianza.
+- Relacionar el nivel de confianza, el error y el tamaño de la muestra.
+explanation:
+- title: Intervalo para la media
+  body: |
+    $$\left(\bar x - z_{\alpha/2}\frac{\sigma}{\sqrt n},\ \ \bar x + z_{\alpha/2}\frac{\sigma}{\sqrt n}\right)$$
+
+    | Confianza | 90 % | 95 % | 99 % |
+    |---|---|---|---|
+    | $z_{\alpha/2}$ | 1,645 | 1,96 | 2,575 |
+
+    El **error máximo** es $E = z_{\alpha/2}\,\sigma/\sqrt n$ (la mitad de la amplitud del intervalo).
+- title: Intervalo para la proporción e interpretación
+  body: |
+    $$\left(\hat p - z_{\alpha/2}\sqrt{\frac{\hat p(1 - \hat p)}{n}},\ \ \hat p + z_{\alpha/2}\sqrt{\frac{\hat p(1 - \hat p)}{n}}\right)$$
+    **Interpretación:** "Con una confianza del 95 %, la media poblacional está entre..."; si repitiéramos el muestreo muchas veces, el 95 % de los intervalos contendría el valor real.
+
+    - Más confianza implica un intervalo más **ancho**.
+    - Una muestra más grande implica un intervalo más **estrecho**.
+examples:
+- title: Proporción de usuarios
+  statement: |
+    En una encuesta a 400 personas, 120 usan el transporte público. Calcula el intervalo de confianza al 95 % para la proporción.
+  steps:
+  - |
+    **Proporción muestral:** $\hat p = 120/400 = 0{,}30$.
+  - |
+    **Error:** $E = 1{,}96\sqrt{\dfrac{0{,}30\cdot0{,}70}{400}} = 1{,}96\cdot0{,}0229 = 0{,}0449$.
+  - |
+    **Intervalo:** $(0{,}30 - 0{,}0449,\ 0{,}30 + 0{,}0449) = (0{,}255,\ 0{,}345)$.
+  result: |
+    Con un 95 % de confianza, entre el **25,5 %** y el **34,5 %** de la población usa el transporte público.
+summary:
+- |
+  $E = z_{\alpha/2}\,\sigma/\sqrt n$ para la media.
+- |
+  Valores críticos: 1,645 (90 %), 1,96 (95 %) y 2,575 (99 %).
+- |
+  Más confianza, intervalo más ancho; más muestra, intervalo más estrecho.
+common_errors:
+- |
+  Decir que "hay un 95 % de probabilidad de que la media esté en ESTE intervalo" (el intervalo es el aleatorio, no la media).
+- |
+  Usar 1,96 para cualquier nivel de confianza.

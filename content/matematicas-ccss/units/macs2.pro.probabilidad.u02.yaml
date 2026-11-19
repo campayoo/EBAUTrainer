@@ -1,0 +1,44 @@
+# Clase completa: Distribuciones binomial y normal
+id: macs2.pro.probabilidad.u02
+objectives:
+- Reconocer y usar la distribución binomial.
+- Tipificar y usar la tabla de la normal, incluida la aproximación de la binomial.
+explanation:
+- title: Distribución binomial
+  body: |
+    Se repite $n$ veces un experimento con dos resultados (éxito con probabilidad $p$), de forma **independiente**. $X$ = número de éxitos:
+    $$P(X = k) = \binom{n}{k}p^k(1 - p)^{n-k}$$
+    Media $\mu = np$; desviación típica $\sigma = \sqrt{np(1 - p)}$.
+- title: Distribución normal
+  body: |
+    $X \sim N(\mu, \sigma)$ tiene forma de campana. Se **tipifica** para usar la tabla de $N(0, 1)$:
+    $$Z = \frac{X - \mu}{\sigma}$$
+    - La tabla da $P(Z \le z)$.
+    - $P(Z > z) = 1 - P(Z \le z)$ y $P(Z \le -z) = 1 - P(Z \le z)$.
+
+    **Aproximación:** si $np \ge 5$ y $n(1 - p) \ge 5$, la binomial se aproxima por $N(np, \sqrt{npq})$, con la corrección de continuidad (±0,5).
+examples:
+- title: Estaturas
+  statement: |
+    La estatura de un grupo sigue una $N(170, 10)$ en cm. ¿Qué proporción mide más de 186 cm?
+  steps:
+  - |
+    **Tipificamos:** $z = \dfrac{186 - 170}{10} = 1{,}6$.
+  - |
+    **Tabla:** $P(Z \le 1{,}6) = 0{,}9452$.
+  - |
+    **Contrario:** $P(Z > 1{,}6) = 1 - 0{,}9452 = 0{,}0548$.
+  result: |
+    Aproximadamente el **5,5 %** del grupo mide más de 186 cm.
+summary:
+- |
+  Binomial: $\binom nk p^k q^{n-k}$, con $\mu = np$.
+- |
+  Normal: tipifica con $Z = (X - \mu)/\sigma$.
+- |
+  La tabla da $P(Z \le z)$; para "mayor que", usa $1 - $ tabla.
+common_errors:
+- |
+  Leer la tabla directamente para un "mayor que".
+- |
+  Usar la binomial cuando los intentos no son independientes.

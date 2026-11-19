@@ -5,21 +5,25 @@
 
 import { html, cls } from '../ui/html.js';
 import { icon } from '../ui/icons.js';
-import { progressBar, subjectBadge } from '../ui/components.js';
+import { progressBar, subjectBadge, classPicker, unitIdsOfBlock } from '../ui/components.js';
 import { content, subjectsById } from '../data/content.js';
-import { addSubject, removeSubject, setSubjectWeight, WEIGHT_LABELS } from '../data/store.js';
+import { addSubject, removeSubject, setSubjectWeight, setClassProgress, classSeenIds, getState, WEIGHT_LABELS } from '../data/store.js';
 import { progressTree } from '../core/stats.js';
 import { formatShort } from '../core/dates.js';
 
 const open = new Set(); // bloques desplegados
 let confirmRemove = null;
 let adding = null;
+// Editor "Por dónde voy en clase": { subjectId, seen: Set } mientras está abierto.
+let editing = null;
 
 const WEIGHTS = [0.75, 1, 1.5];
 
 function unitRow(unit, state, nextDate) {
   const p = state.progress[unit.id];
-  const status = p?.completed
+  const status = p?.completed && p.source === 'clase' && (p.lastScore ?? null) === null
+    ? html`<span class="tag">Vista en clase</span>`
+    : p?.completed
     ? html`<span class="tag ok">${icon('check', 14)} ${Math.round(p.mastery * 100)} %</span>`
     : nextDate ? html`<span class="tag">${formatShort(nextDate)}</span>` : html`<span class="tag muted">Pendiente</span>`;
   return html`
@@ -33,6 +37,12 @@ function unitRow(unit, state, nextDate) {
         <a class="btn btn-sm btn-ghost" href="#/clase/${encodeURIComponent(unit.id)}/${p?.completed ? 'review' : 'lesson'}">${p?.completed ? 'Repasar' : 'Estudiar ya'}</a>
       </div>
     </li>`;
+}
+
+/** Unidades completadas en la app (no "de clase"): no se pueden desmarcar. */
+function lockedUnits(subject, state) {
+  const ids = subject.blocks.flatMap((b) => b.topics.flatMap((t) => t.units.map((u) => u.id)));
+  return new Set(ids.filter((u) => state.progress[u]?.completed && state.progress[u].source !== 'clase'));
 }
 
 export default {
@@ -67,10 +77,20 @@ export default {
                   ${WEIGHTS.map((w) => html`<option value="${w}" ${w === weight ? 'selected' : ''}>${WEIGHT_LABELS[w]}</option>`)}
                 </select>
               </label>
+              <button class="btn btn-sm" data-action="class-edit" data-id="${id}" aria-expanded="${editing?.subjectId === id}">${icon('flag', 16)} Por dónde voy en clase</button>
               ${confirmRemove === id
                 ? html`<span class="confirm">¿Quitar ${subject.short}? <button class="btn btn-danger btn-sm" data-action="remove" data-id="${id}">Sí, quitar</button><button class="btn btn-sm" data-action="cancel-remove">No</button></span>`
                 : html`<button class="btn btn-ghost btn-sm" data-action="ask-remove" data-id="${id}">${icon('trash', 16)} Quitar</button>`}
             </div>
+            ${editing?.subjectId === id ? html`
+              <div class="class-editor">
+                <p class="small">Marca lo que ya habéis dado en clase. Lo que ya has estudiado aquí no cambia.</p>
+                ${classPicker(subject, editing.seen, lockedUnits(subject, state))}
+                <div class="row-end">
+                  <button class="btn btn-ghost btn-sm" data-action="class-cancel">Cancelar</button>
+                  <button class="btn btn-primary btn-sm" data-action="class-save">Guardar y replanificar</button>
+                </div>
+              </div>` : ''}
             <div class="blocks">
               ${tree.blocks.map((b) => html`
                 <div class="block">
@@ -100,7 +120,7 @@ export default {
                 : html`<button class="btn btn-primary" data-action="ask-add" data-id="${s.id}">${icon('plus', 16)} Añadir</button>`}
             </div>`)}
         </div>
-      </section>` : html`<p class="muted section">Ya estudias todas las asignaturas disponibles. Pronto habrá más: el contenido de cada asignatura es un conjunto de archivos YAML, así que añadir una nueva no exige tocar el código.</p>`}`;
+      </section>` : html`<p class="muted section">Ya estudias todas las asignaturas disponibles. Cada asignatura es un conjunto de archivos YAML: añadir una nueva no exige tocar el código.</p>`}`;
   },
 
   actions: {
@@ -111,5 +131,27 @@ export default {
     'ask-add': (el, ctx) => { adding = el.dataset.id; ctx.rerender(); },
     add: (el, ctx) => { adding = null; ctx.teacherToast(addSubject(el.dataset.id, Number(el.dataset.weight))); },
     weight: (el, ctx) => ctx.teacherToast(setSubjectWeight(el.dataset.id, Number(el.value))),
+    'class-edit': (el, ctx) => {
+      const id = el.dataset.id;
+      editing = editing?.subjectId === id ? null : { subjectId: id, seen: new Set(classSeenIds(getState(), id)) };
+      ctx.rerender();
+    },
+    'class-toggle': (el, ctx) => {
+      const u = el.dataset.unit;
+      if (editing.seen.has(u)) editing.seen.delete(u); else editing.seen.add(u);
+      ctx.rerender();
+    },
+    'class-block': (el, ctx) => {
+      for (const u of unitIdsOfBlock(subjectsById.get(editing.subjectId), el.dataset.block)) {
+        if (el.dataset.on === '1') editing.seen.add(u); else editing.seen.delete(u);
+      }
+      ctx.rerender();
+    },
+    'class-cancel': (el, ctx) => { editing = null; ctx.rerender(); },
+    'class-save': (el, ctx) => {
+      const { subjectId, seen } = editing;
+      editing = null;
+      ctx.teacherToast(setClassProgress(subjectId, [...seen]), 'Planning actualizado');
+    },
   },
 };

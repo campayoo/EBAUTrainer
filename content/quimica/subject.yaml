@@ -1,0 +1,74 @@
+# =====================================================================
+# Química (2.º Bachillerato) — temario
+# Bloques del currículo LOMLOE (Decreto 108/2022, Comunitat Valenciana).
+# Ver content/matematicas-ii/subject.yaml para el significado de cada campo.
+# =====================================================================
+id: qui
+name: Química
+short: Química
+order: 3   # posición en listas y en la portada
+color: '#0f766e'
+icon: '⚗'
+description: Estructura de la materia y enlace, reacciones químicas (termoquímica, equilibrio, ácido-base, redox) y química orgánica.
+blocks:
+  - id: qui.est
+    title: A. Estructura de la materia y enlace químico
+    examSection: '1'
+    examWeight: 2
+    topics:
+      - id: qui.est.atomo
+        title: El átomo y la tabla periódica
+        units:
+          - { id: qui.est.atomo.u01, title: Modelo cuántico y configuración electrónica, minutes: 50, difficulty: 3, requires: [], generators: [qui-atomo] }
+          - { id: qui.est.atomo.u02, title: Propiedades periódicas, minutes: 45, difficulty: 2, requires: [qui.est.atomo.u01], generators: [qui-periodica] }
+      - id: qui.est.enlace
+        title: Enlace químico
+        units:
+          - { id: qui.est.enlace.u01, title: Enlace iónico, covalente y metálico; geometría molecular, minutes: 55, difficulty: 3, requires: [qui.est.atomo.u02], generators: [qui-enlace] }
+          - { id: qui.est.enlace.u02, title: Fuerzas intermoleculares y propiedades de las sustancias, minutes: 45, difficulty: 3, requires: [qui.est.enlace.u01], generators: [qui-fuerzas] }
+  - id: qui.reac
+    title: B. Reacciones químicas
+    examSection: '2'
+    examWeight: 2
+    topics:
+      - id: qui.reac.energia
+        title: Termodinámica y cinética
+        units:
+          - { id: qui.reac.energia.u01, title: Termoquímica y ley de Hess, minutes: 55, difficulty: 3, requires: [], generators: [entalpia-combustion] }
+          - { id: qui.reac.energia.u02, title: Entropía y espontaneidad, minutes: 45, difficulty: 3, requires: [qui.reac.energia.u01], generators: [gibbs] }
+          - { id: qui.reac.energia.u03, title: Cinética química, minutes: 45, difficulty: 3, requires: [], generators: [qui-cinetica] }
+  - id: qui.eq
+    title: C. Equilibrio químico
+    examSection: '3'
+    examWeight: 2
+    topics:
+      - id: qui.eq.equilibrio
+        title: Equilibrio químico
+        units:
+          - { id: qui.eq.equilibrio.u01, title: Constantes de equilibrio Kc y Kp, minutes: 60, difficulty: 4, requires: [qui.reac.energia.u03], generators: [kc-equilibrio] }
+          - { id: qui.eq.equilibrio.u02, title: Principio de Le Chatelier, minutes: 45, difficulty: 3, requires: [qui.eq.equilibrio.u01], generators: [qui-equilibrio] }
+  - id: qui.ab
+    title: D. Ácido-base y redox
+    examSection: '4'
+    examWeight: 2
+    topics:
+      - id: qui.ab.acidobase
+        title: Reacciones ácido-base
+        units:
+          - { id: qui.ab.acidobase.u01, title: Ácidos y bases fuertes; concepto de pH, minutes: 50, difficulty: 3, requires: [qui.eq.equilibrio.u01], generators: [ph-fuerte, qui-acidobase] }
+          - { id: qui.ab.acidobase.u02, title: Ácidos débiles e hidrólisis, minutes: 55, difficulty: 4, requires: [qui.ab.acidobase.u01], generators: [ph-debil, qui-acidobase] }
+      - id: qui.ab.redox
+        title: Reacciones redox
+        units:
+          - { id: qui.ab.redox.u01, title: Oxidación-reducción y pilas, minutes: 55, difficulty: 4, requires: [], generators: [fem-pila, qui-redox] }
+          - { id: qui.ab.redox.u02, title: Electrólisis y leyes de Faraday, minutes: 45, difficulty: 3, requires: [qui.ab.redox.u01], generators: [faraday] }
+  - id: qui.org
+    title: E. Química orgánica
+    examSection: '5'
+    examWeight: 2
+    topics:
+      - id: qui.org.organica
+        title: Química del carbono
+        units:
+          - { id: qui.org.organica.u01, title: Grupos funcionales, nomenclatura e isomería, minutes: 55, difficulty: 3, requires: [], generators: [qui-organica] }
+          - { id: qui.org.organica.u02, title: Reacciones orgánicas y polímeros, minutes: 50, difficulty: 3, requires: [qui.org.organica.u01], generators: [qui-reacciones-org] }

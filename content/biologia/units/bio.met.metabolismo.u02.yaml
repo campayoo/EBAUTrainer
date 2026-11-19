@@ -1,0 +1,48 @@
+# Clase completa: Anabolismo - la fotosíntesis
+id: bio.met.metabolismo.u02
+objectives:
+- Describir las fases de la fotosíntesis y su localización.
+- Explicar el origen del oxígeno y los factores que afectan a la fotosíntesis.
+explanation:
+- title: Fase luminosa
+  body: |
+    En las membranas de los **tilacoides**:
+    - La luz excita la clorofila de los **fotosistemas I y II**.
+    - **Fotólisis del agua:** $\mathrm{H_2O \to 2H^+ + 2e^- + \tfrac12 O_2}$. De aquí sale el O₂.
+    - El transporte de electrones produce **NADPH**, y el gradiente de protones, **ATP** (fotofosforilación).
+- title: Fase oscura (ciclo de Calvin)
+  body: |
+    En el **estroma**, con el ATP y el NADPH de la fase luminosa:
+    - La **RuBisCO** fija el CO₂ a la ribulosa-1,5-bisfosfato.
+    - Se obtienen azúcares (gliceraldehído-3-fosfato y, después, glucosa y almidón).
+
+    $$\mathrm{6\,CO_2 + 12\,H_2O \xrightarrow{luz} C_6H_{12}O_6 + 6\,O_2 + 6\,H_2O}$$
+
+    **Factores:** intensidad de luz, concentración de CO₂ y temperatura.
+
+    La **quimiosíntesis** es otro anabolismo autótrofo: usa la energía de oxidar sustancias inorgánicas, sin luz.
+examples:
+- title: ¿De dónde sale el oxígeno?
+  statement: |
+    Se riega una planta con agua marcada con ¹⁸O y se le da CO₂ normal. ¿Dónde aparecerá el ¹⁸O?
+  steps:
+  - |
+    **Fotólisis:** el agua se rompe en la fase luminosa y su oxígeno se libera como O₂.
+  - |
+    **El CO₂:** su oxígeno se incorpora a la glucosa en el ciclo de Calvin.
+  - |
+    **Conclusión:** el ¹⁸O aparece en el **O₂ liberado**, no en la glucosa.
+  result: |
+    El O₂ que liberan las plantas procede del **agua**, no del CO₂.
+summary:
+- |
+  Fase luminosa (tilacoides): fotólisis, O₂, ATP y NADPH.
+- |
+  Ciclo de Calvin (estroma): la RuBisCO fija el CO₂.
+- |
+  El O₂ procede del agua.
+common_errors:
+- |
+  Decir que la fase oscura solo ocurre de noche (ocurre de día, con el ATP y el NADPH).
+- |
+  Afirmar que el O₂ procede del CO₂.

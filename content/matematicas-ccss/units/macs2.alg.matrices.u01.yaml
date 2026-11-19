@@ -1,0 +1,47 @@
+# Clase completa: Matrices, operaciones e inversa
+id: macs2.alg.matrices.u01
+objectives:
+- 'Operar con matrices: suma, producto por un número y producto de matrices.'
+- Calcular la inversa de una matriz y resolver ecuaciones matriciales.
+explanation:
+- title: Operaciones con matrices
+  body: |
+    - **Suma:** elemento a elemento (las matrices deben tener la misma dimensión).
+    - **Producto $A\cdot B$:** se puede hacer si las columnas de $A$ coinciden con las filas de $B$. El elemento $c_{ij}$ es la fila $i$ de $A$ por la columna $j$ de $B$.
+    - El producto **no es conmutativo**: en general, $AB \ne BA$.
+    - **Traspuesta $A^t$:** las filas pasan a ser columnas.
+
+    Las matrices sirven para organizar datos: producción por fábrica, precios por producto... y el producto los combina.
+- title: Matriz inversa
+  body: |
+    $A^{-1}$ cumple $A\cdot A^{-1} = I$. Existe si y solo si $|A| \ne 0$.
+
+    Para una matriz 2×2:
+    $$A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \Rightarrow A^{-1} = \frac{1}{ad - bc}\begin{pmatrix} d & -b \\ -c & a \end{pmatrix}$$
+
+    **Ecuaciones matriciales:** si $AX = B$, entonces $X = A^{-1}B$ (multiplicando por la **izquierda**). Si $XA = B$, entonces $X = BA^{-1}$.
+examples:
+- title: Inversa de una matriz 2×2
+  statement: |
+    Calcula la inversa de $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ y comprueba el resultado.
+  steps:
+  - |
+    **Determinante:** $|A| = 1\cdot4 - 2\cdot3 = -2 \ne 0$, así que tiene inversa.
+  - |
+    **Fórmula:** $A^{-1} = \dfrac{1}{-2}\begin{pmatrix} 4 & -2 \\ -3 & 1 \end{pmatrix} = \begin{pmatrix} -2 & 1 \\ 1{,}5 & -0{,}5 \end{pmatrix}$.
+  - |
+    **Comprobación (primera fila):** $(1, 2)\cdot$ primera columna $= 1(-2) + 2(1{,}5) = 1$ y $(1, 2)\cdot$ segunda columna $= 1(1) + 2(-0{,}5) = 0$. Correcto.
+  result: |
+    $A^{-1} = \begin{pmatrix} -2 & 1 \\ 1{,}5 & -0{,}5 \end{pmatrix}$.
+summary:
+- |
+  $AB$ existe si las columnas de $A$ coinciden con las filas de $B$; $AB \ne BA$ en general.
+- |
+  Tiene inversa si $|A| \ne 0$.
+- |
+  $AX = B \Rightarrow X = A^{-1}B$.
+common_errors:
+- |
+  Escribir $X = BA^{-1}$ cuando la ecuación es $AX = B$.
+- |
+  Multiplicar matrices elemento a elemento.

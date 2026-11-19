@@ -1,0 +1,75 @@
+# =====================================================================
+# Biología (2.º Bachillerato) — temario
+# Bloques del currículo LOMLOE (Decreto 108/2022, Comunitat Valenciana).
+# =====================================================================
+id: bio
+name: Biología
+short: Biología
+order: 4   # posición en listas y en la portada
+color: '#4d7c0f'
+icon: '🧬'
+description: Biomoléculas, la célula, metabolismo, genética molecular y herencia, microbiología e inmunología.
+blocks:
+  - id: bio.mol
+    title: A. Las biomoléculas
+    examSection: '1'
+    examWeight: 2.5
+    topics:
+      - id: bio.mol.inorg
+        title: Biomoléculas inorgánicas
+        units:
+          - { id: bio.mol.inorg.u01, title: Bioelementos, agua y sales minerales, minutes: 40, difficulty: 2, requires: [], generators: [bio-agua] }
+      - id: bio.mol.org
+        title: Biomoléculas orgánicas
+        units:
+          - { id: bio.mol.org.u01, title: Glúcidos y lípidos, minutes: 55, difficulty: 3, requires: [bio.mol.inorg.u01], generators: [bio-glucidos-lipidos] }
+          - { id: bio.mol.org.u02, title: Proteínas y enzimas, minutes: 55, difficulty: 3, requires: [bio.mol.org.u01], generators: [bio-proteinas] }
+          - { id: bio.mol.org.u03, title: Ácidos nucleicos, minutes: 45, difficulty: 3, requires: [bio.mol.org.u02], generators: [bio-nucleicos, chargaff] }
+  - id: bio.cel
+    title: B. La célula
+    examSection: '1'
+    examWeight: 2.5
+    topics:
+      - id: bio.cel.estructura
+        title: Estructura celular
+        units:
+          - { id: bio.cel.estructura.u01, title: Célula procariota y eucariota; orgánulos, minutes: 50, difficulty: 2, requires: [], generators: [bio-celula] }
+          - { id: bio.cel.estructura.u02, title: Membrana plasmática y transporte, minutes: 45, difficulty: 3, requires: [bio.cel.estructura.u01], generators: [bio-membrana] }
+          - { id: bio.cel.estructura.u03, title: Ciclo celular, mitosis y meiosis, minutes: 55, difficulty: 3, requires: [bio.cel.estructura.u01], generators: [bio-division] }
+  - id: bio.met
+    title: C. Metabolismo
+    examSection: '2'
+    examWeight: 2.5
+    topics:
+      - id: bio.met.metabolismo
+        title: Catabolismo y anabolismo
+        units:
+          - { id: bio.met.metabolismo.u01, title: Catabolismo - respiración y fermentación, minutes: 60, difficulty: 4, requires: [bio.cel.estructura.u01], generators: [bio-catabolismo] }
+          - { id: bio.met.metabolismo.u02, title: Anabolismo - la fotosíntesis, minutes: 50, difficulty: 4, requires: [bio.met.metabolismo.u01], generators: [bio-fotosintesis] }
+  - id: bio.gen
+    title: D. Genética molecular y herencia
+    examSection: '3'
+    examWeight: 2.5
+    topics:
+      - id: bio.gen.molecular
+        title: Genética molecular
+        units:
+          - { id: bio.gen.molecular.u01, title: Replicación, transcripción y traducción, minutes: 60, difficulty: 4, requires: [bio.mol.org.u03], generators: [bio-expresion] }
+          - { id: bio.gen.molecular.u02, title: Mutaciones y evolución, minutes: 45, difficulty: 3, requires: [bio.gen.molecular.u01], generators: [bio-mutaciones] }
+      - id: bio.gen.herencia
+        title: Herencia
+        units:
+          - { id: bio.gen.herencia.u01, title: Genética mendeliana, minutes: 55, difficulty: 3, requires: [], generators: [mendel-prob, bio-herencia] }
+  - id: bio.mic
+    title: E. Microbiología, biotecnología e inmunología
+    examSection: '4'
+    examWeight: 2.5
+    topics:
+      - id: bio.mic.micro
+        title: Microorganismos y biotecnología
+        units:
+          - { id: bio.mic.micro.u01, title: Microorganismos, virus y biotecnología, minutes: 50, difficulty: 3, requires: [], generators: [bio-microbiologia] }
+      - id: bio.mic.inmuno
+        title: Inmunología
+        units:
+          - { id: bio.mic.inmuno.u01, title: El sistema inmunitario, minutes: 50, difficulty: 3, requires: [], generators: [bio-inmuno] }

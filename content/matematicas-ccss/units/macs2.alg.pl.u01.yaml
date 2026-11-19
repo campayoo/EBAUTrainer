@@ -1,0 +1,44 @@
+# Clase completa: Inecuaciones y región factible
+id: macs2.alg.pl.u01
+objectives:
+- Representar inecuaciones lineales con dos incógnitas.
+- Dibujar la región factible y calcular sus vértices.
+explanation:
+- title: Semiplanos
+  body: |
+    Una inecuación $ax + by \le c$ representa un **semiplano**:
+    1. Dibuja la recta $ax + by = c$ (dando dos puntos, por ejemplo los cortes con los ejes).
+    2. Prueba un punto que no esté en la recta, normalmente el $(0, 0)$: si cumple la inecuación, su lado es la solución.
+
+    Las condiciones $x \ge 0$, $y \ge 0$ limitan la región al primer cuadrante.
+- title: Región factible
+  body: |
+    La **región factible** es la intersección de todos los semiplanos: el conjunto de soluciones que cumplen **todas** las restricciones.
+    - Puede estar **acotada** (un polígono) o no.
+    - Sus **vértices** se obtienen resolviendo, de dos en dos, los sistemas formados por las rectas que se cortan.
+    - Comprueba siempre que cada vértice cumple todas las restricciones.
+examples:
+- title: Una región de cuatro vértices
+  statement: |
+    Dibuja la región $x + y \le 5$, $x \le 3$, $x \ge 0$, $y \ge 0$ y calcula sus vértices.
+  steps:
+  - |
+    **Recta $x + y = 5$:** pasa por $(5, 0)$ y $(0, 5)$; el $(0, 0)$ cumple $0 \le 5$, así que la región queda por debajo.
+  - |
+    **Recta $x = 3$:** vertical; la región queda a la izquierda.
+  - |
+    **Cortes:** $x = 3$ con $x + y = 5$ da $(3, 2)$; $x = 3$ con $y = 0$ da $(3, 0)$; $x + y = 5$ con $x = 0$ da $(0, 5)$.
+  result: |
+    Es un cuadrilátero de vértices $(0, 0)$, $(3, 0)$, $(3, 2)$ y $(0, 5)$.
+summary:
+- |
+  Recta + punto de prueba para elegir el semiplano.
+- |
+  Región factible: intersección de todas las restricciones.
+- |
+  Vértices: cortes de las rectas que la limitan.
+common_errors:
+- |
+  Elegir el semiplano sin probar ningún punto.
+- |
+  Incluir como vértice un corte que no cumple alguna restricción.

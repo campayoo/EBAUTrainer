@@ -1,0 +1,49 @@
+# Clase completa: Catabolismo - respiración y fermentación
+id: bio.met.metabolismo.u01
+objectives:
+- Describir las etapas de la respiración celular y dónde ocurren.
+- Comparar la respiración aerobia con las fermentaciones.
+explanation:
+- title: Respiración celular aerobia
+  body: |
+    $$\mathrm{C_6H_{12}O_6 + 6\,O_2 \to 6\,CO_2 + 6\,H_2O + ATP}$$
+    1. **Glucólisis** (citosol): glucosa → 2 piruvato + 2 ATP + 2 NADH.
+    2. **Descarboxilación oxidativa** (matriz mitocondrial): piruvato → acetil-CoA + CO₂.
+    3. **Ciclo de Krebs** (matriz): se libera CO₂ y se obtienen NADH y FADH₂.
+    4. **Cadena respiratoria y fosforilación oxidativa** (membrana interna): los electrones llegan al **O₂**, que forma agua; el gradiente de protones mueve la **ATP sintasa**.
+
+    Balance: unos 36-38 ATP por glucosa (algunos libros recientes dan unos 30-32).
+- title: Fermentaciones
+  body: |
+    Sin oxígeno, el piruvato se reduce para regenerar el NAD⁺ y que siga la glucólisis:
+    - **Láctica:** piruvato → ácido láctico. En el músculo y en las bacterias del yogur.
+    - **Alcohólica:** piruvato → etanol + CO₂. En las levaduras (pan, vino y cerveza).
+
+    Solo dan **2 ATP** por glucosa, los de la glucólisis.
+
+    Los ácidos grasos también se oxidan, por **β-oxidación** a acetil-CoA.
+examples:
+- title: Respiración frente a fermentación
+  statement: |
+    Una levadura puede vivir con o sin oxígeno. ¿En qué caso consume más glucosa para obtener la misma energía? ¿Por qué?
+  steps:
+  - |
+    **Con O₂:** respiración aerobia, unos 36-38 ATP por glucosa.
+  - |
+    **Sin O₂:** fermentación alcohólica, solo 2 ATP por glucosa.
+  - |
+    **Comparación:** para obtener la misma energía, sin oxígeno necesita unas 18 veces más glucosa.
+  result: |
+    Sin oxígeno consume mucha más glucosa: la fermentación solo aprovecha la glucólisis, porque el piruvato no se oxida por completo.
+summary:
+- |
+  Glucólisis en el citosol; Krebs y cadena respiratoria en la mitocondria.
+- |
+  Aceptor final: O₂ en la respiración y una molécula orgánica en la fermentación.
+- |
+  Fermentación: 2 ATP por glucosa.
+common_errors:
+- |
+  Situar la glucólisis dentro de la mitocondria.
+- |
+  Decir que la fermentación produce ATP al formar el ácido láctico (solo regenera NAD⁺).

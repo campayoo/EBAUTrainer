@@ -1,0 +1,50 @@
+# Clase completa: Sistemas de ecuaciones lineales
+id: macs2.alg.matrices.u02
+objectives:
+- Resolver sistemas por el método de Gauss.
+- Clasificar un sistema y plantear problemas con sistemas.
+explanation:
+- title: Método de Gauss
+  body: |
+    Se transforma el sistema en uno **escalonado** con operaciones que no cambian las soluciones:
+    - intercambiar ecuaciones;
+    - multiplicar una ecuación por un número distinto de 0;
+    - sumar a una ecuación un múltiplo de otra.
+
+    Después se resuelve de abajo arriba.
+- title: Clasificación
+  body: |
+    - **Compatible determinado:** una única solución.
+    - **Compatible indeterminado:** infinitas soluciones (queda una ecuación $0 = 0$).
+    - **Incompatible:** sin solución (aparece $0 = k$ con $k \ne 0$).
+
+    Con rangos (teorema de Rouché-Frobenius): si $\mathrm{rg}(A) = \mathrm{rg}(A^*) = $ número de incógnitas, es compatible determinado.
+
+    **Al plantear un problema**, define primero las incógnitas con sus unidades ("$x$ = número de entradas de adulto").
+examples:
+- title: Un sistema 3×3
+  statement: |
+    Resuelve el sistema $x + y + z = 6$, $x - y + z = 2$, $2x + y - z = 1$.
+  steps:
+  - |
+    **E2 − E1:** $-2y = -4$, así que $y = 2$.
+  - |
+    **Sustituimos $y = 2$:** E1 queda $x + z = 4$ y E3, $2x - z = -1$.
+  - |
+    **Sumamos las dos:** $3x = 3$, así que $x = 1$ y $z = 3$.
+  - |
+    **Comprobación:** $1 + 2 + 3 = 6$; $1 - 2 + 3 = 2$; $2 + 2 - 3 = 1$.
+  result: |
+    Sistema compatible determinado: $(x, y, z) = (1, 2, 3)$.
+summary:
+- |
+  Gauss: escalona y resuelve de abajo arriba.
+- |
+  Una ecuación $0 = 0$ indica indeterminado; $0 = k \ne 0$, incompatible.
+- |
+  En los problemas, define las incógnitas antes de plantear.
+common_errors:
+- |
+  Cambiar solo un miembro de la ecuación al operar.
+- |
+  No comprobar la solución en las tres ecuaciones.

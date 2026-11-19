@@ -19,6 +19,7 @@ const TRIGGERS = {
   onboarding: 'Plan inicial', 'subject-added': 'Asignatura añadida', 'subject-removed': 'Asignatura quitada',
   weight: 'Cambio de peso', schedule: 'Cambio de horario', missed: 'Sesiones perdidas', 'lesson-done': 'Clase terminada',
   'review-done': 'Repaso terminado', 'reinforce-done': 'Refuerzo terminado', manual: 'Recalculado a mano',
+  'class-progress': 'Por dónde vas en clase',
 };
 
 /** Sesiones de un día: lo ya ocurrido (historial) + lo planificado pendiente. */
@@ -48,7 +49,7 @@ export default {
         </div>
       </header>
 
-      ${plan ? html`<p class="muted">Versión ${plan.version} del plan · ${total} sesiones hasta el examen (${state.profile.examDate})${plan.stats?.finalPhaseStart ? html` · repaso final y simulacros desde el ${formatShort(plan.stats.finalPhaseStart)}` : ''}.</p>` : ''}
+      ${plan ? html`<p class="muted">Versión ${plan.version} del plan · ${total} sesiones hasta el examen (${formatLong(state.profile.examDate)})${plan.stats?.finalPhaseStart ? html` · repaso final y simulacros desde el ${formatShort(plan.stats.finalPhaseStart)}` : ''}.</p>` : ''}
       ${(plan?.warnings ?? []).map((w) => html`<div class="banner warn">${icon('info', 16)} ${w}</div>`)}
 
       <div class="week-nav">
@@ -89,7 +90,7 @@ export default {
         <h2>Lo que ha cambiado y por qué</h2>
         ${state.changes.length === 0 ? html`<p class="muted">Todavía no hay cambios.</p>` : ''}
         <div class="stack">
-          ${state.changes.slice(0, 12).map((c) => teacherSays(c.messages, { title: `${c.at} · ${TRIGGERS[c.trigger] ?? c.trigger}` }))}
+          ${state.changes.slice(0, 12).map((c) => teacherSays(c.messages, { title: `${formatShort(c.at)} · ${TRIGGERS[c.trigger] ?? c.trigger}` }))}
         </div>
       </section>`;
   },
